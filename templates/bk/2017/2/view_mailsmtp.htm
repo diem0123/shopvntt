@@ -1,0 +1,102 @@
+<div class="breadcrumbs ace-save-state" id="breadcrumbs">
+	<ul class="breadcrumb">
+		<li>
+			<a href="index.php?act=adm_common">Cài dặt</a>
+		</li>				
+		<li>
+			<a href="index.php?act=adm_commontype">Mail Outgoing Server</a>
+		</li>		
+		
+	</ul><!-- /.breadcrumb -->
+	<div class="nav-search" id="nav-search">
+		<!--
+		<form class="form-search">
+			<span class="input-icon">
+				<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+				<i class="ace-icon fa fa-search nav-search-icon"></i>
+			</span>
+		</form>-->
+	</div><!-- /.nav-search -->
+</div>
+<div class="adm_out" >
+<div class="adm_common">
+<table width="100%"  border="0" cellspacing="0" cellpadding="0" >
+ <tr >
+    <td width="17" height="40" class='menu'>&nbsp;</td>
+    <td colspan="2" class='menu'></td>
+    </tr>
+ <tr>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>FROM NAME </td>
+   <td class='content'><?=$fromname?></td>
+ </tr>
+ <tr>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>&nbsp;</td>
+   <td class='content'>&nbsp;</td>
+ </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="271" class='menu'>SMTP SERVER<font size="1" color="#D7261C">&nbsp;</font></td>
+    <td width="797" class='content'>
+	<?=$hostname?></td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="271" class='menu'>&nbsp;</td>
+    <td width="797" class='menu'>&nbsp;    </td>
+  </tr>
+  <tr>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>SMTP PORT </td>
+    <td class='content'><?=$port?></td>
+  </tr>
+  <tr>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+    <td class='content'>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>SMTP SECURE </td>
+    <td class='content'><?=$smtptype?></td>
+  </tr>
+  <tr>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+    <td class='content'>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>SMTP USER </td>
+    <td class='content'><?=$emailsmtp?></td>
+  </tr>
+  <tr>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+    <td class='content'>&nbsp;</td>
+  </tr>
+  
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="271" class='menu'>PASSWORD</td>
+    <td width="797" class='content'>
+    ********</td>
+  </tr>
+ <tr>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>&nbsp;</td>
+ </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="271" class='menu'>&nbsp;</td>
+    <td width="797" class='menu'><input name="edit" type="button" class="admbtn" id="edit" onClick="window.location.href='index.php?act=update_mailsmtp&ac=e&ids=1';" value="Hiệu chỉnh"> 
+   </td>
+  </tr>
+    <tr>
+    <td colspan="3" align="center" height="41" class='menu'>        </td>
+  </tr>
+  </table>
+</div>
+</div>

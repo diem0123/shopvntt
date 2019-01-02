@@ -1,0 +1,65 @@
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+	<tr>
+		<td height="1" ></td>
+	</tr>
+</table>
+<form name="f1" method="post" >
+<input type="hidden" name="vlid" value="">
+<table border="0" width="100%">
+	<tr>
+		<td>
+		<table border="0" width="100%" >
+			<tr>
+			  <td height="14" class="title" ><button class="buttonsave" type="button" name="ct1" value="" onClick="SubmitLink(document.forms.f1,'index.php?act=delete_prolike&ac=d&page=<?=$page?>','<?=$lang['tl_plsl_del']?>', '<?=$lang['tl_delsure']?>',document.forms.f1.ck, document.forms.f1.vlid);" ><?=$lang['tl_delpr']?></button></td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<table border="0" width="100%" cellspacing="0">
+			<tr bgcolor="#EEEEEE">
+			  <td width="20" class="do" height="30"><input name="allbox" type="checkbox" onclick="checkall(this.form);" title="check all"></td>
+				<td width="33" class="content" height="30" align="center"><?=$lang['tl_stt']?></td>
+				<td width="153" class="content" height="30" align="center"><?=$lang['tl_pto']?> </td>
+				<td width="258" class="content" height="30"><?=$lang['tl_namepr']?></td>
+				<td colspan="4" class="content"><?=$lang['tl_action']?></td>
+			</tr>
+			<tr >
+			  <td width="20" class="do" height="10">&nbsp;</td>
+			  <td width="33" class="content" height="10">&nbsp;</td>
+				<td width="153" class="content" height="10">&nbsp;</td>
+				<td width="258" class="content" height="10">&nbsp;</td>
+				<td colspan="4" class="content">&nbsp;</td>
+			</tr>																					
+			<?=$prolike_list_rs?>
+			
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td height="10"></td>
+	</tr>
+	<tr>
+		<td height="25" align="center"><table width="50%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td align="center" ><div id="divPaging"><?=$paging?></div></td>
+        </tr>
+      </table></td>
+	</tr>
+</table>
+</form>
+<script type="text/javascript">
+function SubmitLink(obj,url,str1,str2,listck,listid)
+			{
+				getValueListCheckBox(listck,listid);
+				//alert(listid.value);
+				obj.action=url;
+				obj.method='post';				
+				if (listid.value=='')				
+					alert(str1);
+				else if(confirm(str2))
+					obj.submit();
+			}
+
+</script>

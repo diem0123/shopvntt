@@ -1,0 +1,59 @@
+<?php if($idtype !=2){?>
+<section style="height:90px;" class="bg-white bg-gate-center box-all"></section>
+<section class="bg-white" >
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 txtLeft fadeInUp wow">
+				<div class="box-all">
+					<h2 class="title-green fadeInLeft wow animated"><?=$title_cat?></h2>
+				<div class="name-gioithieu"><?=$lang['nongsan']?></div>
+				</div>
+			</div>
+			<div class="col-md-12">
+				<?=$main_contents?>
+			</div>
+			
+			<div style="">
+			<?=$splq?>
+			</div>
+		</div>
+	</div>
+
+</section>
+
+<?php } elseif ($idtype ==2){?>
+<section class="product-page">
+	<div class="container">
+		<div class="row">			
+			<div class="col-md-12">
+				<div class="content-sanpham txtJust fadeInLeft wow">
+					<h2 class="title-green fadeInLeft wow animated"><?=$title_cat?></h2>
+				<div class="name-gioithieu"><?=$lang['nongsan']?></div> 
+				</div>				
+				<br>
+					<?=$main_contents?>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="bg-white" >
+	<div class="container">
+		<div class="row">
+		<div class="col-md-12" >	
+		<div class="common-news"><?=$detailinfo?></div>
+	</div>
+		
+			<div style="text-align:left">
+				<?=$splq?>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="thanhvien">
+	<div class="container">
+		<div class="row">
+			<?=$bannerqc?>
+		</div>
+	</div>
+</section>
+<?php }?>

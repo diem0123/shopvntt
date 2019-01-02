@@ -1,0 +1,253 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div class="breadcrumbs ace-save-state" id="breadcrumbs">
+	<ul class="breadcrumb">
+		<li>
+			<i class="ace-icon fa fa-home home-icon"></i>
+			<a href="index.php?act=adm_home"><?=$lang['adm_home']?></a>
+		</li>
+
+		<li>
+			<a href="index.php?act=adm_commonlist"><?=$lang['adm_thongtinchung']?></a>
+		</li>
+	</ul><!-- /.breadcrumb -->
+	<div class="nav-search" id="nav-search">
+		<!--
+		<form class="form-search">
+			<span class="input-icon">
+				<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+				<i class="ace-icon fa fa-search nav-search-icon"></i>
+			</span>
+		</form>-->
+	</div><!-- /.nav-search -->
+</div>
+<div class="adm_out" >
+<div class="adm_common">
+<?=$submenu2?>
+<form name="f1" method="post" >
+<input type="hidden" id="vlid" name="vlid" value="">
+<input type="hidden" id="idtype1" name="idtype1" value="<?=$idtype?>">
+<table border="0" width="100%" >
+				<tr>
+				  <td height="25"></td>
+				  <td ><input style="width:100%; height:25px;" type="text" placeholder="Tìm kiếm..." id="keyword"  name="keyword" value=""  /></td>
+				  <td ></td>
+				  <td></td>
+			  </tr>
+				<tr>
+				  <td height="10"></td>
+				  <td></td>
+				  <td align="right"></td>
+				  <td></td>
+    </tr>
+				<tr>
+					<td width="10"></td>
+					<td width="234">     
+					  <SELECT  class=textbox style="width:100%" size=1 name="idtype" id="idtype" onchange="changecat();">
+					<option value=""><?=$lang['adm_vuilongchonchuyenmuc']?> 1...</option>
+					<?=$list_commontype?>	
+				</SELECT></td>
+					<td width="55" align="right"></td>
+					<td width="498">&nbsp;</td>
+				</tr>
+				<tr>
+				  <td height="10"></td>
+				  <td ></td>
+				  <td align="right"></td>
+				  <td></td>
+				  </tr>
+				<tr>
+				  <td></td>
+				  <td id="sametype"><SELECT  class=textbox style="width:100%" size=1 name="typecat" id="typecat" onchange="changetype();">
+				  <option value=""><?=$lang['adm_vuilongchonchuyenmuc']?> 2...</option>      
+					<?=$list_type_category?>
+				</SELECT></td>
+				  <td align="right">&nbsp;</td>
+				  <td>&nbsp;</td>
+				  </tr>
+				  <tr>
+				  <td height="10"></td>
+				  <td ></td>
+				  <td align="right"></td>
+				  <td></td>
+				  </tr>
+				<tr <?=$show3?> id = "r1" >
+				  <td></td>
+				  <td id="samesubcat" ><SELECT  class=textbox style="width:100%" size=1 name="subcat" id="subcat">
+				  <option value=""><?=$lang['adm_vuilongchonchuyenmuc']?> 3...</option>      
+					<?=$list_sub_category?>
+				</SELECT></td>
+				  <td align="left"></td>
+				  <td>&nbsp;</td>
+				  </tr>
+				<tr <?=$show3?> id = "r2" >
+				  <td height="10"></td>
+				  <td ></td>
+				  <td align="right"></td>
+				  <td></td>
+			  </tr>
+				<tr>
+				  <td height="10"></td>
+				  <td ><input class="admbtn" type="button" name="go" value="<?=$lang['adm_filter']?>" onclick="filtertype();" /></td>
+				  <td align="right"></td>
+				  <td></td>
+				  </tr>
+				<tr >
+				  <td  height="10"></td>
+				  <td ></td>
+			  </tr>
+				<tr >
+				  <td style="text-align:center" ></td>
+				  <td style="width:30%;text-align:left;">
+					<button class="admbtn" type="button" name="ct1" value="" onclick="window.open('?act=adm_addcommon<?=$query_str?>&ac=a','Addcommonpopup','scrollbars=yes,status=yes,toolbar=no,location=0,directories=0,status=yes,menubar=0,resizable=0,width=\'100%\',height=\'100%\'');" ><?=$lang['adm_them']?></button>
+					<button class="admbtn" type="button" name="ct1" value="" onclick="delit('',document.forms.f1.ck, document.forms.f1.vlid);" ><?=$lang['adm_xoa']?></button>				  </td>
+			  </tr>
+			</table>
+		  
+		
+
+		<table width="100%">
+			<tr>
+				<td>
+				
+				<table border="0" width="100%" cellpadding="0" cellspacing="0" >
+					<tr>
+					  <td height="10" align="left" ></td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<table width="98%" id="dynamic-table" class="table table-striped table-bordered table-hover ">
+					<tr bgcolor="#EEEEEE">
+						<td width="20" class="do" height="25"><input name="allbox" type="checkbox" onclick="checkall(this.form);" title="Check All"></td>
+						<td width="342" class="do" height="25"><?=$lang['tenthanhphan']?> </td>
+						<td width="141" class="do" height="25"><?=$lang['ngaytao']?> </td>
+						<td width="142" class="do" height="25"><?=$lang['ngaycapnhat']?> </td>
+						<td width="97" class="do" height="25"><?=$lang['trangthai']?> </td>
+						<td width="117" class="do"><?=$lang['dangboi']?> </td>
+						<td width="130" colspan="4" class="do"><?=$lang['hanhdong']?> </td>
+					</tr>
+					<?=$commonlist_rs?>
+				</table>
+				</td>
+			</tr>
+			<tr>
+				<td height="5"></td>
+			</tr>
+			<tr>
+				<td height="25" align="center"><div class="box-phantrang">
+            		<div class="modal-footer no-margin-top">
+						<ul class="pagination pull-right no-margin">
+							<?=$paging?>
+						</ul>	
+					</div>
+            	</div></td>
+			</tr>
+	</table>
+	</div>
+</div>
+</form>
+</div>
+</div>
+<script type="text/javascript">
+var fsearch = document.forms.f1;
+$(document).ready(function() {
+// submit form	
+	$(fsearch).keypress(function (e) {
+        if ((e.which && e.which == 13) || (e.keyCode && e.keyCode == 13)) {		
+           filtertype();
+        } 
+    });
+
+});
+
+function filtertype() {
+	window.location.href='index.php?act=adm_commonlist&idtype='+$('#idtype').val()+'&idcat='+$('#typecat').val()+'&idsubcat='+$('#subcat').val()+'&keyword='+$('#keyword').val();	
+	}
+	  function changecat() {	
+	$.ajax({
+		url: 'index.php',
+		type: 'POST',
+		data: 'act=adm_change_cat_common&cat='+ $('#idtype').val(),
+		success: function(data) {
+			//document.getElementById("sametype").style.display = "block";
+			$('#sametype').html(data);
+			/*
+			if($('#idtype').val() != 1){
+				for(i=1;i<=8;i++){
+						var r = '#r'+i;
+						$(r).attr("style","display:none");
+					}
+			}
+			*/
+		}
+	});
+}
+
+function changetype() {
+	$.ajax({
+		url: 'index.php',
+		type: 'POST',
+		data: 'act=adm_change_type_common&typecat='+ $('#typecat').val(),
+		success: function(data) {
+			//alert($('#typecat').val());
+			//document.getElementById("samesubcat").style.display = "block";
+			var getData = $.parseJSON(data);
+			if(getData.mess1 == "no"){
+				for(i=1;i<=2;i++){
+					var r = '#r'+i;
+					$(r).attr("style","display:none");
+				}
+			}
+			else{
+				$('#samesubcat').html(getData.mess2);
+				for(i=1;i<=2;i++){
+					var r = '#r'+i;
+					$(r).attr("style","display:table-row");
+				}
+			}
+			
+		}
+	});
+}	
+	
+function delaction(idp,vlid) {
+		$.ajax({
+			url: 'index.php',
+			type: 'POST',
+			data: 'act=adm_deletecommon&ac=d&idp='+idp+'&vlid='+vlid+'&idtype='+$('#idtype1').val(),
+			success: function(data) {
+				var getdata = $.parseJSON(data);
+				if(getdata.mess1 == "success"){
+					//alert(getdata.mess2);
+					window.location.reload();
+				}
+				else 
+				//$('#err').html(getdata.mess2);//
+				alert(getdata.mess2);		
+			}
+		});	
+	}
+	
+	function delit(idp,listck,listid) {		
+	var str1 = "Vui lòng chọn ít nhất 1 thành phần!";
+	var str2 = "Bạn chắc chắn muốn xóa?";
+	if(idp ==""){
+		getValueListCheckBox(listck,listid);
+		if (listid.value=='') alert(str1);
+		else if(confirm(str2)){
+			//alert($('#vlid').val());
+			var id_list = $('#vlid').val();
+			delaction(idp,id_list);
+			
+		}
+	}
+	else {
+		if(confirm(str2)){
+		delaction(idp,'');
+		}
+	}
+	
+}
+</script>

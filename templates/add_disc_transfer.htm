@@ -1,0 +1,192 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title><?=$title?></title>
+<link rel="stylesheet" type="text/css" href="css/wstyle.css" />
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/webtoolkit.base64.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/NumberFormat154.js"></script>
+<script type="text/javascript" src="wysiwyg/wysiwyg.js"></script>
+</head>
+<div align="left">
+<form action="index.php?act=update_disc_transfer" method="post"  enctype="multipart/form-data" name="f1" onsubmit="return checkform();"> 
+<input type="hidden" name="ac" value="<?=$ac?>">
+<input type="hidden" name="iddis" value="<?=$iddis?>">
+<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+ <tr bgcolor="#FFF5EA">
+    <td width="17" height="40" class='menu'>&nbsp;</td>
+    <td colspan="2" class='menu'><?=$title_action?></td>
+    </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="271" class='menu'> Tỉnh thành
+    <font size="1" color="#D7261C">*</font></td>
+    <td width="797" class='menu'>
+	<SELECT  class=textbox style="WIDTH: 225px;" size=1 name="idpr" id="idpr" onchange="changedist();">
+      <option value="">Vui lòng chọn tỉnh thành...</option>      
+   		<?=$list_provinces?>
+	</SELECT></td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="271" class='menu'>&nbsp;</td>
+    <td width="797" class='menu'>&nbsp;    </td>
+  </tr>
+  <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="271" class='menu'>Quận/Huyện
+    <font size="1" color="#D7261C">*</font></td>
+    <td width="797" class='menu' id="same_dist">
+    <select  class="textbox" style="WIDTH: 225px;" size="1" name="idd" id="idd">
+      <option value="">Vui lòng chọn quận/huyện...</option>
+      <?=$list_dist?>
+    </select></td>
+  </tr>
+  <tr>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>Trị giá đơn hàng <font size="1" color="#D7261C">*</font></td>
+    <td class='menu'><select  class="textbox" style="WIDTH: 225px;" size="1" name="idmn" id="idmn">
+      <option value="">Chọn trị giá đơn hàng...</option>
+      <?=$list_mn?>
+    </select></td>
+  </tr>
+  <tr>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>Kiểu vận chuyển <font size="1" color="#D7261C">*</font></td>
+    <td class='menu'><select  class="textbox" style="WIDTH: 225px;" size="1" name="idtr" id="idtr">
+      <option value="">Chọn kiểu vận chuyển...</option>
+      <?=$list_tr?>
+    </select></td>
+  </tr>
+  <tr>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>Loại khách hàng <font size="1" color="#D7261C">*</font></td>
+    <td class='menu'><select  class="textbox" style="WIDTH: 225px;" size="1" name="idrole" id="idrole">
+      <option value="">Chọn loại khách hàng...</option>
+      <?=$list_role?>
+    </select></td>
+  </tr>
+  <tr>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>Phí vận chuyển <font size="1" color="#D7261C">*</font></td>
+    <td class='menu'><input type="text" name="fee" style="width:225px;" size="1" value="<?=number_format($fee,0,"",".")?>" onblur = "tryNumberFormat(document.forms.f1.fee);"></td>
+  </tr>
+  <tr>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu' height="40">&nbsp;</td>
+    <td class='content'>Ví dụ: 1000 hoặc 1.000 (Nhập số hoặc số có phân cách phần nghìn bằng dấu chấm.)</td>
+  </tr>
+  <tr>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu' height="30">Chiết khấu </td>
+    <td class='content'><input type="text" name="sale" style="width:60px " size="1" value="<?=$sale?>" onkeyup = "data_change(document.forms.f1.sale);"> 
+      (%) (chỉ nhập số, không nhập dấu %) </td>
+  </tr>
+  <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="271" class='menu'>&nbsp;</td>
+    <td width="797" class='menu'>&nbsp;    </td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="271" class='menu'>Thông tin mô tả </td>
+    <td width="797" class='menu'>
+    <textarea id="contentout" name="content"><?=$content?></textarea>
+   <input type="hidden" id="contentencode" name="contentencode" value="">
+       <script type="text/javascript">						  
+		generate_wysiwyg('contentout', 200, 60);
+		document.getElementById('Help').style.display = "none";
+	</script>	</td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="271" class='menu'>&nbsp;</td>
+    <td width="797" class='menu'>&nbsp;</td>
+  </tr>
+    <tr>
+    <td colspan="3" align="center" height="41" class='menu'>
+    <input type="submit" name="submit" value="<?=$button_action?>" class="button" style="width:80px; height:22px ">
+    <input type="button" name="cancel" value="Đóng" onClick="javascript:window.close();" class="button" style="width:60px;height:22px ">    </td>
+  </tr>
+  </table>
+  </form>
+</div>
+<script language="javascript1.2">
+               function checkform(){
+                    
+                    if (document.f1.idpr.selectedIndex==""){
+                         alert("Vui lòng chọn Tỉnh thành!");
+						 document.f1.idpr.focus();
+                         return false;
+                    }
+					
+					if (document.f1.idd.selectedIndex==""){
+                         alert("Vui lòng chọn Quận/Huyện!");
+						 document.f1.idd.focus();
+                         return false;
+                    }
+					
+					if (document.f1.idmn.selectedIndex==""){
+                         alert("Vui lòng chọn Trị giá đơn hàng!");
+						 document.f1.idmn.focus();
+                         return false;
+                    }
+					
+					if (document.f1.idtr.selectedIndex==""){
+                         alert("Vui lòng chọn Kiểu vận chuyển!");
+						 document.f1.idtr.focus();
+                         return false;
+                    }
+					
+					if (document.f1.idrole.selectedIndex==""){
+                         alert("Vui lòng chọn Loại khách hàng!");
+						 document.f1.idrole.focus();
+                         return false;
+                    }
+					
+					 if (document.f1.fee.value==""){
+                                        alert("Vui lòng nhập phí vận chuyển!");
+                                        document.f1.fee.focus();
+                                        return false;
+                                }					                     
+                      
+                     getcontens();
+					 return true;
+               }
+		
+		function getcontens(){
+	  		updateTextArea('contentout');
+			document.getElementById("contentencode").value = Base64.encode($("#contentout").val());
+		}	   
+ function changedist() {
+	$.ajax({
+		url: 'index.php?act=changedist2',
+		type: 'POST',
+		data: 'province='+ $('#idpr').val()+'&dist='+ $('#idd').val(),
+		success: function(data) {
+		//document.getElementById("sametype").style.display = "block";
+		$('#same_dist').html(data);
+		}
+	});
+}           
+</script>

@@ -1,0 +1,46 @@
+<div class="header">
+        <div class="wrap">
+            <div class="header-top group">
+                <span> Hotline: <?=$hotline?></span>
+
+                <div class="language">
+                    <a href="index.php?act=home&lang=2" class="en"><img alt="" src="mobi/img/en.png" /> </a>
+                    <a href="index.php?act=home&lang=1"><img alt="" src="mobi/img/vn.png" /> </a>
+                </div>
+            </div>
+			<div class="htop1 group">
+                <ul>
+					<li><a href="/demo/"><img alt="" src="mobi/img/icon-home.png" /> </a></li>
+					<?=$info_login?>				
+					<li><a href="thong-tin-tai-khoan.html"><?=$lang['tl_account']?> </a></li>					
+           		</ul>               
+            </div>
+            <div class="menu">
+                <h3><?=$lang['tl_dmuc']?></h3>
+                <ul>
+                    <li><a href="/demo/" ><?=$lang['tl_tchu']?></a></li>
+					<li><a href="info-1-Gioi-thieu.html?idcat=1"> <?=$lang['tl_vechungtoi']?></a></li>
+					<li><a href="sanpham.html" ><?=$lang['f_products']?></a></li> 
+                    <li><a href="info-3-tin-tuc.html"><?=$lang['tl_news_thuong']?></a></li>
+					<li><a href="info-3-tin-tuc.html?idcat=19"><?=$lang['tl_ktnnong']?></a></li>
+					<li><a href="info-3-tin-tuc.html?idcat=11"><?=$lang['f_recruitment']?></a></li>
+                    <li><a href="lienhe.html"><?=$lang['tl_lienhednfc']?></a></li>
+                </ul>
+            </div>   <!--end menu-->
+
+            <a href="/demo/" class="logo">
+                <img alt="home" src="mobi/img/logo.png" />
+            </a>
+            <div class="search">
+			<form action="tim-kiem-san-pham.html" method="get"  enctype="multipart/form-data" name="fsearch">
+                <input type="submit" value="" />
+                <input type="text" id="keyword"  name="keyword" value="<?=$lang['tl_keyword']?>" onFocus="if(this.value=='<?=$lang['tl_keyword']?>'){this.value='';}" onblur="if(this.value==''){this.value='<?=$lang['tl_keyword']?>';}" />
+            </form>
+			</div>
+            <a href="thong-tin-gio-hang.html" class="cart">			
+                <span> <img alt="gio hang" src="mobi/img/cart.png" /> <?=$lang['tl_cart']?> (<span id="inviewcart">
+					<?=$countcart?>
+				</span>)</span>
+            </a>
+        </div>
+    </div>

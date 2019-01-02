@@ -1,0 +1,136 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div class="breadcrumbs ace-save-state" id="breadcrumbs">
+	<ul class="breadcrumb">
+		<li>
+			<i class="ace-icon fa fa-home home-icon"></i>
+			<a href="#"><?=$lang['adm_home']?></a>
+		</li>
+
+		<li>
+			<a href="#"><?=$lang['tpl_capacity']?></a>
+		</li>
+	</ul><!-- /.breadcrumb -->
+</div>
+<div class="adm_out" style="text-align:center" >
+	<div class="adm_common">
+
+		<form name="f1" >
+			<input type="hidden" id="vlid" name="vlid" value="">
+			<input type="hidden" id="vlid1" name="vlid1" value="">
+			<table border="0" width="98%" cellspacing="0" cellpadding="0" >
+				<tr>
+					<td width="999">
+						<table border="0" width="100%">
+							<tr>
+								<td>
+									<table border="0" width="100%" cellpadding="0" cellspacing="0" >
+										<tr>
+											<td height="4" align="left" ><span id="err" class="do"></span></td>
+										</tr>
+									</table>
+									<table border="0" width="100%" >
+										<tr>
+											<td height="14" class="title" align="left" >
+												<button class="admbtn" type="button" name="ct1" value="" onclick="window.open('index.php?act=adm_addcapacity&ac=a','Addpropopup','scrollbars=yes,status=yes,toolbar=no,location=0,directories=0,status=yes,menubar=0,resizable=0,width=\'100%\',height=\'100%\'');" ><?=$lang['adm_addcapacity']?></button>
+												<button class="admbutton" type="button" name="ct1" value=""  onclick="window.open('index.php?act=adm_importexcel&ac=a','Addsubcatelementpopup','scrollbars=yes,status=yes,toolbar=no,location=0,directories=0,status=yes,menubar=0,resizable=0,width=500,height=300');">Import</button>&nbsp;&nbsp;
+												<button class="admbutton" type="button" name="ct1" value=""  onclick="exportlist('',document.forms.f1.ck, document.forms.f1.vlid1);">Export filter</button>
+											</td>
+										</tr>
+									</table>
+									<table border="0" width="100%" cellpadding="0" cellspacing="0" >
+										<tr>
+											<td height="10" align="left" ></td>
+										</tr>
+									</table>		
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<table id="dynamic-table" class="table table-striped table-bordered table-hover ">
+										<thead>
+											<tr bgcolor="#EEEEEE">
+												<th  style="color:red"><?=$lang['adm_capacity']?> </th>
+												<th  style="color:red">Mã Code </th>
+												<th  style="color:red"><?=$lang['adm_sanpham']?> </th>
+												<th  style="color:red"><?=$lang['tpl_tinhtrang']?> </th>
+												<th  style="color:red"><?=$lang['adm_trangthai']?> </th>
+												<th  style="color:red"><?=$lang['hanhdong']?> </th>
+												
+											</tr>
+										</thead>
+										<tbody>
+											<?=$capacity_list_rs?>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td height="5"></td>
+							</tr>
+							<tr>
+								<td height="25" align="center">
+									<div class="modal-footer no-margin-top">
+										<ul class="pagination pull-right no-margin">
+											<?=$paging?>
+										</ul>
+										
+									</div>
+									<!-- end box-phantrang -->
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+		<!--<tr>
+			<td width="999" height="1" background="images/bin/line-ngang.jpg">
+			</td>
+		</tr>-->
+	</table>
+	<table border="0" width="1000" cellspacing="0" cellpadding="0">
+		<tr>
+			<td height="5" ></td>
+		</tr>
+	</table>
+</form>
+</div>
+</div>
+<script language="JavaScript" type="text/javascript" rel="stylesheet">
+
+	function delaction(idcapacity,vlid) {
+		$.ajax({
+			url: 'index.php',
+			type: 'POST',
+			data: 'act=adm_deletecapacity&ac=d&idcapacity='+idcapacity+'&vlid='+vlid,
+			success: function(data) {
+				var getdata = $.parseJSON(data);
+				if(getdata.mess1 == "success"){
+					//alert(getdata.mess2);
+					window.location.reload();
+				}
+				else $('#err').html(getdata.mess2);//alert(getdata.mess2);		
+			}
+		});	
+	}
+	
+	function delit(idcapacity,listck,listid) {		
+		var str1 = "Vui lòng chọn ít nhất 1 thành phần!";
+		var str2 = "Bạn chắc chắn muốn xóa?";
+		if(idcapacity ==""){
+			getValueListCheckBox(listck,listid);
+			if (listid.value=='') alert(str1);
+			else if(confirm(str2)){
+			//alert($('#vlid').val());
+			var id_list = $('#vlid').val();
+			delaction(idcapacity,id_list);
+			
+		}
+	}
+	else {
+		if(confirm(str2)){
+			delaction(idcapacity,'');
+		}
+	}
+	
+}
+
+</script>

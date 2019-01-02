@@ -1,0 +1,13 @@
+<tr>
+	<td width="20" height="25"><input type="checkbox" name="ck" value="<?=$idhot?>"></td>
+	<td width="466" height="25" class="menu"><a href="#" class="menu" title="<?=$STITLE?>" onclick="window.open('?act=adm_viewcommon&idcommon=<?=$idn?>&ac=v','Viewcommonpopup','scrollbars=yes,status=yes,toolbar=no,location=0,directories=0,status=yes,menubar=0,resizable=0,width=800,height=580');"><?=$STITLE?></a></td>
+	<td width="110"><?=$idn?></td>
+	<td width="22" height="25">&nbsp;</td>
+	<td width="20" height="25">&nbsp;</td>
+	<td width="104" height="25" class="content"><?=$STATUS?></td>
+	<td width="99" class="content"><?=$IORDER?></td>
+	<td width="34"><a href="#"  title="Set Active/Inactive" onclick="setonoff(<?=$idhot?>);"  ><img src="images/onoff.png" width="16" alt="On-Off"></a></td>
+	<td width="30"><a href="#"  title="Edit" onclick="window.open('?act=adm_update_hotnews&idhot=<?=$idhot?>&ac=e','Editnickpopup','scrollbars=yes,status=yes,toolbar=no,location=0,directories=0,status=yes,menubar=0,resizable=0,width=800,height=280');"  ><img src="images/icon_edit.png" width="16" alt="Edit"></a></td>
+	<td width="28"><a href="#"  title="Delete" onclick="delit(<?=$idhot?>,'','');" ><img src="images/icon_delete.png" width="16" alt="Delete"></a></td>
+	<td width="39"></td>
+</tr>

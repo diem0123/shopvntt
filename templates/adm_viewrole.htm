@@ -1,0 +1,88 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title><?=$title?></title>
+<link rel="stylesheet" type="text/css" href="css/wstyle.css" />
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/webtoolkit.base64.js"></script>
+<input type="hidden" name="base_url" id="base_url" value="<?=$base_url?>">
+<script type="text/javascript" src="wysiwyg/wysiwyg.js"></script>
+</head>
+<div align="left">
+<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+ <tr bgcolor="#FFF5EA">
+    <td width="17" height="40" class='menu'>&nbsp;</td>
+    <td width="216" class='menu'><?=$title_action?></td>
+    <td width="800" class='menu'>&nbsp;</td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="216" class='menu'>Tên vai trò    </td>
+    <td width="800" class='menu'>
+	<?=$rolename?></td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="216" class='menu'>&nbsp;</td>
+    <td width="800" class='menu'>&nbsp;    </td>
+  </tr>
+  <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="216" class='menu'>Phân cấp    </td>
+    <td width="800" class='menu'>
+    <?=$roletype?></td>
+  </tr>
+ <tr style="display:none;">
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="216" class='menu'>&nbsp;</td>
+    <td width="800" class='menu'>&nbsp;    </td>
+  </tr>
+ <tr style="display:none;">
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="216" class='menu'>LEVEL    </td>
+    <td width="800" class='menu'>
+    <?=$level?></td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="216" class='menu'>&nbsp;</td>
+    <td width="800" class='menu'>&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="216" class='menu'>Phân quyền    </td>
+    <td width="800" class='menu'>&nbsp;	</td>
+  </tr>
+  <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="216" class='menu'>&nbsp;</td>
+    <td width="800" class='menu'>&nbsp;	</td>
+  </tr>
+  <tr>
+    <td  class='menu' valign="top" width="17">&nbsp;</td>
+    <td  class='menu' valign="top" colspan="2">
+    <table width="100%" cellspacing="0">
+         <?=$list_permission?>
+    </table>    </td>
+  </tr>
+  <tr>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="216" class='menu'>&nbsp;</td>
+    <td width="800" class='menu'>
+    <input type="button" name="cancel" value="Close" onClick="javascript:window.close();" class="button" style="width:60px;height:22px ">	</td>
+  </tr>
+  <tr>
+    <td  class='menu' valign="top" width="17">&nbsp;</td>
+    <td  class='menu' valign="top" colspan="2">&nbsp;    </td>
+  </tr>
+</table>
+</div>

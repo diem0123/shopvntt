@@ -1,0 +1,128 @@
+<script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+<link rel="stylesheet" type="text/css" href="js/bootstrap.min.css" />
+<div class="col-md-8">
+	<h1 class="title-product bounceInDown wow"><?=$product_name?></h1>
+	<div class="row">
+		<div class="col-md-6 txtCenter bounceInDown wow">
+			<div class="image-detail">
+				<a href="images/bin/<?=$ID_CATEGORY?>/<?=$picture_big?>" class="lightbox" data-fancybox-group="gallery"><img src="images/bin/<?=$ID_CATEGORY?>/<?=$picture_big?>"/></a>
+			</div>
+			<?=$list_images_link_slide?>
+		</div>
+		<div class="col-md-6 bounceInDown wow">
+			<table class="table-detail">
+				<tr>
+					<td>Nhãn hiệu:</td>
+					<td><?=$brand?></td>
+				</tr>
+				<tr>
+					<td>Giới tính:</td>
+					<td><?=$gender?></td>
+				</tr>
+				<tr>
+					<td>Phát hành:</td>
+					<td><?=$size?></td>
+				</tr>				<tr>
+				<td>Xuất xứ:</td>
+				<td><?=$ORIGIN?></td>
+			</tr>
+			<tr>
+				<td>Phong cách:</td>
+				<td><?=$standard?></td>
+			</tr>
+		</table>
+		<h2 class="title-desc">Hương đặc trưng</h2>
+		<div class="desc-sp">
+			<?=nl2br($content_short)?>
+		</div>
+		<div class="view">
+			<img src="images/view.png"/>: <?=$COUNTVIEW?>
+		</div>
+		<div class="share">
+			<div class="desc-like">
+				<div class="share" >
+					<div class="box-social-bottom" >
+						<span class="fbk" ><div class="fb-like" data-href="http://lacoco.vn/<?=$url_like?>" data-send="true" data-layout="button_count" data-width="450" data-show-faces="true"></div></span> <span class="ggg"  ><g:plusone size="medium" href="http://lacoco.vn/<?=$url_like?>"></g:plusone></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+
+<div class="col-md-4 bounceInDown wow">
+	<div class="box-simalar">
+		<h2 class="title-simalar"><?=$product_name?></h2>
+		<?=$list_dungtich?>
+		<?=$pttt?>
+	</div>
+</div>
+<div class="col-md-12">
+	<ul class="nav-tabs">
+		<li class="active"><a href="javascript:void(0)" data-tab="1" class="tab1">Thông tin sản phẩm</a></li>
+		<li><a href="javascript:void(0)" data-tab="2" class="tab1 tab2">Lịch sử thương hiệu</a></li>
+		<li><a href="javascript:void(0)" data-tab="3" class="tab1 tab3">Ý kiến khách hàng</a></li>
+	</ul>
+</div>
+<div class="tab-content">
+	<div class="tab-pane active" id="tab1">
+		<div class="col-md-12">
+			<div class="content-product">
+				<?=$info_detail?>
+			</div>
+		</div>
+	</div>
+	<div class="tab-pane" id="tab2">
+		<div class="col-md-12">
+			<div class="content-product">
+				<?=$content_br?>
+			</div>
+		</div>
+	</div>
+	<div class="tab-pane" id="tab3">
+		<div class="col-md-12">
+			<div class="content-product">
+				<?//$content_ykien?>
+				    <ul class="media-list">
+						<?php include $_SERVER['DOCUMENT_ROOT']."/lacoco/forder_comment/".$file_name.".html"; ?>
+					</ul>
+			</div>
+		</div>
+		<div class="col-md-12">
+			<div class="tab-pane" id="add-comment">
+				<form action="" method="post" class="form-horizontal" id="commentForm" role="form"> 
+					<div class="form-group">
+						<!--<label for="email" class="col-sm-2 control-label">Comment</label>-->
+						<div class="col-md-2"></div>
+						<div class="col-sm-10">
+						  <textarea class="form-control" name="commentContent" id="addComment" rows="5" <?=$disabled?>   ></textarea>
+						</div>
+					</div>
+					<!--<div class="form-group">
+						<label for="uploadMedia" class="col-sm-2 control-label">Họ tên</label>
+						<div class="col-sm-10">                    
+							<div class="input-group">
+							  <div class="input-group-addon">Họ tên</div>
+							  <input type="text" class="form-control" name="name" id="uploadMedia" <?=$disabled?> >
+							</div>
+						</div>
+					</div>-->
+					<div class="form-group">
+						<div class="col-sm-offset-2 col-sm-10">                    
+							<button class="btn btn-success btn-circle text-uppercase" type="submit" name="submitComment" id="submitComment" value="submit" <?=$disabled?>><span class="glyphicon glyphicon-send"></span> Summit comment</button>
+						</div>
+					</div>            
+				</form>
+			</div>
+		</div>
+		</div>	
+	</div>
+		</div>
+	</div>
+</div>
+<script>
+function link() {
+	window.location.href='dangnhap.html';	
+	}
+</script>

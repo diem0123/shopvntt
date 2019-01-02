@@ -1,0 +1,26 @@
+<form name="f1" action="gui-don-hang.html"  method="post"  enctype="multipart/form-data"  onsubmit="return check_complete();">
+<div class="captions group">
+             <ul>                                                                                        
+                 <li class="icon icon14"><a href="phuong-thuc-thanh-toan.html"><span></span><?=$lang['tl_cptthanhtoan']?></a></li>
+             </ul>
+         </div>
+		 <?=$procedurepay_list?>	
+		 <div class="cart-buttons group">
+                <a href="thong-tin-van-chuyen.html" class="ql" ><?=$lang['tl_cquaylai']?></a> <input class="btsubmit" type="submit" name="submit" value="<?=$lang['tl_ctieptuc']?>"  />                
+         </div>
+</form>
+<script type="text/javascript">
+$(function() {	
+	$("#controllaccordion .accordion:not(:first)").hide();	
+	$("#controllaccordion h3").click(function(){
+		$accordion = $(this).next();
+		if ($accordion.is(':hidden') === true) {
+			$("#controllaccordion .accordion").slideUp();
+			$accordion.slideDown();
+		} else {
+			$accordion.slideUp();
+		}
+	});
+});
+
+</script>

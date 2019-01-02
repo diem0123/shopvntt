@@ -1,0 +1,40 @@
+    <?php if($COUNT_STAR == 5){ ?> <p class="star"> 
+                                <i class="fa fa-star vote"></i>
+                                <i class="fa fa-star vote"></i>
+                                <i class="fa fa-star vote"></i>
+                                <i class="fa fa-star vote"></i>
+                                <i class="fa fa-star vote"></i> 
+                            </p> <?php } elseif($COUNT_STAR == 4){ ?><p class="star"> 
+                                <i class="fa fa-star vote"></i>
+                                <i class="fa fa-star vote"></i>
+                                <i class="fa fa-star vote"></i>
+                                <i class="fa fa-star vote"></i>
+                                <i class="fa fa-star "></i>
+                            </p><?php } elseif($COUNT_STAR == 3) { ?><p class="star"> 
+                                <i class="fa fa-star vote"></i>
+                                <i class="fa fa-star vote"></i>
+                                <i class="fa fa-star vote"></i>
+                                <i class="fa fa-star "></i>
+                                <i class="fa fa-star "></i>
+                            </p><?php } elseif($COUNT_STAR == 2) { ?><p class="star"> 
+                                <i class="fa fa-star vote"></i>
+                                <i class="fa fa-star vote"></i>
+                                <i class="fa fa-star "></i>
+                                <i class="fa fa-star "></i>
+                                <i class="fa fa-star "></i>
+                            </p><?php } elseif($COUNT_STAR == 1) { ?><p class="star"> 
+                                <i class="fa fa-star vote"></i>
+                                <i class="fa fa-star "></i>
+                                <i class="fa fa-star "></i>
+                                <i class="fa fa-star "></i>
+                                <i class="fa fa-star "></i>
+                            </p><?php } elseif($COUNT_STAR == 0){ ?><p class="star"> 
+                                <i class="fa fa-star "></i>
+                                <i class="fa fa-star "></i>
+                                <i class="fa fa-star "></i>
+                                <i class="fa fa-star "></i>
+                                <i class="fa fa-star "></i>
+                            </p><?php } ?>
+							<?=nl2br(base64_decode($SCONTENTS))?><br />
+							<i><?=$name_user?></i>
+							<span class="dotline"></span>

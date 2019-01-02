@@ -1,0 +1,99 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<table border="0" width="1000" cellspacing="0" cellpadding="0">
+	<tr>
+		<td height="1" bgcolor="#FFF5EA" id="err"></td>
+	</tr>
+</table>
+<?=$submenu2?>
+<form name="f1" method="post" >
+<input type="hidden" id="vlid" name="vlid" value="">
+<table border="0" width="1000">
+	<tr>
+		<td>
+		<table border="0" width="100%" bgcolor="#FFF5EA">
+			<tr>
+				<td height="14" class="title" ><img src="images/bg-title.gif"  height="14"><input name="hot_news" type="button" id="hot_news" onclick="window.open('?act=adm_update_hotnews&ac=a','Addnickpopup','scrollbars=yes,status=yes,toolbar=no,location=0,directories=0,status=yes,menubar=0,resizable=0,width=800,height=280');" value="Thêm tin nóng" >
+				&nbsp;&nbsp;&nbsp; <a href="#" onclick="delit('',document.forms.f1.ck, document.forms.f1.vlid);" class="menu">X&oacute;a tin nóng </a></td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<table border="0" width="100%" cellspacing="0">
+			<tr bgcolor="#EEEEEE">
+				<td width="20" class="do" height="25"><input name="allbox" type="checkbox" onclick="checkall(this.form);" title="Check All"></td>
+				<td width="466" class="do" height="25">Tiêu đề tin </td>
+				<td width="110" class="do">Id</td>
+				<td width="22" class="do" height="25">&nbsp;</td>
+				<td width="20" class="do" height="25">&nbsp;</td>
+				<td width="104" class="do" height="25">Tr&#7841;ng th&aacute;i </td>
+				<td width="99" class="do">Thứ tự </td>
+				<td colspan="4" class="do">H&agrave;nh &#273;&#7897;ng </td>
+			</tr>									
+			<?=$chatlist_rs?>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td height="5"></td>
+	</tr>
+	<tr>
+		<td height="25" align="center"><div id="divPaging"><?=$paging?></div></td>
+	</tr>
+</table>
+</form>
+<script type="text/javascript">
+function setonoff(idp) {
+		$.ajax({
+			url: 'index.php',
+			type: 'POST',
+			data: 'act=adm_update_hotnews&ac=s&idp='+idp,
+			success: function(data) {			
+				var getdata = $.parseJSON(data);
+				if(getdata.mess1 == "success"){
+					//alert(getdata.mess2);
+					window.location.reload();
+				}
+				else $('#err').html(getdata.mess2);//alert(getdata.mess2);		
+			}
+		});	
+	}
+	
+function delaction(idp,vlid) {
+		$.ajax({
+			url: 'index.php',
+			type: 'POST',
+			data: 'act=adm_delete_hotnews&ac=d&idp='+idp+'&vlid='+vlid,
+			success: function(data) {
+				var getdata = $.parseJSON(data);
+				if(getdata.mess1 == "success"){
+					//alert(getdata.mess2);
+					window.location.reload();
+				}
+				else $('#err').html(getdata.mess2);//alert(getdata.mess2);		
+			}
+		});	
+	}
+	
+	function delit(idp,listck,listid) {		
+	var str1 = "Vui lòng chọn ít nhất 1 tin!";
+	var str2 = "Bạn chắc chắn muốn xóa?";
+	if(idp ==""){
+		getValueListCheckBox(listck,listid);
+		if (listid.value=='') alert(str1);
+		else if(confirm(str2)){
+			//alert($('#vlid').val());
+			var id_list = $('#vlid').val();
+			delaction(idp,id_list);
+			
+		}
+	}
+	else {
+		if(confirm(str2)){
+		delaction(idp,'');
+		}
+	}
+	
+}
+</script>

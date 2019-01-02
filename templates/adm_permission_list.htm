@@ -1,0 +1,24 @@
+<?php if($module!="") { ?>
+<tr bgcolor="#FFF5EA">
+<td widtd="23" height="27" class="menu"></td>
+<td widtd="213" class="menu"><?=$module?></td>
+<td widtd="50" class="menu">Thêm/Sửa</td>
+<td widtd="32" class="menu">Xem</td>
+<td widtd="40" class="menu">Xoá</td>
+<td widtd="41" class="menu">Export</td>
+<td widtd="192" class="menu" style="display:none;" >Truy cập</td>
+</tr>
+<?php } else{ ?>
+<tr>
+<td class="a-center" height="30" >&nbsp;</td>
+<td class="datagrid"><?=$feature_name?></td>
+<td class="a-center"><input type="checkbox" name="r_<?=$feature_id?>_a" id="r_<?=$feature_id?>_a" value="1" <?=$cka?>/></td>
+<td class="a-center"><input type="checkbox" name="r_<?=$feature_id?>_v" id="r_<?=$feature_id?>_v" value="1" <?=$ckv?> /></td>
+<td class="a-center"><input type="checkbox" name="r_<?=$feature_id?>_d" id="r_<?=$feature_id?>_d" value="1" <?=$ckd?> /></td>
+<td class="a-center"><input type="checkbox" name="r_<?=$feature_id?>_ex" id="r_<?=$feature_id?>_ex" value="1" <?=$ckex?> /></td>
+<td class="a-center" style="display:none;"><input type="radio" name="r_<?=$feature_id?>_da" id="r_<?=$feature_id?>_da" value="Own" <?=$rd1?> />
+  Dữ liệu riêng
+  &nbsp;&nbsp;<input type="radio" name="r_<?=$feature_id?>_da" id="r_<?=$feature_id?>_da" value="All" <?=$rd2?> />
+  Tất cả dữ liệu</td>
+</tr>
+<?php } ?>

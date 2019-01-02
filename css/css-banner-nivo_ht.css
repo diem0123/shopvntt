@@ -1,0 +1,180 @@
+ .nivoSlider {
+	position:relative;
+	background:#fff url(../images/loading.gif) no-repeat 50% 50%;
+    margin-bottom:2px;
+    -webkit-box-shadow: 0px 1px 5px 0px #4a4a4a;
+    -moz-box-shadow: 0px 1px 5px 0px #4a4a4a;
+    box-shadow: 0px 1px 5px 0px #4a4a4a;	
+	width:530px;
+	height:281px;
+}
+ .nivoSlider img {
+	position:absolute;
+	top:0px;
+	left:0px;
+	display:none;
+	
+}
+.nivoSlider a {
+	border:0;
+	display:block;
+}
+
+/* The Nivo Slider styles */
+.nivoSlider {
+	position:relative;
+}
+
+/* If an image is wrapped in a link */
+/* link cho hinh lon dang slide */
+.nivoSlider a.nivo-imageLink {
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	border:0;
+	padding:0;
+	margin:0;
+	z-index:6;
+	display:block;	
+	
+}
+
+
+/* Khung chua dieu khien mui ten 2 ben */
+.nivo-directionNav{
+	left: 0px;
+    position: relative;
+    top: 30px;
+	z-index:100;
+	height:164px;
+	width:531px;
+}
+
+/* dieu khien mui ten 2 ben */
+.nivo-directionNav a {
+	display:block;
+	width:42px;
+	height:57px;
+	/*background:url(../images/arrows.png) no-repeat;*/
+	text-indent:-9999px;
+	border:0;
+}
+ a.nivo-nextNav {
+	/*background-position:-30px 0;*/
+	right:15px;
+	background:url(../images/icon-arrow-slider-right.png) no-repeat 0 0;
+}
+ a.nivo-prevNav {
+	left:15px;
+	background:url(../images/icon-arrow-slider-left.png) no-repeat 0 0;
+
+}
+
+ .nivo-caption {
+    font-family: Helvetica, Arial, sans-serif;
+	
+}
+ .nivo-caption a {
+    color:#fff;
+    border-bottom:1px dotted #fff;
+}
+ .nivo-caption a:hover {
+    color:#fff;
+}
+
+
+/* The slices and boxes in the Slider */
+.nivo-slice {
+	display:block;
+	position:absolute;
+	z-index:5;
+	height:100%;
+	
+}
+.nivo-box {
+	display:block;
+	position:absolute;
+	z-index:5;
+	
+}
+/* Caption styles */
+.nivo-caption {
+	position:absolute;
+	left:0px;
+	bottom:0px;
+	background:#000;
+	color:#fff;
+	opacity:0.8; /* Overridden by captionOpacity setting */
+	width:100%;
+	z-index:8;
+
+}
+.nivo-caption p {
+	padding:5px;
+	margin:0;
+}
+.nivo-caption a {
+	display:inline !important;
+}
+.nivo-html-caption {
+    display:none;
+}
+/* Direction nav styles (e.g. Next & Prev) */
+/* dieu khien khung nho chinh so slide 1,2,3 */
+.nivo-directionNav a {
+	position:absolute;
+	top:45%;
+	z-index:9;
+	cursor:pointer;
+}
+.nivo-prevNav {
+	left:0px;
+}
+.nivo-nextNav {
+	right:150px;
+}
+/* Control nav styles (e.g. 1,2,3...) */
+/* dieu khien theo so slide 1,2,3 */
+.nivo-controlNav a {
+	position:relative;
+	z-index:9;
+	cursor:pointer;
+}
+.nivo-controlNav a.active {
+	font-weight:bold;
+}
+
+.nivo-controlNav {
+	position:absolute;
+	left:50%;
+	bottom:0px;
+    margin-left:-40px;
+	
+}
+/* khung nho dieu khien theo so slide 1,2,3 */
+ .nivo-controlNav a {
+	display:block;
+	width:22px;
+	height:22px;
+	/*background:url(../images/bullets.png) no-repeat;*/
+	text-indent:-9999px;
+	border:0;
+	margin-right:3px;
+	float:left;
+	
+}
+
+.nivo-controlNav a.active {
+	background-position:0 -22px;	
+}
+
+
+
+/* khung lon chinh */
+.top-slide
+{
+	width:531px;
+	height:281px;	
+}

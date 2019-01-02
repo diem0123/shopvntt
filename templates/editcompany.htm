@@ -1,0 +1,235 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title><?=$title?></title>
+<link rel="stylesheet" type="text/css" href="css/wstyle.css" />
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/webtoolkit.base64.js"></script>
+<script type="text/javascript" src="wysiwyg/wysiwyg.js"></script>
+</head>
+<div align="left">
+<form action="index.php?act=adm_companyupdate" method="post"  enctype="multipart/form-data" name="f1" onsubmit="return checkform();">
+<input type="hidden" name="idcom" id="idcom" value="<?=$idcom?>">
+<input type="hidden" name="ac" id="ac" value="e"> 
+<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+ <tr bgcolor="#FFF5EA">
+   <td class='menu'>&nbsp;</td>
+   <td colspan="3" class='menu'>&nbsp;</td>
+ </tr>
+ <tr bgcolor="#FFF5EA">
+    <td width="12" class='menu'>&nbsp;</td>
+    <td colspan="3" class='menu'><?=$lang['tl_edit_com']?></td>
+    </tr>
+ <tr>
+    <td width="12" class='menu'>&nbsp;</td>
+    <td width="208" class='menu'>&nbsp;</td>
+    <td class='menu' colspan="2">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="12" class='menu'>&nbsp;</td>
+    <td width="208" class='menu'><?=$lang['tl_comname']?>
+    <font size="1" color="#D7261C">*</font></td>
+    <td width="447" class='menu'>
+	<input type="text" name="comname" style="width:376px " size="1" value="<?=$comname?>"></td>
+    <td width="417" class='menu' rowspan="14" valign="top"></td>
+  </tr>
+  <tr>
+    <td width="12" class='menu'>&nbsp;</td>
+    <td width="208" class='menu'>&nbsp;</td>
+    <td width="447" class='menu'>&nbsp;	</td>
+  </tr>
+  <tr>
+    <td width="12" class='menu'>&nbsp;</td>
+    <td width="208" class='menu'><?=$lang['tl_shortname']?></td>
+    <td width="447" class='menu'>
+	<input type="text" name="shortname" style="width:376px " size="1" value="<?=$shortname?>"></td>
+  </tr>
+  <tr>
+    <td width="12" class='menu'>&nbsp;</td>
+    <td width="208" class='menu'>&nbsp;</td>
+    <td width="447" class='menu'>&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="12" class='menu'>&nbsp;</td>
+    <td width="208" class='menu'>Email
+    <font size="1" color="#D7261C">*</font></td>
+    <td width="447" class='menu'>
+	<input type="text" name="email" style="width:376px " size="1" value="<?=$email?>"></td>
+  </tr>
+  <tr>
+    <td width="12" class='menu'>&nbsp;</td>
+    <td width="208" class='menu'>&nbsp;</td>
+    <td width="447" class='menu'>&nbsp;</td>
+  </tr>
+<tr>
+    <td width="12" class='menu'>&nbsp;</td>
+    <td width="208" class='menu'><?=$lang['tl_telcom']?></td>
+    <td width="447" class='menu'>
+	<input type="text" name="tel" style="width:376px " size="1" value="<?=$tel?>"></td>
+  </tr>
+  <tr>
+    <td width="12" class='menu'>&nbsp;</td>
+    <td width="208" class='menu'>&nbsp;</td>
+    <td width="447" class='menu'>&nbsp;</td>
+  </tr>
+<tr>
+    <td width="12" class='menu'>&nbsp;</td>
+    <td width="208" class='menu'>Fax </td>
+    <td width="447" class='menu'>
+	<input type="text" name="fax" style="width:376px " size="1" value="<?=$fax?>"></td>
+  </tr>
+   <tr>
+    <td width="12" class='menu'>&nbsp;</td>
+    <td width="208" class='menu'>&nbsp;</td>
+    <td width="447" class='menu'>&nbsp;</td>
+  </tr>
+<tr>
+    <td width="12" class='menu'>&nbsp;</td>
+    <td width="208" class='menu'><?=$lang['tl_mobi']?></td>
+    <td width="447" class='menu'>
+	<input type="text" name="mobi" style="width:376px " size="1" value="<?=$mobi?>"></td>
+  </tr>
+   <tr>
+    <td width="12" class='menu'>&nbsp;</td>
+    <td width="208" class='menu'>&nbsp;</td>
+    <td width="447" class='menu'>&nbsp;</td>
+  </tr>
+<tr>
+    <td width="12" class='menu'>&nbsp;</td>
+    <td width="208" class='menu'>Skype</td>
+    <td width="447" class='menu'>
+	<input type="text" name="skype" style="width:376px " size="1" value="<?=$skype?>"></td>
+  </tr>
+   <tr>
+    <td width="12" class='menu'>&nbsp;</td>
+    <td width="208" class='menu'>&nbsp;</td>
+    <td width="447" class='menu'>&nbsp;</td>
+  </tr>
+<tr>
+    <td width="12" class='menu'>&nbsp;</td>
+    <td width="208" class='menu'>Yahoo</td>
+    <td width="447" class='menu'>
+	<input type="text" name="yahoo" style="width:376px " size="1" value="<?=$yahoo?>"></td>
+  </tr>
+  <tr>
+    <td width="12" class='menu'>&nbsp;</td>
+    <td width="208" class='menu'>&nbsp;</td>
+    <td width="447" class='menu'>&nbsp;</td>
+  </tr>
+<tr>
+    <td width="12" class='menu'>&nbsp;</td>
+    <td width="208" class='menu'>Website</td>
+    <td width="447" class='menu'>
+	<input type="text" name="website" style="width:376px " size="1" value="<?=$website?>"></td>
+  </tr>
+  <tr>
+    <td width="12" class='menu'>&nbsp;</td>
+    <td width="208" class='menu'>&nbsp;</td>
+    <td width="447" class='menu'>&nbsp;</td>
+  </tr>
+<tr>
+    <td width="12" class='menu'>&nbsp;</td>
+    <td width="208" class='menu'><?=$lang['tl_addcom']?></td>
+    <td width="447" class='menu'>
+	<input type="text" name="address" style="width:376px " size="1" value="<?=$address?>"></td>
+  </tr>
+  <tr>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+    <td class='do'>&nbsp;</td>
+  </tr>
+  
+  <tr>
+    <td colspan="4" align="center" height="41" class='menu'>
+    <input type="submit" name="submit" value="<?=$lang['tl_save']?>" class="button" style="width:80px; height:22px " >
+     <input type="button" name="cancel" value="<?=$lang['tl_close']?>" onClick="javascript:window.close();" class="button" style="width:60px;height:22px ">    </td>
+  </tr>
+  </table>
+  </form>
+</div>
+<script language="javascript1.2">
+               function checkform(){
+                    
+                    if (document.f1.comname.value==""){
+                                        alert("Vui lòng nhập tên Công ty!");
+                                        document.f1.comname.focus();
+                                        return false;
+                                }                     
+                                
+                     if (document.f1.email.value==""){
+                                        alert("Vui lòng nhập địa chỉ email!");
+                                        document.f1.email.focus();
+                                        return false;
+                     }else{
+								var at="@";
+								var dot=".";
+								var obj=document.f1.email.value;
+								var lat=obj.indexOf(at);
+								var lstr=obj.length;
+								var ldot=obj.indexOf(dot);
+								if (obj.indexOf(at)==-1){
+									alert('Email không đúng định dạng!')
+									document.f1.email.focus();
+									document.f1.email.value="";
+									return false
+								}
+							   if (obj.indexOf(at)==-1 || obj.indexOf(at)==0 || obj.indexOf(at)==lstr){
+									alert('Email không đúng định dạng!');
+									document.f1.email.focus();
+									document.f1.email.value="";
+									return false;
+								}
+							  if (obj.indexOf(dot)==-1 || obj.indexOf(dot)==0 || obj.indexOf(dot)==lstr){
+									alert('Email không đúng định dạng!');
+									document.f1.email.focus();
+									document.f1.email.value="";
+									return false;
+								}
+							 if (obj.indexOf(at,(lat+1))!=-1){
+									alert('Email không đúng định dạng!');
+									document.f1.email.focus();
+									document.f1.email.value="";
+									return false;
+								}
+							 if (obj.substring(lat-1,lat)==dot || obj.substring(lat+1,lat+2)==dot){
+									alert('Email không đúng định dạng!');
+									document.f1.email.focus();
+									document.f1.email.value="";
+									return false;
+								}
+							 if (obj.indexOf(dot,(lat+2))==-1){
+									alert('Email không đúng định dạng!');
+									document.f1.email.focus();
+									document.f1.email.value="";
+									return false;
+								}
+							 if (obj.indexOf(' ')!=-1){
+									alert('Email không đúng định dạng!');
+									document.f1.email.focus();
+									document.f1.email.value="";
+									return false;
+								}
+										 
+							}
+                      
+ 
+					//getcontens();
+
+                     return true;
+               }
+  
+	function checkcst(){
+   		$.ajax({
+		url: $("#base_url").val()+'/admin/checkonecom',
+		type: 'POST',
+		data: 'cst='+ $('#cst').val()+'&idcom='+$('#idcom').val()+'&act='+$('#act').val(),
+		success: function(data) {
+		if(data != "") document.getElementById("checkcstgo").value = 1;
+		else document.getElementById("checkcstgo").value = "";
+		//test = $('#checkcstgo').val();
+		$('#checkcst').html(data);
+		}
+	});
+
+   
+	}             
+</script>

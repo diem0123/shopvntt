@@ -1,0 +1,70 @@
+
+<header class="header-fix">
+	<div class="container">
+		<div class="row">
+			<a href="javascript:void(0)" id="menu_mobile"><img src="images/icon-menu.svg"></a>
+			<div class="col-md-3 left-header" data-wow-delay="0.3s">
+					<?=$logo?>
+				</div>			
+			<div class="col-md-9 pdl0 right-header" data-wow-delay="0.1s">
+				<div class="pull-right box-contact">
+					<div class="social-top">
+						<a href="#"><?=$linkface?></a>
+					</div>
+					<div class="box-search">
+						<form class="form-search" action="tim-kiem-thong-tin.html" method="post" enctype="multipart/form-data">
+							<input type="text" class="form-control input-s" placeholder="<?=$lang['timkiem']?>..." id="keyword"  name="keyword"  onFocus="if(this.value=='<?=$lang['tl_keyword']?>'){this.value='';}" onblur="if(this.value==''){this.value='<?=$lang['tl_keyword']?>';}"/>
+							<input type="submit" class="btn-search" value=""/>
+						</form>
+					</div>
+					<div class="language">
+						<a class="arrow-down">
+						<?php if($plang=="") { ?>
+						<img src="images/vn.png"/>
+						<?php } elseif($plang=="_e") { ?><img src="images/en.png"/>
+						<?php } elseif($plang=="_jp") { ?><img src="images/japan.png"/>
+						<?php } elseif($plang=="_kr") { ?><img src="images/korean.png"/>
+						<?php } ?>
+						</a>
+						<ul class="drop-lang">
+							<li><a href="index.php?atc=home&lang=1"><img src="images/vn.png"/></a></li>
+							<li><a href="index.php?atc=home&lang=2"><img src="images/en.png"/></a></li>
+							<li><a href="index.php?atc=home&lang=3"><img src="images/japan.png"/></a></li>
+							<li><a href="index.php?atc=home&lang=4"><img src="images/korean.png"/></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="width-100">
+					<ul class="menu-main " id="menu_main_ul">
+						<li>
+							<a href="index.php" <?=$st_select1?>><?=$lang['tl_home']?></a>
+						</li>
+						<li>
+							<?=$list_menugt?> 
+						</li>
+						<li>
+							<?=$list_menusanpham?>							 
+						</li>
+						<li>
+							<?=$list_menunhamay?>
+						</li>
+						<li>
+							<?=$list_menuvnl?>
+						</li>
+						
+						<li>
+							<?=$list_tintuc?>							
+						</li>
+						<li>
+							<?=$list_tuyendung?>						
+						</li>
+						<li>
+							<a href="lienhe.html" <?=$st_select9?>><?=$lang['tl_contact']?></a>                    
+						</li>
+					</ul>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</header>

@@ -1,0 +1,96 @@
+<div class="breadcrumbs ace-save-state" id="breadcrumbs">
+	<ul class="breadcrumb">
+		<li>
+			<i class="ace-icon fa fa-home home-icon"></i>
+			<a href="index.php?act=adm_home"><?=$lang['adm_home']?></a>
+		</li>
+
+		<li>
+			<a href="index.php?act=adm_banner&idps=1&mn=1">Banner <?=$lang['adm_hienthitrangchu']?></a>
+		</li>
+		<li>
+			<a href="index.php?act=adm_banner&idps=4&mn=1">Banner <?=$lang['f_aboutus']?></a>
+		</li>
+		<!--
+			<li>
+				<a href="index.php?act=adm_banner&idps=5&mn=1">Banner tin tức</a>
+			</li>
+			<li>
+				<a href="index.php?act=adm_banner&idps=3&mn=1">Banner chi tiết sản phẩm</a>
+			</li>
+		-->
+	</ul><!-- /.breadcrumb -->
+	<!-- /.nav-search -->
+</div>
+<div class="adm_out" >
+<div class="adm_common">
+<?//$submenu2?>
+<table border="0" width="100%" >
+			<tr>
+			  <td height="14" class="title" align="left" ><!--<button class="admbutton" type="button" name="ct1" value="" onclick="window.open('index.php?act=updatebanner&idps=<?=$idps?>&ac=a','Addpropopup','scrollbars=yes,status=yes,toolbar=no,location=0,directories=0,status=yes,menubar=0,resizable=0,width=\'100%\',height=\'100%\'');" >Add Banner</button>--></td>
+			</tr>
+		</table>
+		<table border="0" width="100%" cellpadding="0" cellspacing="0" >
+			<tr>
+			  <td height="10" align="left" ></td>
+			</tr>
+		</table>
+<table border="0" width="1000">
+	<tr>
+		<td>		
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<table id="simple-table" class="table  table-bordered table-hover">
+			<thead>
+			<tr bgcolor="#EEEEEE">
+				<td width="154" class="do" height="25"><?=$lang['adm_tieude']?> banner </td>
+				<td width="199" class="do"><?=$lang['adm_hinh']?> </td>
+				<td width="117" class="do"><?=$lang['adm_danhmucchinh']?> </td>
+				<td width="195" class="do"><?=$lang['adm_danhmuccon']?> </td>
+				<td width="137" class="do" height="25">Link </td>
+				<td width="73" class="do" height="25"><?=$lang['adm_thutu']?> </td>
+				<td colspan="3" class="do"><?=$lang['hanhdong']?> </td>
+			</tr>
+			</thead>
+			<tr>
+	<td width="154" height="10"></td>
+	<td width="199" class="menu"></td>
+	<td width="117" class="menu"></td>
+	<td width="195" class="menu"></td>
+	<td width="137" height="10" class="menu"></td>
+	<td width="73" height="10" class="menu"></td>
+	<td width="26"></td>
+	<td width="32"></td>
+	<td width="43"></td>
+</tr>												
+			<?=$bannerlist_rs?>	
+					
+<tr>
+	<td width="154" height="10"></td>
+	<td width="199" class="menu"></td>
+	<td width="117" class="menu"></td>
+	<td width="195" class="menu"></td>
+	<td width="137" height="10" class="menu"></td>
+	<td width="73" height="10" class="menu"></td>
+	<td width="26"></td>
+	<td width="32"></td>
+	<td width="43"></td>
+</tr>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td height="5"></td>
+	</tr>
+	<tr>
+		<td height="25" align="center"><div class="box-phantrang">
+            		<ul>                    	
+						<?=$paging?>						                       
+                    </ul>
+            	</div></td>
+	</tr>
+</table>
+</div>
+</div>

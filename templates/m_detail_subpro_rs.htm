@@ -1,0 +1,46 @@
+<div class="intro-right">
+                <h1><?=$product_name?></h1>
+                <div class="social">
+                    <table border="0" width="100%">
+					<tr>
+						<td width="6" height="30"></td>
+						<td width="153" ><div class="fb-like" data-href="http://therapyshower.vn/<?=$url_like?>" data-send="true" data-layout="button_count" data-width="450" data-show-faces="true"></div></td>
+						<td width="13" > </td>
+					    <td width="76" >
+					  <g:plusone size="medium" href="http://therapyshower.vn/<?=$url_like?>"></g:plusone>						</td>
+					    <td ></td>
+					    <td  >
+						 </td>
+					    <td ></td>
+					    <td ></td>
+					    <td ></td>
+					</tr>					 
+				</table>
+                </div>
+                <div class="price">
+				<?php if($PRICE_SALE ==""){ ?>
+										<h5><?=$lang['tl_gia']?>: <strong><?=$price?></strong></h5>							
+							<?php } elseif($PRICE_SALE !=""){ ?>							
+										<h5><?=$lang['tl_gia']?>: <strong><?=$PRICE_SALE?></strong></h5>	
+										<span class="price-old">
+                                            <em><?=$price?> </em>
+                                        </span>																																
+							<?php } ?>                    
+                </div>
+                <p>
+                   <?=nl2br($content_short)?>
+                </p>                
+                <hr />
+                <div class="note">
+                    <p>
+                        <?=$lang['tl_moilienhe']?> <strong> <?=$hotline?></strong>
+                    </p>
+                    <p>
+                        <?=$lang['tl_hoacmail']?>: <strong><?=$mailcom?></strong>
+                    </p>
+                </div>
+				<div class="frame-buy group">
+                    <a href="#" onclick="savecart(<?=$idp?>,1);" ><?=$lang['tl_order']?></a>
+                    <a href="#" class="add-to-cart" onclick="savecart(<?=$idp?>,0);" >Thêm vào giỏ hàng</a>
+                </div>
+            </div>

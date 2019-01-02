@@ -1,0 +1,144 @@
+
+.bg-box-doitac{
+	clear:both;
+	background-color: #222222;
+	height:120px;
+	width:986px;
+	margin-top:5px;
+
+}
+
+.center-doitac {
+width:966px;
+height: 120px; 
+margin-left:6px;
+text-align: center;
+border: 1px solid #222222;
+}
+
+.doitac-bottom-jcarousellite {
+width:966px;
+height: 100px; 
+text-align: center;
+margin-top:10px;
+margin-left:5px;
+
+}
+
+.doitac-bottom-jcarousellite .ul_out{
+width:966px;
+height: 100px; 
+padding: 0px; 
+display: block;
+
+}
+
+.doitac-bottom-jcarousellite ul li{ 
+list-style:none; 
+display:block;
+margin-right:13px;
+background-color: #ffffff;
+}
+
+.doitac-jcarousellite { 
+width:239px;
+text-align: center;
+
+}
+.doitac-jcarousellite ul li{ 
+list-style:none; 
+display:block; 
+padding-bottom:1px; 
+margin-bottom:5px; 
+width:239px;
+}
+.doitac-jcarousellite .thumbnail { 
+margin:0 auto;
+width:195px;
+text-align: center;
+overflow: hidden; 
+border: 1px solid #cccccc;
+background-color: #ffffff;
+
+}
+
+.doitac-jcarousellite .ul_out{
+margin: 0px; 
+padding: 0px; 
+position: relative; 
+list-style-type: none; 
+z-index: 1; 
+top: -74.623px;
+
+
+}
+.li_img {
+overflow: hidden; 
+float: none; 
+width: 214px; 
+height: 135px;
+
+}
+
+.clear { clear: both; }
+
+/* san pham tieu bieu */
+.sptb-jcarousellite { 
+width:230px;
+text-align: center;
+border:0px solid #fff000;
+}
+.sptb-jcarousellite ul li{ 
+list-style:none; 
+display:block; 
+padding-bottom:1px; 
+margin-bottom:5px; 
+}
+.sptb-jcarousellite .thumbnail { 
+margin:0 auto;
+width:150px;
+height: 190px;
+margin-top:10px;
+text-align: center;
+
+}
+
+.img-thumbnail{
+	text-align:center;	
+	border: 0px solid #cccccc;
+	background-color: #ffffff;
+	padding-bottom:10px; 
+}
+
+.sptb-jcarousellite .thumbnail h2 a {  
+margin-top:10px;
+color:#5b9a00;
+text-decoration:none;
+}
+
+.sptb-jcarousellite .thumbnail h2 a:hover{  
+color:#ff0000;
+}
+
+.ul_sptb{
+margin: 0px; 
+padding: 0px; 
+position: relative; 
+list-style-type: none; 
+z-index: 1; 
+top: -74.623px;
+
+
+}
+.li_sptb {
+overflow: hidden; 
+float: none; 
+width: 215px; 
+min-height: 224px;
+border:0px solid #ff0000;
+
+}
+
+
+
+

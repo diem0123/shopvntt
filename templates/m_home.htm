@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="vn">
+<head>
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta name="viewport" content="width=device-width, maximum-scale=1.0" />
+<title><?php if($_SESSION['tab'] == 1 && $_SESSION['get_title']==""){ ?>Therapy Shower<?php } elseif($_SESSION['tab'] == 1 && $_SESSION['get_title'] !=""){ ?><?=$_SESSION['get_title']?><?php } elseif($_SESSION['tab'] == 2){ ?><?=$_SESSION['get_title']?><?php } elseif($_SESSION['tab'] == 3){ ?><?=$_SESSION['get_title']?><?php } elseif($_SESSION['tab'] == 4){ ?><?=$_SESSION['get_title']?><?php } elseif($_SESSION['tab'] == 5){ ?><?=$_SESSION['get_title']?><?php } elseif($_SESSION['tab'] == 6){ ?>TherapyShower.vn<?php } ?></title>
+<meta name="keywords" content="Vòi tắm bổ sung Vitamin C và Collagen" />
+<meta name="description" content="<?php if(isset($_SESSION['descript']) && $_SESSION['descript'] != ""){ echo $_SESSION['descript']; } elseif($_SESSION['get_title'] != "") { echo $_SESSION['get_title']; } else { echo 'Chúng tôi chuyên cung cấp Vòi tắm bổ sung Vitamin C và Collagen'; } ?>" />
+<meta name="robots" content="index,follow" />
+<LINK HREF="http://therapyshower.vn/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+	<link rel="stylesheet" type="text/css" href="css/lightbox.css" media="screen" />	
+    <link href="mobi/css/normalize.css" rel="stylesheet" />
+    <link href="mobi/css/jquery.bxslider.css" rel="stylesheet" />
+    <link href="mobi/css/main.css" rel="stylesheet" />	
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+	<script type="text/javascript" src="js/lightbox.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="mobi/js/jquery.bxslider.js"></script>
+    <script type="text/javascript" src="mobi/js/jquery.matchHeight.js"></script>
+    
+	 <script type="text/javascript">
+        $(document).ready(function () {
+            $('.product-col').matchHeight();	
+			$('.product-item').matchHeight();
+            $('.small-item').matchHeight();
+            $('.news-item').matchHeight();			
+             $('.bxslider').bxSlider({
+                auto: true,
+            });
+            $('.accodion-caption').click(function () {
+                if ($(this).next().is(":visible")) {
+                    $(this).next().slideUp();
+                    $(this).removeClass('accodion-active');
+                }
+                else {
+                    $(this).next().slideDown();
+                    $(this).addClass('accodion-active');
+                }
+            });
+			
+			$('.acc-caption').click(function () {
+                if ($(this).next().is(":visible")) {
+                    $(this).next().slideUp();
+                    $('.acc-active').removeClass("acc-active");
+                }
+                else {
+                    $(this).next().slideDown();
+                    $(this).addClass("acc-active");
+                }
+            });
+
+            $('.show-menu').click(function () {
+                if ($('.overlay').is(":visible")) {
+
+                }
+                else {
+                    $('.overlay').show();
+                }
+            });
+            $('.close-overlay').click(function () {
+                if ($('.overlay').is(":visible")) {
+                    $('.overlay').hide();
+                }
+                else {
+
+                }
+            });
+			
+			$('.slider-detail').bxSlider({
+                auto: true,
+                pagerCustom: '#bx-pager1'
+            });
+
+        });
+    </script>
+
+<script>
+$(document).ready(function(){	
+			
+	$(".lightbox").lightbox();		
+});
+</script>
+
+</head>
+<body>
+<div class="overlay">
+        <div class="menu">
+            <div class="menu-header">
+                <a href="dangnhap.html">Đăng nhập </a>
+                <span> | </span>
+                <a href="dangky.html"> Đăng ký</a>
+            </div>
+            <div class="nav">
+                <ul>
+
+                    <li>
+
+                        <a href="/"> <?=$lang['tl_home']?></a>
+                    </li>
+                    <li><a href="info-1-Gioi-thieu.html?idcat=1"><?=$lang['tl_aboutus']?></a></li>
+                    <li>
+                        <a href="sanpham.html"><?=$lang['tl_prod']?></a>
+
+                    </li>
+                    <li>
+                        <a href="info-2-dai-ly.html"><?=$lang['tl_daily']?></a>
+
+                    </li>
+                    <li><a href="info-3-tro-giup.html?idcat=10"><?=$lang['tl_trogiup']?> </a></li>
+                    <li><a href="info-6-chung-chi.html"><?=$lang['tl_chungchi']?></a></li>
+                </ul>
+            </div>
+<!--            
+			<div class="hotline">
+                Hotline:
+                <span><em></em>0909 481 881</span>
+            </div>
+-->			
+            <div class="close-overlay">
+                x
+            </div>
+        </div>
+    </div>
+<div class="wrap">
+<?=$header?>
+<?=$main?>	
+</div>
+<?=$footer?>
+<div id="loading" style="display:none;position:absolute; width:35px; z-index:100000; left: 620px; top: 320px; overflow: hidden">
+<img border="0" src="images/loading.gif" ></div>
+</body>
+</html>
+<script type="text/javascript">
+	getcount();	
+	getcart();		
+	
+</script>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<script type="text/javascript">
+ <!-- {literal} -->
+  window.___gcfg = {lang: 'vi'};
+ <!--{/literal}-->
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>

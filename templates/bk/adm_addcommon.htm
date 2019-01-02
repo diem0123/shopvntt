@@ -1,0 +1,288 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title><?=$title?></title>
+<link rel="stylesheet" type="text/css" href="css/vntt.css" />
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/webtoolkit.base64.js"></script>
+<script type="text/javascript" src="wysiwyg/wysiwyg.js"></script>
+</head>
+<div align="left">
+<form action="?act=adm_addcommon" method="post"  enctype="multipart/form-data" name="f1" onsubmit="return checkform();"> 
+<input type="hidden" name="ac" value="a">
+<input type="hidden" name="idcommon" value="<?=$idcommon?>">
+<table width="100%"  border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF">
+ <tr bgcolor="#FFF5EA">
+   <td class='menu'>&nbsp;</td>
+   <td colspan="2" class='menu'>&nbsp;</td>
+ </tr>
+ <tr bgcolor="#FFF5EA">
+    <td width="16" class='menu'>&nbsp;</td>
+    <td colspan="2" class='menu'><?=$lang['adm_themthongtin']?> </td>
+    </tr>
+ <tr>
+    <td width="16" class='menu'>&nbsp;</td>
+    <td width="378" class='menu'>&nbsp;</td>
+    <td width="613" class='menu'>&nbsp;</td>
+  </tr>
+ <tr>
+    <td width="16" class='menu'>&nbsp;</td>
+    <td width="378" class='menu'><?=$lang['adm_chonchuyenmuc']?> 1 <font size="1" color="#D7261C">*</font></td>
+    <td width="613" class='menu'>
+    <SELECT  class=textbox style="WIDTH: 376px;" size=1 name="idtype" id="idtype" onchange="changecat();">
+   		<option value=""><?=$lang['adm_vuilongchonchuyenmuc']?> 1...</option>
+   		<?=$list_commontype?>	
+    </SELECT></td>
+  </tr>
+ <tr>
+    <td width="16" class='menu'>&nbsp;</td>
+    <td width="378" class='menu'>&nbsp;</td>
+    <td width="613" class='menu'>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'><?=$lang['adm_chonchuyenmuc']?> 2 <font size="1" color="#D7261C">*</font></td>
+    <td class='menu' id="sametype"><SELECT  class=textbox style="WIDTH: 376px;" size=1 name="typecat" id="typecat" onchange="changetype();">
+      <option value=""><?=$lang['adm_vuilongchonchuyenmuc']?> 2...</option>      
+   		<?=$list_type_category?>
+	</SELECT></td>
+  </tr>
+  <tr>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+  </tr>
+  <tr <?=$show3?> id = "r1">
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'><?=$lang['adm_chonchuyenmuc']?> 3 </td>
+    <td class='menu' id="samesubcat"><SELECT  class=textbox style="WIDTH: 376px;" size=1 name="subcat" id="subcat">
+      <option value=""><?=$lang['adm_vuilongchonchuyenmuc']?> 3...</option>      
+   		<?=$list_sub_category?>
+	</SELECT></td>
+  </tr>
+  <tr <?=$show3?> id = "r2">
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="16" class='menu'>&nbsp;</td>
+    <td width="378" class='menu'><?=$lang['adm_tenbaiviet']?>
+    <font size="1" color="#D7261C">*</font></td>
+    <td width="613" class='menu'>
+	<input type="text" name="commonname" style="width:376px " size="1" value="<?=$commonname?>"></td>
+  </tr>
+  <tr>
+    <td width="16" class='menu'>&nbsp;</td>
+    <td width="378" class='menu'>&nbsp;</td>
+    <td width="613" class='menu'>&nbsp;	</td>
+  </tr>
+  
+  <tr>
+    <td width="16" class='menu'>&nbsp;</td>
+    <td width="378" class='menu'>&nbsp;</td>
+    <td width="613" class='do'><?=$mess?></td>
+  </tr>
+  <tr>
+    <td width="16" class='menu'>&nbsp;</td>
+    <td width="378" class='menu'><?=$lang['adm_anhnhodaidien']?> </td>
+    <td width="613" class='menu'>
+	<input name="file_ul" type="file" size="25"></td>
+  </tr>
+  <tr>
+    <td width="16" class='menu'>&nbsp;</td>
+    <td width="378" class='menu'>&nbsp;</td>
+    <td width="613" class='content'>(<?=$lang['adm_anhdang']?>: .png, jpg, gif)</td>
+  </tr>
+  <tr >
+    <td width="16" class='menu'>&nbsp;</td>
+    <td width="378" class='menu'>&nbsp;</td>
+    <td width="613" class='menu'>&nbsp;</td>
+  </tr>
+<tr >
+    <td width="16" class='menu'>&nbsp;</td>
+    <td width="378" class='menu'>Có tính tiêu biểu, đặc trưng</td>
+    <td width="613" class='menu'><input type="checkbox" name="HOME" value="1" <?=$tbchecked?> >	</td>
+  </tr>  
+   <tr style="display:none">
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>Hiển thị ở Hoạt động - Thành tích </td>
+    <td class='do'><span class="menu">
+      <input type="checkbox" name="tieudiem" value="1" <?=$tbchecked2?>>
+    </span></td>
+  </tr>
+  <tr>
+    <td width="16" class='menu'>&nbsp;</td>
+    <td width="378" class='menu'>&nbsp;</td>
+    <td width="613" class='do'></td>
+  </tr>
+  <tr <?=$dispr?>>
+    <td width="16" class='menu'>&nbsp;</td>
+    <td width="378" class='menu'><?=$lang['adm_trangthai']?> <font size="1" color="#D7261C">*</font></td>
+    <td width="613" class='menu'>
+    <SELECT  class=textbox style="WIDTH: 205px;" size=1 name=status>
+		<option value=""><?=$lang['adm_vuilongchontrangthai']?>...</option>
+		<option value="Active" <?=$sl1?>><?=$lang['adm_active']?></option>
+		<option value="Inactive" <?=$sl2?>><?=$lang['adm_inactive']?></option>
+		<option value="Deleted" <?=$sl3?>><?=$lang['adm_deleted']?></option>
+    </SELECT></td>
+  </tr>
+  <tr>
+    <td width="16" class='menu'>&nbsp;</td>
+    <td width="378" class='menu'>&nbsp;</td>
+    <td width="613" class='menu'>&nbsp;										</td>
+  </tr>
+  
+  
+  
+  <tr>
+    <td  class='menu' valign="top" height="95" width="16">&nbsp;</td>
+    <td  class='menu' valign="top" height="95" width="378"><?=$lang['adm_noidungsoluoc']?></td>
+    <td class='menu' height="95">
+	<textarea name="short_content" rows="4" cols="52" onKeyUp="getLengthtextarear(this,500);"><?=$short_content?></textarea></td>
+  </tr>
+   <tr>
+    <td  class='menu' valign="top" height="25" width="16">&nbsp;</td>
+    <td  class='menu' valign="top" height="25" width="378">&nbsp;</td>
+    <td class='menu' height="25">&nbsp;</td>
+  </tr>
+  <tr>
+    <td  class='menu' valign="top" height="95" width="16">&nbsp;</td>
+    <td  class='menu' valign="top" height="95" width="378"><?=$lang['adm_noidungbaiviet']?> </td>
+    <td class='menu' height="95"><textarea id="contentout" name="content"><?=$content?></textarea>
+   <input type="hidden" id="contentencode" name="contentencode" value="">
+       <script type="text/javascript">						  
+		generate_wysiwyg('contentout', 600, 300);
+		document.getElementById('Help').style.display = "none";
+	</script>	</td>
+  </tr>
+  <tr>
+    <td  class='menu' valign="top" width="16">&nbsp;</td>
+    <td  class='menu' valign="top" width="378">&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+  </tr>
+  <tr>
+    <td  class='menu' valign="top" width="16">&nbsp;</td>
+    <td  class='menu' valign="top" width="378"><?=$lang['dangboi']?> </td>
+    <td class='menu'>
+    <SELECT  class=textbox style="WIDTH: 205px;" size=1 name="cst" id="cst" <?=$ronly?>>
+		<option value=""><?=$lang['dangboi']?>...</option>
+		<?=$list_consultant?>    
+    </SELECT>    </td>
+  </tr>
+  <tr>
+    <td  class='menu' valign="top" width="16">&nbsp;</td>
+    <td  class='menu' valign="top" width="378">&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="3" align="center" height="41" class='menu'>
+    <input type="submit" name="submit" value="<?=$lang['them']?>" class="button" style="width:80px; height:22px " >
+    <input type="button" name="cancel" value="<?=$lang['dong']?>" onClick="javascript:window.close();" class="button" style="width:60px;height:22px ">    </td>
+  </tr>
+  </table>
+  </form>
+</div>
+<script language="javascript1.2">
+               function checkform(){
+               
+               		if (document.f1.idtype.selectedIndex==""){
+                         alert("<?=$lang['adm_vuilongchonchuyenmuc']?> 1!");
+						 document.f1.idtype.focus();
+                         return false;
+                    }
+                    
+					if (document.f1.typecat.selectedIndex==""){
+                         alert("<?=$lang['adm_vuilongchonchuyenmuc']?> 2!");
+						 document.f1.typecat.focus();
+                         return false;
+                    }
+                                        
+                    if (document.f1.commonname.value==""){
+                                        alert("<?=$lang['vuilongnhapten']?>!");
+                                        document.f1.commonname.focus();
+                                        return false;
+                                }
+                                                    
+                    
+                    if (document.f1.status.selectedIndex==""){
+                         alert("<?=$lang['adm_vuilongchontrangthai']?>!");
+						 document.f1.status.focus();
+                         return false;
+                    }
+     
+	 /*               
+                    if (document.f1.short_content.value==""){
+                                        alert("Vui lòng nhập mô tả ngắn cho dịch vụ!");
+                                        document.f1.short_content.focus();
+                                        return false;
+                                }
+		*/	
+				
+					getcontens();			
+
+
+                     return true;
+               }
+               
+	  function getLengthtextarear(item1,num)
+			{
+				var str=item1.value;
+				if (item1.value.length>eval(num))
+					{
+						alert("<?=$lang['adm_dodaitoida']?> "+num);
+						item1.value=str.substring(0,eval(num));
+					}
+			}
+	  function getcontens(){
+	  		updateTextArea('contentout');
+			document.getElementById("contentencode").value = Base64.encode($("#contentout").val());
+		}
+		
+	  function changecat() {
+	$.ajax({
+		url: 'index.php',
+		type: 'POST',
+		data: 'act=adm_change_cat_common&cat='+ $('#idtype').val(),
+		success: function(data) {
+			//document.getElementById("sametype").style.display = "block";
+			$('#sametype').html(data);
+			/*
+			if($('#idtype').val() != 1){
+				for(i=1;i<=8;i++){
+						var r = '#r'+i;
+						$(r).attr("style","display:none");
+					}
+			}
+			*/
+		}
+	});
+}
+
+function changetype() {
+	$.ajax({
+		url: 'index.php',
+		type: 'POST',
+		data: 'act=adm_change_type_common&typecat='+ $('#typecat').val(),
+		success: function(data) {
+			//alert($('#typecat').val());
+			//document.getElementById("samesubcat").style.display = "block";
+			var getData = $.parseJSON(data);
+			if(getData.mess1 == "no"){
+				for(i=1;i<=2;i++){
+					var r = '#r'+i;
+					$(r).attr("style","display:none");
+				}
+			}
+			else{
+				$('#samesubcat').html(getData.mess2);
+				for(i=1;i<=2;i++){
+					var r = '#r'+i;
+					$(r).attr("style","display:table-row");
+				}
+			}
+			
+		}
+	});
+}			   
+                              
+</script>

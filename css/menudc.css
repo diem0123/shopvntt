@@ -1,0 +1,108 @@
+.mncap1 {
+margin: 0;
+padding: 0;
+position:relative; 
+width:214px; 
+clear:both; 
+font:normal 12px 'Segoe UI', Helvetica, Arial, sans-serif;
+background:#1f1f1f url(../images/treeTabBg.gif) repeat-x 0 0;
+
+}
+
+.mncap1 .icon_c1 { 
+display:inline-block; float:left; width:30px; height:30px; background:url(../images/treeSplit1.png) no-repeat  100% -64px;  
+} /* vi tri dau tru lon */
+
+.mncap1 a { 
+font-size:12px; 
+padding:5px 2px; 
+display:inline-block;  
+text-decoration:none; 
+width:165px; 
+float:left;
+
+} /* su dung cho link cap 1 */
+
+.sidebarmenu ul{
+margin: 0;
+padding: 0;
+list-style-type: none;
+font: normal 12px 'Segoe UI', Helvetica, Arial, sans-serif;
+width: 214px; /* Ð? r?ng c?a menu chính c?p 1 */
+
+}
+
+.sidebarmenu ul li{
+clear:both;
+display:block; 
+height:30px;
+margin-top: -4px;
+padding: 0px;
+background:#454545 url(../images/glossyback.jpg) repeat-x 0 0; /*background of tabs (default state)*/
+position: relative;
+}
+
+.sidebarmenu ul li span.closed {
+clear:both;
+display:inline-block; 
+float:left; 
+width:27px; height:27px; 
+background:url(../images/treeSplit1.png) no-repeat  3px -196px;  cursor:pointer; /* vi tri dau tru nho */
+
+
+}
+
+/* Top level menu links style */
+.sidebarmenu ul li a{
+float:left;
+display: inline-block;
+overflow: auto; /*force hasLayout in IE7 */
+text-decoration: none;
+padding-top: 6px;
+padding-bottom: 6px;
+padding-left: 0px;
+width: 182px;
+
+}
+
+.sidebarmenu ul li a:hover{
+color:#ABA000;
+}
+
+/*Sub level menu items */
+.sidebarmenu ul li ul{
+position: absolute;
+width: 214px; /* Ð? r?ng c?a menu con c?p 2 và 3 */
+top: 0;
+visibility: hidden;
+padding-top: 6px;
+padding-bottom: 6px;
+padding-left: 0px;
+background:url(../images/treeSplit1.png) no-repeat  3px -196px;  cursor:pointer; /* vi tri dau tru nho */
+z-index:4000;
+}
+
+.sidebarmenu ul li ul li span.opened{
+display:inline-block; 
+float:left; 
+width:17px; height:27px; 
+background:url(../images/treeSplit1.png) no-repeat  -6px -130px;  cursor:pointer; /* vi tri dau tru nho */
+
+}
+
+.sidebarmenu ul li ul li a{
+float:left;
+display: inline-block;
+overflow: auto; /*force hasLayout in IE7 */
+
+text-decoration: none;
+padding-top: 6px;
+padding-bottom: 6px;
+padding-left: 0px;
+width: 182px;
+
+}
+
+.sidebarmenu a.subfolderstyle{
+background: url('../images/right.gif') no-repeat 97% 50%;
+}

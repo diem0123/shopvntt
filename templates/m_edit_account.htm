@@ -1,0 +1,328 @@
+<form name="f1" action="hieu-chinh-tai-khoan.html"  method="post"  enctype="multipart/form-data"  onsubmit="return check_reg();">
+<h3 class="box-caption">
+		<?=$lang['tl_editac']?>
+	</h3>
+<table width="100%" border="0" cellspacing="3" cellpadding="3" >  
+  <tr>
+    <td align="left" height="10"></td>
+    <td align="left" height="10">&nbsp;</td>
+    <td align="left" height="10"><span id="mess_er0" class="style_do"><?=$mess0?></span></td>
+  </tr>
+  <tr>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"> <font size="1" color="#D7261C">*</font></td>
+    <td align="left" height="10"><input placeholder="<?=$lang['tl_uname']?>" type="text" id="user_member" name="user_member" class="textinput" value="<?=$user_member?>"></td>
+  </tr>
+  <tr>
+    <td align="left" height="10"></td>
+    <td align="left" height="10">&nbsp;</td>
+    <td align="left" height="10"><span id="mess_er1" class="style_do"><?=$mess1?></span></td>
+  </tr>
+  <tr>
+    <td align="left" height="10"></td>
+    <td align="left" height="10">  <font size="1" color="#D7261C">*</font></td>
+    <td align="left" height="10"><input placeholder="<?=$lang['tl_lgemail']?>" type="text" id="cus_email" name="email" class="textinput" value="<?=$email?>"></td>
+  </tr>
+  <tr>
+    <td align="left" height="10"></td>
+    <td align="left" height="10">&nbsp;</td>
+    <td align="left" height="10"><span id="mess_er2" class="style_do"></span></td>
+  </tr>
+  <tr>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"><input placeholder="<?=$lang['tl_pw']?>" type="password" name="password" id="password" value="" autocomplete="off" class="textinput" ></td>
+  </tr>
+  <tr>
+    <td align="left" height="10"></td>
+    <td align="left" height="10">&nbsp;</td>
+    <td align="left" height="10"><span id="mess_er21" class="style_do"></span></td>
+  </tr>
+  <tr>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"> </td>
+    <td align="left" height="10"><input placeholder="<?=$lang['tl_cpw']?>" name="password2" type="password" autocomplete="off" class="textinput" /></td>
+  </tr>
+  <tr>
+    <td align="left" height="10"></td>
+    <td align="left" height="10">&nbsp;</td>
+    <td align="left" height="10">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left" height="10"></td>
+    <td height="1" colspan="2" align="left">
+	<span class="dotline"></span></td>
+    </tr>
+  <tr>
+    <td align="left" height="10"></td>
+    <td align="left" height="10">&nbsp;</td>
+    <td align="left" height="10"><span id="mess_er3" class="style_do"></span></td>
+  </tr>
+  <tr>
+    <td width="2%" align="left">&nbsp;</td>
+    <td width="1%" align="left">   <font size="1" color="#D7261C">*</font></td>
+    <td width="97%" align="left"><input placeholder="<?=$lang['tl_fname']?>" type="text" id="cus_name" name="fullname" class="textinput" value="<?=$fullname?>"></td>
+  </tr>
+  <tr>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"></td>
+    <td align="left" height="10" class="do"><?=$mess2?></td>
+  </tr>
+  <tr>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"><input name="file_ul" type="file" size="15"> (Avatar. File: .png, jpg, gif)</td>
+  </tr>
+   <tr>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"></td>
+  </tr>
+  <tr>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"><img src="images/bin/avatar/<?=$avatar?>" alt="<?=$consultantname?>" ></td>
+  </tr>
+  <tr>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"><span id="mess_er31" class="style_do"></span></td>
+  </tr>
+  <tr>
+    <td align="left">&nbsp;</td>
+    <td align="left">&nbsp;</td>
+    <td align="left"><SELECT  class="textinput" name="gender" id="gender" >
+      <option value="" selected="selected"><?=$lang['tl_gd']?>...</option>
+	       <?=$list_gender?>  		
+	</SELECT></td>
+  </tr>
+  <tr>
+    <td align="left">&nbsp;</td>
+    <td align="left">&nbsp;</td>
+    <td align="left"><span id="mess_er4" class="style_do"></span></td>
+  </tr>
+  <tr>
+    <td align="left">&nbsp;</td>
+    <td align="left"></td>
+    <td align="left">
+	<input placeholder="<?=$lang['tl_phon']?>" type="text" id="cus_tel" name="tel" class="textinput" value="<?=$tel?>">	</td>
+  </tr>
+
+  <tr>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"><span id="mess_er5" class="style_do"></span></td>
+  </tr>
+  <tr>
+    <td align="left">&nbsp;</td>
+    <td align="left"></td>
+    <td align="left"><SELECT  class="textinput" name="province" id="cus_province" onchange="changedist();">
+      <option value=""><?=$lang['tl_prv']?>...</option>      
+   		<?=$list_provinces?>
+	</SELECT></td>
+  </tr>
+  <tr>
+    <td align="left">&nbsp;</td>
+    <td align="left">&nbsp;</td>
+    <td align="left"><span id="mess_er6" class="style_do"></span></td>
+  </tr>
+  <tr>
+    <td align="left">&nbsp;</td>
+    <td align="left"></td>
+    <td align="left" ><select  class="textinput" name="country" id="country">
+      <option value=""><?=$lang['tl_ctry']?>...</option>
+      <?=$list_country?>
+    </select></td>
+  </tr>
+  <tr>
+    <td align="left">&nbsp;</td>
+    <td align="left">&nbsp;</td>
+    <td align="left"><span id="mess_er7" class="style_do"></span></td>
+  </tr>
+  <tr>
+    <td align="left">&nbsp;</td>
+    <td align="left"></td>
+    <td align="left"><input placeholder="<?=$lang['tl_adr']?>" type="text" id="cus_address" name="address" class="textinput" value="<?=$address?>"></td>
+  </tr>  
+  <tr>
+    <td align="left">&nbsp;</td>
+    <td align="left" valign="top"></td>
+    <td align="left" height="40"><input type="submit" name="submit" value="<?=$lang['save']?>" style="width:80px;height:30px "></td>
+  </tr>  
+</table>		
+</form>
+<script type="text/javascript">
+function check_reg(){
+			
+		 if (document.f1.user_member.value==""){                                       
+										$('#mess_er0').html("<?=$lang['tl_tenuser']?>");
+                                        return false;
+                                }
+								
+		 if($("#cus_email").val()==""){		 
+		 $('#mess_er1').html("<?=$lang['tl_cnhapmail']?>");
+		 $('#mess_er0').html("");
+		 return false;
+		 }
+		 else{		
+					var at="@";
+					var dot=".";
+					var obj=$("#cus_email").val();
+					var lat=obj.indexOf(at);
+					var lstr=obj.length;
+					var ldot=obj.indexOf(dot);
+					if (obj.indexOf(at)==-1){
+						$('#mess_er1').html("<?=$lang['tl_ckhonghop']?>");
+						$('#mess_er0').html("");
+						return false
+					}
+				   else if (obj.indexOf(at)==-1 || obj.indexOf(at)==0 || obj.indexOf(at)==lstr){
+						$('#mess_er1').html("<?=$lang['tl_ckhonghop']?>");
+						$('#mess_er0').html("");
+						return false;
+					}
+				  else if (obj.indexOf(dot)==-1 || obj.indexOf(dot)==0 || obj.indexOf(dot)==lstr){
+						$('#mess_er1').html("<?=$lang['tl_ckhonghop']?>");
+						$('#mess_er0').html("");
+						return false;
+					}
+				 else if (obj.indexOf(at,(lat+1))!=-1){
+						$('#mess_er1').html("<?=$lang['tl_ckhonghop']?>");
+						$('#mess_er0').html("");
+						return false;
+					}
+				 else if (obj.substring(lat-1,lat)==dot || obj.substring(lat+1,lat+2)==dot){
+						$('#mess_er1').html("<?=$lang['tl_ckhonghop']?>");
+						$('#mess_er0').html("");
+						return false;
+					}
+				 else if (obj.indexOf(dot,(lat+2))==-1){
+						$('#mess_er1').html("<?=$lang['tl_ckhonghop']?>");
+						$('#mess_er0').html("");
+						return false;
+					}
+				 else if (obj.indexOf(' ')!=-1){
+						$('#mess_er1').html("<?=$lang['tl_ckhonghop']?>");
+						$('#mess_er0').html("");
+						return false;
+					}
+							 
+				}
+			/*	
+				if (document.f1.password.value==""){
+                                        $('#mess_er1').html("");
+										$('#mess_er2').html("Vui l&ograve;ng nh&#7853;p m&#7853;t kh&#7849;u!");
+                                        return false;
+                                }
+            */ 
+			         if (document.f1.password.value !="" && document.f1.password.value.length < 6){
+	                    $('#mess_er0').html("");
+						$('#mess_er1').html("");
+						$('#mess_er2').html("<?=$lang['tl_cpass6']?>");
+	                    return false;
+                	}
+           /*
+                     if (document.f1.password2.value==""){
+                                        $('#mess_er1').html("");
+										$('#mess_er2').html("");
+										$('#mess_er21').html("Vui l&ograve;ng x&aacute;c nh&#7853;n l&#7841;i m&#7853;t kh&#7849;u!");
+                                        return false;
+                     }
+            */         
+                     if (document.f1.password.value != document.f1.password2.value){
+									$('#mess_er0').html("");
+									$('#mess_er1').html("");
+									$('#mess_er2').html("");
+									$('#mess_er21').html("<?=$lang['tl_cpasskhongkhop']?>");
+									return false;
+					}
+
+		 if ($("#cus_name").val()==""){
+		 	$('#mess_er0').html("");
+			$('#mess_er1').html("");
+			$('#mess_er2').html("");
+			$('#mess_er21').html("");
+			$('#mess_er3').html("<?=$lang['tl_cnhaphoten']?>");
+			return false;
+		 }
+/*		 
+		 if (document.f1.gender.selectedIndex==""){
+			$('#mess_er0').html("");
+			$('#mess_er1').html("");
+			$('#mess_er2').html("");
+			$('#mess_er21').html("");
+		 	$('#mess_er3').html("");			
+			$('#mess_er31').html("Vui l&ograve;ng ch&#7885;n gi&#7899;i t&iacute;nh!");
+			document.f1.gender.focus();
+			return false;                        
+         }
+		 
+		 if ($("#cus_tel").val()==""){
+		 	$('#mess_er0').html("");
+			$('#mess_er1').html("");
+			$('#mess_er2').html("");
+			$('#mess_er21').html("");
+		 	$('#mess_er3').html("");
+			$('#mess_er31').html("");
+			$('#mess_er4').html("Vui l&ograve;ng nh&#7853;p s&#7889; &#273;i&#7879;n tho&#7841;i!");
+			return false;
+		 }
+
+		if (document.f1.province.selectedIndex==""){
+			$('#mess_er0').html("");
+			$('#mess_er1').html("");
+			$('#mess_er2').html("");
+			$('#mess_er21').html("");
+		 	$('#mess_er3').html("");
+			$('#mess_er31').html("");
+			$('#mess_er4').html("");
+			$('#mess_er5').html("Vui l&ograve;ng ch&#7885;n t&#7881;nh th&agrave;nh!");
+			document.f1.province.focus();
+			return false;                        
+         }
+		 
+		 if (document.f1.dist.selectedIndex==""){
+			$('#mess_er0').html("");
+			$('#mess_er1').html("");
+			$('#mess_er2').html("");
+			$('#mess_er21').html("");
+		 	$('#mess_er3').html("");
+			$('#mess_er31').html("");
+			$('#mess_er4').html("");
+			$('#mess_er5').html("");
+			$('#mess_er6').html("Vui l&ograve;ng ch&#7885;n qu&#7853;n/huy&#7879;n!");
+			document.f1.dist.focus();
+			return false;                        
+         }
+		
+		if ($("#cus_address").val()==""){
+			$('#mess_er0').html("");
+			$('#mess_er1').html("");
+			$('#mess_er2').html("");
+			$('#mess_er21').html("");
+		 	$('#mess_er3').html("");
+			$('#mess_er31').html("");
+			$('#mess_er4').html("");
+			$('#mess_er5').html("");
+			$('#mess_er6').html("");
+			$('#mess_er7').html("Vui l&ograve;ng nh&#7853;p &#273;&#7883;a ch&#7881;!");
+			return false;
+		 }
+	*/
+												
+	return true;
+   }
+   
+   function changedist() {
+	$.ajax({
+		url: 'index.php?act=changedist',
+		type: 'POST',
+		data: 'province='+ $('#cus_province').val(),
+		success: function(data) {
+		//document.getElementById("sametype").style.display = "block";
+		$('#same_dist').html(data);
+		}
+	});
+}
+   			
+</script>

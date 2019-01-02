@@ -1,0 +1,42 @@
+<div class="col-md-4">
+	<div class="product">
+		<a href="chitiet-<?=$ID1?>-<?=$name_link1?>.html">
+			<img src="images/bin/imagenews/<?=$PICTURE1?>" style="height:270px">
+			<div class="hover-info">
+				<h2 class="title-red"><?=$name1?></h2>
+				<div class="content-sp">					
+					<?=nl2br($contentshort1)?>
+				</div>
+			</div>
+		</a>
+	</div>
+</div>
+<?php if($dis1 == "") { ?>
+<div class="col-md-4" <?=$dis1?>>
+	<div class="product">
+		<a href="chitiet-<?=$ID2?>-<?=$name_link2?>.html">
+			<img src="images/bin/imagenews/<?=$PICTURE2?>" style="height:270px">
+			<div class="hover-info">
+				<h2 class="title-red"><?=$name2?></h2>
+				<div class="content-sp">
+					<?=nl2br($contentshort2)?>
+				</div>
+			</div>
+		</a>
+	</div>
+</div> 
+<?php } if($dis2 == "") { ?>
+<div class="col-md-4" <?=$dis2?>>
+	<div class="product">
+		<a href="chitiet-<?=$ID3?>-<?=$name_link3?>.html">
+			<img src="images/bin/imagenews/<?=$PICTURE3?>" style="height:270px">
+			<div class="hover-info">
+				<h2 class="title-red"><?=$name3?></h2>
+				<div class="content-sp">
+					<?=nl2br($contentshort3)?>
+				</div>
+			</div>
+		</a>
+	</div>
+</div> 
+<?php } ?>             

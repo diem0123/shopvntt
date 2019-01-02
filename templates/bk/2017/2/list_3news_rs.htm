@@ -1,0 +1,50 @@
+<div class="item fadeInLeft wow">
+	<div class="col-md-3">
+			<a href="chitiet-<?=$ID1?>-<?=$name_link1?>.html"><img src="images/bin/imagenews/<?=$PICTURE1?>"/></a>
+	</div>
+	<div class="col-md-9">
+		<a href="chitiet-<?=$ID1?>-<?=$name_link1?>.html" class="name-pro"><?=$name1?></a>
+		<div class="content-news">
+			<?=$SCONTENTSHORT1?>
+		</div>
+		<div class="txtRight box-link">
+			<a href="chitiet-<?=$ID1?>-<?=$name_link1?>.html" class="link-detail"><?=$lang['tl_detail']?></a>
+		</div>
+	</div>
+</div>
+
+<?php if($dis1 == "") { ?>
+<div style="clear:both;display:block; height:20px;"></div>
+<div class="item fadeInLeft wow" <?=$dis1?>>
+	<div class="col-md-3">
+			<a href="chitiet-<?=$ID2?>-<?=$name_link2?>.html"><img src="images/bin/imagenews/<?=$PICTURE2?>"/></a>
+	</div>
+	<div class="col-md-9">
+		<a href="chitiet-<?=$ID2?>-<?=$name_link2?>.html" class="name-pro"><?=$name2?></a>
+		<div class="content-news">
+			<?=$SCONTENTSHORT2?>
+		</div>
+		<div class="txtRight box-link">
+			<a href="chitiet-<?=$ID2?>-<?=$name_link2?>.html" class="link-detail">Chi tiết</a>
+		</div>
+	</div>
+</div>
+
+<?php } if($dis2 == "") { ?>
+<div style="clear:both;display:block; height:20px;"></div>
+<div class="item fadeInLeft wow" <?=$dis2?>>
+	<div class="col-md-3">
+			<a href="chitiet-<?=$ID3?>-<?=$name_link3?>.html"><img src="images/bin/imagenews/<?=$PICTURE3?>"/></a>
+	</div>
+	<div class="col-md-9">
+		<a href="chitiet-<?=$ID3?>-<?=$name_link3?>.html" class="name-pro"><?=$name3?></a>
+		<div class="content-news">
+			<?=$SCONTENTSHORT3?>
+		</div>
+		<div class="txtRight box-link">
+			<a href="chitiet-<?=$ID3?>-<?=$name_link3?>.html" class="link-detail">Chi tiết</a>
+		</div>
+	</div>
+</div>
+<div style="display:block; height:20px;"></div>
+<?php } ?>  

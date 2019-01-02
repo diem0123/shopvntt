@@ -1,0 +1,82 @@
+<form name="f1" action="doi-mat-khau.html"  method="post"  enctype="multipart/form-data"  onsubmit="return check_reg();">
+<table width="100%" border="0" cellspacing="3" cellpadding="3" >
+  <tr>
+    <td width="2%" height="10" align="left"></td>
+    <td height="10" colspan="2" align="left" class="title">Thay đổi mật khẩu  </td>
+    </tr>
+  <tr>
+    <td align="left" height="10"></td>
+    <td width="29%" height="10" align="left">&nbsp;</td>
+    <td width="69%" height="10" align="left"><span id="mess_er1" class="style_do"><?=$mess1?></span></td>
+  </tr>
+  <tr>
+    <td align="left" height="10"></td>
+    <td align="left" height="10">Nhập mật khẩu cũ <font size="1" color="#D7261C">*</font></td>
+    <td align="left" height="10"><input type="password" name="password_old" id="password_old" value="" autocomplete="off" style="width:376px"></td>
+  </tr>
+  <tr>
+    <td align="left" height="10"></td>
+    <td align="left" height="10">&nbsp;</td>
+    <td align="left" height="10"><span id="mess_er2" class="style_do"></span></td>
+  </tr>
+  <tr>
+    <td align="left" height="10"></td>
+    <td align="left" height="10">Nhập mật khẩu mới <font size="1" color="#D7261C">*</font></td>
+    <td align="left" height="10"><input type="password" name="password" id="password" value="" autocomplete="off" style="width:376px"></td>
+  </tr>
+  <tr>
+    <td align="left" height="10"></td>
+    <td align="left" height="10">&nbsp;</td>
+    <td align="left" height="10"><span id="mess_er21" class="style_do"></span></td>
+  </tr>
+  <tr>
+    <td align="left" height="10"></td>
+    <td align="left" height="10">X&aacute;c nh&#7853;n  m&#7853;t kh&#7849;u mới <font size="1" color="#D7261C">*</font></td>
+    <td align="left" height="10"><input name="password2" type="password" autocomplete="off" style="width:376px"/></td>
+  </tr>  
+  <tr>
+    <td align="left">&nbsp;</td>
+    <td align="left" valign="top"></td>
+    <td align="left" height="40"><input type="submit" name="submit" value="Lưu" style="width:80px; height:22px "></td>
+  </tr>  
+</table>		
+</form>
+<script type="text/javascript">
+function check_reg(){
+					
+				
+					if (document.f1.password_old.value==""){
+						$('#mess_er1').html("Vui l&ograve;ng nh&#7853;p m&#7853;t kh&#7849;u c&#361;!");						
+						return false;
+                   }
+				   
+				   if (document.f1.password.value==""){
+						$('#mess_er1').html("");
+						$('#mess_er2').html("Vui l&ograve;ng nh&#7853;p m&#7853;t kh&#7849;u m&#7899;i!");						
+						return false;
+                   }
+          
+			         if (document.f1.password.value !="" && document.f1.password.value.length < 6){
+	                    $('#mess_er1').html("");
+						$('#mess_er2').html("M&#7853;t kh&#7849;u ph&#7843;i &iacute;t nh&#7845;t 6 k&yacute; t&#7921;!");
+	                    return false;
+                	}
+           
+                     if (document.f1.password2.value==""){
+                                        $('#mess_er1').html("");
+										$('#mess_er2').html("");
+										$('#mess_er21').html("Vui l&ograve;ng x&aacute;c nh&#7853;n l&#7841;i m&#7853;t kh&#7849;u m&#7899;i!");
+                                        return false;
+                     }
+                    
+                     if (document.f1.password.value != document.f1.password2.value){
+									$('#mess_er1').html("");
+									$('#mess_er2').html("");
+									$('#mess_er21').html("M&#7853;t kh&#7849;u kh&ocirc;ng kh&#7899;p nhau!");
+									return false;
+					}
+												
+	return true;
+   }
+   	
+</script>

@@ -1,0 +1,23 @@
+<div class="item">
+	<div class="product">
+		<img src="images/bin/<?=$ID_CATEGORY?>/<?=$IMAGE_BIG?>"/>
+		<div class="price">
+			<?php if($PRICE_SALE !=''){ ?>
+				<span class="price-green price-regular"><?=$PRICE_SALE?></span>
+			<?php }else{?>
+				<span class="price-green price-regular"><?=$PRICE?></span>
+			<?php }?>
+			<?php if($PRICE_DISC !=''){ ?>
+				<span class="price-line"><?=$PRICE?></span>
+			<?php }?>
+		</div>
+		<div class="box-info-product">
+			<a href="spchitiet-<?=$ID?>-<?=$name_link?>.html" title="<?=$name?>" class="product-name"><?=$name?></a>
+			<a href="sanpham-<?=$ID_CATEGORY?>-<?=$name_link_cat?>.html?idt=<?=$ID_TYPE?>" title="<?=$namecat?>" class="product-name-cat"><p><?=$namecat?></p></a>
+			<div class="box-middle">
+				<a href="thong-tin-gio-hang.html" onclick="savecart(<?=$ID?>,0);" ><img src="images/add_cart.png"/></a>
+				<a href="#" onclick="savecart(<?=$ID?>,0);"><img src="images/plus.png"/></a>
+			</div>
+		</div>	
+	</div>
+</div>

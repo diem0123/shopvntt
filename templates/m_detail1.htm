@@ -1,0 +1,33 @@
+<h1><?=$title_news?></h1>
+<div class="div-padding"><?=$main_contents?></div>
+<table border="0" width="100%">
+					<tr>
+						<td width="1" height="30"></td>
+						<td width="140" class="contentz">
+						<div class="fb-like" data-href="http://therapyshower.vn/<?=$url_like?>" data-send="true" data-layout="button_count" data-width="450" data-show-faces="true"></div>						</td>
+						<td width="4" class="contentz"> </td>
+					    <td width="73" valign="middle">
+						<g:plusone size="medium" href="http://therapyshower.vn/<?=$url_like?>"></g:plusone>						</td>
+					    <td class="contentz"></td>					    
+					    <td class="contentz"></td>
+					    <td class="contentz"></td>
+					</tr>					
+				</table>
+<div class="content-format">
+	<?php if($total_get > 1){ ?>
+	<span class="dotline"></span>
+	<table border="0" width="100%" cellpadding="0" cellspacing="0" >
+		<tr>
+			<td align="left" width="2%" height="3"></td>
+			<td align="left"  width="98%">
+			<div class="news_left">
+			<ul class="ul_related_news">
+				<?=$list_news_other?>								
+			</ul>
+		</div></td>
+		</tr>		
+	</table>
+
+	<?php }?>
+</div>	
+

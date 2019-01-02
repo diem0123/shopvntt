@@ -1,0 +1,101 @@
+<div class="breadcrumbs ace-save-state" id="breadcrumbs">
+	<ul class="breadcrumb">
+		<li>
+			<a href="index.php?act=adm_common"><?=$lang['adm_caidat']?></a>
+		</li>				
+		<li>
+			<a href="index.php?act=adm_menu">Menu <?=$lang['level']?> 1</a>
+		</li>		
+		<li>
+			<a href="index.php?act=menu_sub&idcat=<?=$idcat?>">Menu <?=$lang['level']?> 2</a>
+		</li>		
+		
+	</ul><!-- /.breadcrumb -->
+	<div class="nav-search" id="nav-search">
+		<!--
+		<form class="form-search">
+			<span class="input-icon">
+				<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+				<i class="ace-icon fa fa-search nav-search-icon"></i>
+			</span>
+		</form>-->
+	</div><!-- /.nav-search -->
+</div>
+<div class="adm_out" >
+<div class="adm_common">
+<div class="table-info-sp">
+<table border="0" width="100%">
+	<tr>
+		<td>
+		<table border="0" width="100%" >
+			<tr>
+				<td height="14" class="menu" ><button class="admbtn" type="button" name="bk1" value="" onclick="window.location.href='index.php?act=adm_menu';" >&lt;&lt; Back</button> <button class="admbtn" type="button" name="ct1" value="" onclick="window.open('index.php?act=updatesubmenu&cat=<?=$idcat?>&ac=a','Addsubcatpopup','scrollbars=yes,status=yes,toolbar=no,location=0,directories=0,status=yes,menubar=0,resizable=0,width=\'100%\',height=\'100%\'');" ><?=$lang['adm_them_menu']?> 2</button>
+				&nbsp;&nbsp; <?=$lang['level']?> 1: <?=$NAMECAT?></td>
+			</tr>
+		</table>
+		<table border="0" width="100%" cellpadding="0" cellspacing="0" >
+			<tr>
+			  <td height="10" align="left" ></td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<table border="0" width="100%" cellspacing="0" id="dynamic-table" class="table table-striped table-bordered table-hover" >
+			<tr bgcolor="#EEEEEE">
+				<td width="319" class="do" height="25"><?=$lang['adm_name_lv_menu']?> 2 </td>
+				<td width="258" class="do" height="25">Menu <?=$lang['level']?> 1 </td>
+				<td width="162" class="do" height="25"><?=$lang['adm_lienket']?> </td>
+				<td width="84" class="do"><?=$lang['trangthai']?></td>
+				<td width="75" class="do" height="25"><?=$lang['adm_thutu']?> </td>
+				<td colspan="3" class="do"><?=$lang['hanhdong']?> </td>
+			</tr>			
+			<?=$submenulist_rs?>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td height="5"></td>
+	</tr>
+	<tr>
+		<td height="25" align="center"><div class="box-phantrang">
+            		<div class="modal-footer no-margin-top">
+						<ul class="pagination pull-right no-margin">
+							<?=$paging?>
+						</ul>	
+					</div>
+            	</div></td>
+	</tr>
+</table>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+function delit(idp, cap) {			
+	var str1 = "Bạn chắc chắn muốn xóa?";
+		if(confirm(str1)){
+		delaction(idp,cap);
+		}
+
+}
+
+function delaction(idp,cap) {
+		$.ajax({
+			url: 'index.php',
+			type: 'POST',
+			data: 'act=adm_delmenu&ac=d&idp='+idp+'&cap='+cap,
+			success: function(data) {
+				var getdata = $.parseJSON(data);
+				if(getdata.mess1 == "success"){
+					//alert(getdata.mess2);
+					window.location.reload();
+				}
+				else 
+				//$('#err').html(getdata.mess2);//
+				alert(getdata.mess2);		
+			}
+		});	
+	}
+
+</script>

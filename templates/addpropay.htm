@@ -1,0 +1,127 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title><?=$title?></title>
+<link rel="stylesheet" type="text/css" href="css/wstyle.css" />
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/webtoolkit.base64.js"></script>
+<script src="ckeditor/ckeditor.js"></script>
+</head>
+<div align="left">
+<form action="index.php?act=updatepropay" method="post"  enctype="multipart/form-data" name="f1" onsubmit="return checkform();"> 
+<input type="hidden" name="ac" value="<?=$ac?>">
+<input type="hidden" name="idpropay" value="<?=$idpropay?>">
+<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+ <tr bgcolor="#FFF5EA">
+    <td width="17" height="40" class='menu'>&nbsp;</td>
+    <td colspan="2" class='menu'><?=$title_action?></td>
+    </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="353" class='menu'>T&ecirc;n ph&#432;&#417;ng th&#7913;c thanh to&aacute;n <font size="1" color="#D7261C">*</font></td>
+    <td width="715" class='menu'>
+	<input type="text" name="propayname" style="width:376px " size="1" value="<?=$propayname?>"></td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="353" class='menu'>&nbsp;</td>
+    <td width="715" class='menu'>&nbsp;    </td>
+  </tr>
+  <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="353" class='menu'>Email d&ugrave;ng thanh to&aacute;n <font size="1" color="#D7261C">*</font></td>
+    <td width="715" class='menu'>
+    <input type="text" name="emailpay" style="width:376px " size="1" value="<?=$emailpay?>"></td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="353" class='menu'>&nbsp;</td>
+    <td width="715" class='menu'>&nbsp;    </td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="353" class='menu'>Merchant</td>
+    <td width="715" class='menu'>
+    <input type="text" name="merchant" style="width:376px " size="1" value="<?=$merchant?>"></td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="353" class='menu'>&nbsp;</td>
+    <td width="715" class='menu'>&nbsp;</td>
+  </tr>
+ <tr>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>Accesscode</td>
+   <td class='menu'><input type="text" name="accesscode" style="width:376px " size="1" value="<?=$accesscode?>"></td>
+ </tr>
+ <tr>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>&nbsp;</td>
+ </tr>
+ <tr>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>Th&#7913; t&#7921; <font size="1" color="#D7261C">*</font></td>
+   <td class='menu'><input type="text" name="iorder" style="width:376px " size="1" value="<?=$iorder?>"></td>
+ </tr>
+ <tr>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>&nbsp;</td>
+ </tr>
+ <tr>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>Thông tin </td>
+   <td class='menu'> <textarea id="contentout" name="content"><?=$content?></textarea>
+   <input type="hidden" id="contentencode" name="contentencode" value="">
+      <script>CKEDITOR.replace('content', {			
+			filebrowserBrowseUrl: 'thu-vien.html'
+			
+		});</script></td>
+ </tr>
+ <tr>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>&nbsp;</td>
+ </tr>
+    <tr>
+    <td colspan="3" align="center" height="41" class='menu'>
+    <input type="submit" name="submit" value="<?=$button_action?>" class="button" style="width:80px; height:22px ">
+    <input type="button" name="cancel" value="Đóng" onClick="javascript:window.close();" class="button" style="width:60px;height:22px ">    </td>
+  </tr>
+  </table>
+  </form>
+</div>
+<script language="javascript1.2">
+               function checkform(){
+                    
+                    if (document.f1.propayname.value==""){
+                                        alert("Vui lòng nhập tên phương thức thanh toán!");
+                                        document.f1.propayname.focus();
+                                        return false;
+                                }
+                     if (document.f1.emailpay.value==""){
+                                        alert("Vui lòng nhập email dùng thanh toán!");
+                                        document.f1.emailpay.focus();
+                                        return false;
+                                }
+                      if (document.f1.iorder.value==""){
+                                        alert("Vui lòng nhập số thứ tự!");
+                                        document.f1.iorder.focus();
+                                        return false;
+                                }
+                     getcontens();
+					 return true;
+               }
+			   
+		function CKupdate() {
+		  for (instance in CKEDITOR.instances)
+			CKEDITOR.instances[instance].updateElement();
+		}
+			
+	  function getcontens(){
+	  		//updateTextArea('contentout');
+			CKupdate();
+			document.getElementById("contentencode").value = Base64.encode($("#contentout").val());
+		}	   
+            
+</script>

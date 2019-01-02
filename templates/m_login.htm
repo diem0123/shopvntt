@@ -1,0 +1,76 @@
+<div><div class="dcenter">
+<form name="frmLogin" method="post" action="dangnhap.html" onsubmit="return logincheck();">
+	  <table width="100%" border="0" cellspacing="0" cellpadding="0" >
+            <tr>
+              <td align="right" >&nbsp;</td>
+              <td height="20" align="right">&nbsp;</td>
+              <td align="left" valign="top" class="style_do" id="errorLogin"><?=$msg?></td>
+            </tr>
+            <tr>
+              <td align="right" >&nbsp;</td>
+              <td height="25" align="right">&nbsp;</td>
+              <td align="left"><?=$lang['tl_bmailnhap']?></td>
+            </tr>
+            <tr>
+               <td width="21%" align="right" > </td>
+              <td width="3%" height="35" align="right"><label></label></td>
+              <td width="76%" align="left"><input type="text" name="username" id="username" value="<?=$username?>" style="width:220px;height:30px;"></td>
+            </tr>
+            <tr>
+              <td align="right" >&nbsp;</td>
+              <td height="20" align="right" valign="middle">&nbsp;</td>
+              <td height="20" align="left" ><?=$lang['tl_bpass']?></td>
+            </tr>
+            <tr>
+               <td align="right" ></td>
+               <td height="35" align="right" valign="middle">&nbsp;</td>
+               <td height="35" align="left" valign="middle"><input type="password" name="password" id="password" autocomplete="off" value="" style="width:220px;height:30px;"></td>
+            </tr>
+            <tr>
+               <td align="right" class="news_info">&nbsp;</td>
+               <td height="35" align="right" valign="middle">&nbsp;</td>
+               <td height="35" align="left" valign="middle"><input type="submit" name="Login" value="<?=$lang['tl_bdangnhap']?>" accesskey="true" style="width:100px; height:25px;"></td>
+            </tr>
+            <tr>
+               <td align="right" class="news_info">&nbsp;</td>
+               <td height="30" align="right" valign="middle">&nbsp;</td>
+               <td height="30" align="left" valign="bottom" ><a href="quen-mat-khau.html" class="linka"><?=$lang['tl_bquenpass']?></a></td>
+            </tr>
+            <tr> 
+               <td align="right" class="news_info">&nbsp;</td>
+               <td height="25" align="right" valign="middle">&nbsp;</td>
+               <td height="25" align="left" valign="middle" >&nbsp;</td>
+            </tr>
+         </table>
+<input type="hidden" name="M000" id="M000" value="<?=$M000?>" />
+<input type="hidden" name="M002" id="M002" value="<?=$M002?>" />
+<input type="hidden" name="M003" id="M003" value="<?=$M003?>" />
+</form>
+</div></div>
+<script type="text/javascript">
+function logincheck()
+{	
+	email = $('#username').val();
+	if (email =="" && $('#password').val() == "")
+	{
+		$('#errorLogin').html("<?=$lang['tl_mmailnhap']?>");
+		$('#errorpass').html("<?=$lang['tl_mnhappass']?>");
+		return false;
+	}
+	else
+	if (email == "")
+	{
+		$('#errorLogin').html("<?=$lang['tl_mmailnhap']?>");
+		$('#errorpass').html("");
+		return false;
+	}	
+	else
+	if ($('#password').val() == "")
+	{
+		$('#errorLogin').html("");
+		$('#errorpass').html("<?=$lang['tl_mnhappass']?>");
+		return false;
+	}
+	return true;
+}
+</script>

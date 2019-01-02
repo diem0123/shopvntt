@@ -1,0 +1,90 @@
+<header class="header">
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#menu_mobile').click(function () {
+				if ($('#menu_main_ul').css('display') == "block")
+				{
+					$('#menu_main_ul').slideUp();
+					$('#menu_mobile').animate({left:'10px'},500);
+					//$('#menu_mobile').css('right','auto');
+				}
+				else{
+					$('#menu_main_ul').slideDown();
+					//$('#menu_mobile').css('left','auto');
+					//$('#menu_mobile').css('right','100%');
+					$('#menu_mobile').animate({left:'300px'},500);
+				}
+			});
+			$('.icon-support').click(function(){
+				if ($('.support').css('right') == "-210px")
+				{
+					$('.support').animate({right:'5px'},500);
+				}
+				else
+				{
+					$('.support').animate({right:'-210px'},500);
+				}
+			});
+			$('#menu_main_ul > li').click(function(e){
+				/*if ($(window).width() < 1000 && $(this).find('ul').length > 0)
+				{
+					e.preventDefault();
+					if ($(this).find('ul').css('display') == "none")
+					{
+						$(this).find('ul').slideDown();
+					}
+					else
+					{
+						$(this).find('ul').slideUp();
+					}
+				}
+				else
+				{
+					$('#menu_main_ul > li ul').hide();
+				}*/
+			});
+		});
+    </script>
+	<a href="javascript:void(0)" id="menu_mobile"><img src="images/icon-menu.svg"/></a>
+	<div class="bg-header">
+		 <div class="container">
+		 	<div class="row">
+				<?=$logo?>
+				<div class="col-md-10 col-sm-9 col-xs-9">
+					<div class="pdl0 box-social-top">
+						<div class="box-social fright">
+							<div class="lang">
+								<a href="javascript:void(0)" id="btn_lang"><img src="images/vn.png"/> <img src="images/arrow.png"/></a>
+							</div>
+							<?=$info_login?>
+							<?=$social?>							
+							<?=$hotline?>
+						</div>
+					</div>
+					<div class="box-all searchs">
+						<div class="box-searchs">
+							<a href="javascript:void(0)" id="btn_search"><img src="images/search.png"/></a>
+						</div>
+						<div class="lang">
+							Giỏ hàng: <a href="thong-tin-gio-hang.html" class="cart"><img src="images/cart.png"/> (<span class="num-cart" id="inviewcart"></span>)</a>
+						</div>
+						<div class="form-search">
+							<form action="tim-kiem-san-pham.html" method="get" enctype="multipart/form-data">
+								<input type="text" class="form-control txtSearch" id="keyword"  name="keyword" placeholder="Tìm kiếm..."/>
+								<input type="submit" value="" class="btn-search"/>
+							</form>
+						</div>
+					</div>
+					<div class="nav-main">
+						<div class="box-nav">
+							<ul class="menu_main" id="menu_main_ul">
+								<?=$list_menu_main?>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+<?=$intro?>

@@ -1,0 +1,104 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title><?=$title?></title>
+<link rel="stylesheet" type="text/css" href="css/wstyle.css" />
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/webtoolkit.base64.js"></script>
+<script type="text/javascript" src="wysiwyg/wysiwyg.js"></script>
+</head>
+<div align="left">
+<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+ <tr bgcolor="#FFF5EA">
+    <td width="17" height="40" class='menu'>&nbsp;</td>
+    <td width="216" class='menu'>Chi tiết  </td>
+    <td width="800" class='menu'>&nbsp;</td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="216" class='menu'>Tỉnh thành <font size="1" color="#D7261C">*</font></td>
+    <td width="800" class='content'>
+	<?=$namepr?></td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="216" class='menu'>&nbsp;</td>
+    <td width="800" class='menu'>&nbsp;    </td>
+  </tr>
+  <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="216" class='menu'>Quận/Huyện <font size="1" color="#D7261C">*</font></td>
+    <td width="800" class='content'>
+    <?=$namedis?></td>
+  </tr>
+  <tr>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>Trị giá đơn hàng <font size="1" color="#D7261C">*</font></td>
+    <td class='content'><?=$namemn?></td>
+  </tr>
+  <tr>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>Kiểu vận chuyển <font size="1" color="#D7261C">*</font></td>
+    <td class='content'><?=$nametr?></td>
+  </tr>
+  <tr>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>Loại khách hàng <font size="1" color="#D7261C">*</font></td>
+    <td class='content'><?=$namecus?></td>
+  </tr>
+  <tr>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>Phí vận chuyển <font size="1" color="#D7261C">*</font></td>
+    <td class='content'><?=number_format($fee,0,"",".")?></td>
+  </tr>
+  <tr>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>Chiết khấu </td>
+    <td class='content'><?=$sale?></td>
+  </tr>
+  <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="216" class='menu'>&nbsp;</td>
+    <td width="800" class='menu'>&nbsp;    </td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="216" class='menu'>Thông tin mô tả </td>
+    <td width="800" class='content' valign="top">
+    <?=$content?></td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="216" class='menu'>&nbsp;</td>
+    <td width="800" class='menu'>&nbsp;</td>
+  </tr>
+    <tr>
+    <td colspan="3" align="center" height="41" class='menu'>
+    <input type="button" name="cancel" value="Đóng" onClick="javascript:window.close();" class="button" style="width:60px;height:22px ">    </td>
+  </tr>
+</table>
+</div>

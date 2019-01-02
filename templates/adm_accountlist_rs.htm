@@ -1,0 +1,14 @@
+<tbody>
+<tr bgcolor=#FFFFFF>
+	<td width="20" height="25"><input type="checkbox" name="ck" value="<?=$idc?>"></td>
+	<td width="342" height="25"><a href="#" class="menu" title="<?=$consultantname?>" onclick="window.open('?act=adm_viewaccount&idc=<?=$idc?>&ac=v','Viewaccountpopup','scrollbars=yes,status=yes,toolbar=no,location=0,directories=0,status=yes,menubar=0,resizable=0,width=800,height=580');"><?=$USER_NAME?></a></td>
+	<td width="141" height="25"><?=$CREATED_DATE?></td>
+	<td width="142" height="25"><?=$UPDATED_DATE?></td>
+	<td width="97" height="25" class="menu"><?=$STATUS?></td>
+	<td width="117" class="menu"><?=$ROLE_NAME?></td>
+	<td width="23"><a href="#"  title="View" onclick="window.open('?act=adm_viewaccount&idc=<?=$idc?>&ac=v','Viewaccountpopup','scrollbars=yes,status=yes,toolbar=no,location=0,directories=0,status=yes,menubar=0,resizable=0,width=800,height=580');"  ><img src="images/magnifier.png" width="16" alt="View"></a></td>
+	<td width="23"><a href="#"  title="Edit" onclick="window.open('?act=adm_editaccount&idc=<?=$idc?>&ac=e','Editaccountpopup','scrollbars=yes,status=yes,toolbar=no,location=0,directories=0,status=yes,menubar=0,resizable=0,width=800,height=580');"  ><img src="images/icon_edit.png" width="16" alt="Edit"></a></td>
+	<td width="27"><a href="#"  title="Delete" onclick="delit(<?=$idc?>,'','');" ><img src="images/icon_delete.png" width="16" alt="Delete"></a></td>
+	<td width="42"><a href="#"  title="Xem quy&#7873;n" onclick="window.open('?act=adm_updaterole&idr=<?=$idr?>&ac=v','Viewrolepopup','scrollbars=yes,status=yes,toolbar=no,location=0,directories=0,status=yes,menubar=0,resizable=0,width=800,height=580');" ><img src="images/icon_permission.jpg" width="20" alt="View Permission"></a></td>
+</tr>
+</tbody>

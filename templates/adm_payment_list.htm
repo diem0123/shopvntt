@@ -1,0 +1,109 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<table border="0" width="1000" cellspacing="0" cellpadding="0">
+	<tr>
+		<td height="1" bgcolor="#FFF5EA"></td>
+	</tr>
+</table>
+<?=$submenu2?>
+<form name="f1" method="post" >
+<input type="hidden" id="vlid" name="vlid" value="">
+<table border="0" width="1000">
+	<tr>
+		<td>		
+		<table border="0" width="100%" bgcolor="#FFF5EA">
+			<tr>
+			  <td height="14" class="title" >
+				<button class="admbutton" type="button" name="ct1" value="" onclick="delit('',document.forms.f1.ck, document.forms.f1.vlid);" >X&oacute;a &#273;&#417;n h&agrave;ng</button></td>
+			</tr>
+		</table>
+		<table border="0" width="100%" cellpadding="0" cellspacing="0" >
+			<tr>
+			  <td height="7" align="left" ><span id="err" class="do"></span></td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<table id="payments" class="table table-striped table-bordered table-hover" style="width:100%;margin-left:10px;">
+			<thead>
+				<tr bgcolor="#EEEEEE">
+					<th style="color:red" ><input name="allbox" type="checkbox" onclick="checkall(this.form);" title="Check All"></th>
+					<th style="color:red" >T&ecirc;n &#273;&#417;n h&agrave;ng </th>
+					<th style="color:red" >Ng&agrave;y &#273;&#7863;t h&agrave;ng </th>
+					<th style="color:red" >Tr&#7841;ng th&aacute;i &#273;&#417;n h&agrave;ng </th>
+					<th style="color:red" >Ti&#7873;n gi&aacute; b&aacute;n h&agrave;ng (VN&#272;)</th>
+					<th style="color:red" >Ti&#7873;n gi&aacute; chi&#7871;t kh&#7845;u  (VN&#272;)</th>
+					<th style="color:red" >Ti&#7873;n thanh to&aacute;n (VN&#272;)</th>
+					<th style="color:red" >Kh&aacute;ch h&agrave;ng </th>
+					<th style="color:red" >H&agrave;nh &#273;&#7897;ng </th>
+				</tr>
+			</thead>
+			<tbody>
+				<?=$paymentlist_rs?>
+			</tbody>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td height="5"></td>
+	</tr>
+	<tr>
+		<td height="25" align="center"><div class="box-phantrang" ><?=$paging?></div></td>
+	</tr>
+</table>
+</form>
+<script type="text/javascript">
+function processpay(idp,acc) {
+		$.ajax({
+			url: 'index.php',
+			type: 'POST',
+			data: 'act=adm_payments&idpayment='+idp+'&acc='+acc,
+			success: function(data) {
+				var getdata = $.parseJSON(data);
+				if(getdata.mess1 == "success"){
+					//alert(getdata.mess2);
+					window.location.reload();
+				}
+				else $('#err').html(getdata.mess2);//alert(getdata.mess2);		
+			}
+		});	
+	}
+	
+function delaction(idp,vlid) {
+		$.ajax({
+			url: 'index.php',
+			type: 'POST',
+			data: 'act=adm_delete_order&ac=d&idpayment='+idp+'&vlid='+vlid,
+			success: function(data) {
+				var getdata = $.parseJSON(data);
+				if(getdata.mess1 == "success"){
+					//alert(getdata.mess2);
+					window.location.reload();
+				}
+				else $('#err').html(getdata.mess2);//alert(getdata.mess2);		
+			}
+		});	
+	}
+	
+	function delit(idp,listck,listid) {		
+	var str1 = "Vui lòng chọn ít nhất 1 đơn hàng!";
+	var str2 = "Bạn chắc chắn muốn xóa?";
+	if(idp ==""){
+		getValueListCheckBox(listck,listid);
+		if (listid.value=='') alert(str1);
+		else if(confirm(str2)){
+			//alert($('#vlid').val());
+			var id_list = $('#vlid').val();
+			delaction(idp,id_list);
+			
+		}
+	}
+	else {
+		if(confirm(str2)){
+		delaction(idp,'');
+		}
+	}
+	
+}
+</script>

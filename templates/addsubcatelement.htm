@@ -1,0 +1,139 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title><?=$title?></title>
+<link rel="stylesheet" type="text/css" href="css/wstyle.css" />
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/webtoolkit.base64.js"></script>
+<script type="text/javascript" src="wysiwyg/wysiwyg.js"></script>
+</head>
+<div align="left">
+<form action="index.php?act=updatesubcatelement" method="post"  enctype="multipart/form-data" name="f1" onsubmit="return checkform();"> 
+<input type="hidden" name="ac" value="<?=$ac?>">
+<input type="hidden" name="idprocat" value="<?=$idprocat?>">
+<table width="100%"  border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF">
+ <tr bgcolor="#FFF5EA">
+    <td width="17" height="40" class='menu'>&nbsp;</td>
+    <td width="1016" class='menu' colspan="2"><?=$title_action?></td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="216" class='menu'>Chuyên mục cấp 1
+    <font size="1" color="#D7261C">*</font></td>
+    <td width="800" class='menu'>
+    <SELECT  class=textbox style="WIDTH: 376px;" size=1 name="cat" id="cat" onchange="changecat();">
+   		<option value="" selected>Please select Category...</option>
+   		<?=$list_category?>
+	</SELECT></td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="216" class='menu'>&nbsp;</td>
+    <td width="800" class='menu'>&nbsp;
+	</td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="216" class='menu'>Chuyên mục cấp 2
+    <font size="1" color="#D7261C">*</font></td>
+    <td width="800" class='menu' id="sametype">
+    <SELECT  class=textbox style="WIDTH: 376px;" size=1 name="typecat" id="typecat">
+   		<option value="" selected>Please select type Category...</option>
+   		<?=$list_type_category?>
+	</SELECT></td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="216" class='menu'>&nbsp;</td>
+    <td width="800" class='menu'>&nbsp;
+	</td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="216" class='menu'>Chuyên mục cấp 3
+    <font size="1" color="#D7261C">*</font></td>
+    <td width="800" class='menu'>
+	<input type="text" name="nameprocat" style="width:376px " size="1" value="<?=$nameprocat?>"></td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="216" class='menu'>&nbsp;</td>
+    <td width="800" class='menu'>&nbsp;
+    </td>
+  </tr>
+  <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="216" class='menu'>Thứ tự
+    <font size="1" color="#D7261C">*</font></td>
+    <td width="800" class='menu'>
+    <input type="text" name="iorder" style="width:376px " size="1" value="<?=$iorder?>"></td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="216" class='menu'>&nbsp;</td>
+    <td width="800" class='menu'>&nbsp;
+    </td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="216" class='menu'>Liên kết </td>
+    <td width="800" class='menu'>
+    <input type="text" name="link" style="width:376px " size="1" value="<?=$link?>"></td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="216" class='menu'>&nbsp;</td>
+    <td width="800" class='menu'>&nbsp;</td>
+  </tr>
+    <tr>
+    <td colspan="3" align="center" height="41" class='menu'>
+    <input type="submit" name="submit" value="<?=$button_action?>" class="button" style="width:80px; height:22px ">
+    <input type="button" name="cancel" value="Đóng" onClick="javascript:window.close();" class="button" style="width:60px;height:22px ">
+    </td>
+  </tr>
+  </table>
+  </form>
+</div>
+<script language="javascript1.2">
+               function checkform(){
+               
+               		if (document.f1.cat.selectedIndex==""){
+                         alert("Please select Category");
+						 document.f1.cat.focus();
+                         return false;
+                    }
+                    
+                    if (document.f1.typecat.selectedIndex==""){
+                         alert("Please select type Category");
+						 document.f1.typecat.focus();
+                         return false;
+                    }
+
+
+                    
+                    if (document.f1.nameprocat.value==""){
+                                        alert("Please enter Sub Element Category name!");
+                                        document.f1.nameprocat.focus();
+                                        return false;
+                                }
+                     if (document.f1.iorder.value==""){
+                                        alert("Please enter order!");
+                                        document.f1.iorder.focus();
+                                        return false;
+                                }
+                      
+                     return true;
+               }
+ 
+	function changecat() {
+		$.ajax({
+			url: 'index.php',
+			type: 'POST',
+			data: 'act=adm_change_cat1&cat='+ $('#cat').val(),
+			success: function(data) {
+			//document.getElementById("sametype").style.display = "block";
+			$('#sametype').html(data);
+			}
+		});
+	}
+           
+</script>

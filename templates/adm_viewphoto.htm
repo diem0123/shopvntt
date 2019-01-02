@@ -1,0 +1,123 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title><?=$title?></title>
+<link rel="stylesheet" type="text/css" href="css/vntt.css" />
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/webtoolkit.base64.js"></script>
+<input type="hidden" name="base_url" id="base_url" value="<?=$base_url?>">
+<script type="text/javascript" src="wysiwyg/wysiwyg.js"></script>
+</head>
+<div align="left">
+<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+ <tr bgcolor="#FFF5EA">
+   <td class='menu'>&nbsp;</td>
+   <td colspan="2" class='menu'>&nbsp;</td>
+ </tr>
+ <tr bgcolor="#FFF5EA">
+    <td width="16" class='menu'>&nbsp;</td>
+    <td colspan="2" class='menu'>Thông tin chi tiết </td>
+    </tr>
+ <tr>
+    <td width="16" class='menu'>&nbsp;</td>
+    <td width="378" class='menu'>&nbsp;</td>
+    <td width="613" class='menu'>&nbsp;</td>
+  </tr> 
+  <tr>
+    <td width="16" class='menu'>&nbsp;</td>
+    <td width="378" class='menu'>Tên photo
+    <font size="1" color="#D7261C">*</font></td>
+    <td width="613" class='menu'>
+	<input type="text" name="photoname" style="width:376px " size="1" value="<?=$photoname?>"></td>
+  </tr>
+  <tr>
+    <td width="16" class='menu'>&nbsp;</td>
+    <td width="378" class='menu'>&nbsp;</td>
+    <td width="613" class='menu'>&nbsp;	</td>
+  </tr>
+  
+  <tr>
+    <td width="16" class='menu'>&nbsp;</td>
+    <td width="378" class='menu'>&nbsp;</td>
+    <td width="613" class='do'><?=$mess?></td>
+  </tr>
+  <tr>
+    <td width="16" class='menu'>&nbsp;</td>
+    <td width="378" class='menu'>Ảnh Upload </td>
+    <td width="613" class='menu'>&nbsp;</td>
+  </tr>
+    
+  <tr>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+    <td class='do'><span class="menu"><img src="images/bin/imagenews/<?=$thumbnail?>" width="180" height="180" alt="<?=$photoname?>" /></span></td>
+  </tr>
+  <tr>
+    <td width="16" class='menu'>&nbsp;</td>
+    <td width="378" class='menu'>&nbsp;</td>
+    <td width="613" class='do'></td>
+  </tr>
+  <tr <?=$dispr?>>
+    <td width="16" class='menu'>&nbsp;</td>
+    <td width="378" class='menu'>Trạng thái <font size="1" color="#D7261C">*</font></td>
+    <td width="613" class='menu'>
+    <SELECT  class=textbox style="WIDTH: 205px;" size=1 name=status>
+		<option value="">Select status...</option>
+		<option value="Active" <?=$sl1?>>Active</option>
+		<option value="Inactive" <?=$sl2?>>Inactive</option>
+		<option value="Deleted" <?=$sl3?>>Deleted</option>
+    </SELECT></td>
+  </tr>
+  <tr>
+    <td width="16" class='menu'>&nbsp;</td>
+    <td width="378" class='menu'>&nbsp;</td>
+    <td width="613" class='menu'>&nbsp;										</td>
+  </tr>
+  
+  
+  
+  <tr>
+    <td  class='menu' valign="top" height="95" width="16">&nbsp;</td>
+    <td  class='menu' valign="top" height="95" width="378">Nội dung sơ lược <font size="1" color="#D7261C">*</font></td>
+    <td class='menu' height="95">
+	<textarea name="short_content" rows="4" cols="52" onKeyUp="getLengthtextarear(this,500);"><?=$short_content?></textarea></td>
+  </tr>
+   <tr>
+    <td  class='menu' valign="top" height="25" width="16">&nbsp;</td>
+    <td  class='menu' valign="top" height="25" width="378">&nbsp;</td>
+    <td class='menu' height="25">&nbsp;</td>
+  </tr>
+  <tr>
+    <td  class='menu' valign="top" height="95" width="16">&nbsp;</td>
+    <td  class='menu' valign="top" height="95" width="378">Nội dung bài viết </td>
+    <td class='menu' height="95"><textarea id="contentout" name="content"><?=$content?></textarea>
+   <input type="hidden" id="contentencode" name="contentencode" value="">
+       <script type="text/javascript">						  
+		generate_wysiwyg('contentout', 600, 300);
+		document.getElementById('Help').style.display = "none";
+	</script>	</td>
+  </tr>
+  <tr>
+    <td  class='menu' valign="top" width="16">&nbsp;</td>
+    <td  class='menu' valign="top" width="378">&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+  </tr>
+  <tr>
+    <td  class='menu' valign="top" width="16">&nbsp;</td>
+    <td  class='menu' valign="top" width="378">Đăng bởi </td>
+    <td class='menu'>
+    <SELECT  class=textbox style="WIDTH: 205px;" size=1 name="cst" id="cst" <?=$ronly?>>
+      <option value="">Select post by...</option>
+		<?=$list_consultant?>    
+    </SELECT>    </td>
+  </tr>
+  <tr>
+    <td  class='menu' valign="top" width="16">&nbsp;</td>
+    <td  class='menu' valign="top" width="378">&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="3" align="center" height="41" class='menu'>    
+    <input type="button" name="cancel" value="Close" onClick="javascript:window.close();" class="button" style="width:60px;height:22px ">    </td>
+  </tr>
+  </table>  
+</div>

@@ -1,0 +1,66 @@
+<div class="newsletter-subscribe">
+	<div class="container">
+		<div class="intro">
+			<h2 class="text-center">Bạn bị quên mật khẩu?</h2>
+			<p class="text-center">Xin hãy nhập email đã đăng ký với chúng tôi vào ô bên dưới và bấm nút "Send". Chúng tôi sẽ gửi lại bạn mật khẩu mới. </p>
+			<p align="left" valign="top" class="style_do" id="mess_er1" style="color:red;text-align:center"><?=$msg?></p>
+		</div>
+		
+		<form class="form-inline" name="frmLogin" method="post" action="quen-mat-khau.html" onsubmit="return logincheck();">
+			<div class="form-groupf"><input class="form-control" type="email" name="username" id="username" value="<?=$username?>" placeholder="Your Email"></div>
+			<div class="form-groupf"><input class="btn btn-primary" name="submit" type="submit" value="Send"></div>
+		
+			<input type="hidden" name="M000" id="M000" value="<?=$M000?>" />
+			<input type="hidden" name="M002" id="M002" value="<?=$M002?>" />
+			<input type="hidden" name="M003" id="M003" value="<?=$M003?>" />
+		</form>
+	</div>
+</div>
+<script type="text/javascript">
+function logincheck()
+{	
+	if($("#username").val()==""){		 
+		 $('#mess_er1').html("<?=$lang['tl_mmailnhap']?>");
+		 return false;
+		 }
+		 else{		
+					var at="@";
+					var dot=".";
+					var obj=$("#username").val();
+					var lat=obj.indexOf(at);
+					var lstr=obj.length;
+					var ldot=obj.indexOf(dot);
+					if (obj.indexOf(at)==-1){
+						$('#mess_er1').html("<?=$lang['tl_ckhonghop']?>");
+						return false
+					}
+				   else if (obj.indexOf(at)==-1 || obj.indexOf(at)==0 || obj.indexOf(at)==lstr){
+						$('#mess_er1').html("<?=$lang['tl_ckhonghop']?>");
+						return false;
+					}
+				  else if (obj.indexOf(dot)==-1 || obj.indexOf(dot)==0 || obj.indexOf(dot)==lstr){
+						$('#mess_er1').html("<?=$lang['tl_ckhonghop']?>");
+						return false;
+					}
+				 else if (obj.indexOf(at,(lat+1))!=-1){
+						$('#mess_er1').html("<?=$lang['tl_ckhonghop']?>");
+						return false;
+					}
+				 else if (obj.substring(lat-1,lat)==dot || obj.substring(lat+1,lat+2)==dot){
+						$('#mess_er1').html("<?=$lang['tl_ckhonghop']?>");
+						return false;
+					}
+				 else if (obj.indexOf(dot,(lat+2))==-1){
+						$('#mess_er1').html("<?=$lang['tl_ckhonghop']?>");
+						return false;
+					}
+				 else if (obj.indexOf(' ')!=-1){
+						$('#mess_er1').html("<?=$lang['tl_ckhonghop']?>");
+						return false;
+					}
+							 
+				}
+				
+	return true;
+}
+</script>

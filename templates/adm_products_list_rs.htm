@@ -1,0 +1,17 @@
+<tr bgcolor="#FFFFFF">
+	<td><input type="checkbox" name="ck" value="<?=$idp?>"></td>
+	<td width="30" height="25" align="left"><?=$idp?></td>
+	<td width="46" height="25" align="left"><?=$CODE?></td>
+	<td width="289" height="25" align="left"><a href="#" class="menu" onclick="window.open('?act=adm_viewproduct&idp=<?=$idp?>&ac=v','viewpropopup','scrollbars=yes,status=yes,toolbar=no,location=0,directories=0,status=yes,menubar=0,resizable=0,width=\'100%\',height=\'100%\'');"><?=$productname?></a></td>
+	<td width="137" height="25" align="left"><?=$NAME_BRAND?></td>
+	<td width="137" height="25" align="left"><?=$DATE_POST?></td>
+	<td width="141" height="25" align="left"><?=$DATE_UPDATE?></td>
+	<td width="80" height="25" class="menu" align="left"><?=$STATUS?></td>
+	<td width="130" class="menu" align="left"><?=$FULL_NAME?></td>
+	<td width="120" align="left">
+		<a href="#"  title="Xem" onclick="window.open('?act=adm_viewproduct&idp=<?=$idp?>&ac=v','viewpropopup','scrollbars=yes,status=yes,toolbar=no,location=0,directories=0,status=yes,menubar=0,resizable=0,width=\'100%\',height=\'100%\'');"  ><img src="images/magnifier.png" width="16" alt="Xem" border="0"></a>
+		<a href="#"  title="S&#7917;a" onclick="window.open('?act=adm_editproduct&idp=<?=$idp?>&ac=e','Editpropopup','scrollbars=yes,status=yes,toolbar=no,location=0,directories=0,status=yes,menubar=0,resizable=0,width=\'100%\',height=\'100%\'');"  ><img src="images/icon_edit.png" width="16" alt="S&#7917;a" border="0"></a>
+		<a href="#"  title="X&oacute;a" onclick="delit(<?=$idp?>,'','');" ><img src="images/icon_delete.png" width="16" alt="X&oacute;a" border="0"></a>
+		<a href="#"  title="&#7842;nh c&ugrave;ng s&#7843;n ph&#7849;m" onclick="window.open('index.php?act=upload_images&idp=<?=$idp?>','viewpropopup','scrollbars=yes,status=yes,toolbar=no,location=0,directories=0,status=yes,menubar=0,resizable=0,width=800,height=700');"  ><img src="images/16camera.png" width="16" alt="Xem" border="0"></a>
+	</td>
+</tr>

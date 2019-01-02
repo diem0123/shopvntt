@@ -1,0 +1,30 @@
+<div class="box-tin-tuc">
+        	<h3 class="title"><span><?=$full_name?></span></h3>
+            <div class="content">
+            	<ul>
+                	<?=$menu_account_rs?>
+                </ul>
+            </div><!-- end content -->
+        </div><!-- end box-news-most-view -->
+<?php if($owner == 1){ ?>		
+<div class="box-tin-tuc">
+        	<h3 class="title"><span><?=$lang['tl_mnac']?></span></h3>
+            <div class="content">
+            	<ul>
+                	<li><a href="thong-tin-tai-khoan.html"><?=$lang['tl_viewac']?></a></li>	
+					<li><a href="hieu-chinh-tai-khoan.html"><?=$lang['tl_editac']?></a></li>				
+					<li><a href="san-pham-da-luu.html"><?=$lang['tl_prsave']?></a></li>
+                </ul>
+            </div><!-- end content -->
+        </div><!-- end box-news-most-view -->	
+<?php } else { ?>
+<div class="box-tin-tuc">
+        	<h3 class="title"><?=$lang['tl_mnac']?></h3>
+            <div class="content">
+            	<ul>
+                	<li><a href="thong-tin-tai-khoan.html"><?=$lang['tl_viewac']?></a></li>					
+					<li><a href="San-pham-da-luu.html"><?=$lang['tl_prsave']?></a></li>
+                </ul>
+            </div><!-- end content -->
+        </div><!-- end box-news-most-view -->
+<?php } ?>			

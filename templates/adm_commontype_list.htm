@@ -1,0 +1,71 @@
+<div class="breadcrumbs ace-save-state" id="breadcrumbs">
+	<ul class="breadcrumb">
+		<li>
+			<a href="index.php?act=adm_common"><?=$lang['adm_caidat']?></a>
+		</li>
+
+		<li>
+			<a href="index.php?act=adm_common&mn=2"><?=$lang['chuyenmucthongtin']?></a>
+		</li>
+	</ul><!-- /.breadcrumb -->
+	<div class="nav-search" id="nav-search">
+		<!--
+		<form class="form-search">
+			<span class="input-icon">
+				<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+				<i class="ace-icon fa fa-search nav-search-icon"></i>
+			</span>
+		</form>-->
+	</div><!-- /.nav-search -->
+</div>
+<div class="adm_out" >
+<div class="adm_common">
+<?//$submenu2?>
+<form name="f1" method="post" action="admin/accountlist" >
+<input type="hidden" name="vlid" value="">
+<table border="0" width="98%">
+	<tr>
+		<td>
+		<table border="0" width="100%" >
+			<tr>
+			  <td height="14" class="title" >
+			    <button class="admbtn" type="button" name="ct1" value="" onclick="window.open('index.php?act=updatecommontype&ac=a','Addcommontypepopup','scrollbars=yes,status=yes,toolbar=no,location=0,directories=0,status=yes,menubar=0,resizable=0,width=\'100%\',height=\'100%\'');" ><?=$lang['adm_them']?></button>
+				&nbsp;&nbsp;&nbsp;</td>
+			</tr>
+		</table>
+		<table border="0" width="100%" cellpadding="0" cellspacing="0" >
+			<tr>
+			  <td height="10" align="left" ></td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<table id="simple-table" class="table  table-bordered table-hover" >
+			<thead>
+			<tr bgcolor="#EEEEEE">
+				<td width="120" class="do" height="25"><?=$lang['stt']?> </td>
+				<td height="25" class="do"><?=$lang['tenthanhphan']?> </td>
+				<td class="do"><?=$lang['adm_trangthai']?> </td>
+				<td width="130" colspan="4" class="do"><?=$lang['hanhdong']?> </td>
+			</tr>
+			</thead>
+			<?=$commontype_rs?>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td height="5"></td>
+	</tr>
+	<tr>
+		<td height="25" align="center"><div class="box-phantrang">
+            		<ul>                    	
+						<?=$paging?>						                       
+                    </ul>
+            	</div></td>
+	</tr>
+</table>
+</form>
+</div>
+</div>

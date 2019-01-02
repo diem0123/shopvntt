@@ -1,0 +1,43 @@
+<div class="row">
+	<div class="col-sm-6">
+		<a href="images/bin/<?=$ID_CATEGORY?>/<?=$picture_big?>" class="lightbox" >
+			<img src="images/bin/<?=$ID_CATEGORY?>/<?=$picture_big?>"/>
+		</a>
+	</div>
+	<div class="col-sm-6">
+		<h1 class="title-product"><?=$product_name?></h1>
+		<div class="box-social">
+			<div class="listsocial">
+				<div class="box-social-bottom" >
+					<span class="fbkk" ><div class="fb-like" data-href="http://onlinemall.vn/<?=$url_like?>" data-send="true" data-layout="button_count" data-width="450" data-show-faces="true"></div></span> 
+					<span class="gggg"  ><g:plusone size="medium" href="http://onlinemall.vn/<?=$url_like?>"></g:plusone></span>
+				</div>	
+			</div>
+			<div class="views"><?=$COUNTVIEW?></div>
+		</div>
+		<div class="box-price">
+			<span class="price-red"><?=$price?></span><span class="text-currency">đ</span> <span class="text-grey">(Chưa VAT)</span>
+		</div>
+		<div class="status">
+			Tình trạng:<?php if ($EXPRICE ==0) echo 'Còn hàng'; else echo 'Hết hàng';?>
+		</div>
+		<ul class="list-ship">
+			<li>Người mua được quyền xem hàng trước khi nhận</li>
+			<li>Giao hàng toàn quốc</li>
+		</ul>
+		<div class="quantity">
+			<span class="text-quantity">Số lượng:</span> <span class="minus-button">-</span><input type="text" value="1" class="txt-quantity" /><span class="plus-button">+</span>
+		</div>
+		<div class="addtocartbox">
+			<a href="#" onclick="savecart(<?=$idp?>,1);" class="mua-ngay">Mua ngay</a>
+			<a href="#" onclick="savecart(<?=$idp?>,0);" class="addtocart">Thêm vào giỏ hàng</a>
+		</div>
+	</div>
+</div>
+<div class="col-xs-12">
+	<h2 class="title-desc"><span>Mô tả chi tiết</span></h2>
+	<div class="desc-product">
+		<?=$info_detail?>
+	</div>
+	<?=$listsp_splq?>
+</div>

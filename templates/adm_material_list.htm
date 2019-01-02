@@ -1,0 +1,88 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div class="adm_out" >
+<div class="adm_common">
+<table border="0" width="1000" cellspacing="0" cellpadding="0">
+	<tr>
+		<td height="1" bgcolor="#FFF5EA" id="err"></td>
+	</tr>
+</table>
+<?=$submenu2?>
+<table border="0" width="1000">
+	<tr>
+		<td>
+		<table border="0" width="100%" bgcolor="#FFF5EA">
+			<tr>
+				<td height="14" class="title" ><button class="admbutton" type="button" name="ct1" value="" onclick="window.open('index.php?act=updatematerial&ac=a','Addcatpopup','scrollbars=yes,status=yes,toolbar=no,location=0,directories=0,status=yes,menubar=0,resizable=0,width=800,height=250');" >Thêm chất liệu</button></td>
+			</tr>
+		</table>
+		<table border="0" width="100%" cellpadding="0" cellspacing="0" >
+			<tr>
+			  <td height="10" align="left" ></td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<table border="0" width="994" cellspacing="0">
+			<tr bgcolor="#EEEEEE">
+				<td width="471" class="do" height="25">T&ecirc;n chất liệu </td>
+				<td width="247" class="do" height="25">Tr&#7841;ng th&aacute;i </td>
+				<td width="132" class="do" height="25">Th&#7913; t&#7921; </td>
+				<td width="130" colspan="3" class="do">H&agrave;nh &#273;&#7897;ng </td>
+			</tr>				
+			<?=$materiallist_rs?>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td height="5"></td>
+	</tr>
+	<tr>
+		<td height="25" align="center"><div class="box-phantrang">
+            		<ul>                    	
+						<?=$paging?>						                       
+                    </ul>
+            	</div></td>
+	</tr>
+</table>
+</div>
+</div>
+<script type="text/javascript">
+function delaction(idp,vlid) {
+		$.ajax({
+			url: 'index.php',
+			type: 'POST',
+			data: 'act=adm_deletematerial&ac=d&idp='+idp+'&vlid='+vlid,
+			success: function(data) {
+				var getdata = $.parseJSON(data);
+				if(getdata.mess1 == "success"){
+					//alert(getdata.mess2);
+					window.location.reload();
+				}
+				else $('#err').html(getdata.mess2);//alert(getdata.mess2);		
+			}
+		});	
+	}
+	
+	function delit(idp,listck,listid) {		
+	var str1 = "Vui lòng chọn ít nhất 1 thành phần!";
+	var str2 = "Bạn chắc chắn muốn xóa?";
+	if(idp ==""){
+		getValueListCheckBox(listck,listid);
+		if (listid.value=='') alert(str1);
+		else if(confirm(str2)){
+			//alert($('#vlid').val());
+			var id_list = $('#vlid').val();
+			delaction(idp,id_list);
+			
+		}
+	}
+	else {
+		if(confirm(str2)){
+		delaction(idp,'');
+		}
+	}
+	
+}
+</script>

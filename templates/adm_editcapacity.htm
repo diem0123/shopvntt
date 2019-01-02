@@ -1,0 +1,295 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title><?=$title?></title>
+<link rel="stylesheet" type="text/css" href="css/wstyle.css" />
+<link rel="stylesheet" type="text/css" href="css/jquery-ui.css"  />
+  <link rel="stylesheet" type="text/css" href="css/mau.css" />
+  <link rel="stylesheet" type="text/css" href="css/font-awesome/4.5.0/css/font-awesome.min.css" />
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/jquery.ui.dialog.js"></script>
+<script type="text/javascript" src="js/jquery.ui.position.js"></script>
+<script type="text/javascript" src="js/webtoolkit.base64.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/NumberFormat154.js"></script>
+<!-- <script type="text/javascript" src="wysiwyg/wysiwyg.js"></script> -->
+<script src="ckeditor/ckeditor.js"></script>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<div align="left">
+<form action="index.php?act=adm_editcapacity" method="post"  enctype="multipart/form-data" name="f1" onsubmit="return checkform();"> 
+<input type="hidden" name="ac" value="e">
+<input type="hidden" name="idcom" value="<?=$idcom?>">
+<input type="hidden" name="idcapacity" value="<?=$idcapacity?>">
+<table width="100%"  border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF">
+ <tr bgcolor="#FFF5EA">
+   <td class='menu'>&nbsp;</td>
+   <td colspan="2" class='menu'>&nbsp;</td>
+ </tr>
+ <tr bgcolor="#FFF5EA">
+    <td width="17" class='menu'>&nbsp;</td>
+    <td colspan="2" class='menu'>Chỉnh sửa dung tích sản phẩm</td>
+    </tr>	
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="203" class='menu'>&nbsp;</td>
+    <td width="864" class='menu'>&nbsp;</td>
+  </tr>
+   <tr >
+    <td width="17" class='menu'>&nbsp;</td>
+        <td width="203" class='menu'>Tên sản phẩm
+    <font size="1" color="#D7261C">*</font></td>
+    <td width="864" class='menu' id="sametype">
+    <SELECT  class=textbox style="WIDTH: 376px;" size=1 name="id_product"  id="id_product">
+      <option value="0">Vui lòng chọn sản phẩm...</option>      
+      <?=$list_product?>
+  </SELECT></td>
+  </tr>
+ <tr >
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>&nbsp;</td>
+ </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="203" class='menu'>Dung tích</td>
+    <td width="864" class='menu'>
+  <input type="text" name="name_capacity" style="width:376px " size="1" value="<?=$name_capacity?>"></td>
+  </tr>
+    <tr>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+    <td class='contents'>(Ví dụ: 5ml, 10ml, 15ml, 100ml....) </td>
+  </tr>
+  <tr style="">
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="203" class='menu'>&nbsp;</td>
+    <td width="864" class='menu'>&nbsp;</td>
+  </tr>
+    <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="203" class='menu'>Giá (VND)    </td>
+    <td width="864" class='menu'>
+  <input type="text" name="PRICE" style="width:376px;" size="1" value="<?=$PRICE?>" onblur = "tryNumberFormat(document.forms.f1.PRICE);"></td>
+  </tr>
+  <tr>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+    <td class='contents'>Ví dụ: 1000 hoặc 1.000 (Nhập số hoặc số có phân cách phần nghìn bằng dấu chấm.) </td>
+  </tr>
+  <tr>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+    <td class='do'>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>Giảm giá </td>
+    <td class='contents'><input type="text" name="SALE" style="width:60px " size="1" value="<?=$SALE?>" onkeyup = "data_change(document.forms.f1.SALE);"> 
+      (%) (chỉ nhập số, không nhập dấu %) </td>
+  </tr>
+  <tr>
+  <td class='menu'>&nbsp;</td>
+  <td class='menu'>&nbsp;</td>
+  <td class='do'>&nbsp;</td>
+  </tr>
+
+<tr >
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="203" class='menu'>Tình trạng </td>
+    <td width="864" class='menu'><input type="checkbox" name="TINHTRANG" value="1" <?=$tbchecked?> ><?php if($ttchecked) echo ' Hết hàng';else echo ' Còn hàng'; ?></td>
+  </tr>
+  <tr>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+    <td class='contents'>Còn hàng thì check vào ô (Hết hàng thì không check) </td>
+  </tr>
+  <tr style = "" id = "lt4">
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="203" class='menu'>&nbsp;</td>
+    <td width="864" class='do'></td>
+  </tr>
+
+  <tr <?=$dispr?>>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="203" class='menu'>Trạng thái
+    <font size="1" color="#D7261C">*</font></td>
+    <td width="864" class='menu'>
+    <SELECT  class=textbox style="WIDTH: 205px;" size=1 name=status>
+      <option value="">Vui lòng chọn trạng thái...</option>
+		<option value="Active" <?=$sl1?>>Active</option>
+		<option value="Inactive" <?=$sl2?>>Inactive</option>
+		<option value="Deleted" <?=$sl3?>>Deleted</option>
+    </SELECT></td>
+  </tr>
+  <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="203" class='menu'>&nbsp;</td>
+    <td width="864" class='menu'>&nbsp;</td>
+  </tr>
+  
+  
+  <tr>
+    <td  class='menu' valign="top" height="95" width="17">&nbsp;</td>
+    <td  class='menu' valign="top" height="95" width="203">Mô tả chi tiết </td>
+    <td class='menu' height="95"><textarea id="contentout" name="content"><?=$content?></textarea>
+   <input type="hidden" id="contentencode" name="contentencode" value="">
+   <input type="hidden" id="contentencodeparam" name="contentencodeparam" value="">
+   <input type="hidden" id="addmore" name="addmore" value="">
+    <script>CKEDITOR.replace('content', {     
+      filebrowserBrowseUrl: 'thu-vien.html'
+      
+    });</script>  </td>
+  </tr>
+  <tr>
+    <td  class='menu' valign="top" width="17">&nbsp;</td>
+    <td  class='menu' valign="top" width="203">&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+  </tr>
+  <tr style="display: none">
+    <td  class='menu' valign="top" width="17">&nbsp;</td>
+    <td  class='menu' valign="top" width="203">Người nhập liệu </td>
+    <td class='menu'>
+    <SELECT  class=textbox style="WIDTH: 205px;" size=1 name="cst" id="cst" <?=$ronly?>>
+      <option value="">Vui lòng chọn người quản lý...</option>      
+		<?=$list_consultant?>
+    </SELECT>    </td>
+  </tr>
+  <tr>
+    <td  class='menu' valign="top" width="17">&nbsp;</td>
+    <td  class='menu' valign="top" width="203">&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="3" align="center" height="41" class='menu'>
+    <input type="submit" name="submit" value="Lưu" class="button" >    
+    <input type="button" name="cancel" value="Hủy bỏ" onClick="javascript:window.close();" class="button" >    </td>
+  </tr>
+  </table>
+  </form>
+</div>
+<script language="javascript1.2">
+               function checkform(){
+               
+               		if (document.f1.cat.selectedIndex==""){
+                         alert("Vui lòng chọn chuyên mục cấp 1");
+						 document.f1.cat.focus();
+                         return false;
+                    }
+             /*        
+                    if (document.f1.typecat.selectedIndex==""){
+                         alert("Vui lòng chọn chuyên mục cấp 2");
+						 document.f1.typecat.focus();
+                         return false;
+                    }
+                   
+                    if (document.f1.subcat.selectedIndex==""){
+                         alert("Vui lòng chọn chuyên mục cấp 3");
+						 document.f1.subcat.focus();
+                         return false;
+                    }
+			*/		
+                 
+                    if (document.f1.productname.value==""){
+                                        alert("Vui lòng nhập tên sản phẩm!");
+                                        document.f1.productname.focus();
+                                        return false;
+                                }
+                    if (document.f1.SEX.value==""){
+                                        alert("Vui lòng chọn giới tính!");
+                                        document.f1.SEX.focus();
+                                        return false;
+                                }					
+					
+					if (document.f1.SALE.value !=""){					
+						  var field2 = document.f1.SALE;
+						  var check2 = true;
+						  var value2 = field2.value; //get characters
+						//check that all characters are digits, ., -, or ""
+						  for(var i=0;i < field2.value.length; i++)
+						  {	
+						  
+							   var new_key = value2.charAt(i); //cycle through characters
+							   
+							   if(((new_key < "0") || (new_key > "9")) && !(new_key == ""))
+							   {
+									check2 = false;									
+									break;								
+							   }
+						  }
+						  if(check2 == false){
+						  	alert('Vui long chi nhap so!');
+							document.f1.SALE.focus();
+						 	return false;
+						  }
+						 
+					}
+					 
+           			if (document.f1.province.selectedIndex==""){
+                         alert("Vui lòng chọn tỉnh thành!");
+						 document.f1.province.focus();
+                         return false;
+                    }
+                    
+            
+                    if (document.f1.status.selectedIndex==""){
+                         alert("Vui lòng chọn trạng thái!");
+						 document.f1.status.focus();
+                         return false;
+                    }										
+										
+					getcontens();
+                     return true;
+               }
+               
+	  function getLengthtextarear(item1,num)
+      {
+        var str=item1.value;
+        if (item1.value.length>eval(num))
+          {
+            alert("Độ dài tối đa là "+num);
+            item1.value=str.substring(0,eval(num));
+          }
+      }
+  
+    function CKupdate() {
+      for (instance in CKEDITOR.instances)
+      CKEDITOR.instances[instance].updateElement();
+    }
+        
+    function getcontens(){
+        //  updateTextArea('contentout'); 
+    //  updateTextArea('contentoutparam');
+      CKupdate();
+      document.getElementById("contentencode").value = Base64.encode($("#contentout").val());
+      document.getElementById("contentencodeparam").value = Base64.encode($("#contentoutparam").val());
+      //document.getElementById("addmore").value = am;
+      //alert('test6='+Base64.encode($("#contentout").val()));
+    }
+    
+    function getcontinue(am){
+      document.getElementById("addmore").value = am;
+    }
+    
+    function checkcount(){
+      document.getElementById("COUNT_QUANTITY").value = 0;
+    }      
+
+    function changecat() {
+  $.ajax({
+    url: 'index.php',
+    type: 'POST',
+    data: 'act=adm_change_cat&id_product='+ $('#id_product').val(),
+    success: function(data) {
+      //document.getElementById("sametype").style.display = "block";
+      $('#sametype').html(data);
+      if($('#id_product').val() != 1){
+        for(i=1;i<=8;i++){
+            var r = '#r'+i;
+            $(r).attr("style","display:none");
+          }
+      }
+    }
+  });
+}
+</script>

@@ -1,0 +1,47 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title><?=$title?></title>
+<link rel="stylesheet" type="text/css" href="css/wstyle.css" />
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/webtoolkit.base64.js"></script>
+<script type="text/javascript" src="wysiwyg/wysiwyg.js"></script>
+</head>
+<table border="0" width="100%" cellspacing="0" cellpadding="0" >
+	<tr>
+		<td height="32" background="images/bg_viewcart2.gif"  >&nbsp;&nbsp;&nbsp;Tình trạng xử lý đơn hàng </td>
+	</tr>
+	<tr>
+	  <td ><table width="100%" border="0" cellspacing="0" cellpadding="0"> 
+        <tr>
+          <td width="2%">&nbsp;</td>
+          <td width="46%" height="30">S&#7889; &#273;&#417;n h&agrave;ng</td>
+          <td width="52%">: <?=$paymentname?></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td height="30">Ng&agrave;y &#273;&#7863;t h&agrave;ng</td>
+          <td>: <?=$CREATED_DATE?></td>
+        </tr> 
+        <tr>
+          <td>&nbsp;</td>
+          <td height="30">T&igrave;nh tr&#7841;ng &#273;&#417;n h&agrave;ng</td>
+          <td>: <?php if($APPROVE == 0){ ?><img src="images/duyetdoi.png" width="16" height="16" alt="No process" title="Đơn hàng chờ xử lý"> Đơn hàng chờ xử lý <?php } elseif($APPROVE == 1){ ?><img src="images/duyet.png" width="16" height="16" alt="Approve" title="Đơn hàng đã thanh toán"> Đơn hàng đã thanh toán<?php } elseif($APPROVE == 2){ ?><img src="images/duyetno.png" width="16" height="16" alt="Reject" title="Đơn hàng không hợp lệ"> Đơn hàng không hợp lệ<?php } ?></td>
+        </tr>		
+      </table></td>
+  </tr>
+  <tr>
+		<td height="10"></td>
+	</tr>
+	<tr>
+		<td height="32" background="images/bg_viewcart2.gif"  >&nbsp;&nbsp;&nbsp;Chi tiết đơn đặt hàng nguyên trạng ban đầu  </td>
+	</tr>
+	<tr>
+	  <td height="10" ></td>
+  </tr>
+	<tr>
+	  <td valign="top" ><?=$content_email?></td>
+  </tr>
+	<tr>
+	  <td valign="top" >&nbsp;</td>
+  </tr>
+</table>

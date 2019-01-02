@@ -1,0 +1,274 @@
+<script type="text/javascript" src="js/webtoolkit.base64.js"></script>
+<form name="f1" action="lienhe.html"  method="post"  enctype="multipart/form-data"  onsubmit="return check_complete();">
+<table width="100%" border="0" cellpadding="3" cellspacing="3" class="ptext" >
+  <tr>
+    <td width="2%" height="1" align="left"></td>
+    <td width="98%" height="1" colspan="2" align="left" ></td>
+  </tr>
+  <tr>
+    <td width="2%" height="30" align="left"></td>
+    <td width="98%" height="30" colspan="2" align="left" class="name_com" id="adrcom1"></td>
+  </tr>
+  <tr>
+    <td align="left" height="25"></td>
+    <td height="25" colspan="2" align="left" class="addr" ><?=$lang['tl_vanphong']?>: <span id="adrct1"></span></td>
+  </tr>  
+  <tr>
+    <td align="left" height="25"></td>
+    <td height="25" colspan="2" align="left" class="addr" id="adrct4" ></td>
+  </tr>
+  <tr>
+    <td align="left" height="25"></td>
+    <td height="25" colspan="2" align="left" class="addr"  ><?=$lang['tl_conus']?>: <a href="https://www.facebook.com/redribbon.vn" class="title_xs" target="_blank" >https://www.facebook.com/redribbon.vn</a></td>
+  </tr>
+  <tr>
+    <td align="left" height="25"></td>
+    <td height="25" colspan="2" align="left" class="addr" id="adrct3" ></td>
+  </tr>
+  <tr>
+    <td align="left" height="25"></td>
+    <td height="25" colspan="2" align="left" class="addr" id="adrct2" ></td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="3" cellpadding="3" class="ptext">
+  <tr>
+    <td align="left" height="50"></td>
+    <td height="50" colspan="2" align="left" class="textftitle"><?=$lang['text_yeucau']?>:</td>
+    </tr>
+  <tr>
+    <td align="left" height="10"></td>
+    <td align="left" height="10">&nbsp;</td>
+    <td align="left" height="10"><span id="mess_er1" class="do"></span></td>
+  </tr>
+  <tr>
+    <td width="2%" align="left">&nbsp;</td>
+    <td width="3%" align="left">   <font size="1" color="#D7261C">*</font></td>
+    <td width="95%" align="left"><input placeholder="<?=$lang['fullname']?>" type="text" id="cus_name" name="fullname" class="textinput" value="<?=$fullname?>"></td>
+  </tr>
+  <tr>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"><span id="mess_er4" class="do"></span></td>
+  </tr>
+  <tr>
+    <td align="left">&nbsp;</td>
+    <td align="left"> <font size="1" color="#D7261C">*</font></td>
+    <td align="left">
+	<input placeholder="<?=$lang['tel']?>" type="text" id="cus_tel" name="tel" class="textinput" value="<?=$tel?>">	</td>
+  </tr>
+  <tr>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"><span id="mess_er2" class="do"></span></td>
+  </tr>
+  <tr>
+    <td align="left">&nbsp;</td>
+    <td align="left"> <font size="1" color="#D7261C">*</font></td>
+    <td align="left"><input placeholder="<?=$lang['tl_email']?>" type="text" id="cus_email" name="email" class="textinput" value="<?=$email?>"></td>
+  </tr>
+  <tr>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"><span id="mess_er6" class="do"></span></td>
+  </tr>
+  <tr>
+    <td align="left">&nbsp;</td>
+    <td align="left"></td>
+    <td align="left"><input placeholder="<?=$lang['tl_congty']?>" type="text" id="cus_company" name="company" class="textinput" value="<?=$company?>"></td>
+  </tr>
+   <tr>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"></td>
+  </tr>
+  <tr>
+    <td align="left">&nbsp;</td>
+    <td align="left"></td>
+    <td align="left"><input placeholder="<?=$lang['tl_address']?>" type="text" id="cus_address" name="address" class="textinput" value="<?=$address?>"></td>
+  </tr>
+  <tr>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"></td>
+  </tr>
+  <tr>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"><input placeholder="<?=$lang['tl_tieude']?>" type="text" id="cus_subj" name="subj" class="textinput" value="<?=$subj?>"></td>
+  </tr>
+  <tr>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"><span id="mess_er3" class="do"></span></td>
+  </tr>
+  <tr>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"><?=$lang['text_content']?></td>
+  </tr>
+  <tr>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"></td>
+  </tr>
+  <tr>
+    <td align="left">&nbsp;</td>
+    <td align="left" valign="top"> <font size="1" color="#D7261C">*</font></td>
+    <td align="left"><textarea class="textar" id="cus_content" name="content" onKeyUp="getLengthtextarear(this,3000);"></textarea>
+	<input type="hidden" id="cus_contentencode" name="cus_contentencode" value="">	</td>
+  </tr>
+  <tr>
+    <td align="left">&nbsp;</td>
+    <td align="left" valign="top">&nbsp;</td>
+    <td align="left" height="40"><input type="submit" name="submit" value="<?=$lang['send']?>" style="width:100px; height:30px "></td>
+  </tr>
+  <tr>
+    <td align="left">&nbsp;</td>
+    <td align="left" valign="top">&nbsp;</td>
+    <td align="left">&nbsp;</td>
+  </tr>  
+</table>
+</form>
+<script type="text/javascript">
+getctact2();
+	function getctact2() {			
+			$.ajax({
+				url: 'index.php?act=textfooter',
+				type: 'POST',
+				data: 'idcom='+1,
+				success: function(data) {
+					var getData1 = $.parseJSON(data);
+					//var textdt1 = "Tel: "+getData1.TEL+" | Fax: "+getData1.FAX;
+					var textdt1 = "<?=$lang['tl_callus']?>: "+getData1.MOBI;
+					var textdt2 = '<?=$lang["tl_emailus"]?>: <a href="mailto:'+getData1.EMAIL+'" class="title_xs">'+getData1.EMAIL+'</a>';
+					var textdt3 = '<?=$lang["tl_wsite"]?>: <a href="'+getData1.WEBSITE+'" class="title_xs">'+getData1.WEBSITE+'</a>';
+					$('#adrcom1').html(getData1.COM_NAME);
+					$('#adrct1').html(getData1.ADDRESS);
+					$('#adrct2').html(textdt1);
+					$('#adrct3').html(textdt2);
+					$('#adrct4').html(textdt3);
+				}
+			});
+	}
+function getLengthtextarear(item1,num)
+			{
+				var str=item1.value;
+				if (item1.value.length>eval(num))
+					{
+						alert("<?=$lang['tl_daitoida']?> "+num);
+						item1.value=str.substring(0,eval(num));
+					}
+			}
+function check_complete(){
+			
+		 if ($("#cus_name").val()==""){
+			$('#mess_er1').html("<?=$lang['tl_cnhaphoten']?>");
+			return false;
+		 }
+		 
+		 if ($("#cus_tel").val()==""){
+		 	$('#mess_er1').html("");
+			$('#mess_er4').html("<?=$lang['tl_nhaptel']?>");
+			return false;
+		 }
+		 
+		 else if($("#cus_email").val()==""){
+		 $('#mess_er1').html("");
+		 $('#mess_er4').html("");
+		 $('#mess_er2').html("<?=$lang['tl_cnhapmail']?>");
+		 return false;
+		 }
+		 else{
+		 $('#mess_er1').html("");
+		 $('#mess_er4').html("");
+					var at="@";
+					var dot=".";
+					var obj=$("#cus_email").val();
+					var lat=obj.indexOf(at);
+					var lstr=obj.length;
+					var ldot=obj.indexOf(dot);
+					if (obj.indexOf(at)==-1){
+						$('#mess_er2').html("<?=$lang['tl_ckhonghop']?>");
+						return false
+					}
+				   else if (obj.indexOf(at)==-1 || obj.indexOf(at)==0 || obj.indexOf(at)==lstr){
+						$('#mess_er2').html("<?=$lang['tl_ckhonghop']?>");
+						return false;
+					}
+				  else if (obj.indexOf(dot)==-1 || obj.indexOf(dot)==0 || obj.indexOf(dot)==lstr){
+						$('#mess_er2').html("<?=$lang['tl_ckhonghop']?>");
+						return false;
+					}
+				 else if (obj.indexOf(at,(lat+1))!=-1){
+						$('#mess_er2').html("<?=$lang['tl_ckhonghop']?>");
+						return false;
+					}
+				 else if (obj.substring(lat-1,lat)==dot || obj.substring(lat+1,lat+2)==dot){
+						$('#mess_er2').html("<?=$lang['tl_ckhonghop']?>");
+						return false;
+					}
+				 else if (obj.indexOf(dot,(lat+2))==-1){
+						$('#mess_er2').html("<?=$lang['tl_ckhonghop']?>");
+						return false;
+					}
+				 else if (obj.indexOf(' ')!=-1){
+						$('#mess_er2').html("<?=$lang['tl_ckhonghop']?>");
+						return false;
+					}
+							 
+				}
+	/*	
+		if (document.f1.province.selectedIndex==""){
+			$('#mess_er1').html("");
+			$('#mess_er4').html("");
+			$('#mess_er2').html("");
+			$('#mess_er6').html("Vui l&ograve;ng ch&#7885;n t&#7881;nh th&agrave;nh!");
+			document.f1.province.focus();
+			return false;                        
+         }
+		 
+		 if (document.f1.dist.selectedIndex==""){
+			$('#mess_er1').html("");
+			$('#mess_er4').html("");
+			$('#mess_er2').html("");
+			$('#mess_er6').html("");
+			$('#mess_er7').html("Vui l&ograve;ng ch&#7885;n qu&#7853;n/huy&#7879;n!");
+			document.f1.dist.focus();
+			return false;                        
+         }
+		
+		if ($("#cus_address").val()==""){
+			$('#mess_er1').html("");
+			$('#mess_er4').html("");
+			$('#mess_er2').html("");
+			$('#mess_er6').html("");
+			$('#mess_er7').html("");
+			$('#mess_er5').html("Vui l&ograve;ng nh&#7853;p &#273;&#7883;a ch&#7881;!");
+			return false;
+		 }
+	*/	
+		if ($("#cus_content").val()==""){
+			$('#mess_er1').html("");
+			$('#mess_er4').html("");
+			$('#mess_er2').html("");
+			$('#mess_er5').html("");
+			$('#mess_er3').html("<?=$lang['tl_nhaplienhe']?>");
+			return false;
+		 }
+	get_encode_special();								
+	return true;
+   }
+   
+   function changedist() {
+	$.ajax({
+		url: 'index.php?act=changedist',
+		type: 'POST',
+		data: 'province='+ $('#cus_province').val(),
+		success: function(data) {
+		//document.getElementById("sametype").style.display = "block";
+		$('#same_dist').html(data);
+		}
+	});
+}
+   			
+</script>

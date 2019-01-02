@@ -1,0 +1,228 @@
+<!--<section class="bg-white bg-re">
+<div class="container">
+<table width="100%" border="0" cellspacing="3" cellpadding="3" >
+  <tr>
+    <td align="left" height="10"></td>
+    <td height="10" colspan="2" align="left" ><strong><?=$lang['tl_attintkhoan']?></strong></td>
+  </tr>
+  <?php if($owner==1){ ?>
+  <tr>
+    <td align="left" height="10"></td>
+    <td align="left" height="10">&nbsp;</td>
+    <td align="left" height="10">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"><?=$lang['tl_uname']?></td>
+    <td align="left" height="10"><?=$user_member?></td>
+  </tr>
+  <tr>
+    <td align="left" height="10"></td>
+    <td align="left" height="10">&nbsp;</td>
+    <td align="left" height="10">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"><?=$lang['tl_lgemail']?> </td>
+    <td align="left" height="10"><?=$email?></td>
+  </tr>
+  <tr>
+    <td align="left" height="10"></td>
+    <td align="left" height="10">&nbsp;</td>
+    <td align="left" height="10"><span id="mess_er2" class="style_do"></span></td>
+  </tr>
+  <tr>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"><?=$lang['tl_pw']?></td>
+    <td align="left" height="10">***************</td>
+  </tr>
+  <tr>
+    <td align="left" height="10"></td>
+    <td height="1" colspan="2" align="left">
+	<span class="dotline"></span></td>
+    </tr>
+	<?php } ?>
+  <tr>
+    <td align="left" height="10"></td>
+    <td align="left" height="10">&nbsp;</td>
+    <td align="left" height="10"><span id="mess_er3" class="style_do"></span></td>
+  </tr>
+  <tr>
+    <td width="2%" align="left">&nbsp;</td>
+    <td width="29%" align="left"><?=$lang['tl_fname']?> </td>
+    <td width="69%" align="left"><?=$fullname?></td>
+  </tr>
+  <tr>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"><span id="mess_er31" class="style_do"></span></td>
+  </tr>
+  <tr>
+    <td align="left">&nbsp;</td>
+    <td align="left"><?=$lang['tl_gd']?></td>
+    <td align="left"><?=$gender_name?></td>
+  </tr>
+  <tr>
+    <td align="left">&nbsp;</td>
+    <td align="left">&nbsp;</td>
+    <td align="left"><span id="mess_er4" class="style_do"></span></td>
+  </tr>
+  <tr>
+    <td align="left">&nbsp;</td>
+    <td align="left"><?=$lang['tl_phon']?></td>
+    <td align="left">
+	<?=$tel?>	</td>
+  </tr>
+<!--
+  <tr>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"><span id="mess_er5" class="style_do"></span></td>
+  </tr>
+  <tr>
+    <td align="left">&nbsp;</td>
+    <td align="left"><?=$lang['tl_prv']?></td>
+    <td align="left"><?=$provinces_name?></td>
+  </tr>
+  <tr>
+    <td align="left">&nbsp;</td>
+    <td align="left">&nbsp;</td>
+    <td align="left"><span id="mess_er6" class="style_do"></span></td>
+  </tr>
+  <tr>
+    <td align="left">&nbsp;</td>
+    <td align="left"><?=$lang['tl_ctry']?></td>
+    <td align="left" id="same_dist"><?=$country_name?></td>
+  </tr>
+  
+  <tr>
+    <td align="left">&nbsp;</td>
+    <td align="left">&nbsp;</td>
+    <td align="left"><span id="mess_er7" class="style_do"></span></td>
+  </tr>
+  <tr>
+    <td align="left">&nbsp;</td>
+    <td align="left"><?=$lang['tl_adr']?></td>
+    <td align="left"><?=$address?></td>
+  </tr>  
+  <tr>
+    <td align="left">&nbsp;</td>
+    <td align="left" valign="top"></td>
+    <td align="left" height="50"></td>
+  </tr>  
+</table>
+</div>
+</section>-->
+<style>
+  input.hidden {
+    position: absolute;
+    left: -9999px;
+}
+
+#profile-image1 {
+    cursor: pointer;  
+     width: 100px;
+    height: 100px;
+	border:2px solid #03b1ce ;}
+	.tital{ font-size:16px; font-weight:500;}
+	 .bot-border{ border-bottom:1px #f8f8f8 solid;  margin:5px 0  5px 0}
+	 .panel-default>.panel-heading {
+		color:#fff;
+		background-color: #fe5400;
+		border-color: #ddd;
+	 }
+</style>
+
+<div class="container">
+    <div class="row">
+		
+		<div class="col-md-2"></div>
+		<div class="col-md-8 ">
+			<div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4	>User Profile</h4>
+                </div>
+                <div class="panel-body">
+
+                    <div class="box box-info">
+
+                        <div class="box-body">
+                            <div class="col-sm-6">
+                                <div align="center"> 
+									<img alt="User Pic" src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" id="profile-image1" class="img-circle img-responsive">
+                                   <!-- 
+								   <div style="color:#999;">click here to change profile image</div>
+                                    Upload Image Js And Css-->
+								</div>
+								<br>
+								<!-- /input-group -->
+                            </div>
+                            <div class="col-sm-6">
+                                <h4 style="color:#00b1b1;"><?=$lang['tl_uname']?> </h4></span>
+                                <span>
+                                    <p><?=$user_member?></p>
+                                </span>
+								<h4>
+                                    <a href="donhang-6-quan-ly-don-hang.html" style="color:#fe5400;">Thông tin giỏ hàng </a>
+                                </h4>
+                            </div>
+                            <div class="clearfix"></div>
+                            <hr style="margin:5px 0 5px 0;">
+
+
+                            <div class="col-sm-5 col-xs-6 tital ">Email đăng nhập:</div>
+                            <div class="col-sm-7 col-xs-6 "><?=$email?></div>
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+
+                            <div class="col-sm-5 col-xs-6 tital ">Mật khẩu:</div>
+                            <div class="col-sm-7"> ***************</div>
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+
+                            <div class="col-sm-5 col-xs-6 tital ">Họ và tên</div>
+                            <div class="col-sm-7"> <?=$fullname?></div>
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+
+                            <div class="col-sm-5 col-xs-6 tital ">Số điện thoại:</div>
+                            <div class="col-sm-7"><?=$tel?></div>
+
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+
+                            <div class="col-sm-5 col-xs-6 tital ">Địa chỉ:</div>
+                            <div class="col-sm-7"><?=$address?></div>
+
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+
+                            <div class="col-sm-5 col-xs-6 tital ">Ngày tham gia:</div>
+                            <div class="col-sm-7"><?=$ngaydk?>
+							</div><div class="col-sm-5 col-xs-6 tital ">Thông tin giỏ hàng:</div>
+                            <div class="col-sm-7"><?=$ngaydk?></div>
+
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+							<!-- /.box-body -->
+                        </div>
+                        <!-- /.box -->
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+		<div class="col-md-2"></div>
+        <script>
+            $(function() {
+                $('#profile-image1').on('click', function() {
+                    $('#profile-image-upload').click();
+                });
+            });
+        </script>
+
+    </div>
+</div>
+

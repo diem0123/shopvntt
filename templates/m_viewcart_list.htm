@@ -1,0 +1,68 @@
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.0/css/responsive.dataTables.min.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.12.4.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.0/js/dataTables.responsive.min.js"></script>
+<style>
+.dtr-details{
+	width:100%;
+}
+.dtr-data{
+	float:right;
+}
+form input[type="text"] {
+    margin-left: 50px;
+}
+.dtr-data a.delete {
+    display: block;
+    margin: 0px auto 0px auto;
+    text-indent: -9999px;
+    width: 15px;
+    height: 18px;
+    background-image: url(./images/delete.png);
+}
+</style>
+<script type="text/javascript">
+
+	$(document).ready( function () {
+			$('#example')
+				.addClass( 'nowrap' )
+				.dataTable( {
+					"paging":   false,
+					"searching" :false,
+					responsive: true,
+					columnDefs: [
+						{ targets: [-1, -3], className: 'dt-body-right' }
+					]
+				} );
+		} );
+	
+
+</script>
+
+<table id="example" class="display nowrap dataTable dtr-inline collapsed" style="width: 100%;" role="grid" aria-describedby="giohang_info">
+	<thead>
+		<tr role="row">
+            <th class="sorting_asc" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 119px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Tên sản phẩm</th>
+            <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 190px;" aria-label="Position: activate to sort column ascending"><?=$lang['tl_csanpham']?></th>
+            <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 88px;" aria-label="Office: activate to sort column ascending"><?=$lang['tl_cdongia'] ?></th>
+            <th class="dt-body-right sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 34px;" aria-label="Age: activate to sort column ascending"><?=$lang['tl_cgiamgia']?></th>
+            <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 79px;" aria-label="Start date: activate to sort column ascending"><?=$lang['tl_csoluong']?></th>
+            <th class="dt-body-right sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 0px; display: none;" aria-label="Salary: activate to sort column ascending"><?=$lang['tl_cthanhtien']?></th>
+			<th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 190px;" aria-label="Position: activate to sort column ascending"><?=$lang['tl_cthanhtien']?> sau giam giá</th>
+            <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 88px;" aria-label="Office: activate to sort column ascending"><?=$lang['tl_cloaibo']?></th>
+		</tr>
+	</thead>
+	<tbody>
+	   <?=$list_pro_com?> 
+	</tbody>
+</table>
+
+<div class="total group">
+	<p><?=$lang['tl_ctongtien']?></p>
+	<div class="total-right">
+		<span><?=$totalpay_disc?></span>
+	</div>
+</div>

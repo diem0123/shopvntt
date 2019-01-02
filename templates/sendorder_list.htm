@@ -1,0 +1,34 @@
+<form name="f1" action="hoan-tat-dat-hang.html"  method="post"  enctype="multipart/form-data" onsubmit="return check_submit_trans();" >
+<div class="bar-icon group">
+                <a href="mua-hang.html">                                                                                      
+                    <img alt="" src="images/i1.png" />
+                    <span><?=$lang['tl_cdonhang']?></span>
+                </a>
+                <a href="thong-tin-nguoi-mua.html">
+                    <img alt="" src="images/i2.png" />
+                    <span>  <?=$lang['tl_cnguoimua']?></span>
+                </a>
+                <a href="thong-tin-van-chuyen.html">
+                    <img alt="" src="images/i3.png" />
+                    <span><?=$lang['tl_cvanchuyen']?></span>
+                </a>
+                <a href="phuong-thuc-thanh-toan.html">
+                    <img alt="" src="images/i4.png" />
+                    <span><?=$lang['tl_cptthanhtoan']?></span>
+                </a>
+                <a href="#">
+                    <img alt="" src="images/i51.png" />
+                    <span><?=$lang['tl_cguidonhang']?> </span>
+                </a>
+                <a href="#">
+                    <img alt="" src="images/i6.png" />
+                    <span><?=$lang['tl_choantat']?></span>
+                </a>
+            </div>
+			<div style="height:3px;"></div>
+		 <?=$sendorder_list?>
+		 <div class="cart-control group">
+                <a href="phuong-thuc-thanh-toan.html" class="btn-lui"><span> <?=$lang['tl_cquaylai']?></span> </a> <input class="btsubmit" type="submit" name="submit" value="<?=$lang['tl_ctieptuc']?>"  />              
+            </div>		  
+		 
+</form>

@@ -1,0 +1,237 @@
+<script type="text/javascript" src="js/webtoolkit.base64.js"></script>
+<div class="intro">
+            <div class="intro-left">
+                <div class="slider-dt">				
+                            <ul class="slider-detail">
+							<?php if($checkid == ""){ ?>                    
+								<li><table width="560" height="400" border="0" cellpadding="0" cellspacing="0" >
+						<tr>
+						  <td  valign="middle" align="center" ><img src="images/bin/<?=$idc?>/<?=$image_display?>" width="<?=$w?>" height="<?=$h?>" alt="<?=$product_name?>" /></td>
+							</tr>												
+					  </table>	</li>
+					  <?php } else { ?>					  
+								<?=$list_images_link_slide?>
+								<?php } ?>
+							</ul>                                                                                										
+				</div>
+                <div id="bx-pager1">
+                    <?=$list_images_link?>
+                </div>
+            </div>
+			<?=$detail_subpro?>
+            
+            <div class="clearfix"></div>
+        </div>
+					<div class="detail">
+            <h5><?=$lang['tl_detailsp']?>:</h5>
+            <p><?=$info_detail?></p>
+			<form action="index.php?act=send_comment" method="post"  enctype="multipart/form-data" name="f1" onSubmit="return checkdanhgia();">
+            <div class="quote">
+                <h5><?=$lang['tl_title_contact']?> <?=$hotline?> <?=$lang['tl_hoacmail']?> <?=$mailcom?></p> </h5>
+                <p><span>*</span> <?=$lang['tl_vuilongsent']?></p>
+				<span id="mess_er0" class="do"></span>
+                <select name="yeucau" id="yeucau" >
+                    <option value="" selected="selected" ><?=$lang['tl_vuilongchon']?></option>
+					<option value="1" ><?=$lang['tl_spmau']?></option>
+					<option value="2" ><?=$lang['tl_guibaogia']?></option>
+                </select>
+                <p><span>*</span> <?=$lang['fullname']?></p>
+				<span id="mess_er1" class="do"></span>
+                <input type="text" id="cus_name" name="fullname" value="" />
+                <p><span>*</span> <?=$lang['tl_email']?></p>
+				<span id="mess_er2" class="do"></span>
+                <input type="text" id="cus_email" name="email"  value="" />
+                <p><span>*</span> <?=$lang['tel']?></p>
+				<span id="mess_er3" class="do"></span>
+                <input type="text" id="cus_tel" name="tel"  value="" />
+                <p><span>*</span> <?=$lang['text_content']?></p>
+				<span id="mess_er4" class="do"></span>
+                <textarea id="cus_content" name="content" onKeyUp="getLengthtextarear(this,4000);"></textarea>
+				<input type="hidden" id="cus_contentencode" name="cus_contentencode" value="">
+				<input type="hidden" id="idp" name="idp" value="<?=$idp?>" >
+
+                <div class="quote-control">
+					<span id="wait" style="display:none;"><img border="0" src="images/loading.gif" style="margin-top:10px;" ></span>
+					<input type="button" name="gui" value="<?=$lang['send']?>" onclick="send_comment();" />                    
+                    <div class="clearfix"></div>
+                </div>
+				
+				<span id="mess_er5" class="do"></span>
+				<span id="mess_er6" class="title_x"></span>
+            </div>
+			</form>
+        </div>
+
+<script type="text/javascript">
+function get_encode_special(){	 
+	 	var b64_content = Base64.encode($("#cus_content").val());
+		document.getElementById("cus_contentencode").value = encodeURIComponent(b64_content);			
+	}
+function check_sm(){	
+	
+	if (document.f1.yeucau.selectedIndex==""){
+			$('#mess_er1').html("");
+			$('#mess_er2').html("");
+			$('#mess_er3').html("");
+			$('#mess_er4').html("");
+			$('#mess_er0').html("<?=$lang['tl_chonyeucau']?>");
+			document.f1.yeucau.focus();
+			return false;                        
+         }
+		 
+	if ($("#cus_name").val()==""){
+			$('#mess_er0').html("");
+			$('#mess_er1').html("<?=$lang['tl_cnhaphoten']?>");
+			return false;
+		 }
+		 		
+		 
+		 else if($("#cus_email").val()==""){
+		 $('#mess_er0').html("");
+		 $('#mess_er1').html("");
+		 $('#mess_er2').html("<?=$lang['tl_cnhapmail']?>");
+		 return false;
+		 }
+		 else{
+		 $('#mess_er0').html("");
+		 $('#mess_er1').html("");
+					var at="@";
+					var dot=".";
+					var obj=$("#cus_email").val();
+					var lat=obj.indexOf(at);
+					var lstr=obj.length;
+					var ldot=obj.indexOf(dot);
+					if (obj.indexOf(at)==-1){
+						$('#mess_er2').html("<?=$lang['tl_ckhonghop']?>");
+						return false
+					}
+				   else if (obj.indexOf(at)==-1 || obj.indexOf(at)==0 || obj.indexOf(at)==lstr){
+						$('#mess_er2').html("<?=$lang['tl_ckhonghop']?>");
+						return false;
+					}
+				  else if (obj.indexOf(dot)==-1 || obj.indexOf(dot)==0 || obj.indexOf(dot)==lstr){
+						$('#mess_er2').html("<?=$lang['tl_ckhonghop']?>");
+						return false;
+					}
+				 else if (obj.indexOf(at,(lat+1))!=-1){
+						$('#mess_er2').html("<?=$lang['tl_ckhonghop']?>");
+						return false;
+					}
+				 else if (obj.substring(lat-1,lat)==dot || obj.substring(lat+1,lat+2)==dot){
+						$('#mess_er2').html("<?=$lang['tl_ckhonghop']?>");
+						return false;
+					}
+				 else if (obj.indexOf(dot,(lat+2))==-1){
+						$('#mess_er2').html("<?=$lang['tl_ckhonghop']?>");
+						return false;
+					}
+				 else if (obj.indexOf(' ')!=-1){
+						$('#mess_er2').html("<?=$lang['tl_ckhonghop']?>");
+						return false;
+					}
+							 
+				}
+	/*	
+		if (document.f1.province.selectedIndex==""){
+			$('#mess_er1').html("");
+			$('#mess_er4').html("");
+			$('#mess_er2').html("");
+			$('#mess_er6').html("Vui l&ograve;ng ch&#7885;n t&#7881;nh th&agrave;nh!");
+			document.f1.province.focus();
+			return false;                        
+         }
+		 
+		 if (document.f1.dist.selectedIndex==""){
+			$('#mess_er1').html("");
+			$('#mess_er4').html("");
+			$('#mess_er2').html("");
+			$('#mess_er6').html("");
+			$('#mess_er7').html("Vui l&ograve;ng ch&#7885;n qu&#7853;n/huy&#7879;n!");
+			document.f1.dist.focus();
+			return false;                        
+         }
+		
+		if ($("#cus_address").val()==""){
+			$('#mess_er1').html("");
+			$('#mess_er4').html("");
+			$('#mess_er2').html("");
+			$('#mess_er6').html("");
+			$('#mess_er7').html("");
+			$('#mess_er5').html("Vui l&ograve;ng nh&#7853;p &#273;&#7883;a ch&#7881;!");
+			return false;
+		 }
+	*/	
+		
+		 if ($("#cus_tel").val()==""){
+		 	$('#mess_er0').html("");
+			$('#mess_er1').html("");
+			$('#mess_er2').html("");
+			$('#mess_er3').html("<?=$lang['tl_nhaptel']?>");
+			return false;
+		 }
+		
+		if ($("#cus_content").val()==""){
+			$('#mess_er0').html("");
+			$('#mess_er1').html("");
+			$('#mess_er2').html("");
+			$('#mess_er3').html("");
+			$('#mess_er4').html("<?=$lang['tl_nhaplienhe']?>");
+			return false;
+		 }
+	get_encode_special();
+	
+	return true;
+	
+}							
+function getLengthtextarear(item1,num)
+			{
+				var str=item1.value;
+				if (item1.value.length>eval(num))
+					{
+						alert("<?=$lang['tl_daitoida']?> "+num);
+						item1.value=str.substring(0,eval(num));
+					}
+			}
+
+function send_comment() {	
+	if(check_sm()){
+	//alert($('#star').val());
+		$.ajax({
+			url: 'index.php?act=send_comment',
+			type: 'POST',
+			data: 'yeucau='+ $('#yeucau').val()+'&cus_name='+ $('#cus_name').val()+'&cus_email='+ $('#cus_email').val()+'&cus_tel='+ $('#cus_tel').val()+'&content='+ $('#cus_contentencode').val()+'&idp='+ $('#idp').val(),
+			beforeSend: function(){
+			     	$("#wait").show();
+			    },
+			complete: function(){
+				$("#wait").hide();
+			},
+			success: function(data) {
+				var getdata = $.parseJSON(data);
+					//alert(getdata.mess1);	
+				if(getdata.mess1 == "success"){			
+				$('#mess_er6').html(getdata.mess2);
+				$('#mess_er0').html("");
+				$('#mess_er1').html("");
+				$('#mess_er2').html("");
+				$('#mess_er3').html("");
+				$('#mess_er4').html("");
+				$('#mess_er5').html("");
+				}
+				else{
+				$('#mess_er5').html(getdata.mess2);
+				$('#mess_er0').html("");
+				$('#mess_er1').html("");
+				$('#mess_er2').html("");
+				$('#mess_er3').html("");
+				$('#mess_er4').html("");
+				$('#mess_er6').html("");
+				}
+				
+				
+			}
+		});
+	}	
+}
+			
+</script>					

@@ -1,0 +1,12 @@
+<form name="fcart" method="post" >
+<div class="cart-page">
+                <h2><?=$lang['tl_infocart']?></h2>
+				<?=$viewcart_list_rs?>
+                <div class="cart-control group">
+                    <a href="/" class="btn1"><span> <?=$lang['tl_muatiep']?></span> </a>
+                    <a href="#" class="btn2" onClick="Submitform(document.forms.fcart,'thong-tin-gio-hang.html');" > <span><?=$lang['tl_capnhatgiohang']?></span></a>
+                    <a href="#" class="btn3" onclick="emptycart('emptycart');" ><span><?=$lang['tl_huygiohang']?></span></a>
+                    <a href="mua-hang.html" class="btn4"><span> <?=$lang['tl_xacnhanmua']?></span></a>
+                </div>
+            </div>
+</form>	

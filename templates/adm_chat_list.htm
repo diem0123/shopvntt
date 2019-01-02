@@ -1,0 +1,107 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div class="adm_out" >
+<div class="adm_common">
+<table border="0" width="1000" cellspacing="0" cellpadding="0">
+	<tr>
+		<td height="1" bgcolor="#FFF5EA"></td>
+	</tr>
+</table>
+<?=$submenu2?>
+<form name="f1" method="post" >
+<input type="hidden" id="vlid" name="vlid" value="">
+<table border="0" width="1000">
+	<tr>
+		<td>
+		<table border="0" width="100%" bgcolor="#FFF5EA">
+			<tr>
+				<td height="14" class="title" ><button class="admbutton" type="button" name="ct1" value="" onclick="window.open('?act=adm_update_nick&ac=a','Addnickpopup','scrollbars=yes,status=yes,toolbar=no,location=0,directories=0,status=yes,menubar=0,resizable=0,width=800,height=380');" >Thêm nick chat</button>&nbsp;&nbsp;<button class="admbutton" type="button" name="ct1" value="" onclick="delit('',document.forms.f1.ck, document.forms.f1.vlid);" >X&oacute;a nick chat</button></td>
+			</tr>
+		</table>
+		<table border="0" width="100%" cellpadding="0" cellspacing="0" >
+			<tr>
+			  <td height="10" align="left" ></td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<table border="0" width="100%" cellspacing="0">
+			<tr bgcolor="#EEEEEE">
+				<td width="20" class="do" height="25"><input name="allbox" type="checkbox" onclick="checkall(this.form);" title="Check All"></td>
+				<td width="211" class="do" height="25">T&ecirc;n đặc tả </td>
+				<td width="187" class="do">T&ecirc;n nick</td>
+				<td width="119" class="do" height="25">Kiểu chat </td>
+				<td width="120" class="do" height="25">Icon </td>
+				<td width="85" class="do" height="25">Tr&#7841;ng th&aacute;i </td>
+				<td width="99" class="do">Thứ tự </td>
+				<td colspan="4" class="do">H&agrave;nh &#273;&#7897;ng </td>
+			</tr>						
+			<?=$chatlist_rs?>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td height="5"></td>
+	</tr>
+	<tr>
+		<td height="25" align="center"><div id="divPaging"><?=$paging?></div></td>
+	</tr>
+</table>
+</form>
+</div>
+</div>
+<script type="text/javascript">
+function setonoff(idp) {
+		$.ajax({
+			url: 'index.php',
+			type: 'POST',
+			data: 'act=adm_update_nick&ac=s&idp='+idp,
+			success: function(data) {
+				var getdata = $.parseJSON(data);
+				if(getdata.mess1 == "success"){
+					//alert(getdata.mess2);
+					window.location.reload();
+				}
+				else $('#err').html(getdata.mess2);//alert(getdata.mess2);		
+			}
+		});	
+	}
+	
+function delaction(idp,vlid) {
+		$.ajax({
+			url: 'index.php',
+			type: 'POST',
+			data: 'act=adm_deletenick&ac=d&idp='+idp+'&vlid='+vlid,
+			success: function(data) {
+				var getdata = $.parseJSON(data);
+				if(getdata.mess1 == "success"){
+					//alert(getdata.mess2);
+					window.location.reload();
+				}
+				else $('#err').html(getdata.mess2);//alert(getdata.mess2);		
+			}
+		});	
+	}
+	
+	function delit(idp,listck,listid) {		
+	var str1 = "Vui lòng chọn ít nhất 1 nick chat!";
+	var str2 = "Bạn chắc chắn muốn xóa?";
+	if(idp ==""){
+		getValueListCheckBox(listck,listid);
+		if (listid.value=='') alert(str1);
+		else if(confirm(str2)){
+			//alert($('#vlid').val());
+			var id_list = $('#vlid').val();
+			delaction(idp,id_list);
+			
+		}
+	}
+	else {
+		if(confirm(str2)){
+		delaction(idp,'');
+		}
+	}
+	
+}
+</script>

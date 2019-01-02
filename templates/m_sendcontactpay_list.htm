@@ -1,0 +1,355 @@
+<script type="text/javascript" src="js/webtoolkit.base64.js"></script>
+<form name="f1" action="thong-tin-van-chuyen.html"  method="post"  enctype="multipart/form-data"  onsubmit="return check_complete();">
+<div class="captions group">
+             <ul>                                                                                        
+                 <li class="icon icon12"><a href="thong-tin-nguoi-mua.html"><span></span> <?=$lang['tl_cnguoimua']?>  </a></li>                 
+             </ul>
+         </div>
+		 <?=$contactpay_list?>
+		 <div class="cart-control group">
+                <a href="mua-hang.html" class="btn-lui"><span> <?=$lang['tl_cquaylai']?></span> </a> <input class="btsubmit" type="submit" name="submit" value="<?=$lang['tl_ctieptuc']?>"  />              
+            </div>		 
+		 
+</form>
+<script type="text/javascript">
+checkloggedin();
+get_decode_special();
+function get_encode_special(){	 
+	 	var b64_content = Base64.encode($("#cus_content").val());
+		document.getElementById("cus_contentencode").value = encodeURIComponent(b64_content);			
+	}
+function get_decode_special(){		
+		if($("#cus_contentencode").val() != ""){	 
+	 	//var b64_content_decode = Base64.encode($("#cus_content").val());
+		// decode uri
+		var uri_content_decode = decodeURIComponent($("#cus_contentencode").val());		 
+		//decode base64
+		document.getElementById("cus_content").value = Base64.decode(uri_content_decode);
+		}				
+	}
+function getLengthtextarear(item1,num)
+			{
+				var str=item1.value;
+				if (item1.value.length>eval(num))
+					{
+						alert("<?=$lang['tl_mdaitoida']?> "+num);
+						item1.value=str.substring(0,eval(num));
+					}
+			}
+function check_complete(){
+			
+		 if ($("#cus_name").val()==""){
+			$('#mess_er1').html("<?=$lang['tl_mnhaptenban']?>");
+			return false;
+		 }
+		 
+		 if ($("#cus_tel").val()==""){
+		 	$('#mess_er1').html("");
+			$('#mess_er4').html("<?=$lang['tl_mnhapsodt']?>");
+			return false;
+		 }
+		 
+		 else if($("#cus_email").val()==""){
+		 $('#mess_er1').html("");
+		 $('#mess_er4').html("");
+		 $('#mess_er2').html("<?=$lang['tl_mnhapemail']?>");
+		 return false;
+		 }
+		 else{
+		 $('#mess_er1').html("");
+		 $('#mess_er4').html("");
+					var at="@";
+					var dot=".";
+					var obj=$("#cus_email").val();
+					var lat=obj.indexOf(at);
+					var lstr=obj.length;
+					var ldot=obj.indexOf(dot);
+					if (obj.indexOf(at)==-1){
+						$('#mess_er2').html("<?=$lang['tl_ckhonghop']?>");
+						return false
+					}
+				   else if (obj.indexOf(at)==-1 || obj.indexOf(at)==0 || obj.indexOf(at)==lstr){
+						$('#mess_er2').html("<?=$lang['tl_ckhonghop']?>");
+						return false;
+					}
+				  else if (obj.indexOf(dot)==-1 || obj.indexOf(dot)==0 || obj.indexOf(dot)==lstr){
+						$('#mess_er2').html("<?=$lang['tl_ckhonghop']?>");
+						return false;
+					}
+				 else if (obj.indexOf(at,(lat+1))!=-1){
+						$('#mess_er2').html("<?=$lang['tl_ckhonghop']?>");
+						return false;
+					}
+				 else if (obj.substring(lat-1,lat)==dot || obj.substring(lat+1,lat+2)==dot){
+						$('#mess_er2').html("<?=$lang['tl_ckhonghop']?>");
+						return false;
+					}
+				 else if (obj.indexOf(dot,(lat+2))==-1){
+						$('#mess_er2').html("<?=$lang['tl_ckhonghop']?>");
+						return false;
+					}
+				 else if (obj.indexOf(' ')!=-1){
+						$('#mess_er2').html("<?=$lang['tl_ckhonghop']?>");
+						return false;
+					}
+							 
+				}
+		
+		if (document.f1.province.selectedIndex==""){
+			$('#mess_er1').html("");
+			$('#mess_er4').html("");
+			$('#mess_er2').html("");
+			$('#mess_er6').html("<?=$lang['tl_mtinhthanh']?>");
+			document.f1.province.focus();
+			return false;                        
+         }
+		 
+		 if (document.f1.dist.selectedIndex==""){
+			$('#mess_er1').html("");
+			$('#mess_er4').html("");
+			$('#mess_er2').html("");
+			$('#mess_er6').html("");
+			$('#mess_er7').html("<?=$lang['tl_mqhuyen']?>");
+			document.f1.dist.focus();
+			return false;                        
+         }
+		
+		if ($("#cus_address").val()==""){
+			$('#mess_er1').html("");
+			$('#mess_er4').html("");
+			$('#mess_er2').html("");
+			$('#mess_er6').html("");
+			$('#mess_er7').html("");
+			$('#mess_er5').html("<?=$lang['tl_mdchi']?>");
+			return false;
+		 }
+		 
+		 // check dong thoi dang ky tai khoan		 				 
+		 if($('#addreg').is(':checked')){
+		 		// check email exist
+				//checkemail_exist();
+				//alert($('#ckedmail').val());
+				/*							
+					if($('#ckedmail').val() == 'yes'){
+						$('#mess_reg1').html("Email n&agrave;y &#273;&atilde; t&#7891;n t&#7841;i, vui l&ograve;ng ch&#7885;n email kh&aacute;c!");
+							return false;
+					}
+					*/
+		 			if (document.f1.passwordreg.value==""){
+							$('#mess_reg1').html("<?=$lang['tl_cnhappass']?>");
+							return false;
+					}
+                     if (document.f1.passwordreg.value.length < 6){
+						$('#mess_reg1').html("<?=$lang['tl_cpass6']?>");
+	                    return false;
+                	}
+           
+                     if (document.f1.passwordreg2.value==""){
+						$('#mess_reg1').html("");
+						$('#mess_reg2').html("<?=$lang['tl_cxacnhanpass']?>");
+						return false;
+                     }
+                     
+                     if (document.f1.passwordreg.value != document.f1.passwordreg2.value){
+						$('#mess_reg1').html("");
+						$('#mess_reg2').html("<?=$lang['tl_cpasskhongkhop']?>");
+						return false;
+					}
+		
+		 }
+		 
+		/*
+		if ($("#cus_content").val()==""){
+			$('#mess_er1').html("");
+			$('#mess_er4').html("");
+			$('#mess_er2').html("");
+			$('#mess_er5').html("");
+			$('#mess_er3').html("Vui l&ograve;ng nh&#7853;p th&ocirc;ng tin li&ecirc;n h&#7879;!");
+			return false;
+		 }
+		 */
+		 
+	get_encode_special();								
+	return true;
+   }
+   
+   function changedist() {
+	$.ajax({
+		url: 'index.php?act=changedist',
+		type: 'POST',
+		data: 'province='+ $('#cus_province').val(),
+		success: function(data) {
+		//document.getElementById("sametype").style.display = "block";
+		$('#same_dist').html(data);
+		}
+	});
+}
+
+function changedistcopy() {
+	$.ajax({
+		url: 'index.php?act=changedist',
+		type: 'POST',
+		data: 'province='+ $('#cus_province').val()+'&dist='+ $('#cus_dist').val(),
+		success: function(data) {
+		//document.getElementById("sametype").style.display = "block";
+		$('#same_dist').html(data);
+		}
+	});
+}
+
+
+function loginuser() {
+	if(check_userpass()){
+		$.ajax({
+			url: 'index.php?act=login',
+			type: 'POST',
+			data: 'order=1&username='+ $('#username').val()+'&password='+ $('#password').val(),
+			success: function(data) {				
+				var getdata = $.parseJSON(data);
+				//alert(getdata.mess1);
+				if(getdata.mess1 == "success"){
+					// none display login
+					for(i=1;i<=8;i++){
+					var r = "#r"+i;
+					$(r).attr("style","display:none");					
+					}
+					// none display reg pass
+					for(i=1;i<=6;i++){
+						var r1 = '#dr'+i;
+						$(r1).attr("style","display:none");
+					}
+					document.getElementById("cus_name").value = getdata.FULL_NAME;
+					document.getElementById("cus_tel").value = getdata.TEL;
+					document.getElementById("cus_email").value = getdata.EMAIL;
+					document.getElementById("cus_address").value = getdata.ADDRESS;
+					document.getElementById("cus_province").value = getdata.ID_PROVINCE;
+					document.getElementById("cus_dist").value = getdata.ID_DIST;
+					changedistcopy();					
+					$('#errorLogin').html("");
+					$('#errorpass').html("");
+				}
+				else{
+					$('#errorLogin').html(getdata.mess2);
+					$('#errorpass').html("");				
+				}
+			}
+		});
+	}	
+}
+
+
+
+function check_userpass(){
+			
+	email = $('#username').val();
+	if (email =="" && $('#password').val() == "")
+	{
+		$('#errorLogin').html("<?=$lang['tl_mmailnhap']?>");
+		$('#errorpass').html("<?=$lang['tl_mnhappass']?>");
+		return false;
+	}
+	else
+	if (email == "")
+	{
+		$('#errorLogin').html("<?=$lang['tl_mmailnhap']?>");
+		$('#errorpass').html("");
+		return false;
+	}	
+	else
+	if ($('#password').val() == "")
+	{
+		$('#errorLogin').html("");
+		$('#errorpass').html("<?=$lang['tl_mnhappass']?>");
+		return false;
+	}
+	return true;
+}
+
+function checkloggedin() {
+
+	if ($('#loggedin').val() == 1)
+	{	
+		$.ajax({
+			url: 'index.php?act=info_loggedin',
+			type: 'POST',
+			data: 'order=1',
+			success: function(data) {				
+				//alert(data);
+				var getdata = $.parseJSON(data);
+				//alert(getdata.mess1);
+				if(getdata.mess1 == "success"){
+					// none display login
+					for(i=1;i<=8;i++){
+					var r = "#r"+i;
+					$(r).attr("style","display:none");					
+					}
+					// none display reg pass
+					//for(i=1;i<=6;i++){
+						//var r1 = '#dr'+i;
+						$('#dr5').attr("style","display:none");
+						$('#dr6').attr("style","display:none");
+					//}
+					document.getElementById("cus_name").value = getdata.FULL_NAME;
+					document.getElementById("cus_tel").value = getdata.TEL;
+					document.getElementById("cus_email").value = getdata.EMAIL;
+					document.getElementById("cus_address").value = getdata.ADDRESS;
+					document.getElementById("cus_province").value = getdata.ID_PROVINCE;
+					document.getElementById("cus_dist").value = getdata.ID_DIST;
+					changedistcopy();					
+					$('#errorLogin').html("");
+					$('#errorpass').html("");
+				}
+				else{
+					$('#errorLogin').html(getdata.mess2);
+					$('#errorpass').html("");				
+				}
+			}
+		});
+	
+	}
+	
+}
+
+function getpw() {	
+	if($('#addreg').is(':checked')){
+		for(i=1;i<=4;i++){
+			var r = '#dr'+i;
+			$(r).attr("style","display:table-row");
+		}
+	}
+	else{
+		for(i=1;i<=4;i++){
+			var r = '#dr'+i;
+			$(r).attr("style","display:none");
+		}
+	}	
+	
+}
+
+//var cked="";
+function checkemail_exist() {
+	$.ajax({
+		url: 'index.php?act=checkmailexist',
+		type: 'POST',
+		data: 'email='+ $('#cus_email').val(),
+		success: function(data) {
+			var getdata = $.parseJSON(data);
+			//alert(getdata.mess1);
+			if(getdata.mess1 == "yes"){
+				//cked = 'yes';
+			 	document.getElementById("ckedmail").value = 'yes';								
+			}
+			else {
+				//cked = 'no';
+				document.getElementById("ckedmail").value = 'no';				
+			}
+		}
+	});
+	
+	//alert(cked);
+	//cked = document.getElementById("ckedmail").value;	
+	//return cked;
+}
+
+
+</script>

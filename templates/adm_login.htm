@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<title>Admin</title>
+<LINK HREF="images/faviconn.ico" rel="shortcut icon" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="css/wstyle.css" />
+<script src="js/func.js" type="text/javascript" ></script>
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+</head>
+<body>
+<div class="page-login">
+	<div class="form-login">
+    	<div class="imgtitle"><img src="images/title-admin.png" alt="" /></div>
+        <div class="content-frm">
+		  <form class="frm-dangnhap" name="frmLogin" method="post" action="index.php?act=adm_login" onsubmit="return logincheck();">
+            	<ul>
+                	<li>
+                    	<span><?=$msg?></span>                        						
+                    </li>
+					<li>
+                    	<label>E-mail:</label><br />                        
+						<input type="text" name="username" id="username" value="<?=$username?>" />
+                    </li>
+                    <li>
+                    	<label>Mật khẩu:</label><br />
+						<input type="password" name="password" id="password" autocomplete="off" value="" />
+                    </li>
+                    <li>
+						<input type="submit" name="Login" value="Đăng nhập" accesskey="true" />
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+function logincheck()
+{	
+	email = $('#username').val();
+	if (email =="" && $('#password').val() == "")
+	{
+		$('#errorLogin').html("Vui l&ograve;ng nh&#7853;p email &#273;&#259;ng nh&#7853;p!");
+		$('#errorpass').html("Vui l&ograve;ng nh&#7853;p m&#7853;t kh&#7849;u!");
+		return false;
+	}
+	else
+	if (email == "")
+	{
+		$('#errorLogin').html("Vui l&ograve;ng nh&#7853;p email &#273;&#259;ng nh&#7853;p!");
+		$('#errorpass').html("");
+		return false;
+	}	
+	else
+	if ($('#password').val() == "")
+	{
+		$('#errorLogin').html("");
+		$('#errorpass').html("Vui l&ograve;ng nh&#7853;p m&#7853;t kh&#7849;u!");
+		return false;
+	}
+	return true;
+}
+</script>

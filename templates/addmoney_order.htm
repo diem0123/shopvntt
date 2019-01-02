@@ -1,0 +1,123 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title><?=$title?></title>
+<link rel="stylesheet" type="text/css" href="css/wstyle.css" />
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/webtoolkit.base64.js"></script>
+<script type="text/javascript" src="wysiwyg/wysiwyg.js"></script>
+</head>
+<div align="left">
+<form action="index.php?act=update_money_order" method="post"  enctype="multipart/form-data" name="f1" onsubmit="return checkform();"> 
+<input type="hidden" name="ac" value="<?=$ac?>">
+<input type="hidden" name="idmn" value="<?=$idmn?>">
+<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+ <tr bgcolor="#FFF5EA">
+    <td width="17" height="40" class='menu'>&nbsp;</td>
+    <td width="271" class='menu'><?=$title_action?></td>
+    <td width="797" class='menu'>&nbsp;</td>
+  </tr>
+ <tr>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>Chọn kiểu áp dụng <font size="1" color="#D7261C">*</font></td>
+   <td class='menu'><select  class="textbox" style="WIDTH: 255px;" size="1" name="type_trigia" id="type_trigia">
+      <option value="">Chọn kiểu áp dụng...</option>
+      <option value="vc" <?=$s1?> >Trị giá đơn hàng tính cước vận chuyển</option>
+	  <option value="ck" <?=$s2?> >Trị giá đơn hàng Đại lý chiết khấu</option>
+	  <option value="kg" <?=$s3?> >Trị giá đơn hàng Đại lý ký gửi</option>
+    </select></td>
+ </tr>
+ <tr>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>&nbsp;</td>
+ </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="271" class='menu'>Trị giá 
+    <font size="1" color="#D7261C">*</font></td>
+    <td width="797" class='menu'>
+	<input type="text" name="catname" style="width:376px " size="1" value="<?=$catname?>"></td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="271" class='menu'>&nbsp;</td>
+    <td width="797" class='menu'>&nbsp;    </td>
+  </tr>
+  <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="271" class='menu'>Từ
+    <font size="1" color="#D7261C">*</font></td>
+    <td width="797" class='menu'>
+    <input type="text" name="from" style="width:376px " size="1" value="<?=$from?>"></td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="271" class='menu'>&nbsp;</td>
+    <td width="797" class='menu'>&nbsp;    </td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="271" class='menu'>Đến <font size="1" color="#D7261C">*</font></td>
+    <td width="797" class='menu'>
+    <input type="text" name="to" style="width:376px " size="1" value="<?=$to?>"></td>
+  </tr>
+ <tr>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>&nbsp;</td>
+ </tr>
+ <tr>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>Thứ tự <font size="1" color="#D7261C">*</font></td>
+   <td class='menu'><input type="text" name="iorder" style="width:376px " size="1" value="<?=$iorder?>"></td>
+ </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="271" class='menu'>&nbsp;</td>
+    <td width="797" class='menu'>&nbsp;</td>
+  </tr>
+    <tr>
+    <td colspan="3" align="center" height="41" class='menu'>
+    <input type="submit" name="submit" value="<?=$button_action?>" class="button" style="width:80px; height:22px ">
+    <input type="button" name="cancel" value="Đóng" onClick="javascript:window.close();" class="button" style="width:60px;height:22px ">    </td>
+  </tr>
+  </table>
+  </form>
+</div>
+<script language="javascript1.2">
+               function checkform(){
+                   
+				    
+                   if (document.f1.type_trigia.selectedIndex==""){
+                         alert("Vui lòng chọn kiểu áp dụng!");
+						 document.f1.type_trigia.focus();
+                         return false;
+                    } 
+                   
+				    if (document.f1.catname.value==""){
+                                        alert("Vui lòng nhập trị giá!");
+                                        document.f1.catname.focus();
+                                        return false;
+                                }
+                     if (document.f1.from.value==""){
+                                        alert("Vui lòng nhập giá trị Từ!");
+                                        document.f1.from.focus();
+                                        return false;
+                                }
+                      
+					  if (document.f1.to.value==""){
+                                        alert("Vui lòng nhập giá trị Đến!");
+                                        document.f1.to.focus();
+                                        return false;
+                                }
+						
+						if (document.f1.iorder.value==""){
+                                        alert("Vui lòng nhập thứ tự!");
+                                        document.f1.iorder.focus();
+                                        return false;
+                                }
+										
+                     return true;
+               }
+            
+</script>

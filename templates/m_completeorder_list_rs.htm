@@ -1,0 +1,102 @@
+<table width="100%" border="0" cellspacing="3" cellpadding="3" >
+  <tr>
+    <td width="2%" height="10" align="left"></td>
+    <td width="29%" height="10" align="left"></td>
+    <td width="69%" height="10" align="left"></td>
+  </tr>
+  <tr>
+    <td align="left" height="10"></td>
+    <td height="10" colspan="2" align="center"><?php if($pay_get != 1 && $pay_get != 3 && $pay_get != 6 ){ ?>	<img border="0" src="images/loading.gif" ><?php } else { ?><?=$mess_complete?> <?php } ?></td>
+  </tr>
+  <tr>
+    <td align="left" height="10"></td>
+    <td height="10" colspan="2" align="center" ><?php if($pay_get != 1 && $pay_get != 3 && $pay_get != 6 ){ ?><?=$lang['tl_dangxulydoi']?>! <?php } else { ?>  <?php } ?></td>
+  </tr>
+  <tr>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"><span id="mess_er3" class="do"></span></td>
+  </tr>  
+</table>
+<div style="display:none">
+<?php if($pay_get == 4){ ?>			
+	<form name="fnganluong" method="post" action="https://www.nganluong.vn/advance_payment.php" >
+	<input type="hidden" name="receiver" value="<?=$emailpay?>" />
+	<input type="hidden" name="product" value="<?=$code_order?>" />
+	<input type="hidden" name="price" value="<?=$totalpay_final?>" />
+	<input type="hidden" name="return_url" value="http://dnfc.vn/" />
+	<input type="hidden" name="comments" value="<?=$comment_donhang?>" />
+	</form>
+<?php } elseif($pay_get == 5){ ?>
+	<form name="fbaokim" method="get" action="https://www.baokim.vn/payment/customize_payment/product" >
+	<input type='hidden' name='business' value='<?=$emailpay?>' />
+	<input type ='hidden' name='product_name' value='<?=$code_order?>' >
+	<input type ='hidden' name='total_amount' value='<?=$totalpay_final?>' >
+	<input type ='hidden' name='name_ctl' value='1' >			
+	</form>
+<?php } elseif($pay_get == 2){ ?>	
+	<form name="fonepay" method="post" action="index.php?act=do" >
+	<input type="hidden" name="virtualPaymentClientURL"  value="https://onepay.vn/onecomm-pay/vpc.op"  />
+		
+	<input type="hidden" name="vpc_Merchant" value="<?=$merchant_onepay?>"  />	
+	<input type="hidden" name="vpc_AccessCode" value="<?=$accesscode_onepay?>" />
+	
+	<input type="hidden" name="vpc_MerchTxnRef" value="<?=$vpc_MerchTxnRef?>" />		
+	<input type="hidden" name="vpc_OrderInfo" value="<?=$code_order?>" />	
+	<input type="hidden" name="vpc_Amount" value="<?=$totalpay_final_onepay?>" />
+		
+	<input type="hidden" name="vpc_ReturnURL"  value="http://dnfc.vn/dr-1-ket-qua-giao-dich.html" />
+	
+	<input type="hidden" name="vpc_Version" value="2" />
+	<input type="hidden" name="vpc_Command" value="pay" />
+	<input type="hidden" name="vpc_Locale" value="vn" />
+	<input type="hidden" name="vpc_Currency" value="VND" />
+	<input type="hidden" name="vpc_TicketNo" value="<?php echo $_SERVER ['REMOTE_ADDR']; ?>" />
+	
+	<input type="hidden" name="vpc_SHIP_Street01" value="<?=$shipping_address?>" />
+	<input type="hidden" name="vpc_SHIP_Provice" value="<?=$shipping_province?>" />	
+	<input type="hidden" name="vpc_SHIP_City" value="<?=$shipping_city?>" />	
+	<input type="hidden" name="vpc_SHIP_Country" value="Viet Nam" />	
+	<input type="hidden" name="vpc_Customer_Phone" value="<?=$cus_phone?>" />	
+	<input type="hidden" name="vpc_Customer_Email" value="<?=$cus_mail?>" />	
+	<input type="hidden" name="vpc_Customer_Id" value="<?=$cus_username?>" />
+	</form>
+	<?php } elseif($pay_get == 7){ ?>	
+	<form name="f123pay" method="post" action="index.php?act=createOrder" >
+	
+	<input type="hidden" name="mTransactionID" value="<?=$vpc_MerchTxnRef?>" />
+	<input type="hidden" name="merchantCode" value="<?=$merchant_onepay?>"  />		
+	<input type="hidden" name="bankCode" value="<?=$bankCode?>" />
+	<input type="hidden" name="totalAmount" value="<?=$totalpay_final?>" />
+	<input type="hidden" name="clientIP" value="<?php echo $_SERVER ['REMOTE_ADDR']; ?>" />
+	<input type="hidden" name="custName" value="<?=$cus_username?>" />
+	<input type="hidden" name="custAddress" value="<?=$shipping_address?>" />
+	<input type="hidden" name="custGender" value="U" />
+	<input type="hidden" name="custDOB" value="<?=$custDOB?>" />
+	<input type="hidden" name="custPhone" value="<?=$cus_phone?>" />	
+	<input type="hidden" name="custMail" value="<?=$cus_mail?>" />
+	<input type="hidden" name="description" value="<?=$descrip_donhang?>" />
+	<input type="hidden" name="cancelURL"  value="http://therapyshower.vn/123pay-2-huy-giao-dich.html" />
+	<input type="hidden" name="redirectURL"  value="http://therapyshower.vn/123pay-1-ket-qua-giao-dich.html" />
+	<input type="hidden" name="errorURL"  value="http://therapyshower.vn/123pay-3-giao-dich-that-bai.html" />
+	<input type="hidden" name="passcode" value="<?=$accesscode_onepay?>" />
+	<input type="hidden" name="mikey" value="MIKEY" />
+	</form>	
+<?php } ?>
+</div>
+<script type="text/javascript">
+<?php if($pay_get == 4){ ?>
+//alert('Ngan luong');
+ document.forms.fnganluong.submit(); 
+<?php } elseif($pay_get == 5){ ?>
+//alert('Bao kim');
+ document.forms.fbaokim.submit(); 
+<?php } elseif($pay_get == 2){ ?>
+//alert('Onepay');
+ document.forms.fonepay.submit(); 
+ <?php } elseif($pay_get == 7){ ?>
+//alert('123Pay');
+ document.forms.f123pay.submit();
+<?php } ?>
+
+</script>	

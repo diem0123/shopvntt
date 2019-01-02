@@ -1,0 +1,49 @@
+<div class="product-col">
+                            <div class="product">
+                                <a href="spchitiet-<?=$ID1?>-<?=$name_link1?>.html" ><img  border="0" src="images/bin/<?=$ID_CATEGORY1?>/<?=$IMAGE_LARGE1?>" alt="<?=$name1?>" width="<?=$w1?>" height="<?=$h1?>" ></a>
+                                <h3><a href="spchitiet-<?=$ID1?>-<?=$name_link1?>.html"><?=$name1?></a></h3>
+								<?php if($PRICE_SALE1 ==""){ ?>
+					<p class="price">
+                                    <span></span>
+                                    <?=$lang['tl_gia']?>: <strong><?=$PRICE1?></strong>                                   
+                                </p>																						
+					<?php } elseif($PRICE_SALE1 !=""){ ?>
+							<p class="price">
+                                    <span><?=$PRICE1?></span>
+                                    <?=$lang['tl_gia']?>: <strong><?=$PRICE_SALE1?></strong>
+                                    <em>-<?=$SALE1?>%</em>
+                                </p>																																																
+					<?php } ?>                                
+                                
+                                <p class="group">
+								<a class="btn-dh" href="#" onclick="savecart(<?=$ID1?>,1);" ><?=$lang['tl_order']?></a>
+                                <a href="#" class="btn-add" onclick="savecart(<?=$ID1?>,0);" title="Thêm vào giỏ hàng" ></a>
+                                </p>
+                            </div>
+                        </div>
+
+<div class="product-col" <?=$dis1?> >
+                            <div class="product" <?=$dis1?> >
+                                <a href="spchitiet-<?=$ID2?>-<?=$name_link2?>.html" ><img  border="0" src="images/bin/<?=$ID_CATEGORY2?>/<?=$IMAGE_LARGE2?>" alt="<?=$name2?>" width="<?=$w2?>" height="<?=$h2?>" <?=$dis1?> ></a>
+                                <h3><a href="spchitiet-<?=$ID2?>-<?=$name_link2?>.html"><?=$name2?></a></h3>
+								<?php if($PRICE_SALE2 ==""){ ?>
+					<p class="price">
+                                    <span></span>
+                                    <?=$lang['tl_gia']?>: <strong><?=$PRICE2?></strong>                                   
+                                </p>																						
+					<?php } elseif($PRICE_SALE2 !=""){ ?>
+							<p class="price">
+                                    <span><?=$PRICE2?></span>
+                                    <?=$lang['tl_gia']?>: <strong><?=$PRICE_SALE2?></strong>
+                                    <em>-<?=$SALE2?>%</em>
+                                </p>																																																
+					<?php } ?>                                
+                                
+                                <p class="group">
+								<a class="btn-dh" href="#" onclick="savecart(<?=$ID2?>,1);" ><?=$lang['tl_order']?></a>
+                                <a href="#" class="btn-add" onclick="savecart(<?=$ID2?>,0);" title="Thêm vào giỏ hàng" ></a>
+                                </p>
+                            </div>
+                        </div>
+
+				<div class="clearboth"></div>

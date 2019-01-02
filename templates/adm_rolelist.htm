@@ -1,0 +1,66 @@
+<div class="breadcrumbs ace-save-state" id="breadcrumbs">
+	<ul class="breadcrumb">
+		<li>
+			<i class="ace-icon fa fa-home home-icon"></i>
+			<a href="index.php?act=adm_home"><?=$lang['adm_home']?></a>
+		</li>
+
+		<li>
+			<a href="#"><?=$lang['adm_quanlyvaitro']?></a>
+		</li>
+	</ul><!-- /.breadcrumb -->
+	<div class="nav-search" id="nav-search">
+		<!--
+		<form class="form-search">
+			<span class="input-icon">
+				<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+				<i class="ace-icon fa fa-search nav-search-icon"></i>
+			</span>
+		</form>-->
+	</div><!-- /.nav-search -->
+</div>
+<div class="adm_out" >
+<div class="adm_common">
+<?=$submenu2?>
+<table border="0" width="98%">
+	<tr>
+		<td>
+		<table border="0" width="100%" >
+			<tr>
+				<td height="25" class="title" >
+			    <input class="admbtn" type="button" name="addrole" value="<?=$lang['adm_addrole']?>" onclick="window.open('?act=adm_updaterole&ac=a','Addrolepopup','scrollbars=yes,status=yes,toolbar=no,location=0,directories=0,status=yes,menubar=0,resizable=0,width=800,height=580');" /></td>
+			</tr>
+		</table>
+		<table border="0" width="100%" cellpadding="0" cellspacing="0" >
+			<tr>
+			  <td height="10" align="left" ></td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<table border="0" width="994" cellspacing="0" id="simple-table" class="table  table-bordered table-hover">
+			<thead>
+			<tr bgcolor="#EEEEEE">
+				<td width="377" class="do" height="25"><?=$lang['adm_namerole']?> </td>
+				<td width="119" class="do" height="25"><?=$lang['adm_phancap']?> </td>
+				<td width="135" class="do" height="25" style="display:none;" >C&#7845;p b&#7853;c </td>
+				<td width="98" class="do" height="25"><?=$lang['ngaytao']?> </td>
+				<td width="118" class="do"><?=$lang['ngaycapnhat']?> </td>
+				<td width="130" colspan="3" class="do"><?=$lang['hanhdong']?> </td>
+			</tr>
+			</thead>
+			<?=$rolelist_rs?>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td height="5"></td>
+	</tr>
+	<tr>
+		<td height="25" align="center"><div id="divPaging"><?=$paging?></div></td>
+	</tr>
+</table>
+</div>
+</div>

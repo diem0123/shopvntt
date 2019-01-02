@@ -1,0 +1,110 @@
+<section class="box-all mgt10">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 content-left">
+				<div class="slideBannerTop fadeInUp wow">
+					<?=$listnews_tieubieu?>
+					<script>
+						$('#slidebannertop').owlCarousel({
+							loop:true, margin:10, responsiveClass:true, autoplay:true, responsive:{
+								0:{
+									items:1, nav:true
+								},
+								400:{
+									items:1, nav:true
+								},
+								600:{
+									items:1, nav:true
+								},
+								1000:{
+									items:1, nav:true, loop:true
+								}
+							}
+						});
+					</script>
+				</div>
+				
+				<div class="slideBannerTop fadeInUp wow mgt10">
+					<?=$list_qc_banner?><!-- Quảng cáo banner top -->
+					<script>
+						$('#slidebannersecond').owlCarousel({
+							loop:true, autoplay:true, margin:10, responsiveClass:true, responsive:{
+								0:{
+									items:1, nav:true
+								},
+								400:{
+									items:1, nav:true
+								},
+								600:{
+									items:1, nav:true
+								},
+								1000:{
+									items:1, nav:true, loop:true
+								}
+							}
+						});
+					</script>
+				</div>
+				
+				
+			</div>
+			<div class="col-md-4 content-right">
+				<div class="slideads fadeInUp wow">
+					<?=$list_qc_top_right1?>
+				</div>
+				<script>
+					$('#slideadsleft').owlCarousel({
+						loop:true, margin:10, autoplay:true, responsiveClass:true, responsive:{
+							0:{
+								items:1, nav:true
+							},
+							400:{
+								items:1, nav:true
+							},
+							600:{
+								items:1, nav:true
+							},
+							1000:{
+								items:1, nav:true, loop:true
+							}
+						}
+					});
+				</script>
+				<div class="slideads fadeInUp wow">
+					<?=$list_qc_top_right2?>
+				</div>
+				<script>
+					$('#slideadsleft2').owlCarousel({
+						loop:true, margin:10, autoplay:true, responsiveClass:true, responsive:{
+							0:{
+								items:1, nav:true
+							},
+							400:{
+								items:1, nav:true
+							},
+							600:{
+								items:1, nav:true
+							},
+							1000:{
+								items:1, nav:true, loop:true
+							}
+						}
+					});
+				</script>
+				
+			</div>
+			<div class="col-md-12 mgt10">
+				<ul class="breadcrumbs">
+					<?=$title_cat?>
+				</ul>
+				<div class="box-all mgt10">
+					<h3 class="title-orange fadeInUp wow animated" ><?=$name_cat?></h3>
+					<div class="desc fadeInUp wow" style="padding-bottom:10px;">Chúng tôi chuyên cung cấp các sản phẩm chất lượng từ các nhà cung cấp uy tín với thương hiệu mạnh </div>
+					<ul class="list-product-bottom fadeInUp wow">
+						<?=$main_contents?>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,780 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title><?=$title?></title>
+<link rel="stylesheet" type="text/css" href="css/wstyle.css" />
+<link rel="stylesheet" type="text/css" href="css/jquery-ui.css"  />
+  <link rel="stylesheet" type="text/css" href="css/mau.css" />
+  <link rel="stylesheet" type="text/css" href="css/font-awesome/4.5.0/css/font-awesome.min.css" />
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/jquery.ui.dialog.js"></script>
+<script type="text/javascript" src="js/jquery.ui.position.js"></script>
+<script type="text/javascript" src="js/webtoolkit.base64.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/NumberFormat154.js"></script>
+<!-- <script type="text/javascript" src="wysiwyg/wysiwyg.js"></script> -->
+<script src="ckeditor/ckeditor.js"></script>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<div align="left">
+<form action="index.php?act=adm_editproduct" method="post"  enctype="multipart/form-data" name="f1" onsubmit="return checkform();"> 
+<input type="hidden" name="ac" value="e">
+<input type="hidden" name="idcom" value="<?=$idcom?>">
+<input type="hidden" name="idp" value="<?=$idp?>">
+<table width="100%"  border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF">
+ <tr bgcolor="#FFF5EA">
+   <td class='menu'>&nbsp;</td>
+   <td colspan="2" class='menu'>&nbsp;</td>
+ </tr>
+ <tr bgcolor="#FFF5EA">
+    <td width="17" class='menu'>&nbsp;</td>
+    <td colspan="2" class='menu'><?=$lang['edit_products']?></td>
+    </tr>	
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="203" class='menu'>&nbsp;</td>
+    <td width="864" class='menu'>&nbsp;</td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="203" class='menu'>Chọn chuyên mục cấp 1
+    <font size="1" color="#D7261C">*</font></td>
+    <td width="864" class='menu'>
+    <SELECT  class=textbox style="WIDTH: 376px;" size=1 name="cat" id="cat" onchange="changecat();">
+      <option value="">Vui lòng chọn chuyên mục cấp 1...</option>      
+   		<?=$list_category?>
+	</SELECT></td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="203" class='menu'>&nbsp;</td>
+    <td width="864" class='menu'>&nbsp;</td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="203" class='menu'>Chọn chuyên mục cấp 2</td>
+    <td width="864" class='menu' id="sametype">
+    <SELECT  class=textbox style="WIDTH: 376px;" size=1 name="typecat" id="typecat" onchange="changetype();">
+      <option value="">Vui lòng chọn chuyên mục cấp 2...</option>      
+   		<?=$list_type_category?>
+	</SELECT></td>
+  </tr>
+  <tr >
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="203" class='menu'>&nbsp;</td>
+    <td width="864" class='menu'>&nbsp;</td>
+  </tr>
+ <tr >
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="203" class='menu'>Chọn chuyên mục cấp 3</td>
+    <td width="864" class='menu' id="samesubcat">
+    <SELECT  class=textbox style="WIDTH: 376px;" size=1 name="subcat"  id="subcat">
+      <option value="">Vui lòng chọn chuyên mục cấp 3...</option>      
+   		<?=$list_sub_category?>
+	</SELECT></td>
+  </tr> 
+ <tr >
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>&nbsp;</td>
+ </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="203" class='menu'>Mã sản phẩm</td>
+    <td width="864" class='menu'>
+	<input type="text" name="CODE" style="width:376px " size="1" value="<?=$CODE?>"></td>
+  </tr>
+ <tr>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>&nbsp;</td>
+ </tr>
+  <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="203" class='menu'>Tên sản phẩm
+    <font size="1" color="#D7261C">*</font></td>
+    <td width="864" class='menu'>
+	<input type="text" name="productname" style="width:376px " size="1" value="<?=$productname?>"></td>
+  </tr>
+  <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="203" class='menu'>&nbsp;</td>
+    <td width="864" class='menu'>&nbsp;	</td>
+  </tr>
+  <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="203" class='menu'>Giá (VND) </td>
+    <td width="864" class='menu'>
+	<input type="text" name="PRICE" style="width:376px;" size="1" value="<?=$PRICE?>" onblur = "tryNumberFormat(document.forms.f1.PRICE);"></td>
+  </tr>
+  <tr>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+    <td class='contents'>Ví dụ: 1000 hoặc 1.000 (Nhập số hoặc số có phân cách phần nghìn bằng dấu chấm.) </td>
+  </tr>
+  <tr>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+    <td class='do'>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>Giảm giá </td>
+    <td class='contents'><input type="text" name="SALE" style="width:60px " size="1" value="<?=$SALE?>" onkeyup = "data_change(document.forms.f1.SALE);"> 
+      (%) (chỉ nhập số, không nhập dấu %) </td>
+  </tr>
+    <tr>
+  <td class='menu'>&nbsp;</td>
+  <td class='menu'>&nbsp;</td>
+  <td class='do'>&nbsp;</td>
+  </tr>
+ <!--   <tr >
+    <td width="17" class='menu'>&nbsp;</td>
+        <td width="203" class='menu'>Chọn thương hiệu
+    <font size="1" color="#D7261C">*</font></td>
+    <td width="864" class='menu'>
+    <SELECT  class=textbox style="WIDTH: 376px;" size=1 name="id_brand"  id="id_brand" >
+      <option value="0">Vui lòng chọn thương hiệu...</option>      
+      <?=$list_brand?>
+  </SELECT></td>
+  </tr>
+    <tr>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+    <td class='do'>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>Chọn màu </td>
+    <td class="contents"><input type="text" name="custom_color" placeholder="#ffffff" id="pickcolor" class="call-picker" value="<?=$custom_color?>">
+    <div class="color-holder call-picker" style="background-color: <?=$custom_color?>;"></div>
+    </td>
+    <td class="color-picker" id="color-picker" style="display:none" ></td>
+  </tr> -->
+   <tr style="display: none">
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>&nbsp;</td>
+ </tr>
+  <tr style="display: none">
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="203" class='menu'>Đánh giá
+    <td width="864" class='menu'>
+  <input type="text" name="RATE" style="width:160px " placeholder="Nhập số sao đánh giá" size="1" value="<?=$RATE?>"></td>
+  </tr>
+  <tr>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+    <td class='do'>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>Năm phát hành</td>
+    <td class='do'><span class="menu">
+      <input type="text" name="sizepro" style="width:376px " size="1" value="<?=$SIZE?>" />
+    </span></td>
+  </tr>
+  <tr style="display:none" >
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="203" class='menu'>&nbsp;</td>
+    <td width="864" class='do'>&nbsp;</td>
+  </tr>
+  <tr style="display:none" >
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="203" class='menu'>Chất liệu </td>
+    <td width="864" class='do'><SELECT  class=textbox style="WIDTH: 376px;" size=1 name="material" id="material">
+      <option value="">Vui lòng chọn chất liệu...</option>      
+   		<?=$list_material?>
+	</SELECT></td>
+  </tr>
+  <tr>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+    <td class='do'>&nbsp;</td>
+  </tr>  
+  <tr>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>Phong cách</td>
+    <td class='do'><span class="menu">
+      <input type="text" name="STANDARD" style="width:376px " size="1" value="<?=$STANDARD?>" />
+    </span></td>
+  </tr>
+  <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="203" class='menu'>&nbsp;</td>
+    <td width="864" class='do'>&nbsp;</td>
+  </tr>
+  <tr style="display:none">
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>Dùng trong </td>
+    <td class='do'><span class="menu">
+      <input name="USE_IN" type="text" id="USE_IN" style="width:376px " value="<?=$USE_IN?>" size="1" />
+    </span></td>
+  </tr>
+  <tr style="display:none">
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="203" class='menu'>&nbsp;</td>
+    <td width="864" class='do'>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>Xuất xứ </td>
+    <td class='do'><span class="menu">
+      <input name="ORIGIN" type="text" id="ORIGIN" style="width:376px " value="<?=$ORIGIN?>" size="1" />
+    </span></td>
+  </tr>
+  <tr style="display:none">
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="203" class='menu'>&nbsp;</td>
+    <td width="864" class='do'>&nbsp;</td>
+  </tr>
+  <tr style="display:none">
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="203" class='menu'>Hãng sản xuất </td>
+    <td width="864" class='do'><SELECT  class=textbox style="WIDTH: 376px;" size=1 name="brand" id="brand">
+   		<option value="">Vui lòng chọn hãng sản xuất...</option>      
+   		<?=$list_brand?>
+	</SELECT></td>
+  </tr>
+  <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="203" class='menu'>&nbsp;</td>
+    <td width="864" class='do'>&nbsp;</td>
+  </tr>
+  <tr style = "display:none" id = "f1">
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="203" class='menu'>Upload ảnh </td>
+    <td width="864" class='menu'><input type="radio" name="upl" value="1" checked onclick="showupload(1);">
+      &nbsp; 
+	Upload ảnh mới &nbsp; <input type="radio" name="upl" value="2" onclick="showupload(2);">
+	&nbsp; Lấy ảnh từ Thư viện ảnh
+	<input type="hidden" name="imginput1" id="imginput1" value="">
+	<input type="hidden" name="imginput2" id="imginput2" value="">	</td>
+  </tr>
+  <tr style = "display:none" id = "f2">
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="203" class='menu'>&nbsp;</td>
+    <td width="864" class='do'><?=$mess1?></td>
+  </tr>
+  <tr style = "display:none" id = "f3">
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="203" class='menu'>Ảnh nhỏ <font size="1" color="#D7261C">*</font></td>
+    <td width="864" class='menu' id="ul1">
+	<input name="thumbnail" type="file" size="25"></td>
+  </tr>
+  <tr style = "display:none" id = "f4">
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="203" class='menu'>&nbsp;</td>
+    <td width="864" class='contents'>(Ảnh dạng: .png, jpg, gif. Có thể đưa vào ảnh lớn, kích thước sẽ tự động thu nhỏ)</td>
+  </tr>
+  <tr >
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="203" class='menu'>&nbsp;</td>
+    <td width="864" class='do'><?=$mess2?></td>
+  </tr>
+<tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="203" class='menu'>Ảnh sản phẩm</td>
+    <td width="864" class='menu' id="ul2">
+	<input name="file_ul" type="file" size="25"></td>
+</tr>
+  <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="203" class='menu'>&nbsp;</td>
+    <td width="864" class='contents'>(Ảnh dạng: .png, jpg, gif.)</td>
+  </tr>  
+  <tr>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'></td>
+  </tr>
+  <tr>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'><a target="_blank" href="images/bin/<?=$cat_directory?>/<?=$image_large?>" title="<?=$productname?>"><img border="0" src="images/bin/<?=$cat_directory?>/<?=$image_large?>" alt="<?=$productname?>" width="88" height="95" /></a></td>
+  </tr>
+  <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="203" class='menu'>&nbsp;</td>
+    <td width="864" class='menu'>	</td>
+  </tr>
+  <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="203" class='menu'>&nbsp;</td>
+    <td width="864" class='do'><?=$mess3?></td>
+  </tr>
+<tr style="display:none">
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="203" class='menu'>Upload Catalog</td>
+    <td width="864" class='menu' >
+	<input name="file_catalog" type="file" size="25"> 
+	<span class="contents">(File: .pdf, .doc, .docx, .xls, .xlsx)</span></td>
+</tr>
+  <tr style="display:none">
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="203" class='menu'>&nbsp;</td>
+    <td width="864" class='contents'>Catalog: <a target="_blank" href="images/bin/<?=$cat_directory?>/<?=$catalog?>" title="View catalog"><?=$catalog?></a></td>
+  </tr>
+   <tr>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+    <td class='do'>&nbsp;</td>
+  </tr>
+  <tr style="display:none">
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>Vị trí sắp xếp </td>
+    <td class='do'><span class="menu">
+      <input type="text" name="iorder" style="width:60px " size="1" value="<?=$iorder?>" />
+    </span></td>
+  </tr>
+  <tr>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+    <td class='do'>&nbsp;</td>
+  </tr>
+<tr style="display:none">
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="203" class='menu'>Sản phẩm đã hết hàng </td>
+    <td width="864" class='menu'><input type="checkbox" name="EXPIRE" value="1" onclick="checkcount();" <?=$EXPIRE?> >	</td>
+  </tr>
+  <tr style="display:none">
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+  </tr>
+  <tr style="display:none">
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>Số lượng hàng còn </td>
+    <td class='menu'><span class="contents">
+      <input type="text" name="COUNT_QUANTITY" id="COUNT_QUANTITY" style="width:60px " size="1" value="<?=$COUNT_QUANTITY?>" onkeyup = "data_change(document.forms.f1.COUNT_QUANTITY);" />
+    </span></td>
+  </tr>
+  <tr style="display:none">
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="203" class='menu'>&nbsp;</td>
+    <td width="864" class='menu'>&nbsp;</td>
+  </tr>
+<tr style="display:none">
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="203" class='menu'>Có khuyến mãi  </td>
+    <td width="864" class='menu'><input type="checkbox" name="KHUYENMAI" value="1" <?=$KHUYENMAI?>></td>
+  </tr>
+  <tr >
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="203" class='menu'>&nbsp;</td>
+    <td width="864" class='menu'>&nbsp;</td>
+  </tr>
+<tr >
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="203" class='menu'>Sản phẩm tiêu biểu </td>
+    <td width="864" class='menu'><input type="checkbox" name="TIEUBIEU" value="1" <?=$tbchecked?> >	</td>
+  </tr>
+    <tr >
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="203" class='menu'>&nbsp;</td>
+    <td width="864" class='menu'>&nbsp;</td>
+  </tr>
+<tr >
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="203" class='menu'>Sản phẩm bán chạy </td>
+    <td width="864" class='menu'><input type="checkbox" name="HOT" value="1" <?=$tbchecked1?> > </td>
+  </tr>
+  <tr >
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="203" class='menu'>&nbsp;</td>
+    <td width="864" class='do'>&nbsp;</td>
+  </tr>
+<!--
+  <tr >
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="203" class='menu'>Giới tính <font size="1" color="#D7261C">*</font> </td>
+    <td width="864" class='menu'>
+		<SELECT  class="textbox" style="WIDTH: 205px;" size=1 name="SEX">
+			<?php if($sex==1){?>      
+				<option value="1">Nam</option>
+				<option value="0">Nữ</option>
+				<option value="">Vui lòng chọn giới tính...</option>
+			<?php }elseif($sex==''){?>      
+				<option value="">Vui lòng chọn giới tính...</option>
+				<option value="1">Nam</option>
+				<option value="0">Nữ</option>				
+			<?php }else{?>
+				<option value="0">Nữ</option>
+				<option value="1">Nam</option>
+				<option value="">Vui lòng chọn giới tính...</option>
+			<?php }?>
+	</SELECT>
+	</td>
+  </tr>-->
+  <tr >
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="203" class='menu'>&nbsp;</td>
+    <td width="864" class='do'>&nbsp;</td>
+  </tr>
+  <tr style = "display:none" id = "lt3">
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="203" class='menu'>Tỉnh thành
+    <font size="1" color="#D7261C">*</font></td>
+    <td width="864" class='do'>
+    <SELECT  class=textbox style="WIDTH: 205px;" size=1 name="province">
+      <option value="">Vui lòng chọn tỉnh thành...</option>      
+   		<?=$list_provinces?>
+	</SELECT></td>
+  </tr>
+  <tr style = "display:none" id = "lt4">
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="203" class='menu'>&nbsp;</td>
+    <td width="864" class='do'></td>
+  </tr>
+  <tr <?=$dispr?>>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="203" class='menu'>Trạng thái
+    <font size="1" color="#D7261C">*</font></td>
+    <td width="864" class='menu'>
+    <SELECT  class=textbox style="WIDTH: 205px;" size=1 name=status>
+      <option value="">Vui lòng chọn trạng thái...</option>
+		<option value="Active" <?=$sl1?>>Active</option>
+		<option value="Inactive" <?=$sl2?>>Inactive</option>
+		<option value="Deleted" <?=$sl3?>>Deleted</option>
+    </SELECT></td>
+  </tr>
+  <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="203" class='menu'>&nbsp;</td>
+    <td width="864" class='menu'>&nbsp;										</td>
+  </tr>
+  
+  
+  
+  <tr>
+    <td  class='menu' valign="top" height="95" width="17">&nbsp;</td>
+    <td  class='menu' valign="top" height="95" width="203">Thông tin mô tả ngắn </td>
+    <td class='menu' height="95">
+	<textarea id="contentout0" name="INFO_SHORT" rows="5" cols="45" onKeyUp="getLengthtextarear(this,500);"><?=$INFO_SHORT?></textarea></td>
+  </tr>
+   <tr>
+    <td  class='menu' valign="top" height="25" width="17">&nbsp;</td>
+    <td  class='menu' valign="top" height="25" width="203">&nbsp;</td>
+    <td class='menu' height="25">&nbsp;</td>
+  </tr>
+  <tr>
+    <td  class='menu' valign="top" height="95" width="17">&nbsp;</td>
+    <td  class='menu' valign="top" height="95" width="203">Thông tin chi tiết sản phẩm </td>
+    <td class='menu' height="95"><textarea id="contentout" name="content"><?=$content?></textarea>
+   <input type="hidden" id="contentencode" name="contentencode" value="">
+   <input type="hidden" id="contentencodeparam" name="contentencodeparam" value="">
+   <input type="hidden" id="addmore" name="addmore" value="">
+    <script>CKEDITOR.replace('content', {     
+      filebrowserBrowseUrl: 'thu-vien.html'
+      
+    });</script>  </td>
+  </tr>
+    <tr>
+    <td  class='menu' valign="top" width="17">&nbsp;</td>
+    <td  class='menu' valign="top" width="203">&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+  </tr>
+  <tr>
+    <td  class='menu' valign="top" width="17">&nbsp;</td>
+    <td  class='menu' valign="top" width="203">Các thông số của sản phẩm </td>
+    <td class='menu'><textarea id="contentoutparam" name="param" ><?=$param?></textarea>
+    <script>CKEDITOR.replace('param', {     
+      filebrowserBrowseUrl: 'thu-vien.html'
+      
+    });</script>   </td>
+  </tr>
+  <tr>
+    <td  class='menu' valign="top" width="17">&nbsp;</td>
+    <td  class='menu' valign="top" width="203">&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+  </tr>
+  <tr>
+    <td  class='menu' valign="top" width="17">&nbsp;</td>
+    <td  class='menu' valign="top" width="203">Người nhập liệu </td>
+    <td class='menu'>
+    <SELECT  class=textbox style="WIDTH: 205px;" size=1 name="cst" id="cst" <?=$ronly?>>
+      <option value="">Vui lòng chọn người quản lý...</option>      
+		<?=$list_consultant?>
+    </SELECT>    </td>
+  </tr>
+  <tr>
+    <td  class='menu' valign="top" width="17">&nbsp;</td>
+    <td  class='menu' valign="top" width="203">&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="3" align="center" height="41" class='menu'>
+    <input type="submit" name="submit" value="Lưu" class="button" >    
+    <input type="button" name="cancel" value="Hủy bỏ" onClick="javascript:window.close();" class="button" >    </td>
+  </tr>
+  </table>
+  </form>
+</div>
+<div id="showlibrary" style="display:none">
+<div id="imglibrary" ></div>
+<div id="buttonclose" ><input type=button name="done" value="Ho&agrave;n th&agrave;nh" onclick="$('#showlibrary').dialog('close');"> <input type=button name="close" value="H&#7911;y b&#7887;" onclick="$('#showlibrary').dialog('close');clearurlimage();"> <input type=button name="close" value="&#272;&oacute;ng" onclick="$('#showlibrary').dialog('close');"></div>
+</div>
+<script language="javascript1.2">
+               function checkform(){
+               
+               		if (document.f1.cat.selectedIndex==""){
+                         alert("Vui lòng chọn chuyên mục cấp 1");
+						 document.f1.cat.focus();
+                         return false;
+                    }
+             /*        
+                    if (document.f1.typecat.selectedIndex==""){
+                         alert("Vui lòng chọn chuyên mục cấp 2");
+						 document.f1.typecat.focus();
+                         return false;
+                    }
+                   
+                    if (document.f1.subcat.selectedIndex==""){
+                         alert("Vui lòng chọn chuyên mục cấp 3");
+						 document.f1.subcat.focus();
+                         return false;
+                    }
+			*/		
+                 
+                    if (document.f1.productname.value==""){
+                                        alert("Vui lòng nhập tên sản phẩm!");
+                                        document.f1.productname.focus();
+                                        return false;
+                                }
+                  /*  if (document.f1.SEX.value==""){
+                                        alert("Vui lòng chọn giới tính!");
+                                        document.f1.SEX.focus();
+                                        return false;
+                                }					
+					*/
+					if (document.f1.SALE.value !=""){					
+						  var field2 = document.f1.SALE;
+						  var check2 = true;
+						  var value2 = field2.value; //get characters
+						//check that all characters are digits, ., -, or ""
+						  for(var i=0;i < field2.value.length; i++)
+						  {	
+						  
+							   var new_key = value2.charAt(i); //cycle through characters
+							   
+							   if(((new_key < "0") || (new_key > "9")) && !(new_key == ""))
+							   {
+									check2 = false;									
+									break;								
+							   }
+						  }
+						  if(check2 == false){
+						  	alert('Vui long chi nhap so!');
+							document.f1.SALE.focus();
+						 	return false;
+						  }
+						 
+					}
+					 
+           			if (document.f1.province.selectedIndex==""){
+                         alert("Vui lòng chọn tỉnh thành!");
+						 document.f1.province.focus();
+                         return false;
+                    }
+                    
+            
+                    if (document.f1.status.selectedIndex==""){
+                         alert("Vui lòng chọn trạng thái!");
+						 document.f1.status.focus();
+                         return false;
+                    }										
+										
+					getcontens();
+                     return true;
+               }
+               
+	  function getLengthtextarear(item1,num)
+      {
+        var str=item1.value;
+        if (item1.value.length>eval(num))
+          {
+            alert("Độ dài tối đa là "+num);
+            item1.value=str.substring(0,eval(num));
+          }
+      }
+  
+    function CKupdate() {
+      for (instance in CKEDITOR.instances)
+      CKEDITOR.instances[instance].updateElement();
+    }
+        
+    function getcontens(){
+        //  updateTextArea('contentout'); 
+    //  updateTextArea('contentoutparam');
+      CKupdate();
+      document.getElementById("contentencode").value = Base64.encode($("#contentout").val());
+      document.getElementById("contentencodeparam").value = Base64.encode($("#contentoutparam").val());
+      //document.getElementById("addmore").value = am;
+      //alert('test6='+Base64.encode($("#contentout").val()));
+    }
+    
+    function getcontinue(am){
+      document.getElementById("addmore").value = am;
+    }
+    
+    function checkcount(){
+      document.getElementById("COUNT_QUANTITY").value = 0;
+    }      
+               
+
+function changecat() {
+  $.ajax({
+    url: 'index.php',
+    type: 'POST',
+    data: 'act=adm_change_cat&cat='+ $('#cat').val(),
+    success: function(data) {
+      //document.getElementById("sametype").style.display = "block";
+      $('#sametype').html(data);
+      if($('#cat').val() != 1){
+        for(i=1;i<=8;i++){
+            var r = '#r'+i;
+            $(r).attr("style","display:none");
+          }
+      }
+    }
+  });
+}
+
+function changecat_other() {
+  $.ajax({
+    url: 'index.php',
+    type: 'POST',
+    data: 'act=adm_change_cat_other&subcat='+ $('#subcat').val(),
+    success: function(data) {
+    var getData = $.parseJSON(data);
+    //alert("data="+getData.mess1);   
+      if(getData.mess1 == 'success'){
+        for(i=1;i<=8;i++){
+          var r = '#r'+i;
+          $(r).attr("style","display:table-row");
+        }
+      } 
+    }
+  });
+}
+  
+function changetype() {
+  $.ajax({
+    url: 'index.php',
+    type: 'POST',
+    data: 'act=adm_change_type&typecat='+ $('#typecat').val(),
+    success: function(data) {
+    //document.getElementById("samesubcat").style.display = "block";
+    $('#samesubcat').html(data);
+    }
+  });
+}
+
+function showupload(num) {  
+  var data1 = '<input name="thumbnail" type="file" size="25">';
+  var data2 = '<input name="imagelarge" type="file" size="25">';
+  var data3 = '<input type="text" name="thumblibrary" id="thumblibrary" style="width:376px " size="1" value="" > <img src="images/insert_picture_on.gif" style="cursor:pointer" onclick="getimagelibrary(0);setimginput(1);" title="Lấy ảnh từ thư viện" align="bottom">';
+  var data4 = '<input type="text" name="largelibrary" id="largelibrary" style="width:376px " size="1" value="" > <img src="images/insert_picture_on.gif" style="cursor:pointer" onclick="getimagelibrary(0);setimginput(2);" title="Lấy ảnh từ thư viện" align="bottom">';
+  if(num==1) {
+  $('#ul1').html(data1);
+  $('#ul2').html(data2);
+  }
+  else {
+  $('#ul1').html(data3);
+  $('#thumblibrary').attr('readonly', true);
+  $('#thumblibrary').attr("style","width:376px;background-color:#f3f3f3;");
+  $('#ul2').html(data4);
+  $('#largelibrary').attr('readonly', true);
+  $('#largelibrary').attr("style","width:376px;background-color:#f3f3f3;");
+  }
+}
+
+function getimagelibrary(page)
+    { 
+      $("#showlibrary:ui-dialog" ).dialog( "destroy" );
+      $("#showlibrary").dialog({
+      //var dialogtest = $('<div style="display:none"></div>').appendTo('body');
+      //dialogtest.dialog({
+          dialogClass: 'flora',
+          title: 'Th&#432; vi&#7879;n &#7843;nh',
+          resizable: false,
+          width: 400,
+          height : 590,
+          //close: function(event, ui) {          
+                    // remove div with all data and events
+                    //dialogtest.remove();
+                  //},          
+          modal: true,
+          position: { my:'top',at:'top' }
+        });
+        $('.flora.ui-dialog').css({ top: "2px" });
+        $('.flora.ui-dialog').css({ left: "365px" });
+        //$(".ui-dialog-titlebar").hide();        
+        $.ajax({  
+            url: $("#base_url").val()+'/admin/getimagelibrary',
+            type: 'POST',
+            data: 'page='+ page,
+            cache: false,
+            success: function(data) {
+            //alert(data);
+            $('#imglibrary').html(data);
+            //dialogtest.html(data);
+            } 
+          });
+  }
+  
+function geturlimage(urlimage) {
+  if($("#imginput1").val() == 1)
+  document.getElementById("thumblibrary").value = urlimage;
+  else 
+  document.getElementById("largelibrary").value = urlimage;
+}
+
+function clearurlimage() {
+  if($("#imginput1").val() == 1)
+  document.getElementById("thumblibrary").value = "";
+  else 
+  document.getElementById("largelibrary").value = "";
+}
+
+function setimginput(num) {
+  if(num == 1){
+  document.getElementById("imginput1").value = 1;
+  document.getElementById("imginput2").value = 0;
+  }
+  else {
+  document.getElementById("imginput1").value = 0;
+  document.getElementById("imginput2").value = 1;
+  }
+}
+            
+</script>
+
+
+    <script>
+      var colorList = ['ffaaaa', 'ff5656', 'ff0000', 'bf0000', '7f0000', 'ffffff', 'ffd4aa', 'ffaa56', 
+      'ff7f00', 'bf5f00', '7f3f00', 'e5e5e5', 'ffffaa', 'ffff56', 'ffff00', 'bfbf00', '7f7f00', 'cccccc', 'd4ffaa', 'aaff56', '7fff00', '5fbf00', '3f7f00', 'b2b2b2', 'aaffaa', '56ff56', '00ff00', '00bf00', '007f00', '999999', 'aaffd4', '56ffaa', '00ff7f', '00bf5f', '007f3f', '7f7f7f', 'aaffff', '56ffff', '00bfbf','007f7f','666666','aad4ff','56aaff','007fff','005fbf','003f7f','4c4c4c','aaaaff','5656ff','0000ff','0000bf','00007f','333333','d4aaff','aa56ff','7f00ff','5f00bf','3f007f','191919','ffaaff','ff56ff','ff00ff','bf00bf','7f007f','000000','ffaad4','ff56aa','ff007f','bf005f','7f003f'];
+      var picker = $('#color-picker');
+
+      for(var i=0; i< colorList.length; i++)
+      {
+        picker.append('<li class="color-item" data-hex="'+
+          '#' + colorList[i] + '" style="background-color:' +
+          '#' + colorList[i] + ';"></li>');
+      }
+    // khi click vao bang mau, no se tu mat
+    $('body').click(function(){
+      picker.fadeOut();
+    });
+    
+    // click de xuat hien bang mau
+    $('.call-picker').click(function(event){
+      event.stopPropagation();
+      picker.fadeIn();
+      picker.children('li').hover(function(){
+        var codeHex = $(this).data('hex');
+        $('.color-holder').css('background-color',codeHex);
+        $('#pickcolor').val(codeHex);
+      });
+    });
+  </script>

@@ -1,0 +1,4 @@
+<?php
+		$common->logout();		
+	
+?>

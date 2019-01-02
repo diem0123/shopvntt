@@ -1,0 +1,46 @@
+<style>
+.cart-control .btn-prev {
+    padding: 0px 20px;
+    position: relative;
+    margin-left: 30px;
+}
+.cart-control a {
+    float: left;
+    height: 44px;
+    padding: 0px 20px 0px 50px;
+    margin: 0px 35px 0px 0px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+}
+.cart-control .btn-next {
+    padding: 0px 20px;
+    position: relative;
+	margin-left: 150px;
+    margin-top: -45px;
+}
+.cart-control a {
+    float: left;
+    height: 44px;
+    padding: 0px 20px 0px 50px;
+    margin: 0px 35px 0px 0px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+}
+.cart-control a span {
+    display: block;
+    line-height: 44px;
+    color: #337ab7;
+    font-size: 18px;
+    font-family: 'UTMNeoSansIntelBold';
+}
+</style>
+<form name="fcart" method="post" >
+		 <div class="cart-page">
+			<?=$viewcart_list_rs?>
+		</div>
+		 </div>	                               
+			<div class="cart-control group">
+			<a href="thong-tin-gio-hang.html" class="btn-prev"><span> <?=$lang['tl_cquaylai']?></span> </a>                 
+			<a href="thong-tin-nguoi-mua.html" class="btn-next"><span> <?=$lang['tl_ctieptuc']?></span> </a>
+		</div>		
+</form>	

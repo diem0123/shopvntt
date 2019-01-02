@@ -1,0 +1,11 @@
+<tbody>
+<tr bgcolor="#FFFFFF" >
+	<td width="271" height="25"><a href="index.php?act=menu_sub&idcat=<?=$idcat?>" class="menu" title="View list sub menu" ><?=$CATNAME?></a></td>
+	<td width="200" height="25" class="menu"><?=$LINK?></td>
+	<td width="247" height="25" class="menu"><?=$STATUS?></td>
+	<td width="132" height="25" class="menu"><?=$IORDER?></td>
+	<td width="23"><a href="#"  title="View" onclick="window.open('index.php?act=updatemenu&idcat=<?=$idcat?>&ac=v','Viewcatpopup','scrollbars=yes,status=yes,toolbar=no,location=0,directories=0,status=yes,menubar=0,resizable=0,width=\'100%\',height=\'100%\'');"  ><img src="images/magnifier.png" width="16" alt="View"></a></td>
+	<td width="23"><a href="#"  title="Edit" onclick="window.open('index.php?act=updatemenu&idcat=<?=$idcat?>&ac=e','Editcatpopup','scrollbars=yes,status=yes,toolbar=no,location=0,directories=0,status=yes,menubar=0,resizable=0,width=\'100%\',height=\'100%\'');"  ><img src="images/icon_edit.png" width="16" alt="Edit"></a></td>
+	<td width="84"><a href="#"  title="Delete" onclick="delit(<?=$idcat?>,'1');" ><img src="images/icon_delete.png" width="16" alt="Delete"></a></td>
+</tr>
+</tbody>

@@ -1,0 +1,36 @@
+<div style="padding-left:10px;">
+<table border="0" width="1000" cellspacing="0" cellpadding="0" class="content">
+<tr>
+	<td  height="30" ><strong>Danh sách đánh giá sản phẩm</strong></td>
+</tr>
+<tr>
+	<td height="1" class="style50">
+	<span class="dotline"></span>	</td>
+</tr>
+<tr>
+	<td  height="10" ></td>
+</tr>
+	<?=$list_comments_rs?>	
+<tr>
+	<td  height="20" ></td>
+</tr>																			
+</table>
+</div>
+<script type="text/javascript">
+function approve(idp,ap) {
+	$.ajax({
+		url: 'index.php',
+		type: 'POST',
+		data: 'act=approve_comments&ap='+ap+'&idp='+idp,
+		success: function(data) {
+			var getdata = $.parseJSON(data);
+			if(getdata.mess1 == "success"){
+				if(getdata.mess2 == "approved")
+				$('#approve_status').html("&#272;&atilde; duy&#7879;t cho hi&#7875;n th&#7883;");
+				else window.location.reload();
+			}
+			else $('#err_approve').html("Kh&ocirc;ng th&#7875; c&#7853;p nh&#7853;t th&ocirc;ng tin");
+		}
+	});
+}
+</script>

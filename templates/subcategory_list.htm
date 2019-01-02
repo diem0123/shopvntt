@@ -1,0 +1,55 @@
+<div class="adm_out" >
+<div class="adm_common">
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+	<tr>
+		<td height="1" bgcolor="#FFF5EA"></td>
+	</tr>
+</table>
+<?=$submenu2?>
+<table border="0" width="100%">
+	<tr>
+		<td>
+		<table border="0" width="100%" >
+			<tr>
+				<td height="14" class="menu" ><button class="admbutton" type="button" name="bk1" value="" onclick="window.history.go(-1);" >&lt;&lt; Back</button>
+				&nbsp;&nbsp;<button class="admbutton" type="button" name="ct1" value="" onclick="window.open('index.php?act=updatesubcategory&cat=<?=$idcat?>&ac=a','Addsubcatpopup','scrollbars=yes,status=yes,toolbar=no,location=0,directories=0,status=yes,menubar=0,resizable=0,width=\'100%\',height=\'100%\'');" ><?=$lang['adm_addcategory']?> 2</button>
+				&nbsp;&nbsp; <?=$lang['level']?> 1: <?=$NAMECAT?></td>
+			</tr>
+		</table>
+		<table border="0" width="100%" cellpadding="0" cellspacing="0" >
+			<tr>
+			  <td height="10" align="left" ></td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<table  id="simple-table" class="table  table-bordered table-hover">
+			<thead>
+			<tr bgcolor="#EEEEEE">
+				<td width="319" class="do" height="25"><?=$lang['adm_namecategory']?> 2 </td>
+				<td width="258" class="do" height="25"><?=$lang['adm_muccap']?> 1 </td>
+				<td width="162" class="do" height="25"><?=$lang['adm_lienket']?> </td>
+				<td width="84" class="do"><?=$lang['adm_trangthai']?></td>
+				<td width="75" class="do" height="25"><?=$lang['adm_thutu']?> </td>
+				<td colspan="3" class="do"><?=$lang['hanhdong']?> </td>
+			</tr>
+			</thead>
+			<?=$subcategorylist_rs?>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td height="5"></td>
+	</tr>
+	<tr>
+		<td height="25" align="center"><div class="box-phantrang">
+            		<ul>                    	
+						<?=$paging?>						                       
+                    </ul>
+            	</div></td>
+	</tr>
+</table>
+</div>
+</div>

@@ -1,0 +1,117 @@
+%!Adobe-FontList 1.11
+%Locale:0x42a
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:UTM-Alter-Gothic
+FamilyName:UTM Alter Gothic
+StyleName:Regular
+FullName:UTM Alter Gothic
+MenuName:UTM Alter Gothic
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:D:\part_time\website_binh\FOOD\Font\UTM Alter Gothic.ttf
+DataFormat:sfntData
+FileLength:38660
+FileModTime:1254299018
+WeightClass:400
+WidthClass:5
+AngleClass:0
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:UTM-Aquarelle
+FamilyName:UTM Aquarelle
+StyleName:Regular
+FullName:UTM Aquarelle
+MenuName:UTM Aquarelle
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:D:\part_time\website_binh\FOOD\Font\UTM Aquarelle.ttf
+DataFormat:sfntData
+FileLength:88632
+FileModTime:1277605596
+WeightClass:400
+WidthClass:5
+AngleClass:0
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:UTM-Avo
+FamilyName:UTM Avo
+StyleName:Regular
+FullName:UTM Avo
+MenuName:UTM Avo
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:D:\part_time\website_binh\FOOD\Font\UTM Avo.ttf
+DataFormat:sfntData
+FileLength:39308
+FileModTime:1248943622
+WeightClass:400
+WidthClass:5
+AngleClass:0
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:UTMAvoBold
+FamilyName:UTM Avo
+StyleName:Bold
+FullName:UTMAvoBold
+MenuName:UTM Avo
+StyleBits:2
+WritingScript:Roman
+OutlineFileName:D:\part_time\website_binh\FOOD\Font\UTM AvoBold.ttf
+DataFormat:sfntData
+FileLength:39364
+FileModTime:1289323252
+WeightClass:700
+WidthClass:5
+AngleClass:0
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:UTMBanqueBold
+FamilyName:UTM Banque
+StyleName:Bold
+FullName:UTMBanqueBold
+MenuName:UTM Banque
+StyleBits:2
+WritingScript:Roman
+OutlineFileName:D:\part_time\website_binh\FOOD\Font\UTM BanqueB.ttf
+DataFormat:sfntData
+FileLength:33788
+FileModTime:1263281860
+WeightClass:700
+WidthClass:5
+AngleClass:0
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:UTM-Banque
+FamilyName:UTM Banque
+StyleName:Regular
+FullName:UTM Banque
+MenuName:UTM Banque
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:D:\part_time\website_binh\FOOD\Font\UTM BanqueR.ttf
+DataFormat:sfntData
+FileLength:33860
+FileModTime:1263284674
+WeightClass:400
+WidthClass:5
+AngleClass:0
+%EndFont
+

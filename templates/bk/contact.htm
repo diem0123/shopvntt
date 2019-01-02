@@ -1,0 +1,220 @@
+<div class="col-md-12">
+<script type="text/javascript" src="js/webtoolkit.base64.js"></script>
+<form class="well form-horizontal bv-form" name="f1" action="lienhe.html" method="post" enctype="multipart/form-data" id="contact_form" novalidate="novalidate">
+            <div class="form-group has-feedback">
+                <label class="col-md-4 control-label"><?=$lang['fullname']?></label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                        <input name="fullname" type="text" class="form-control" placeholder="Nhập họ tên của bạn" size="200px" data-bv-field="fullname" value="<?=$fullname?>"><i class="form-control-feedback" data-bv-icon-for="fullname" style="display: none;"></i>
+                    </div>
+                <small data-bv-validator="stringLength" data-bv-validator-for="fullname" class="help-block" style="display: none;">Tên không hợp lệ</small><small data-bv-validator="notEmpty" data-bv-validator-for="fullname" class="help-block" style="display: none;">Tên của bạn không được bỏ trống</small></div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group has-feedback">
+                <label class="col-md-4 control-label"><?=$lang['tl_email']?></label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                        <input name="email" placeholder="Ví dụ name@gmail.com" class="form-control" type="text" data-bv-field="email" value="<?=$email?>"><i class="form-control-feedback" data-bv-icon-for="email" style="display: none;"></i>
+                    </div>
+                <small data-bv-validator="notEmpty" data-bv-validator-for="email" class="help-block" style="display: none;">Mail không được để trống</small><small data-bv-validator="emailAddress" data-bv-validator-for="email" class="help-block" style="display: none;">E-Mail chưa đúng</small></div>
+            </div>
+
+            <!-- Text input-->
+
+            <div class="form-group has-feedback">
+                <label class="col-md-4 control-label"><?=$lang['tel']?></label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-phone" aria-hidden="true"></i></span>
+                        <input name="tel" placeholder="Nhập số điện thoại của bạn" class="form-control" type="text" data-bv-field="tel" value="<?=$tel?>"><i class="form-control-feedback" data-bv-icon-for="tel" style="display: none;"></i>
+                    </div>
+                <small data-bv-validator="notEmpty" data-bv-validator-for="tel" class="help-block" style="display: none;">Số điện thoại không dược để trống</small><small data-bv-validator="phone" data-bv-validator-for="tel" class="help-block" style="display: none;">Số điện thoại không đúng</small></div>
+            </div>
+			<!-- Text input-->
+
+            <div class="form-group has-feedback">
+                <label class="col-md-4 control-label"><?=$lang['tl_congty']?></label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-building-o" aria-hidden="true"></i></span>
+                        <input name="company" placeholder="Nhập tên công ty của bạn" class="form-control" type="text" data-bv-field="company" value="<?=$company?>"><i class="form-control-feedback" data-bv-icon-for="company" style="display: none;"></i>
+                    </div>
+                <small data-bv-validator="stringLength" data-bv-validator-for="company" class="help-block" style="display: none;">This value is not valid</small><small data-bv-validator="notEmpty" data-bv-validator-for="company" class="help-block" style="display: none;">Vui lòng điền tên công ty</small></div>
+            </div>
+
+            <!-- Text input-->
+
+            <div class="form-group has-feedback">
+                <label class="col-md-4 control-label"><?=$lang['tl_address']?></label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                        <input name="address" placeholder="Nhập địa chỉ của bạn" class="form-control" type="text" data-bv-field="address" value="<?=$address?>"><i class="form-control-feedback" data-bv-icon-for="address" style="display: none;"></i>
+                    </div>
+                <small data-bv-validator="stringLength" data-bv-validator-for="address" class="help-block" style="display: none;">This value is not valid</small><small data-bv-validator="notEmpty" data-bv-validator-for="address" class="help-block" style="display: none;">Hãy để lại địa chỉ của bạn</small></div>
+            </div>
+
+            <!-- Text input-->
+
+            <div class="form-group has-feedback">
+                <label class="col-md-4 control-label"><?=$lang['tl_tieude']?></label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-tags" aria-hidden="true"></i></i></span>
+                        <input name="subj" placeholder="Tiêu đề nội dung" class="form-control" type="text" data-bv-field="subj" value="<?=$subj?>"><i class="form-control-feedback" data-bv-icon-for="subj" style="display: none;"></i>
+                    </div>
+                <small data-bv-validator="stringLength" data-bv-validator-for="subj" class="help-block" style="display: none;">This value is not valid</small><small data-bv-validator="notEmpty" data-bv-validator-for="subj" class="help-block" style="display: none;">Tiêu đề bài viết không được để trống</small></div>
+            </div>
+
+            <!-- Text area -->
+
+            <div class="form-group has-feedback">
+                <label class="col-md-4 control-label"><?=$lang['text_content']?></label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-pencil" aria-hidden="true"></i></span>
+                        <textarea rows="3" class="form-control" name="content" placeholder="Nội dung" data-bv-field="content"></textarea><i class="form-control-feedback" data-bv-icon-for="content" style="display: none;"></i>
+                    </div>
+                <small data-bv-validator="stringLength" data-bv-validator-for="content" class="help-block" style="display: none;">Nội dung liên hệ không được nhỏ hơn 10 ký tự và lớn hơn 3000 ký tự</small><small data-bv-validator="notEmpty" data-bv-validator-for="content" class="help-block" style="display: none;">Nội dung liên hệ không được để trống</small></div>
+            </div>
+
+            <!-- Success message -->
+            <div class="alert alert-success" role="alert" id="success_message"><i class="fa fa-thumbs-up" aria-hidden="true"></i> Mọi yêu cầu Chúng tôi sẽ phản hồi thông tin cho bạn sớm nhất .</div>
+
+            <!-- Button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label "></label>
+                <div class="col-md-4" >
+                   <span class=""><input type="submit" name="submit" value="Gửi" class="btn btn-primary"/> </span>
+                </div>
+            </div>
+
+
+    <input type="hidden" name="submit" value="Gửi">
+    </form>
+
+ <div>
+<h3 class="titlemaps">GOOGLE MAPS</h3>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1647.7923244073777!2d106.65830841275235!3d10.801146160860018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDQ4JzA1LjAiTiAxMDbCsDM5JzMyLjciRQ!5e0!3m2!1svi!2s!4v1483150647839" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+</div>
+</div>
+
+
+<script type="text/javascript">
+getctact2();
+	function getctact2() {			
+			$.ajax({
+				url: 'index.php?act=textfooter',
+				type: 'POST',
+				data: 'idcom='+1,
+				success: function(data) {
+					var getData1 = $.parseJSON(data);
+					//var textdt1 = "Tel: "+getData1.TEL+" | Fax: "+getData1.FAX;
+					var textdt1 = "<?=$lang['tl_callus']?>: "+getData1.MOBI;
+					var textdt2 = '<?=$lang["tl_emailus"]?>: <a href="mailto:'+getData1.EMAIL+'" class="title_xs">'+getData1.EMAIL+'</a>';
+					var textdt3 = '<?=$lang["tl_wsite"]?>: <a href="'+getData1.WEBSITE+'" class="title_xs">'+getData1.WEBSITE+'</a>';
+					$('#adrcom1').html(getData1.COM_NAME);
+					$('#adrct1').html(getData1.ADDRESS);
+					$('#adrct2').html(textdt1);
+					$('#adrct3').html(textdt2);
+					$('#adrct4').html(textdt3);
+				}
+			});
+	}
+function getLengthtextarear(item1,num)
+			{
+				var str=item1.value;
+				if (item1.value.length>eval(num))
+					{
+						alert("<?=$lang['tl_daitoida']?> "+num);
+						item1.value=str.substring(0,eval(num));
+					}
+			}
+function check_complete(){
+			
+		 if ($("#cus_name").val()==""){
+			$('#mess_er1').html("<?=$lang['tl_cnhaphoten']?>");
+			return false;
+		 }
+		 
+		 if ($("#cus_tel").val()==""){
+		 	$('#mess_er1').html("");
+			$('#mess_er4').html("<?=$lang['tl_nhaptel']?>");
+			return false;
+		 }
+		 
+		 else if($("#cus_email").val()==""){
+		 $('#mess_er1').html("");
+		 $('#mess_er4').html("");
+		 $('#mess_er2').html("<?=$lang['tl_cnhapmail']?>");
+		 return false;
+		 }
+		 else{
+		 $('#mess_er1').html("");
+		 $('#mess_er4').html("");
+					var at="@";
+					var dot=".";
+					var obj=$("#cus_email").val();
+					var lat=obj.indexOf(at);
+					var lstr=obj.length;
+					var ldot=obj.indexOf(dot);
+					if (obj.indexOf(at)==-1){
+						$('#mess_er2').html("<?=$lang['tl_ckhonghop']?>");
+						return false
+					}
+				   else if (obj.indexOf(at)==-1 || obj.indexOf(at)==0 || obj.indexOf(at)==lstr){
+						$('#mess_er2').html("<?=$lang['tl_ckhonghop']?>");
+						return false;
+					}
+				  else if (obj.indexOf(dot)==-1 || obj.indexOf(dot)==0 || obj.indexOf(dot)==lstr){
+						$('#mess_er2').html("<?=$lang['tl_ckhonghop']?>");
+						return false;
+					}
+				 else if (obj.indexOf(at,(lat+1))!=-1){
+						$('#mess_er2').html("<?=$lang['tl_ckhonghop']?>");
+						return false;
+					}
+				 else if (obj.substring(lat-1,lat)==dot || obj.substring(lat+1,lat+2)==dot){
+						$('#mess_er2').html("<?=$lang['tl_ckhonghop']?>");
+						return false;
+					}
+				 else if (obj.indexOf(dot,(lat+2))==-1){
+						$('#mess_er2').html("<?=$lang['tl_ckhonghop']?>");
+						return false;
+					}
+				 else if (obj.indexOf(' ')!=-1){
+						$('#mess_er2').html("<?=$lang['tl_ckhonghop']?>");
+						return false;
+					}
+							 
+				}
+
+		if ($("#cus_content").val()==""){
+			$('#mess_er1').html("");
+			$('#mess_er4').html("");
+			$('#mess_er2').html("");
+			$('#mess_er5').html("");
+			$('#mess_er3').html("<?=$lang['tl_nhaplienhe']?>");
+			return false;
+		 }
+	get_encode_special();								
+	return true;
+   }
+   
+   function changedist() {
+	$.ajax({
+		url: 'index.php?act=changedist',
+		type: 'POST',
+		data: 'province='+ $('#cus_province').val(),
+		success: function(data) {
+		//document.getElementById("sametype").style.display = "block";
+		$('#same_dist').html(data);
+		}
+	});
+}
+   			
+</script>
+

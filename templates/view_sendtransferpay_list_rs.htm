@@ -1,0 +1,115 @@
+<table width="100%" border="0" cellspacing="3" cellpadding="3"  >
+  <tr>
+    <td colspan="3" align="left"><table width="100%" border="0" cellpadding="3" cellspacing="0"  background="images/bg_viewcart2.gif">
+  <tr >
+    <td width="2%" height="10" align="left">&nbsp;</td>
+    <td width="98%" height="32" colspan="2" align="left" class="title_xam" ><?=$lang['tl_nnguoinhan']?> </td>
+  </tr>
+</table></td>
+  </tr>
+  <tr>
+    <td align="left">&nbsp;</td>
+    <td align="left">&nbsp;</td>
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="2%" align="left">&nbsp;</td>
+    <td width="29%" align="left"><?=$lang['tl_ntennhan']?></td>
+    <td width="69%" align="left"><?=$fullname_get?></td>
+  </tr>
+  <tr>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"><span id="mess_er4" class="do"></span></td>
+  </tr>
+  <tr>
+    <td align="left">&nbsp;</td>
+    <td align="left"><?=$lang['tl_ntelnhan']?></td>
+    <td align="left">
+	<?=$tel_get?>	</td>
+  </tr>
+  <tr>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"><span id="mess_er2" class="do"></span></td>
+  </tr>
+  <tr>
+    <td align="left">&nbsp;</td>
+    <td align="left"><?=$lang['tl_nmailnhan']?></td>
+    <td align="left"><?=$email_get?></td>
+  </tr>
+  <tr>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"><span id="mess_er5" class="do"></span></td>
+  </tr>
+   <tr>
+    <td align="left" ></td>
+    <td align="left" ><?=$lang['tl_btinhthanh']?></td>
+    <td align="left" ><?=$province_name_get?></td>
+  </tr>
+ <tr>
+    <td align="left">&nbsp;</td>
+    <td align="left">&nbsp;</td>
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left">&nbsp;</td>
+    <td align="left"><?=$lang['tl_bquanhuyen']?></td>
+    <td align="left"><?=$dist_name_get?></td>
+  </tr>
+  <tr>
+    <td align="left">&nbsp;</td>
+    <td align="left">&nbsp;</td>
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left">&nbsp;</td>
+    <td align="left"><?=$lang['tl_ndiachinhan']?></td>
+    <td align="left"><?=$address_get?></td>
+  </tr>
+  <tr>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"><span id="mess_er3" class="do"></span></td>
+  </tr>
+  <tr>
+    <td height="10" colspan="3" align="left"><table width="100%" border="0" cellpadding="3" cellspacing="0"  background="images/bg_viewcart2.gif">
+  <tr >
+    <td width="2%" height="10" align="left">&nbsp;</td>
+    <td width="98%" height="32" colspan="2" align="left" class="title_xam" ><?=$lang['tl_nptvanchuyen']?> </td>
+  </tr>
+</table></td>
+  </tr>
+  <tr>
+    <td align="left" height="10"></td>
+    <td height="25" colspan="2" align="left">	
+<?php if($cked == 1){ ?>
+		<table width="100%" border="0" cellpadding="3" cellspacing="3" >
+		  <tr>
+			<td height="40" colspan="2" align="left" >
+		    <?=$lang['tl_nphatbuudien']?></td>
+		  </tr>
+		</table>	
+			<table width="95%" border="0" cellpadding="3" cellspacing="3" >
+			  <tr>
+				<td height="40" align="left" ><?=$buudien?></td>
+			  </tr>
+			</table>
+<?php } else { ?>	
+		<table width="100%" border="0" cellpadding="3" cellspacing="3" >
+		  <tr>
+			<td height="40" align="left" >
+		      <?=$lang['tl_nphatnhanh']?></td>
+			<td align="left">&nbsp;</td>
+		  </tr>
+		</table>	
+		<table width="95%" border="0" cellpadding="3" cellspacing="3" >  
+		  <tr>
+			<td height="40" colspan="2" align="left" >
+			<?=$phatnhanh?></td>
+		  </tr>
+		</table>
+<?php } ?>	</td>
+  </tr>    
+</table>	

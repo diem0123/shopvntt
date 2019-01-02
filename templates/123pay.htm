@@ -1,0 +1,92 @@
+<style type="text/css">
+<!--
+
+tr.title {
+	height: 25px;
+	background-color: #0074C4
+}
+
+td {
+	font-family: Verdana, Arial, sans-serif;
+	font-size: 8pt;
+	color: #000000
+}
+
+th {
+	font-family: Verdana, Arial, sans-serif;
+	font-size: 10pt;
+	color: #000000;
+	font-weight: bold;
+	background-color: #CCCCCC;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em
+}
+
+#background-image {
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+	font-size: 12px;
+	width: 100%;
+	text-align: left;
+	border-collapse: collapse;	
+	margin: 0px;
+}
+
+#background-image th {
+	font-weight: normal;
+	font-size: 14px;
+	color: #000000;
+	padding: 12px;
+}
+
+#background-image td {
+	color: #000000;
+	border-top: 1px solid #fff;
+	padding: 9px 12px;
+}
+
+#background-image tbody tr:hover td {
+	color: #f34e0c;
+	background: none;
+}
+-->
+</style>
+<h2>KẾT QUẢ THANH TOÁN TỪ CỔNG 123PAY</h2>
+<center>
+	<span class="title_cam" ><?=$message?>!</span>
+</center>
+<div style="text-align:center; padding:10px 0;">
+<table id="background-image" summary="Meeting Results" border="1"  width="100%" >
+	<thead>
+		<tr>
+			<th scope="col">T&ecirc;n</th>
+			<th scope="col">Gi&aacute; tr&#7883; </th>
+			<th scope="col">M&ocirc; t&#7843; </th>
+		</tr>
+	</thead>	
+	<tbody>
+		<tr>
+			<td><strong><i>Code Order </i></strong></td>
+			<td><?=$code_order?></td>
+			<td>Mã đơn hàng</td>
+		</tr>
+		<tr>
+			<td><strong><i>Date Order</i></strong></td>
+			<td><?=$CREATED_DATE?></td>
+			<td>Ngày đặt hàng</td>
+		</tr>
+		<tr>
+			<td><strong><i>Status</i></strong></td>
+			<td><?=$Status?></td>
+			<td>Trạng thái đơn hàng: <?=$getResponseDescription?></td>
+		</tr>
+		<tr>
+			<td><strong><i>Amount</i></strong></td>
+			<td><?=$Amount?></td>
+			<td>Số tiền thanh toán</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+<center>
+	<span class="title_cam" ><a href="chi-tiet-don-hang.html?idpayment=<?=$idpay?>"> >> Xem lại thông tin đơn hàng đã đặt</a></span>
+</center>

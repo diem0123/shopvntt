@@ -1,0 +1,65 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title><?=$title?></title>
+<link rel="stylesheet" type="text/css" href="css/wstyle.css" />
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/webtoolkit.base64.js"></script>
+<script type="text/javascript" src="wysiwyg/wysiwyg.js"></script>
+</head>
+<div align="left">
+<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+ <tr bgcolor="#FFF5EA">
+    <td width="17" height="40" class='menu'>&nbsp;</td>
+    <td width="216" class='menu'>Chi tiết  </td>
+    <td width="800" class='menu'>&nbsp;</td>
+  </tr>
+ 
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="216" class='menu'>Trị giá</td>
+    <td width="800" class='menu'>
+	<?=$catname?></td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="216" class='menu'>&nbsp;</td>
+    <td width="800" class='menu'>&nbsp;    </td>
+  </tr>
+  <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="216" class='menu'>Từ  </td>
+    <td width="800" class='menu'>
+    <?=number_format($from,0,"",".")?></td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="216" class='menu'>&nbsp;</td>
+    <td width="800" class='menu'>&nbsp;    </td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="216" class='menu'>Đến</td>
+    <td width="800" class='menu'>
+    <?=number_format($to,0,"",".")?></td>
+  </tr>
+ <tr>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>&nbsp;</td>
+ </tr>
+ <tr>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>Số thứ tự</td>
+   <td class='menu'><?=$iorder?></td>
+ </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="216" class='menu'>&nbsp;</td>
+    <td width="800" class='menu'>&nbsp;</td>
+  </tr>
+    <tr>
+    <td colspan="3" align="center" height="41" class='menu'>
+    <input type="button" name="cancel" value="Đóng" onClick="javascript:window.close();" class="button" style="width:60px;height:22px ">    </td>
+  </tr>
+</table>
+</div>

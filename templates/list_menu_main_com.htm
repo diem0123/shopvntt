@@ -1,0 +1,13 @@
+<?php if($list_catsub_menu ==''){ ?>
+<li <?=$st_select?>><a href="<?=$link1?>"  ><?=$name?></a></li>
+<?php }else{?>
+	<li <?=$st_select?>>
+		<a href="<?=$link1?>" data-toggle="collapse" data-target="#menu-sub-2"><?=$name?></a>
+		<ul class="dropdown-menu collapse" id="menu-sub-2">
+			<?=$list_catsub_menu?>
+		</ul>
+	</li>
+<?php } ?>	
+
+	
+                

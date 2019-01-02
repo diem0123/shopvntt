@@ -1,0 +1,276 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title><?=$title?></title>
+<link rel="stylesheet" type="text/css" href="css/wstyle.css" />
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/webtoolkit.base64.js"></script>
+<script type="text/javascript" src="wysiwyg/wysiwyg.js"></script>
+</head>
+<?php if($mess1 == 'ok'){ ?>
+<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="350" class="content" align="center"><?=$mess2?><br /><br /><input type="button" name="cancel" value="Đóng" onclick="javascript:window.close();" class="button" style="width:60px;height:22px " /></td>
+  </tr> 
+</table>
+<?php } else { ?>
+<table border="0" width="100%" id="table26" cellspacing="0" cellpadding="0">
+					<tr>
+						<td valign="top" align=left width="2%"></td>
+						<td class="title_xam" align=left width="98%" height="40">Gửi cho bạn bè </td>
+					</tr>
+      <tr>
+   <td colspan="2">
+<div align="left">
+	<table width="100%" border="0" cellpadding="3" cellspacing="0">
+<form method="post" name="contact" action="sp-<?=$idp?>-gui-ban-be.html" onsubmit="return checkform();" enctype="multipart/form-data">
+<input type="hidden" name="idp" value="<?=$idp?>">
+  <tr>
+    <td colspan="3" height=5></td>
+  </tr>
+  
+  <tr>
+    <td class="menu" width="2%"></td>
+    <td class="menu" width="26%" height="10"></td>
+    <td width="72%" class="do"><?=$mess2?></td>
+  </tr>
+
+  <tr>
+    <td class="menu" width="2%">&nbsp;</td>
+    <td class="menu" width="26%" height="25">Tên của bạn
+    <font size="1" color="#D7261C">*</font></td>
+    <td width="72%">
+	<input name="fullname" type="text" style="width:180px" value="<?=$fullname?>" size="1">&nbsp; </td>
+  </tr>
+  <tr>
+    <td class="menu"></td>
+    <td class="menu" height="10"></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td class="menu" width="2%">&nbsp;</td>
+    <td class="menu" width="26%" height="25">
+      Email của bạn
+    <font size="1" color="#D7261C">*</font></td>
+    <td width="72%">
+	<input name="email" type="text" style="width:180px" value="<?=$email?>" size="1"></td>
+  </tr>
+  <tr>
+    <td class="menu"></td>
+    <td class="menu" height="10"></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td class="menu" width="2%">&nbsp;</td>
+    <td class="menu" width="26%" height="25">Tên người nhận
+    <font size="1" color="#D7261C">*</font></td>
+    <td width="72%">
+	<input name="namefriend" style="width:180px" value="<?=$namefriend?>" size="1"></td>
+  </tr>
+  <tr>
+    <td class="menu"></td>
+    <td class="menu" height="10"></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td class="menu" width="2%">&nbsp;</td>
+    <td class="menu" width="26%" height="25">
+      Email người nhận
+    <font size="1" color="#D7261C">*</font></td>
+    <td width="72%">
+	<input name="emailfriend" style="width:180px" value="<?=$emailfriend?>" size="1"></td>
+  </tr>
+  <tr>
+    <td class="menu" height="10"></td>
+    <td class="menu"></td>
+    <td class="menu"></td>
+  </tr>
+  <tr>
+    <td class="menu" height="25"></td>
+    <td class="menu">Tiêu đề <font size="1" color="#D7261C">*</font></td>
+    <td class="menu"><input name="subject" style="width:180px" value="<?=$subject?>" size="1"></td>
+  </tr>
+  <tr>
+    <td class="menu" height="10"></td>
+    <td class="menu"></td>
+    <td class="menu"></td>
+  </tr>
+  <tr>
+    <td class="menu" width="2%">&nbsp;</td>
+    <td class="menu" width="26%">Tin nhắn    </td>
+    <td class="menu" width="72%"><textarea name="comment" cols="40" rows="4" onKeyUp="getLengthtextarear(this,1000);"><?=$comment?></textarea></td>
+  </tr>
+    <tr>
+      <td align="center"></td>
+      <td align="center" height="10"></td>
+      <td align="center"></td>
+    </tr>
+    <tr>
+      <td align="center" width="2%">&nbsp;</td>
+    <td align="center" width="26%" height="35">&nbsp;          </td>
+    <td align="center" width="72%"><div align="left">
+      <input name="idp" type="hidden" value="<?=$idp?>">
+      <input type="submit" name="submit" value="Gửi" class="button">
+    </div></td>
+  </tr>
+  <tr>
+    <td align="center" width="2%">&nbsp;</td>
+    <td align="center" width="26%">&nbsp;</td>
+    <td align="center" width="72%">&nbsp;</td>
+  </tr>
+  </form>
+</table>
+</div>
+</td></tr>
+	 <tr>
+        <td colspan="2">&nbsp;</td>
+  </tr>
+</table>
+<?php } ?>
+<script language="javascript1.2">
+               function checkform(){
+                    
+                    if (document.contact.fullname.value==""){
+                                        alert("Vui lòng nhập tên của bạn!");
+                                        document.contact.fullname.focus();
+                                        return false;
+                                }
+
+                    if (document.contact.email.value==""){
+                         alert("Vui lòng nhập email của bạn!");
+						 document.contact.email.focus();
+                         return false;
+                    }else{
+								var at="@";
+								var dot=".";
+								var obj=document.contact.email.value;
+								var lat=obj.indexOf(at);
+								var lstr=obj.length;
+								var ldot=obj.indexOf(dot);
+								if (obj.indexOf(at)==-1){
+									alert('Emai không đúng định dạng!')
+									document.contact.email.focus();
+									
+									return false
+								}
+							   if (obj.indexOf(at)==-1 || obj.indexOf(at)==0 || obj.indexOf(at)==lstr){
+									alert('Emai không đúng định dạng!');
+									document.contact.email.focus();
+									
+									return false;
+								}
+							  if (obj.indexOf(dot)==-1 || obj.indexOf(dot)==0 || obj.indexOf(dot)==lstr){
+									alert('Emai không đúng định dạng!');
+									document.contact.email.focus();
+									
+									return false;
+								}
+							 if (obj.indexOf(at,(lat+1))!=-1){
+									alert('Emai không đúng định dạng!');
+									document.contact.email.focus();
+									
+									return false;
+								}
+							 if (obj.substring(lat-1,lat)==dot || obj.substring(lat+1,lat+2)==dot){
+									alert('Emai không đúng định dạng!');
+									document.contact.email.focus();
+									
+									return false;
+								}
+							 if (obj.indexOf(dot,(lat+2))==-1){
+									alert('Emai không đúng định dạng!');
+									document.contact.email.focus();
+									
+									return false;
+								}
+							 if (obj.indexOf(' ')!=-1){
+									alert('Emai không đúng định dạng!');
+									document.contact.email.focus();
+									
+									return false;
+								}
+										 
+							}
+	if (document.contact.namefriend.value==""){
+                                        alert("Vui lòng nhập tên người nhận!");
+                                        document.contact.namefriend.focus();
+                                        return false;
+                                }
+								
+								
+								
+							    if (document.contact.emailfriend.value==""){
+                                        alert("Vui lòng nhập email người nhận!");
+                                        document.contact.emailfriend.focus();
+                                        return false;
+                                }else{
+								var at="@";
+								var dot=".";
+								var obj=document.contact.emailfriend.value;
+								var lat=obj.indexOf(at);
+								var lstr=obj.length;
+								var ldot=obj.indexOf(dot);
+								if (obj.indexOf(at)==-1){
+									alert('Emai không đúng định dạng!')
+									document.contact.emailfriend.focus();
+									
+									return false
+								}
+							   if (obj.indexOf(at)==-1 || obj.indexOf(at)==0 || obj.indexOf(at)==lstr){
+									alert('Emai không đúng định dạng!');
+									document.contact.emailfriend.focus();
+									
+									return false;
+								}
+							  if (obj.indexOf(dot)==-1 || obj.indexOf(dot)==0 || obj.indexOf(dot)==lstr){
+									alert('Emai không đúng định dạng!');
+									document.contact.emailfriend.focus();
+									
+									return false;
+								}
+							 if (obj.indexOf(at,(lat+1))!=-1){
+									alert('Emai không đúng định dạng!');
+									document.contact.emailfriend.focus();
+									
+									return false;
+								}
+							 if (obj.substring(lat-1,lat)==dot || obj.substring(lat+1,lat+2)==dot){
+									alert('Emai không đúng định dạng!');
+									document.contact.emailfriend.focus();
+									
+									return false;
+								}
+							 if (obj.indexOf(dot,(lat+2))==-1){
+									alert('Emai không đúng định dạng!');
+									document.contact.emailfriend.focus();
+									
+									return false;
+								}
+							 if (obj.indexOf(' ')!=-1){
+									alert('Emai không đúng định dạng!');
+									document.contact.emailfriend.focus();
+									
+									return false;
+								}
+										 
+							}
+				
+				 if (document.contact.subject.value==""){
+                                        alert("Vui lòng nhập tiêu đề thư!");
+                                        document.contact.subject.focus();
+                                        return false;
+                                }			
+
+                    return true;
+               }
+               
+               function getLengthtextarear(item1,num)
+			{
+				var str=item1.value;
+				if (item1.value.length>eval(num))
+					{
+						alert("Số ký tự tối đa là "+num);
+						item1.value=str.substring(0,eval(num));
+					}
+			} 
+
+          </script>

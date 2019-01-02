@@ -1,0 +1,50 @@
+<input name="fee_trans" type="hidden" id="fee_trans" value="<?=$fee?>"  />
+<input name="sale_trans" type="hidden" id="sale_trans" value="<?=$sale?>"  />
+<input name="fee_transfer" type="hidden" id="fee_transfer" value="<?=$fee_transfer?>"  />
+<table width="100%" border="0" cellspacing="3" cellpadding="3" >  
+  <tr background="images/bg_viewcart2.gif">
+    <td align="left" height="30"></td>
+    <td align="left" height="30" class="title_xam" > <?=$lang['tl_sphivanchuyen']?></td>
+  </tr>  
+   <tr >
+    <td align="left" height="20"></td>
+    <td align="left" height="20"  ></td>
+  </tr>
+  <tr >
+    <td align="left" height="20" ></td>
+    <td align="left" height="20" class="ptext"><?=$lang['tl_sphivanchuyen']?>: <strong><?=$fee?></strong> (VNĐ)</td>
+  </tr>
+  <tr >
+    <td align="left" height="20"></td>
+    <td align="left" height="20" ></td>
+  </tr>
+  <tr >
+    <td align="left" height="20"> </td>
+    <td align="left" height="20" class="ptext"><?=$lang['tl_sgiamcuoc']?>: <strong><?=$sale?></strong> (%)</td>
+  </tr>
+  <tr >
+    <td height="20" colspan="2" align="left" class="style38"><span class="dotline"></span></td>
+  </tr>
+  <!--
+  <tr >
+    <td align="left" height="20">  </td>
+    <td align="left" height="20" class="ptext"><?=$lang['tl_sphivanchuyen']?> (<?=$lang['tl_csaugiam']?>): <strong><?=$fee_transfer?></strong> (VNĐ)</td>
+  </tr>  
+  <tr>
+    <td width="2%" height="20" align="left">&nbsp;</td>
+    <td width="96%" align="left"></td>
+  </tr>
+  <tr>
+    <td align="left" height="20"></td>
+    <td align="left" height="20" class="ptext"><?=$lang['tl_stongthanhtoan']?>: <strong><?=$totalpay_final?></strong> (VNĐ)</td>
+  </tr>
+  -->
+  <tr>
+    <td height="20" align="left"></td>
+    <td align="left"></td>
+  </tr>
+</table>
+<div class="price-total">
+		<p><?=$lang['tl_sphivanchuyen']?> (<?=$lang['tl_csaugiam']?>): <span> <?=$fee_transfer?></span> VNĐ</p>
+		<p><?=$lang['tl_stongthanhtoan']?> : <span> <?=$totalpay_final?></span> VNĐ</p>
+</div>

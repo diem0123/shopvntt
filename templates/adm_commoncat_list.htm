@@ -1,0 +1,79 @@
+<div class="breadcrumbs ace-save-state" id="breadcrumbs">
+	<ul class="breadcrumb">
+		<li>
+			<a href="index.php?act=adm_common">Cài dặt</a>
+		</li>
+		
+		<?php if($idtype==2){ ?>
+		<li>
+			<a href="index.php?act=adm_commontype&idtype=2">Chuyên mục sản phẩm</a>
+		</li>
+		<?php } else { ?>
+		<li>
+			<a href="index.php?act=adm_commontype">Chuyên mục thông tin</a>
+		</li>
+		<?php } ?>
+		
+	</ul><!-- /.breadcrumb -->
+	<div class="nav-search" id="nav-search">
+		<!--
+		<form class="form-search">
+			<span class="input-icon">
+				<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+				<i class="ace-icon fa fa-search nav-search-icon"></i>
+			</span>
+		</form>-->
+	</div><!-- /.nav-search -->
+</div>
+<div class="adm_out" >
+<div class="adm_common">
+<?//$submenu2?>
+<form name="f1" method="post"  >
+<input type="hidden" name="vlid" value="">
+<table border="0" width="100%">
+	<tr>
+		<td>
+		<table border="0" width="100%" >
+			<tr>
+			  <td height="30" class="menu" ><?=$lang['level']?> 1: <?=$typename?></td>
+			</tr>
+		</table>
+		<table border="0" width="100%" bgcolor="#FFF5EA">
+			<tr>
+			  <td height="14" class="menu" >
+			    <button class="admbtn" type="button" name="bk1" value="" onclick="window.history.go(-1);" >&lt;&lt; <?=$lang['back']?></button>&nbsp;&nbsp;<button class="admbtn" type="button" name="ct1" value="" onclick="window.open('index.php?act=updatecommoncat&idtype=<?=$idtype?>&ac=a','Addcommoncatpopup','scrollbars=yes,status=yes,toolbar=no,location=0,directories=0,status=yes,menubar=0,resizable=0,width=\'100%\',height=\'100%\'');" ><?=$lang['adm_them']?></button>
+				</td>
+			</tr>
+		</table>
+		<table border="0" width="100%" cellpadding="0" cellspacing="0" >
+			<tr>
+			  <td height="10" align="left" ></td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<table id="simple-table" class="table  table-bordered table-hover">
+			<thead>
+			<tr bgcolor="#EEEEEE">
+				<td width="100" class="do" height="25"><?=$lang['stt']?> </td>
+				<td height="25" class="do"><?=$lang['tenthanhphan']?> </td>
+				<td class="do"><?=$lang['trangthai']?> </td>
+				<td width="130" colspan="4" class="do"><?=$lang['hanhdong']?> </td>
+			</tr>
+			</thead>
+			<?=$commoncat_list_rs?>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td height="5"></td>
+	</tr>
+	<tr>
+		<td height="25" align="center"><div id="divPaging"><?=$paging?></div></td>
+	</tr>
+</table>
+</form>
+</div>
+</div>

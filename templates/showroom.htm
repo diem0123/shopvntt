@@ -1,0 +1,64 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="js/webtoolkit.base64.js"></script>
+<script type="text/javascript" 
+src="http://maps.googleapis.com/maps/api/js?sensor=false&language=vi"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+initialize();
+});
+var map;
+function initialize() {
+      var myLatlng = new google.maps.LatLng(10.794166676621954,106.61471843719482);
+      var myOptions = {
+	  //10.843928,106.717672
+    zoom: 15,
+    center: myLatlng,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+}
+map = new google.maps.Map(document.getElementById("div_id"), myOptions); 
+  // Biến text chứa nội dung sẽ được hiển thị
+var text;
+text= "<b style='color:#00F' " + 
+         "style='text-align:center'>ĐẠI LÝ PHÂN PHỐI GẠCH MEN PHƯỚC LỘC</b><br />" + 
+     "<img src='http://www.vietnamtiepthi.com.vn/images/logo.png'  /> ";
+   var infowindow = new google.maps.InfoWindow(
+    { content: text,
+        size: new google.maps.Size(100,50),
+        position: myLatlng
+    });
+       infowindow.open(map);    
+    var marker = new google.maps.Marker({
+      position: myLatlng, 
+      map: map,
+      title:"ĐẠI LÝ PHÂN PHỐI GẠCH MEN PHƯỚC LỘC"
+  });
+}
+</script>
+
+<table width="670" border="0" cellpadding="3" cellspacing="3" class="content" >
+  <tr>
+    <td  height="1" colspan="2" align="left" class="menu"></td>
+  </tr>
+  <tr>
+    <td  height="30" colspan="2" align="left" class="name_com">ĐẠI LÝ PHÂN PHỐI GẠCH MEN PHƯỚC LỘC</td>
+  </tr>
+  <tr>
+    <td height="10" colspan="2" align="left" ><?=$lang['tl_address']?>: 610 Bình Long, P. Tân Quý, Q. Tân Phú, TP.HCM</td>
+  </tr>
+  <tr>
+    <td height="10" colspan="2" align="left" >Điện thoại: 08. 3559 0436 - 5408 4672 - Fax: 08. 6265 7835</td>
+  </tr>
+  <tr>
+    <td height="10" colspan="2" align="left" >Email: <a href="mailto:quynhxuan.041186@yahoo.com.vn" class="title_x">quynhxuan.041186@yahoo.com.vn</a></td>
+  </tr>
+  <tr>
+    <td height="10" colspan="2" align="left" >Website: <a href="http://www.gachmenphuocloc.com" class="title_x">www.gachmenphuocloc.com</a></td>
+  </tr>
+  <tr>
+    <td height="40" colspan="2" align="left" class="title_den" >SƠ ĐỒ ĐƯỜNG ĐI</td>
+  </tr>
+  <tr>
+    <td height="10" colspan="2" align="left" ></td>
+  </tr>
+</table>
+<div id="div_id" style="height:600px; width:670px;border:1px solid #cccccc;"></div>

@@ -1,0 +1,56 @@
+<div class="item">
+                        <div class="ite">
+						<?php if($PRICE_SALE1 !=""){ ?>
+										<strong class="sale">-<?=$SALE1?>%</strong>
+										<?php } ?>
+                            <a href="spchitiet-<?=$ID1?>-<?=$name_link1?>.html" class="linkopacity" title="<?=$name1?>" ><img class="border_rounded" border="0" src="images/bin/<?=$ID_CATEGORY1?>/<?=$IMAGE_LARGE1?>" alt="<?=$name1?>" width="<?=$w1?>" height="<?=$h1?>" ></a>
+                            <h3>
+                               <a href="spchitiet-<?=$ID1?>-<?=$name_link1?>.html" title="<?=$name1?>" ><?=$name1?> </a>
+                            </h3>
+                            <?=$star1?>
+
+                            <?php if($PRICE_SALE1 ==""){ ?>
+										<strong><em><?=$lang['tl_gia']?>:</em> <?=$PRICE1?> </strong>							
+							<?php } elseif($PRICE_SALE1 !=""){ ?>
+							<span class="old-price">                                            
+											<?=$lang['tl_giagoc']?>: <em><?=$PRICE1?> </em>
+                                        </span>
+										<strong><em><?=$lang['tl_gia']?>:</em> <?=$PRICE_SALE1?> </strong>	
+										<strong><em><?=$lang['tl_giam']?>:</em> <?=$PRICE_DISC1?> (<?=$SALE1?>%)</strong>																						
+							<?php } ?>							
+
+                            <div class="group controls">
+							<a href="#" class="btn_dh" onclick="savecart(<?=$ID1?>,1);" ><?=$lang['tl_order']?> <i class="fa fa-caret-right"></i></a>
+                            <a href="#" class="plus" onClick="savecart(<?=$ID1?>,0);" title="<?=$lang['tl_addcart']?>" ></a>
+                               
+                            </div>
+                        </div>
+						
+						<div class="ite" <?=$dis1?> >
+						<?php if($PRICE_SALE2 !=""){ ?>
+										<strong class="sale">-<?=$SALE2?>%</strong>
+										<?php } ?>
+                            <a href="spchitiet-<?=$ID2?>-<?=$name_link2?>.html" class="linkopacity" title="<?=$name2?>" ><img class="border_rounded" border="0" src="images/bin/<?=$ID_CATEGORY2?>/<?=$IMAGE_LARGE2?>" alt="<?=$name2?>" width="<?=$w2?>" height="<?=$h2?>" ></a>
+                            <h3>
+                               <a href="spchitiet-<?=$ID2?>-<?=$name_link2?>.html" title="<?=$name2?>" ><?=$name2?> </a>
+                            </h3>
+                            <?=$star2?>
+
+                            <?php if($PRICE_SALE2 ==""){ ?>
+										<strong><em><?=$lang['tl_gia']?>:</em> <?=$PRICE2?> </strong>							
+							<?php } elseif($PRICE_SALE2 !=""){ ?>
+							<span class="old-price">
+                                            <?=$lang['tl_giagoc']?>: <em><?=$PRICE2?> </em>
+                                        </span>
+										<strong><em><?=$lang['tl_gia']?>:</em> <?=$PRICE_SALE2?> </strong>
+										<strong><em><?=$lang['tl_giam']?>:</em> <?=$PRICE_DISC2?> (<?=$SALE2?>%)</strong>																							
+							<?php } ?>							
+
+                            <div class="group controls">
+							<a href="#" class="btn_dh" onclick="savecart(<?=$ID2?>,1);" ><?=$lang['tl_order']?> <i class="fa fa-caret-right"></i> </a>
+                            <a href="#" class="plus" onClick="savecart(<?=$ID2?>,0);" title="<?=$lang['tl_addcart']?>" ></a>
+                               
+                            </div>
+                        </div>
+                        
+                    </div>

@@ -1,0 +1,38 @@
+<table border="0" width="1000" cellspacing="0" cellpadding="0">
+	<tr>
+		<td height="1" bgcolor="#FFF5EA"></td>
+	</tr>
+</table>
+<?=$submenu2?>
+<table border="0" width="1000">
+	<tr>
+		<td>
+		<table border="0" width="100%" bgcolor="#FFF5EA">
+			<tr>
+				<td height="14" class="title" ><img src="images/bg-title.gif"  height="14"><input type="button" name="add" value="Th&ecirc;m tr&#7883; gi&aacute; &#273;&#417;n h&agrave;ng" onclick="window.open('index.php?act=update_money_order&ac=a','Addsubcatpopup','scrollbars=yes,status=yes,toolbar=no,location=0,directories=0,status=yes,menubar=0,resizable=0,width=800,height=450');" ></td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<table border="0" width="1000" cellspacing="0">
+			<tr bgcolor="#EEEEEE">
+				<td width="249" class="do" height="25">Kho&#7843;ng ti&#7873;n </td>
+				<td width="190" class="do" height="25">T&#7915; (VN&#272;) </td>
+				<td width="148" class="do" height="25">&#272;&#7871;n (VN&#272;)</td>
+				<td width="100" class="do">Ki&#7875;u</td>
+				<td width="125" class="do" height="25">Th&#7913; t&#7921; </td>
+				<td colspan="3" class="do">H&agrave;nh &#273;&#7897;ng </td>
+			</tr>						
+			<?=$moneyorder_list_rs?>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td height="5"></td>
+	</tr>
+	<tr>
+		<td height="25" align="center"><?=$paging?></td>
+	</tr>
+</table>

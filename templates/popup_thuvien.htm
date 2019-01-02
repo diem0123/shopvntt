@@ -1,0 +1,185 @@
+<link href="up_img/css/jquery.filer.css" type="text/css" rel="stylesheet" />
+<link href="up_img/css/themes/jquery.filer-dragdropbox-theme.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript" src="up_img/js/jquery.filer.min.js?v=1.0.5"></script>
+<script type="text/javascript" src="up_img/js/custom.js"></script>
+<script src="ckeditor/ckeditor.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div class="popup_lbr" >
+<div class="upfile">
+<form name="f2" action="upload.html" method="post" enctype="multipart/form-data">
+      <input type="file" name="files[]" id="filer1" multiple="multiple">
+	  <input type="hidden" id="nameCKEditor" name="nameCKEditor" value="<?=$nameCKEditor?>">
+	  <input type="hidden" id="fnum" name="fnum" value="<?=$fnum?>">
+	  <input type="hidden" id="langCode" name="langCode" value="<?=$langCode?>">
+	  <div><span class="texttv"><br />File thuộc định dạng: <br /><em>(jpg,jpeg,gif,png,bmp,pdf,doc,docx,xls,xlsx,ppt,pptx,txt,mp3,wmv,mp4,avi,wav,wma,mpg,mpeg,swf,flv)</em></span></div>
+      <!--<input type="submit" value="Submit"> -->
+</form>
+</div>
+<form name="f1" method="post" >
+<input type="hidden" id="vlid" name="vlid" value="">
+<input type="hidden" id="idtype1" name="idtype1" value="<?=$idtype?>">
+		
+<table border="0" width="100%">
+	<tr>
+		<td>
+		<table border="0" width="100%" >
+			<tr>
+			  <td height="14" class="menu" ><button class="admbtn" type="button" name="ct1" value="" onClick="delselect(<?=$pagejs?>,'Vui l&ograve;ng ch&#7885;n &iacute;t nh&#7845;t 1 h&igrave;nh &#7843;nh!','B&#7841;n ch&#7855;c ch&#7855;n mu&#7889;n x&oacute;a?', document.forms.f1.ck, document.forms.f1.vlid,'<?=$thumuc?>');" >Xoá file chọn </button> <button class="admbtn" type="button" name="ct1" value="" onClick="getlibrary(0);" >Quản lý ảnh </button> <button class="admbtn" type="button" name="ct2" value="" onClick="getfilelibrary(0);" >Quản lý file </button> <button class="admbtn" type="button" name="ct4" value="" onClick="showup();" >Upload ... </button></td>
+			</tr>
+		</table>
+		<table border="0" width="100%" cellpadding="0" cellspacing="0" >
+			<tr>
+			  <td height="1" align="left" ></td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #F7F7F7; border: 2px solid #FFFFFF; padding: 5px;">	
+			<tr>
+			  <td colspan="15" align="left" height="10"><input class="checktv" name="allbox" type="checkbox" onclick="checkall(this.form);" title="Check All"> 
+				<span class="texttv">Ch&#7885;n t&#7845;t c&#7843;  / H&#7911;y ch&#7885;n t&#7845;t c&#7843;</span>    </td>
+			</tr>
+			<tr>
+				<td align="left" height="5"><span class="dotline_auto"></span></td>
+			</tr>
+			<tr>
+				<td align="left" ><?=$list_images?></td>
+			</tr>
+								
+		</table>
+		</td>
+	</tr>
+		
+</table>
+<div class="box-phantrang">
+            		<ul>                    	
+						<?=$paging?>						                       
+                    </ul>
+            	</div>
+</form>
+</div>
+<script type="text/javascript">
+function showup() {	
+	//$('.upfile').attr("style","display:block");	
+	$('.upfile').toggle("fast");
+}
+
+
+
+function delfile(page,imgname, thumuc) {
+	//alert(imgname);
+	$.ajax({
+		url: $("#base_url").val()+'index.php',
+		type: 'POST',
+		data: 'act=delimage&page='+page+'&imgname='+imgname+'&thumuc='+thumuc,
+		success: function(data) {
+		//alert(data);
+		var getData = $.parseJSON(data);
+		//$('#showfile').html(data);
+		//document.getElementById("showlistimg").style.display = "block";
+		if(getData.mess1 == "success") getfilelibrary(page);
+		else alert(getData.mess2);
+		
+		}
+	});
+}
+
+function deletelistfile(page, mess1, mess2, cklist, vlidlist, thumuc) {
+	getValueListCheckBoxspec(cklist,vlidlist);
+	var vlidtemp = $("#vlid").val();
+	//alert(vlidtemp);
+	if (vlidlist.value=='') alert(mess1);
+	else if(confirm(mess2)){		
+		$.ajax({
+			url: $("#base_url").val()+'index.php',
+			type: 'POST',
+			data: 'act=delimage&page='+page+'&ac=d&vlid='+vlidtemp+'&thumuc='+thumuc,		
+			success: function(data) {
+			//alert(data);
+			var getData = $.parseJSON(data);
+			//$('#showfile').html(data);
+			//document.getElementById("showlistimg").style.display = "block";
+			if(getData.mess1 == "success") getfilelibrary(page);//window.location.reload();
+			else alert(getData.mess2);
+			
+			}
+		});
+	}
+}
+
+function delimage(page,imgname,thumuc) {
+	//alert(imgname);
+	$.ajax({
+		url: $("#base_url").val()+'index.php',
+		type: 'POST',
+		data: 'act=delimage&page='+page+'&imgname='+imgname+'&thumuc='+thumuc,
+		success: function(data) {
+		//alert(data);
+		var getData = $.parseJSON(data);
+		//$('#showfile').html(data);
+		//document.getElementById("showlistimg").style.display = "block";
+		if(getData.mess1 == "success") getlibrary(page);
+		else alert(getData.mess2);
+		
+		}
+	});
+}
+
+function deletelistimg(page, mess1, mess2, cklist, vlidlist, thumuc) {
+	getValueListCheckBoxspec(cklist,vlidlist);
+	var vlidtemp = $("#vlid").val();
+	//alert(vlidtemp);
+	if (vlidlist.value=='') alert(mess1);
+	else if(confirm(mess2)){		
+		$.ajax({
+			url: $("#base_url").val()+'index.php',
+			type: 'POST',
+			data: 'act=delimage&page='+page+'&ac=d&vlid='+vlidtemp+'&thumuc='+thumuc,		
+			success: function(data) {
+			//alert(data);
+			var getData = $.parseJSON(data);
+			//$('#showfile').html(data);
+			//document.getElementById("showlistimg").style.display = "block";
+			if(getData.mess1 == "success") getlibrary(page);//window.location.reload();
+			else alert(getData.mess2);
+			
+			}
+		});
+	}
+}	
+
+function geturlimage(urlimage, fnum) {
+	var imgdiv = '<img id="cke_93_previewImage" src="'+urlimage+'">';
+	var thea = window.opener.document.getElementById('cke_92_previewLink');
+	var m;
+	
+	//alert(urlimage);
+	
+	//window.opener.document.getElementById("cke_99_textInput").focus();
+	//window.opener.document.getElementById("cke_99_textInput").value = urlimage;	
+	//window.opener.document.getElementById("cke_99_textInput").blur();
+	//$(thea).html(imgdiv);
+		
+	//m = window.parent.CKEDITOR.tools.callFunction(1, urlimage, '');
+	window.opener.CKEDITOR.tools.callFunction(fnum, urlimage, '');
+	window.close();
+	
+	//$(theDiv).onchange();	
+	//CKEDITOR.instances['cke_99_textInput'].updateElement();
+	//CKEDITOR.instances['cke_99_textInput'].on('change', function() {alert('change fired');});	
+	//window.opener.document.getElementById("cke_106_textInput").focus();
+	//parent.opener.document.getElementById("cke_99_textInput").value = 'abc';
+	//window.opener.document.getElementById('cke_99_textInput').html(urlimage);
+	//document.getElementById("fileurl").value = $("#base_nohttp").val()+urlimage;
+	//window.opener.CKEDITOR.instances.cke_99_textInput.insertHTML(urlimage);
+}
+
+function delselect(page, mess1, mess2, cklist, vlidlist, thumuc) {
+	if($("#selectfile").val() == "I") deletelistimg(page, mess1, mess2, cklist, vlidlist, thumuc);
+	else deletelistfile(page, mess1, mess2, cklist, vlidlist, thumuc);
+}	
+
+</script>

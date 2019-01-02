@@ -1,0 +1,45 @@
+<?php if ($idtype ==2){?>
+<div class="box-all boxdetail fadeInLeft wow">
+	<div class="detailleft">
+		<a href="images/bin/imagenews/<?=$picture?>" class="lightbox" title="<?=$title_news?>"><img style="width:450px;height:350px" src="images/bin/imagenews/<?=$picture?>" class="img-sp-banner"/></a>
+	</div>
+	<div class="detailright">
+	<h2 class="title-about fadeInCenter wow"><?=$title_news?></h2>
+		<div class="detailinfo">
+			<?=$main_contents_short?>
+		</div>
+		<div style="height:20px;"></div>
+		<div class="box-social-bottom">
+	<span class="fbk" ><div class="fb-like" data-href="http://gcfood.com.vn/<?=$url_like?>" data-send="true" data-layout="button_count" data-width="450" data-show-faces="true"></div></span>
+	<span class="ggg"  ><g:plusone size="medium" href="http://gcfood.com.vn/<?=$url_like?>"></g:plusone></span>
+</div>
+	</div>
+</div>
+<div style="clear:both;height:20px;"></div>
+
+
+	
+<?php }else{?>
+	
+
+	<h2 class="detailnews"><?=$title_news?></h2> 
+	<div class="txtJust fadeInLeft wow">	
+		<div class="common-news"><?=$main_contents?></div>
+	</div>
+	<div style="height:20px;"></div>
+<div class="box-social-bottom" >
+						<span class="fbk" ><div class="fb-like" data-href="http://gcfood.com.vn/<?=$url_like?>" data-send="true" data-layout="button_count" data-width="450" data-show-faces="true"></div></span> <span class="ggg"  ><g:plusone size="medium" href="http://gcfood.com.vn/<?=$url_like?>"></g:plusone></span>
+						</div>
+<span class="dotline"></span>
+<div class="content-format">
+	<?php if($total_get >= 1){ ?>
+	
+	<div class="box-all">		
+		<ul class="list-related">
+			<?=$list_news_other?>
+		</ul>
+	</div>
+	<?php }?>
+</div>
+
+<?php }?>

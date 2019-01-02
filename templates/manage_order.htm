@@ -1,0 +1,44 @@
+ <ul class="breadcrumbs">
+	<li><a href="thong-tin-tai-khoan.html"><?=$lang['tl_qltkhoan']?></a></li>            
+	<li><a href="donhang-6-quan-ly-don-hang.html"><?=$lang['tl_aqldhang']?></a></li>            
+</ul>
+<form name="f1" method="post" >
+<input type="hidden" name="vlid" value="">
+<table border="0" width="100%">
+	<tr>
+		<td>
+		<table border="0" width="100%" >
+			<tr>
+			  <td height="14" class="title_xam" ><button class="admbutton" type="button" name="ct1" value="" onClick="SubmitLink(document.forms.f1,'index.php?act=delete_order&ac=d&page=<?=$page?>','<?=$lang['tl_ayeucauchon']?>', '<?=$lang['tl_axacnhanxoa']?>',document.forms.f1.ck, document.forms.f1.vlid);" ><?=$lang['tl_axoadonhang']?></button> </td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<table border="0" width="100%" cellspacing="0">
+			<tr bgcolor="#EEEEEE">
+				<td width="20" class="do" height="25"><input name="allbox" type="checkbox" onclick="checkall(this.form);" title="Ch&#7885;n t&#7845;t c&#7843;"></td>
+				<td width="34"  height="30"><?=$lang['tl_stt']?></td>
+				<td width="153"  height="30"><?=$lang['tl_cdonhang']?></td>
+				<td width="224"  height="30"><?=$lang['tl_mngaydathang']?> </td>
+				<td width="244"  height="30"><?=$lang['tl_mtinhrang']?> </td>
+				<td width="184" ><?=$lang['tl_atienthanhtoan']?> </td>
+				<td colspan="4" ><?=$lang['tl_ahanhdong']?> </td>
+			</tr>			
+			<?=$paymentlist_rs?>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td height="10"></td>
+	</tr>
+	<tr>
+		<td height="25" align="center"><table width="50%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td><div id="divPaging"><?=$paging?></div></td>
+        </tr>
+      </table></td>
+	</tr>
+</table>
+</form>

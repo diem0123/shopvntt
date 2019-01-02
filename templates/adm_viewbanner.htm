@@ -1,0 +1,112 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title><?=$title?></title>
+<link rel="stylesheet" type="text/css" href="css/wstyle.css" />
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/webtoolkit.base64.js"></script>
+
+</head>
+<div align="left">
+<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+ <tr bgcolor="#FFF5EA">
+   <td class='menu'>&nbsp;</td>
+   <td colspan="2" class='menu'>&nbsp;</td>
+ </tr>
+ <tr bgcolor="#FFF5EA">
+    <td width="16" class='menu'>&nbsp;</td>
+    <td colspan="2" class='menu'>Thông tin Banner</td>
+    </tr>
+ <tr>
+    <td width="16" class='menu'>&nbsp;</td>
+    <td width="378" class='menu'>&nbsp;</td>
+    <td width="613" class='menu'>&nbsp;</td>
+  </tr>
+ <tr>
+    <td width="16" class='menu'>&nbsp;</td>
+    <td width="378" class='menu'>Tiêu đề banner <font size="1" color="#D7261C">*</font></td>
+    <td width="613" class='menu'>
+    <?=$titlebn?></td>
+  </tr>
+ <tr>
+    <td width="16" class='menu'>&nbsp;</td>
+    <td width="378" class='menu'>&nbsp;</td>
+    <td width="613" class='menu'>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>Link</td>
+    <td class='menu' id="sametype"><?=$linkbn?></td>
+  </tr>
+  <tr>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+  </tr>
+  <tr <?=$show3?> id = "r1">
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>Vị trí </td>
+    <td class='menu' ><SELECT  class=textbox style="WIDTH: 376px;" size=1 name="ps" id="ps" disabled="disabled">
+      <option value="">Chọn vị trí...</option>      
+   		<?=$list_ps?>
+	</SELECT></td>
+  </tr>
+  <tr <?=$show3?> id = "r2">
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="16" class='menu'>&nbsp;</td>
+    <td width="378" class='menu'>Thứ tự
+    <font size="1" color="#D7261C">*</font></td>
+    <td width="613" class='menu'>
+	<?=$iorder?></td>
+  </tr>
+  <tr>
+    <td width="16" class='menu'>&nbsp;</td>
+    <td width="378" class='menu'>&nbsp;</td>
+    <td width="613" class='menu'>&nbsp;	</td>
+  </tr>
+  
+  <tr>
+    <td width="16" class='menu'>&nbsp;</td>
+    <td width="378" class='menu'>&nbsp;</td>
+    <td width="613" class='do'></td>
+  </tr>
+  <tr>
+    <td width="16" class='menu'>&nbsp;</td>
+    <td width="378" class='menu'>Hình banner</td>
+    <td width="613" class='menu'><?=$imgname?>	</td>
+  </tr>
+  <tr>
+    <td width="16" class='menu'>&nbsp;</td>
+    <td width="378" class='menu'>&nbsp;</td>
+    <td width="613" class='content'>&nbsp;</td>
+  </tr>  
+  
+  <tr>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+    <td class='do'>&nbsp;</td>
+  </tr>
+  
+
+  
+  
+  <tr>
+    <td  class='menu' valign="top" height="25" width="16">&nbsp;</td>
+    <td  class='menu' valign="top" height="25" width="378">Thông tin mô tả <font size="1" color="#D7261C">&nbsp;</font></td>
+    <td class='menu' height="25">	</td>
+  </tr>
+   <tr>
+    <td  class='menu' valign="top" height="25" width="16">&nbsp;</td>
+    <td height="25" colspan="2" valign="top"  class='content'><?=nl2br($content)?></td>
+    </tr>
+  
+  <tr>
+    <td colspan="3" align="center" height="41" class='menu'>
+    
+    <input type="button" name="cancel" value="Đóng" onClick="javascript:window.close();" class="button" style="width:60px;height:22px ">    </td>
+  </tr>
+  </table>
+</div>

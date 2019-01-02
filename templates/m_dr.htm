@@ -1,0 +1,121 @@
+<style type="text/css">
+<!--
+
+tr.title {
+	height: 25px;
+	background-color: #0074C4
+}
+
+td {
+	font-family: Verdana, Arial, sans-serif;
+	font-size: 8pt;
+	color: #000000
+}
+
+th {
+	font-family: Verdana, Arial, sans-serif;
+	font-size: 10pt;
+	color: #000000;
+	font-weight: bold;
+	background-color: #CCCCCC;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em
+}
+
+#background-image {
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+	font-size: 12px;
+	width: 100%;
+	text-align: left;
+	border-collapse: collapse;	
+	margin: 0px;
+}
+
+#background-image th {
+	font-weight: normal;
+	font-size: 14px;
+	color: #000000;
+	padding: 12px;
+}
+
+#background-image td {
+	color: #000000;
+	border-top: 1px solid #fff;
+	padding: 9px 12px;
+}
+
+#background-image tbody tr:hover td {
+	color: #f34e0c;
+	background: none;
+}
+-->
+</style>
+
+<br><br>
+
+<center>
+	<span class="title_cam" ><?=$transStatus?>!</span>
+</center>
+<div style="text-align:center; padding:10px 0;">
+<table id="background-image" summary="Meeting Results" border="1"  width="100%" >
+	<thead>
+		<tr>
+			<th scope="col">T&ecirc;n</th>
+			<th scope="col">Gi&aacute; tr&#7883; </th>
+			<th scope="col">M&ocirc; t&#7843; </th>
+		</tr>
+	</thead>	
+	<tbody>
+		<tr>
+			<td><strong><i>Merchant ID </i></strong></td>
+			<td><?=$merchantID?></td>
+			<td>Được cấp bởi OnePAY</td>
+		</tr>
+		<tr>
+			<td><strong><i>Merchant Transaction Reference</i></strong></td>
+			<td><?=$merchTxnRef?></td>
+			<td>ID của giao dịch gửi từ website merchant</td>
+		</tr>
+		<tr>
+			<td><strong><i>Transaction OrderInfo</i></strong></td>
+			<td><?=$orderInfo?></td>
+			<td>Tên hóa đơn</td>
+		</tr>
+		<tr>
+			<td><strong><i>Purchase Amount</i></strong></td>
+			<td><?=$amount?></td>
+			<td>Số tiền được thanh toán</td>
+		</tr>
+		
+		<tr>
+			<td><strong><i>VPC Transaction Response Code </i></strong></td>
+			<td><?=$txnResponseCode?></td>
+			<td>Mã trạng thái giao dịch trả về</td>
+		</tr>
+		<tr>
+			<td><strong><i>Transaction Response Code Description </i></strong></td>
+			<td><?=$getResponseDescription?></td>
+			<td>Trạng thái giao dịch</td>
+		</tr>
+		<tr>
+			<td><strong><i>Message</i></strong></td>
+			<td><?=$message?></td>
+			<td>Thông báo từ cổng thanh toán</td>
+		</tr>
+<?php
+// only display the following fields if not an error condition
+if ($txnResponseCode != "7" && $txnResponseCode != "No Value Returned") {
+	?>
+            <tr>
+			<td><strong><i>Transaction Number</i></strong></td>
+			<td><?=$transactionNo?></td>
+			<td>ID giao dịch trên cổng thanh toán</td>
+		</tr>
+		
+<?php
+}
+?>    
+	</tbody>
+</table>
+</div>
+

@@ -1,0 +1,28 @@
+<table border="0" width="1059">
+	<tr>
+	  <td height="10"></td>
+	  <td></td>
+	  <td ></td>
+	  <td ></td>
+	  <td ></td>
+	  <td></td>
+  </tr>
+	<tr>
+		<td width="10"></td>
+		<td width="234">Filter:	     
+		  <select  style="WIDTH: 176px;" size="1" name="catfilter" id="catfilter" onchange="changecat();" >
+		    <option value=""><?=$lang['adm_muccap']?> 1...</option>
+            <?=$list_category?>
+              </select></td>
+		<td width="181" id="sametype"><SELECT  style="WIDTH: 176px;" size=1 name="typecat" id="typecat" onchange="changetype();" >
+   		<option value=""><?=$lang['adm_muccap']?> 2...</option>      
+   		<?=$list_type_category?>
+	        </SELECT></td> 
+		<td width="185" align="right" id="samesubcat"><SELECT  style="WIDTH: 176px;" size=1 name="subcat" id="subcat">
+   		<option value=""><?=$lang['adm_muccap']?> 3...</option>      
+   		<?=$list_sub_category?>
+	    </SELECT></td> 
+		<td width="55" align="right"><input type="button" name="go" value="Filter" onclick="filtertype();" /></td>
+		<td width="498">&nbsp;</td>
+	</tr>
+</table>

@@ -1,0 +1,392 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title><?=$title?></title>
+<link rel="stylesheet" type="text/css" href="css/wstyle.css" />
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/webtoolkit.base64.js"></script>
+<script type="text/javascript" src="wysiwyg/wysiwyg.js"></script>
+</head>
+<div align="left">
+<form action="?act=adm_editaccount" method="post"  enctype="multipart/form-data" name="f1" onsubmit="return checkform();"> 
+<input type="hidden" name="ac" value="v">
+<input type="hidden" name="idc" value="<?=$idc?>">
+<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+ <tr bgcolor="#FFF5EA">
+    <td height="40" colspan="5" class='menu'>&nbsp; THÔNG TIN T&Agrave;I KHO&#7842;N </td>
+    </tr>
+ <tr>
+    <td width="11" class='menu'>&nbsp;</td>
+    <td width="350" class='menu'></td>
+    <td class='do' colspan="3"></td>
+  </tr>
+ <tr>
+    <td width="11" class='menu'>&nbsp;</td>
+    <td width="350" class='menu'>Email &#273;&#259;ng nh&#7853;p<font size="1" color="#D7261C"> *</font></td>
+    <td class='menu' colspan="3">
+	<?=$email?></td>
+  </tr>
+ <tr>
+    <td width="11" class='menu'>&nbsp;</td>
+    <td width="350" class='menu'>&nbsp;</td>
+    <td width="463" class='menu'>&nbsp;    </td>
+    <td width="138" class='menu' rowspan="7" valign="top" align="center">
+    <img src="images/bin/avatar/<?=$avatar?>" alt="<?=$consultantname?>" width="120" height="120"></td>
+    <td width="122" class='menu'>&nbsp;    </td>
+  </tr>
+ <tr>
+    <td width="11" class='menu' height="20">&nbsp;</td>
+    <td width="350" class='menu' height="20">M&#7853;t kh&#7849;u</td>
+    <td width="463" class='menu' height="20">*********</td>
+    <td width="122" class='menu' height="20">&nbsp;</td>
+  </tr>
+ <tr> 
+    <td width="11" class='menu'>&nbsp;</td>
+    <td width="350" class='menu'>&nbsp;</td>
+    <td width="463" class='menu'>&nbsp;    </td>
+    <td width="122" class='menu'>&nbsp;    </td>
+  </tr>
+ <tr>
+    <td width="11" class='menu'>&nbsp;</td>
+    <td width="350" class='menu'>&nbsp;</td>
+    <td width="463" class='menu'>&nbsp;</td>
+    <td width="122" class='menu'>&nbsp;    </td>
+  </tr>
+ <tr>
+    <td width="11" class='menu'>&nbsp;</td>
+    <td width="350" class='menu'>&nbsp;</td>
+    <td width="463" class='content'>&nbsp;</td>
+    <td width="122" class='menu'>&nbsp;    </td>
+  </tr>
+ <tr >
+    <td width="11" class='menu'>&nbsp;</td>
+    <td width="350" height="35" class='menu'>Vai tr&ograve; <font size="1" color="#D7261C">*</font></td>
+    <td width="463" class='menu'>
+    <?=$rolename?></td>
+    <td width="122" class='menu'>&nbsp;    </td>
+  </tr>
+ <tr>
+    <td width="11" class='menu'>&nbsp;</td>
+    <td width="350" class='menu'>&nbsp;</td>
+    <td width="463" class='menu'>&nbsp;    </td>
+    <td width="122" class='menu'>&nbsp;    </td>
+  </tr>
+ <tr bgcolor="#FFF5EA">
+    <td height="30" colspan="5" class='menu'>&nbsp; Th&ocirc;ng tin c&aacute; nh&acirc;n    </td>
+    </tr>
+ <tr>
+    <td width="11" class='menu'>&nbsp;</td>
+    <td width="350" class='menu'>&nbsp;</td>
+    <td class='menu' colspan="3">&nbsp;    </td>
+  </tr>
+ <tr>
+    <td width="11" class='menu'>&nbsp;</td>
+    <td width="350" class='menu'>Giới tính <font size="1" color="#D7261C">*</font></td>
+    <td class='menu' colspan="3">
+    <?=$namegender?></td>
+  </tr>
+ <tr>
+    <td width="11" class='menu'>&nbsp;</td>
+    <td width="350" class='menu'>&nbsp;</td>
+    <td class='menu' colspan="3">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="11" class='menu'>&nbsp;</td>
+    <td width="350" class='menu'>T&ecirc;n &#273;&#7847;y &#273;&#7911; <font size="1" color="#D7261C">*</font></td>
+    <td class='menu' colspan="3">
+	<?=$consultantname?></td>
+  </tr>
+  <tr>
+    <td width="11" class='menu'>&nbsp;</td>
+    <td width="350" class='menu'>&nbsp;</td>
+    <td class='menu' colspan="3">&nbsp;	</td>
+  </tr>
+<tr>
+    <td width="11" class='menu'>&nbsp;</td>
+    <td width="350" class='menu'>&#272;i&#7879;n tho&#7841;i <font size="1" color="#D7261C">*</font></td>
+    <td class='menu' colspan="3">
+	<?=$tel?></td>
+  </tr>
+  <tr>
+    <td width="11" class='menu'>&nbsp;</td>
+    <td width="350" class='menu'>&nbsp;</td>
+    <td class='menu' colspan="3">&nbsp;</td>
+  </tr>
+<tr>
+    <td width="11" class='menu'>&nbsp;</td>
+    <td width="350" class='menu'>Website</td>
+    <td class='menu' colspan="3">
+	<?=$website?></td>
+  </tr>
+  <tr>
+    <td width="11" class='menu'>&nbsp;</td>
+    <td width="350" class='menu'>&nbsp;</td>
+    <td class='menu' colspan="3">&nbsp;</td>
+  </tr>
+<tr>
+    <td width="11" class='menu'>&nbsp;</td>
+    <td width="350" class='menu'>&#272;&#7883;a ch&#7881; <font size="1" color="#D7261C">*</font></td>
+    <td class='menu' colspan="3">
+	<?=$address?></td>
+  </tr>
+  <tr>
+    <td width="11" class='menu'>&nbsp;</td>
+    <td width="350" class='menu'>&nbsp;</td>
+    <td class='do' colspan="3"></td>
+  </tr>
+
+
+  <tr>
+    <td width="11" class='menu'>&nbsp;</td>
+    <td width="350" class='menu'>&nbsp;</td>
+    <td class='menu' colspan="3">&nbsp;										</td>
+  </tr>
+  
+  
+  
+  <tr>
+    <td width="11" class='menu'>&nbsp;</td>
+    <td width="350" class='menu'>&#272;i&#7879;n tho&#7841;i di &#273;&#7897;ng</td>
+    <td class='menu' colspan="3">
+	<?=$mobi?></td>
+  </tr>
+  
+  
+  
+  <tr>
+    <td width="11" class='menu'>&nbsp;</td>
+    <td width="350" class='menu'>&nbsp;</td>
+    <td class='menu' colspan="3">&nbsp;										</td>
+  </tr>
+  <tr <?=$dis?>>
+    <td width="11" class='menu'>&nbsp;</td>
+    <td width="350" class='menu'>Tr&#7841;ng th&aacute;i <font size="1" color="#D7261C">*</font></td>
+    <td class='menu' colspan="3"><?=$status?></td>
+  </tr>
+  <tr <?=$dis?>>
+    <td  class='menu' valign="top">&nbsp;</td>
+    <td  class='menu' valign="top">&nbsp;</td>
+    <td class='menu' colspan="3">&nbsp;</td>
+  </tr>
+  
+  <tr>
+    <td colspan="5" align="center" height="41" class='menu'><input type="reset" name="cancel" value="Đóng" onClick="javascript:window.close();" class="button" style="width:60px;height:22px ">    </td>
+  </tr>
+  </table>
+  </form>
+</div>
+<script language="javascript1.2">
+               function checkform(){
+                    
+                    if (document.f1.email.value==""){
+                                        alert("Vui lòng nhập địa chỉ email!");
+                                        document.f1.email.focus();
+                                        return false;
+                     }else{
+								var at="@";
+								var dot=".";
+								var obj=document.f1.email.value;
+								var lat=obj.indexOf(at);
+								var lstr=obj.length;
+								var ldot=obj.indexOf(dot);
+								if (obj.indexOf(at)==-1){
+									alert('Email không đúng định dạng!')
+									document.f1.email.focus();
+									document.f1.email.value="";
+									return false
+								}
+							   if (obj.indexOf(at)==-1 || obj.indexOf(at)==0 || obj.indexOf(at)==lstr){
+									alert('Email không đúng định dạng!');
+									document.f1.email.focus();
+									document.f1.email.value="";
+									return false;
+								}
+							  if (obj.indexOf(dot)==-1 || obj.indexOf(dot)==0 || obj.indexOf(dot)==lstr){
+									alert('Email không đúng định dạng!');
+									document.f1.email.focus();
+									document.f1.email.value="";
+									return false;
+								}
+							 if (obj.indexOf(at,(lat+1))!=-1){
+									alert('Email không đúng định dạng!');
+									document.f1.email.focus();
+									document.f1.email.value="";
+									return false;
+								}
+							 if (obj.substring(lat-1,lat)==dot || obj.substring(lat+1,lat+2)==dot){
+									alert('Email không đúng định dạng!');
+									document.f1.email.focus();
+									document.f1.email.value="";
+									return false;
+								}
+							 if (obj.indexOf(dot,(lat+2))==-1){
+									alert('Email không đúng định dạng!');
+									document.f1.email.focus();
+									document.f1.email.value="";
+									return false;
+								}
+							 if (obj.indexOf(' ')!=-1){
+									alert('Email không đúng định dạng!');
+									document.f1.email.focus();
+									document.f1.email.value="";
+									return false;
+								}
+										 
+							}
+                                /*                      
+                     if (document.f1.password.value==""){
+                                        alert("Please enter password!");
+                                        document.f1.password.focus();
+                                        return false;
+                                }
+          */                      
+                     if (document.f1.password.value !="" && document.f1.password.value.length < 6){
+	                    alert("Mật khẩu phải ít nhất 6 ký tự!");
+	                    document.f1.password.focus();
+	                    return false;
+                	}
+          /* 
+                     if (document.f1.password2.value==""){
+                                        alert("Please enter retype password!");
+                                        document.f1.password2.focus();
+                                        return false;
+                     }
+            */         
+                     if (document.f1.password.value != document.f1.password2.value){
+									alert ("Mật khẩu không khớp nhau!");
+									document.f1.password2.focus();
+									return false;
+					}
+					
+					if (document.f1.role.selectedIndex==""){
+                         alert("Vui lòng chọn vai trò người sử dụng!");
+						 document.f1.role.focus();
+                         return false;
+                    }
+                    
+                    if (document.f1.pre.selectedIndex==""){
+                         alert("Vui lòng chọn xưng hô theo giới tính!");
+						 document.f1.pre.focus();
+                         return false;
+                    }
+                    
+                    if (document.f1.consultantname.value==""){
+                                        alert("Vui lòng điền tên đầy đủ!");
+                                        document.f1.consultantname.focus();
+                                        return false;
+                     }
+        
+                                
+                                
+					if (document.f1.tel.value==""){
+	                    alert("Vui lòng nhập số điện thoại!");
+	                    document.f1.tel.focus();
+	                    return false;
+					}
+					if (document.f1.address.value==""){
+                            alert("Vui lòng nhập địa chỉ!");
+                            document.f1.address.focus();
+                            return false;
+                    }
+           
+                     if (document.f1.status.selectedIndex==""){
+                         alert("Vui lòng chọn trạng thái!");
+						 document.f1.status.focus();
+                         return false;
+                    }
+					
+					if (document.f1.emailnganluong.value !=""){			
+								var at="@";
+								var dot=".";
+								var obj=document.f1.emailnganluong.value;
+								var lat=obj.indexOf(at);
+								var lstr=obj.length;
+								var ldot=obj.indexOf(dot);
+								if (obj.indexOf(at)==-1){
+									alert('Email không đúng định dạng!')
+									document.f1.emailnganluong.focus();
+									return false
+								}
+							   if (obj.indexOf(at)==-1 || obj.indexOf(at)==0 || obj.indexOf(at)==lstr){
+									alert('Email không đúng định dạng!');
+									document.f1.emailnganluong.focus();
+									return false;
+								}
+							  if (obj.indexOf(dot)==-1 || obj.indexOf(dot)==0 || obj.indexOf(dot)==lstr){
+									alert('Email không đúng định dạng!');
+									document.f1.emailnganluong.focus();
+									return false;
+								}
+							 if (obj.indexOf(at,(lat+1))!=-1){
+									alert('Email không đúng định dạng!');
+									document.f1.emailnganluong.focus();
+									return false;
+								}
+							 if (obj.substring(lat-1,lat)==dot || obj.substring(lat+1,lat+2)==dot){
+									alert('Email không đúng định dạng!');
+									document.f1.emailnganluong.focus();
+									return false;
+								}
+							 if (obj.indexOf(dot,(lat+2))==-1){
+									alert('Email không đúng định dạng!');
+									document.f1.emailnganluong.focus();
+									return false;
+								}
+							 if (obj.indexOf(' ')!=-1){
+									alert('Email không đúng định dạng!');
+									document.f1.emailnganluong.focus();
+									return false;
+								}
+										 
+							}
+							
+							if (document.f1.emailbaokim.value !=""){			
+								var at="@";
+								var dot=".";
+								var obj=document.f1.emailbaokim.value;
+								var lat=obj.indexOf(at);
+								var lstr=obj.length;
+								var ldot=obj.indexOf(dot);
+								if (obj.indexOf(at)==-1){
+									alert('Email không đúng định dạng!')
+									document.f1.emailbaokim.focus();
+									return false
+								}
+							   if (obj.indexOf(at)==-1 || obj.indexOf(at)==0 || obj.indexOf(at)==lstr){
+									alert('Email không đúng định dạng!');
+									document.f1.emailbaokim.focus();
+									return false;
+								}
+							  if (obj.indexOf(dot)==-1 || obj.indexOf(dot)==0 || obj.indexOf(dot)==lstr){
+									alert('Email không đúng định dạng!');
+									document.f1.emailbaokim.focus();
+									return false;
+								}
+							 if (obj.indexOf(at,(lat+1))!=-1){
+									alert('Email không đúng định dạng!');
+									document.f1.emailbaokim.focus();
+									return false;
+								}
+							 if (obj.substring(lat-1,lat)==dot || obj.substring(lat+1,lat+2)==dot){
+									alert('Email không đúng định dạng!');
+									document.f1.emailbaokim.focus();
+									return false;
+								}
+							 if (obj.indexOf(dot,(lat+2))==-1){
+									alert('Email không đúng định dạng!');
+									document.f1.emailbaokim.focus();
+									return false;
+								}
+							 if (obj.indexOf(' ')!=-1){
+									alert('Email không đúng định dạng!');
+									document.f1.emailbaokim.focus();
+									return false;
+								}
+										 
+							}
+
+
+                      
+                     return true;
+               }
+               
+</script>

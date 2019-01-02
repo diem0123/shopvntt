@@ -1,0 +1,47 @@
+<form name="f1" action="gui-don-hang.html"  method="post"  enctype="multipart/form-data"  onsubmit="return check_complete();">
+<div class="bar-icon group">
+                <a href="mua-hang.html">                                                                                      
+                    <img alt="" src="images/i1.png" />
+                    <span><?=$lang['tl_cdonhang']?></span>
+                </a>
+                <a href="thong-tin-nguoi-mua.html">
+                    <img alt="" src="images/i2.png" />
+                    <span>  <?=$lang['tl_cnguoimua']?></span>
+                </a>
+                <a href="thong-tin-van-chuyen.html">
+                    <img alt="" src="images/i3.png" />
+                    <span><?=$lang['tl_cvanchuyen']?></span>
+                </a>
+                <a href="#">
+                    <img alt="" src="images/i41.png" />
+                    <span><?=$lang['tl_cptthanhtoan']?></span>
+                </a>
+                <a href="#">
+                    <img alt="" src="images/i5.png" />
+                    <span><?=$lang['tl_cguidonhang']?> </span>
+                </a>
+                <a href="#">
+                    <img alt="" src="images/i6.png" />
+                    <span><?=$lang['tl_choantat']?></span>
+                </a>
+            </div>
+		 <?=$procedurepay_list?>
+		 <div class="cart-control group">
+                <a href="thong-tin-van-chuyen.html" class="btn-lui"><span> <?=$lang['tl_cquaylai']?></span> </a> <input class="btsubmit" type="submit" name="submit" value="<?=$lang['tl_ctieptuc']?>"  />              
+            </div>			 
+</form>
+<script type="text/javascript">
+$(function() {	
+	$("#controllaccordion .accordion:not(:first)").hide();	
+	$("#controllaccordion h3").click(function(){
+		$accordion = $(this).next();
+		if ($accordion.is(':hidden') === true) {
+			$("#controllaccordion .accordion").slideUp();
+			$accordion.slideDown();
+		} else {
+			$accordion.slideUp();
+		}
+	});
+});
+
+</script>

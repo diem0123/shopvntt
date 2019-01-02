@@ -1,0 +1,92 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title><?=$title?></title>
+<link rel="stylesheet" type="text/css" href="css/wstyle.css" />
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/webtoolkit.base64.js"></script>
+<script type="text/javascript" src="wysiwyg/wysiwyg.js"></script>
+</head>
+<div align="left">
+<form action="index.php?act=update_dist" method="post"  enctype="multipart/form-data" name="f1" onsubmit="return checkform();"> 
+<input type="hidden" name="ac" value="<?=$ac?>">
+<input type="hidden" name="idd" value="<?=$idd?>">
+<table width="100%"  border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF">
+ <tr bgcolor="#FFF5EA">
+    <td width="17" height="40" class='menu'>&nbsp;</td>
+    <td width="216" class='menu'><?=$title_action?></td>
+    <td width="800" class='menu'>&nbsp;</td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="216" class='menu'>Chọn Tỉnh thành
+    <font size="1" color="#D7261C">*</font></td>
+    <td width="800" class='menu'>
+    <SELECT  class=textbox style="WIDTH: 376px;" size=1 name="idpr" id="idpr">
+   		<option value="">Chọn Tỉnh thành...</option>
+   		<?=$list_provinces?>
+	</SELECT></td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="216" class='menu'>&nbsp;</td>
+    <td width="800" class='menu'>&nbsp;	</td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="216" class='menu'>Quận/Huyện
+    <font size="1" color="#D7261C">*</font></td>
+    <td width="800" class='menu'>
+	<input type="text" name="named" style="width:376px " size="1" value="<?=$named?>"></td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="216" class='menu'>&nbsp;</td>
+    <td width="800" class='menu'>&nbsp;    </td>
+  </tr>
+  <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="216" class='menu'>Thứ tự
+    <font size="1" color="#D7261C">*</font></td>
+    <td width="800" class='menu'>
+    <input type="text" name="iorder" style="width:376px " size="1" value="<?=$iorder?>"></td>
+  </tr>
+ 
+ 
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="216" class='menu'>&nbsp;</td>
+    <td width="800" class='menu'>&nbsp;</td>
+  </tr>
+    <tr>
+    <td colspan="3" align="center" height="41" class='menu'>
+    <input type="submit" name="submit" value="<?=$button_action?>" class="button" style="width:80px; height:22px ">
+    <input type="button" name="cancel" value="Đóng" onClick="javascript:window.close();" class="button" style="width:60px;height:22px ">    </td>
+  </tr>
+  </table>
+  </form>
+</div>
+<script language="javascript1.2">
+               function checkform(){
+               
+               		if (document.f1.cat.selectedIndex==""){
+                         alert("Please select Category");
+						 document.f1.cat.focus();
+                         return false;
+                    }
+
+                    
+                    if (document.f1.nametype.value==""){
+                                        alert("Please enter Sub Category name!");
+                                        document.f1.catname.focus();
+                                        return false;
+                                }
+                     if (document.f1.iorder.value==""){
+                                        alert("Please enter order!");
+                                        document.f1.iorder.focus();
+                                        return false;
+                                }
+                      
+                     return true;
+               }
+            
+</script>

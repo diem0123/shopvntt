@@ -1,0 +1,7 @@
+<?php if($idu == ""){ ?>
+	<a href="#modal_login" class="link-w" data-toggle="modal">Đăng nhập</a>
+	<a href="#modal_register" class="link-w" data-toggle="modal">Đăng ký</a>
+<?php }else{?>
+	<a href="thong-tin-tai-khoan.html"><?=$lang['tl_wlcom']?> <strong><?=$user_member?></strong> |</a>
+	<a href="thoat.html"><?=$lang['tl_lout']?></a>
+<?php }?>

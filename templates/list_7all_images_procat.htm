@@ -1,0 +1,69 @@
+<div class="col-md-4 col-sm-6">
+	<div class="product">
+		<?php if($SALE1 !=''){ ?>
+			<div class="onsale_pro"><?=$SALE1?>%</div>
+		<?php }?>
+		<img src="images/bin/<?=$ID_CATEGORY1?>/<?=$IMAGE_BIG1?>" class="img-pro"/>
+		<div class="price">
+			<?php if($PRICE_SALE1 !=''){ ?>
+				<span class="price-green price-regular"><?=$PRICE_SALE1?></span>
+				<span class="price-line"><?=$PRICE1?></span>
+			<?php }else{?>
+				<span class="price-green price-regular"><?=$PRICE1?></span>
+			<?php }?>
+		</div>
+		<div class="box-info-product">
+			<a href="spchitiet-<?=$ID1?>-<?=$name_link1?>.html" title="<?=$name1?>" class="product-name"><?=$name1?></a>
+			<div class="box-middle">
+				<a href="thong-tin-gio-hang.html" onclick="savecart(<?=$ID1?>,0);""><img src="images/add_cart.png"/></a>
+				<a href="#" onclick="savecart(<?=$ID1?>,0);"><img src="images/plus.png"/></a>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="col-md-4 col-sm-6" <?=$dis1?>>
+	<div class="product">
+		<?php if($SALE2 !=''){ ?>
+			<div class="onsale_pro"><?=$SALE2?>%</div>
+		<?php }?>
+		<img src="images/bin/<?=$ID_CATEGORY2?>/<?=$IMAGE_BIG2?>" class="img-pro"/>
+		<div class="price">
+			<?php if($PRICE_SALE2 !=''){ ?>
+				<span class="price-green price-regular"><?=$PRICE_SALE2?></span>
+				<span class="price-line"><?=$PRICE2?></span>
+			<?php }else{?>
+				<span class="price-green price-regular"><?=$PRICE2?></span>
+			<?php }?>
+		</div>
+		<div class="box-info-product">
+			<a href="spchitiet-<?=$ID2?>-<?=$name_link2?>.html" title="<?=$name2?>" class="product-name"><?=$name2?></a>
+			<div class="box-middle">
+				<a href="thong-tin-gio-hang.html" onclick="savecart(<?=$ID2?>,0);"><img src="images/add_cart.png"/></a>
+				<a href="#" onclick="savecart(<?=$ID2?>,0);"><img src="images/plus.png"/></a>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="col-md-4 col-sm-6" <?=$dis2?>>
+	<div class="product">
+		<?php if($SALE3 !=''){ ?>
+			<div class="onsale_pro"><?=$SALE3?>%</div>
+		<?php }?>
+		<img src="images/bin/<?=$ID_CATEGORY3?>/<?=$IMAGE_BIG3?>" class="img-pro"/>
+		<div class="price">
+			<?php if($PRICE_SALE3 !=''){ ?>
+				<span class="price-green price-regular"><?=$PRICE_SALE3?></span>
+				<span class="price-line"><?=$PRICE3?></span>
+			<?php }else{?>
+				<span class="price-green price-regular"><?=$PRICE3?></span>
+			<?php }?>
+		</div>
+		<div class="box-info-product">
+			<a href="spchitiet-<?=$ID3?>-<?=$name_link3?>.html" title="<?=$name3?>" class="product-name"><?=$name3?></a>
+			<div class="box-middle">
+				<a href="thong-tin-gio-hang.html" onclick="savecart(<?=$ID3?>,0);"><img src="images/add_cart.png"/></a>
+				<a href="#" onclick="savecart(<?=$ID3?>,0);"><img src="images/plus.png"/></a>
+			</div>
+		</div>
+	</div>
+</div>

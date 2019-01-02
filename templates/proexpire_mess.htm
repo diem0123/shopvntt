@@ -1,0 +1,88 @@
+<table width="100%" border="0" cellspacing="3" cellpadding="3"  class="content">
+  <tr>
+    <td width="2%" height="30" align="left"></td>
+    <td height="30" align="left" class="title">Thông báo hết hàng </td>
+  </tr>
+  <tr>
+    <td align="left" height="30"></td>
+    <td height="30" align="left"><p>Chào Bạn,<br />
+Cảm ơn bạn đã quan tâm đến sản phẩm <span class="style62"><?=$product_name?></span> của chúng tôi. Sản phẩm này hiện tại đã tạm hết hàng và đang chờ được bổ xung. Bạn có thể nhập email vào ô bên dưới để chúng tôi thông báo cho bạn ngay khi có hàng. <br />    
+Xin cảm ơn! </p></td>
+  </tr>
+  <tr>
+    <td align="left" height="10"></td>
+    <td height="10" align="left"><span id="mess_km1" class="style16"> </span></td>
+  </tr>
+  <tr>
+    <td align="left" height="10"></td>
+    <td height="10" align="left">Email: 
+      <input type="text" id="email_km1"  name="email_km1" style="width:176px " size="1" value="">  <input type="button" name="tb" value="Thông báo cho tôi" style="width:125px; height:22px " onclick="submitmail_km1();"></td>
+  </tr>
+  <tr>
+    <td align="left" height="10"></td>
+    <td height="10" align="left" class="content">&nbsp;</td>
+  </tr>  
+</table>		
+<script type="text/javascript">
+function submitmail_km1() {
+	//alert($('#email_km1').val());	
+		if(check_mail_km1()){
+			$.ajax({
+				url: 'index.php?act=newsletter_reg',
+				type: 'POST',
+				data: 'email_km='+ $('#email_km1').val()+'&mess_exp=1',
+				success: function(data) {
+				var getdata = $.parseJSON(data);				
+				$('#mess_km1').html(getdata.mess2);
+				}				
+			});
+		}
+	}			
+	
+	function check_mail_km1(){	
+		 if($("#email_km1").val()==""){
+		 $('#mess_km1').html("Vui l&ograve;ng nh&#7853;p email!");
+		 return false;
+		 }
+		 else{		 		 
+					var at="@";
+					var dot=".";
+					var obj=$("#email_km1").val();
+					var lat=obj.indexOf(at);
+					var lstr=obj.length;
+					var ldot=obj.indexOf(dot);
+					if (obj.indexOf(at)==-1){
+						$('#mess_km1').html("Email kh&ocirc;ng h&#7907;p l&#7879;!");
+						return false
+					}
+
+				   else if (obj.indexOf(at)==-1 || obj.indexOf(at)==0 || obj.indexOf(at)==lstr){
+						$('#mess_km1').html("Email kh&ocirc;ng h&#7907;p l&#7879;!");
+						return false;
+					}
+				  else if (obj.indexOf(dot)==-1 || obj.indexOf(dot)==0 || obj.indexOf(dot)==lstr){
+						$('#mess_km1').html("Email kh&ocirc;ng h&#7907;p l&#7879;!");
+						return false;
+					}
+				 else if (obj.indexOf(at,(lat+1))!=-1){
+						$('#mess_km1').html("Email kh&ocirc;ng h&#7907;p l&#7879;!");
+						return false;
+					}
+				 else if (obj.substring(lat-1,lat)==dot || obj.substring(lat+1,lat+2)==dot){
+						$('#mess_km1').html("Email kh&ocirc;ng h&#7907;p l&#7879;!");
+						return false;
+					}
+				 else if (obj.indexOf(dot,(lat+2))==-1){
+						$('#mess_km1').html("Email kh&ocirc;ng h&#7907;p l&#7879;!");
+						return false;
+					}
+				 else if (obj.indexOf(' ')!=-1){
+						$('#mess_km1').html("Email kh&ocirc;ng h&#7907;p l&#7879;!");
+						return false;
+					}
+							 
+				}
+												
+	return true;
+   }
+</script>

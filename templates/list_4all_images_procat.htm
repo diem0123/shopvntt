@@ -1,0 +1,107 @@
+<div class="item">
+	<?php if($PRICE_SALE1 !=""){ ?>
+	<strong class="sale">-<?=$SALE1?>%</strong>
+	<?php } ?>
+	<table width="193" height="225"  border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td valign="middle" align="center"><a href="spchitiet-<?=$ID1?>-<?=$name_link1?>.html" class="linkopacity" title="<?=$name1?>" ><img class="border_rounded" border="0" src="images/bin/<?=$ID_CATEGORY1?>/<?=$IMAGE_LARGE1?>" alt="<?=$name1?>" width="<?=$w1?>" height="<?=$h1?>" ></a></td>
+		</tr>
+	</table>
+	<h3><a href="spchitiet-<?=$ID1?>-<?=$name_link1?>.html" title="<?=$name1?>" ><?=$name1?> </a></h3>
+	<?=$star1?>
+	
+	<?php if($PRICE_SALE1 ==""){ ?>
+	<span><em><?=$lang['tl_gia']?>:</em> <?=$PRICE1?> </span>							
+	<?php } elseif($PRICE_SALE1 !=""){ ?>
+	<span class="price-old">
+		<?=$lang['tl_giagoc']?>: <em><?=$PRICE1?> </em>
+	</span>
+	<span><em><?=$lang['tl_gia']?>:</em> <?=$PRICE_SALE1?> </span>	
+	<span class="price-disc"><em><?=$lang['tl_giam']?>:</em> <?=$PRICE_DISC1?> (<?=$SALE1?>%)</span>																						
+	<?php } ?>							                                        
+	<div class="item-control group">
+		<a href="#" class="btn" onclick="savecart(<?=$ID1?>,1);" ><?=$lang['tl_order']?> <i class="fa fa-caret-right"></i> </a>
+		<a href="#" class="add" onClick="savecart(<?=$ID1?>,0);" title="<?=$lang['tl_addcart']?>" ></a>
+	</div>
+</div>
+
+<div class="item" <?=$dis1?> >
+	<?php if($PRICE_SALE2 !=""){ ?>
+	<strong class="sale">-<?=$SALE2?>%</strong>
+	<?php } ?>
+	<table width="193" height="225"  border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td valign="middle" align="center"><a href="spchitiet-<?=$ID2?>-<?=$name_link2?>.html" class="linkopacity" title="<?=$name2?>" ><img class="border_rounded" border="0" src="images/bin/<?=$ID_CATEGORY2?>/<?=$IMAGE_LARGE2?>" alt="<?=$name2?>" width="<?=$w2?>" height="<?=$h2?>" ></a></td>
+		</tr>
+	</table>
+	<h3><a href="spchitiet-<?=$ID2?>-<?=$name_link2?>.html" title="<?=$name2?>" ><?=$name2?> </a></h3>
+	<?=$star2?>
+	
+	<?php if($PRICE_SALE2 ==""){ ?>
+	<span><em><?=$lang['tl_gia']?>:</em> <?=$PRICE2?> </span>							
+	<?php } elseif($PRICE_SALE2 !=""){ ?>
+	<span class="price-old">
+		<?=$lang['tl_giagoc']?>: <em><?=$PRICE2?> </em>
+	</span>
+	<span><em><?=$lang['tl_gia']?>:</em> <?=$PRICE_SALE2?> </span>
+	<span class="price-disc"><em><?=$lang['tl_giam']?>:</em> <?=$PRICE_DISC2?> (<?=$SALE2?>%)</span>																							
+	<?php } ?>							                                        
+	<div class="item-control group">
+		<a href="#" class="btn" onclick="savecart(<?=$ID2?>,1);" ><?=$lang['tl_order']?> <i class="fa fa-caret-right"></i> </a>
+		<a href="#" class="add" onClick="savecart(<?=$ID2?>,0);" title="<?=$lang['tl_addcart']?>" ></a>
+	</div>
+</div>
+<div class="item" <?=$dis2?> >
+	<?php if($PRICE_SALE3 !=""){ ?>
+	<strong class="sale">-<?=$SALE3?>%</strong>
+	<?php } ?>
+	<table width="193" height="225"  border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td valign="middle" align="center"><a href="spchitiet-<?=$ID3?>-<?=$name_link3?>.html" class="linkopacity" title="<?=$name3?>" ><img class="border_rounded" border="0" src="images/bin/<?=$ID_CATEGORY3?>/<?=$IMAGE_LARGE3?>" alt="<?=$name3?>" width="<?=$w3?>" height="<?=$h3?>" ></a></td>
+		</tr>
+	</table>
+	<h3><a href="spchitiet-<?=$ID3?>-<?=$name_link3?>.html" title="<?=$name3?>" ><?=$name3?> </a></h3>
+	<?=$star3?>
+	
+	<?php if($PRICE_SALE3 ==""){ ?>
+	<span><em><?=$lang['tl_gia']?>:</em> <?=$PRICE3?> </span>							
+	<?php } elseif($PRICE_SALE3 !=""){ ?>
+	<span class="price-old">
+		<?=$lang['tl_giagoc']?>: <em><?=$PRICE3?> </em>
+	</span>
+	<span><em><?=$lang['tl_gia']?>:</em> <?=$PRICE_SALE3?> </span>
+	<span class="price-disc"><em><?=$lang['tl_giam']?>:</em> <?=$PRICE_DISC3?> (<?=$SALE3?>%)</span>																							
+	<?php } ?>							                                        
+	<div class="item-control group">
+		<a href="#" class="btn" onclick="savecart(<?=$ID3?>,1);" ><?=$lang['tl_order']?> <i class="fa fa-caret-right"></i> </a>
+		<a href="#" class="add" onClick="savecart(<?=$ID3?>,0);" title="<?=$lang['tl_addcart']?>" ></a>
+	</div>
+</div>
+
+<div class="item" <?=$dis3?> >
+	<?php if($PRICE_SALE4 !=""){ ?>
+	<strong class="sale">-<?=$SALE4?>%</strong>
+	<?php } ?>
+	<table width="193" height="225"  border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td valign="middle" align="center"><a href="spchitiet-<?=$ID4?>-<?=$name_link4?>.html" class="linkopacity" title="<?=$name4?>" ><img class="border_rounded" border="0" src="images/bin/<?=$ID_CATEGORY4?>/<?=$IMAGE_LARGE4?>" alt="<?=$name4?>" width="<?=$w4?>" height="<?=$h4?>" ></a></td>
+		</tr>
+	</table>
+	<h3><a href="spchitiet-<?=$ID4?>-<?=$name_link4?>.html" title="<?=$name4?>" ><?=$name4?> </a></h3>
+	<?=$star4?>
+	
+	<?php if($PRICE_SALE4 ==""){ ?>
+	<span><em><?=$lang['tl_gia']?>:</em> <?=$PRICE4?> </span>							
+	<?php } elseif($PRICE_SALE4 !=""){ ?>
+	<span class="price-old">
+		<?=$lang['tl_giagoc']?>: <em><?=$PRICE4?> </em>
+	</span>
+	<span><em><?=$lang['tl_gia']?>:</em> <?=$PRICE_SALE4?> </span>
+	<span class="price-disc"><em><?=$lang['tl_giam']?>:</em> <?=$PRICE_DISC4?> (<?=$SALE4?>%)</span>																							
+	<?php } ?>							                                        
+	<div class="item-control group">
+		<a href="#" class="btn" onclick="savecart(<?=$ID4?>,1);" ><?=$lang['tl_order']?> <i class="fa fa-caret-right"></i> </a>
+		<a href="#" class="add" onClick="savecart(<?=$ID4?>,0);" title="<?=$lang['tl_addcart']?>" ></a>
+	</div>
+</div>				
+<div class="clearboth"></div>								

@@ -1,0 +1,391 @@
+<div id="navbar" class="navbar navbar-default ace-save-state">
+	<div class="navbar-container ace-save-state" id="navbar-container">
+		<button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
+			<span class="sr-only">Toggle sidebar</span>
+
+			<span class="icon-bar"></span>
+
+			<span class="icon-bar"></span>
+
+			<span class="icon-bar"></span>
+		</button>
+
+		<div class="navbar-header pull-left">
+			<a href="index.html" class="navbar-brand">
+				<small>
+					<i class="fa fa-leaf"></i>
+					<?=$lang['adm_gcfood_Admin']?>
+				</small>
+			</a>
+		</div>
+		<div class="navbar-buttons navbar-header pull-right" role="navigation">
+			<ul class="nav ace-nav">
+				<li class="purple dropdown-modal">
+							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+								<i class="ace-icon fa fa-globe icon-animated-bell"></i>
+								<span class="badge badge-important"></span>
+							</a>
+
+							<ul class="dropdown-menu-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-close">
+								<li class="dropdown-header">
+									<i class="ace-icon fa fa-globe"></i>
+									Language
+								</li>
+
+								<li class="dropdown-content">
+									<ul class="dropdown-menu dropdown-navbar navbar-pink">
+										<li>
+											<a href="index.php?atc=home&lang=1">
+												<div class="clearfix">
+													<span class="pull-left">
+														<img src="images/flag-vi.png"/>
+														Việt Nam
+													</span>
+												</div>
+											</a>
+										</li>
+
+										<li>
+											<a href="index.php?atc=home&lang=3">
+												<img src="images/japan.png"/>
+												Japan
+											</a>
+										</li>
+
+										<li>
+											<a href="index.php?atc=home&lang=2">
+												<div class="clearfix">
+													<span class="pull-left">
+														<img src="images/flag-en.png"/>
+														English
+													</span>
+												</div>
+											</a>
+										</li>
+
+										<li>
+											<a href="index.php?atc=home&lang=4">
+												<div class="clearfix">
+													<span class="pull-left">
+														<img src="images/korean.png"/>
+														Korean
+													</span>
+												</div>
+											</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+				<li class="light-blue dropdown-modal">
+					<a data-toggle="dropdown" href="#" class="dropdown-toggle">
+						<i class="fa fa-user" aria-hidden="true" style="width:20px; font: normal normal normal 20px/1 FontAwesome;"></i>
+						<span class="user-info">
+							<small><?=$lang['adm_welcome']?> !</small>
+							<?=$full_name?>
+						</span>
+
+						<i class="ace-icon fa fa-caret-down"></i>
+					</a>
+					<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+<!-- 								<li>
+									<a href="#">
+										<i class="ace-icon fa fa-cog"></i>
+										Settings
+									</a>
+								</li>
+
+								<li>
+									<a href="profile.html">
+										<i class="ace-icon fa fa-user"></i>
+										Profile
+									</a>
+								</li> -->
+
+								<li class="divider"></li>
+
+								<li>
+									<a href="index.php?act=adm_logout">
+										<i class="ace-icon fa fa-power-off"></i>
+										Logout
+									</a>
+								</li>
+							</ul>
+				</li>
+			</ul>
+		</div>
+	</div><!-- /.navbar-container -->
+</div>
+<div id="sidebar" class="sidebar responsive ace-save-state">
+				<script type="text/javascript">
+					try{ace.settings.loadState('sidebar')}catch(e){}
+				</script>
+
+<!-- 				<div class="sidebar-shortcuts" id="sidebar-shortcuts">
+					<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+						<button class="btn btn-success">
+							<i class="ace-icon fa fa-signal"></i>
+						</button>
+
+						<button class="btn btn-info">
+							<i class="ace-icon fa fa-pencil"></i>
+						</button>
+
+						<button class="btn btn-warning">
+							<i class="ace-icon fa fa-users"></i>
+						</button>
+
+						<button class="btn btn-danger">
+							<i class="ace-icon fa fa-cogs"></i>
+						</button>
+					</div>
+
+					<div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+						<span class="btn btn-success"></span>
+
+						<span class="btn btn-info"></span>
+
+						<span class="btn btn-warning"></span>
+
+						<span class="btn btn-danger"></span>
+					</div>
+				</div> -->
+
+				<ul class="nav nav-list">
+					<li class="">
+						<a href="index.php?act=adm_home">
+							<i class="menu-icon fa fa-tachometer"></i>
+							<span class="menu-text"> <?=$lang['adm_home']?> </span>
+						</a>
+
+						<b class="arrow"></b>
+					</li>
+					<li class="">
+						<a href="index.php?act=adm_company" class="dropdown-toggle">
+							<i class="menu-icon fa fa-desktop"></i>
+							<span class="menu-text">
+								<?=$lang['adm_congty']?>
+							</span>
+
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+						<ul class="submenu">
+							<li class="">
+								<a href="index.php?act=adm_company">
+									<i class="menu-icon fa fa-caret-right"></i>
+									<?=$lang['adm_congty']?>
+								</a>
+								<b class="arrow"></b>
+							</li>
+							<!-- <li class="">
+								<a href="index.php?act=adm_products&cat=1">
+									<i class="menu-icon fa fa-caret-right"></i>
+									<?=$lang['adm_quanlysanpham']?>
+								</a>
+								<b class="arrow"></b>
+							</li>
+							<li class="">
+								<a href="index.php?act=adm_payments">
+									<i class="menu-icon fa fa-caret-right"></i>
+									<?=$lang['adm_quanlydonhang']?>
+								</a>
+								<b class="arrow"></b>
+							</li>
+							<li class="index.php?act=adm_customer&idrole=5">
+								<a href="elements.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									<?=$lang['adm_quanlykhachhang']?>
+								</a>
+								<b class="arrow"></b>
+							</li> -->
+						</ul>
+					</li>
+					<li class="">
+						<a href="index.php?act=adm_account" class="dropdown-toggle">
+							<i class="menu-icon fa fa-list"></i>
+							<span class="menu-text"> <?=$lang['adm_taikhoan']?> </span>
+
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+						<b class="arrow"></b>
+						<ul class="submenu">
+							<li class="">
+								<a href="index.php?act=adm_account">
+									<i class="menu-icon fa fa-caret-right"></i>
+									<?=$lang['adm_taikhoan']?>
+								</a>
+								<b class="arrow"></b>
+							</li>
+							<li class="">
+								<a href="index.php?act=adm_rolelist">
+									<i class="menu-icon fa fa-caret-right"></i>
+									<?=$lang['adm_quanlyvaitro']?>
+								</a>
+								<b class="arrow"></b>
+							</li>
+						</ul>
+					</li>
+
+					<li class="">
+						<a href="index.php?act=adm_commonlist" class="dropdown-toggle">
+							<i class="menu-icon fa fa-pencil-square-o"></i>
+							<span class="menu-text"> <?=$lang['adm_thongtinchung']?> </span>
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+						<b class="arrow"></b>
+						<ul class="submenu">
+							<li class="">
+								<a href="index.php?act=adm_commonlist&idtype=1">
+									<i class="menu-icon fa fa-caret-right"></i>
+									<?=$lang['adm_congty']?>
+								</a>
+								<b class="arrow"></b>
+							</li>
+							<li class="">
+								<a href="index.php?act=adm_commonlist&idtype=3">
+									<i class="menu-icon fa fa-caret-right"></i>
+									<?=$lang['adm_tintuc']?>
+								</a>
+								<b class="arrow"></b>
+							</li>
+							<li class="">
+								<a href="index.php?act=adm_commonlist&idtype=5">
+									<i class="menu-icon fa fa-caret-right"></i>
+									<?=$lang['adm_cauhinhtonghop']?>
+								</a>
+								<b class="arrow"></b>
+							</li>
+							<li class="">
+								<a href="index.php?act=adm_banner&idps=1&mn=1">
+									<i class="menu-icon fa fa-caret-right"></i>
+									<?=$lang['adm_banner']?>
+								</a>
+								<b class="arrow"></b>
+							</li>
+							<li class="">
+								<a href="thu-vien-anh.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									<?=$lang['adm_thuvienanh']?>
+								</a>
+								<b class="arrow"></b>
+							</li>
+							<li class="">
+								<a href="thu-vien-anh.html?f=1">
+									<i class="menu-icon fa fa-caret-right"></i>
+									<?=$lang['adm_thuvientailieu']?>
+								</a>
+								<b class="arrow"></b>
+							</li>
+						</ul>
+					</li>
+					<li class="">
+						<a href="index.php?act=adm_category" class="dropdown-toggle">
+							<i class="menu-icon fa fa-pencil-square-o"></i>
+							<span class="menu-text"> <?=$lang['adm_caidat']?> </span>
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+						<b class="arrow"></b>
+						<ul class="submenu">
+							<li class="">
+							<a href="index.php?act=adm_category" class="dropdown-toggle">
+							<i class="menu-icon fa fa-caret-right"></i>
+								<?=$lang['adm_quanlychuyenmuc']?>
+								<b class="arrow fa fa-angle-down"></b>
+							</a>
+								<b class="arrow"></b>
+								<ul class="submenu">
+									<li class="">
+										<a href="index.php?act=adm_category&mn=1">
+											<i class="menu-icon fa fa-caret-right"></i>
+												<?=$lang['adm_sanpham']?>
+										</a>
+										<b class="arrow"></b>
+									</li>
+								</ul>
+								<b class="arrow"></b>
+								<ul class="submenu">
+									<li class="">
+										<a href="index.php?act=adm_common&mn=2">
+											<i class="menu-icon fa fa-caret-right"></i>
+												<?=$lang['adm_thongtin']?>
+										</a>
+										<b class="arrow"></b>
+									</li>
+								</ul>
+							</li>
+							<!-- <li class="">
+								<a href="index.php?act=adm_provinces">
+									<i class="menu-icon fa fa-caret-right"></i>
+									<?=$lang['adm_quanlytinhthanh']?>
+								</a>
+								<b class="arrow"></b>
+							</li>
+							<li class="">
+								<a href="" onclick="window.open('index.php?act=update_mailsmtp&ac=v&ids=1','Viewcatpopup','scrollbars=yes,status=yes,toolbar=no,location=0,directories=0,status=yes,menubar=0,resizable=0,width=800,height=250');">
+									<i class="menu-icon fa fa-caret-right"></i>
+									<?=$lang['adm_mailsmtp']?>
+								</a>
+								<b class="arrow"></b>
+							</li> -->
+							<li class="">
+								<a href="index.php?act=adm_type_transfer&mn=1">
+									<i class="menu-icon fa fa-caret-right"></i>
+									<?=$lang['adm_quanlyvanchuyen']?>
+								</a>
+								<b class="arrow"></b>
+							</li>
+							<li class="">
+								<a href="index.php?act=adm_propay">
+									<i class="menu-icon fa fa-caret-right"></i>
+									<?=$lang['adm_kieuthanhtoan']?>
+								</a>
+								<b class="arrow"></b>
+							</li>
+						</ul>
+					</li>
+					<!-- <li class="">
+						<a href="index.php?act=adm_contacts" class="dropdown-toggle">
+							<i class="menu-icon fa fa-tag"></i>
+							<span class="menu-text"> <?=$lang['adm_emailmarketing']?> </span>
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+						<b class="arrow"></b>
+						<ul class="submenu">
+							<li class="">
+								<a href="index.php?act=adm_contacts">
+									<i class="menu-icon fa fa-caret-right"></i>
+									<?=$lang['adm_emailtemplates']?>
+								</a>
+								<b class="arrow"></b>
+							</li>
+							<li class="">
+								<a href="index.php?act=adm_contacts">
+									<i class="menu-icon fa fa-caret-right"></i>
+									<?=$lang['adm_templatessend']?>
+								</a>
+								<b class="arrow"></b>
+							</li>
+							<li class="">
+								<a href="index.php?act=adm_contacts">
+									<i class="menu-icon fa fa-caret-right"></i>
+									<?=$lang['adm_thongkeguimail']?>
+								</a>
+								<b class="arrow"></b>
+							</li>
+							<li class="">
+								<a href="index.php?act=adm_contacts">
+									<i class="menu-icon fa fa-caret-right"></i>
+									<?=$lang['adm_khachhangnhantin']?>
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+						</ul>
+					</li> -->
+				</ul><!-- /.nav-list -->
+				<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+					<i id="sidebar-toggle-icon" class="ace-icon fa fa-angle-double-left ace-save-state" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+				</div>
+			</div>

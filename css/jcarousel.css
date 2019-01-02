@@ -1,0 +1,134 @@
+
+#tooltip {
+	position: absolute;
+	z-index: 30000;
+	border: 1px solid #111;
+	background-color: #eee;
+	padding: 5px;
+}
+#tooltip h3, #tooltip div { margin: 0; }
+
+#home_vip_store div.sptb_center {
+	margin:0 auto;
+	text-align:center;
+	width:185px;
+}
+
+#home_vip_store div.company_logo {
+	margin:0 auto;
+	width:185px;
+	border:0px solid #fff000;
+	padding:5px 5px;
+}
+
+#home_vip_store div.company_logo img {
+	width: 150px; 
+	height: 131px;
+}
+
+#home_vip_store div.company_name { 
+	/*
+	display: block;
+	padding-left:2px;
+	text-align: center; 
+	height: 40px; 
+	font-weight: bold;
+	font-weight:normal;
+	font-family:Verdana, Geneva, sans-serif;
+	margin-top:9px;
+	*/	
+	margin:0 auto;
+	text-align: center; 
+	font-size: 13px;
+	color: #71a720;
+	font-weight: bold;
+	padding-top: 10px;
+	font-family: Tahoma;
+	width:165px;
+	border:0px solid #ff0000;
+}
+
+#home_vip_store div.company_name a { 	
+	color: #71a720;
+	text-decoration:none;
+}
+
+/* Jcarousel skin IE7 - edited ****************************************************************/
+.jcarousel-skin-ie7 .jcarousel-container-horizontal {
+    width: 713px;
+    padding: 0px 0px;
+	border:0px solid #000;
+}
+
+.jcarousel-skin-ie7 .jcarousel-clip {
+    overflow: hidden;
+}
+
+.jcarousel-skin-ie7 .jcarousel-clip-horizontal {
+    width: 713px;
+}
+
+.jcarousel-skin-ie7 .jcarousel-item {
+    width: 158px;  
+	text-align: center;
+}
+
+.jcarousel-skin-ie7 .jcarousel-item a{
+	text-decoration:none;
+	color:#6b6b6b;
+}
+
+.jcarousel-skin-ie7 .jcarousel-item a:hover{
+	color:#3b3b3b;
+}
+
+.jcarousel-skin-ie7 .jcarousel-item-horizontal {
+    margin-left: 0;
+    margin-right: 15px;
+}
+
+.jcarousel-skin-ie7 .jcarousel-direction-rtl .jcarousel-item-horizontal {
+	margin-left: 10px;
+	margin-right: 0;
+}
+
+/**
+ *  Horizontal Buttons
+ */
+.jcarousel-skin-ie7 .jcarousel-next-horizontal {
+    position: absolute;
+    top: -38px;
+    right: 0px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    background: transparent url(../images/next-horizontal.png) no-repeat 0 0;
+
+}
+
+.jcarousel-skin-ie7 .jcarousel-direction-rtl .jcarousel-next-horizontal {
+    left: 5px;
+    right: auto;
+    background-image: url(../images/prev-horizontal.png);
+}
+
+.jcarousel-skin-ie7 .jcarousel-prev-horizontal {
+    position: absolute;
+    top: -38px;
+    left: 650px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    background: transparent url(../images/prev-horizontal.png) no-repeat 0 0;
+}
+
+.jcarousel-skin-ie7 .jcarousel-prev-horizontal:hover,
+.jcarousel-skin-ie7 .jcarousel-next-horizontal:hover {
+	opacity:0.9;
+}
+
+.jcarousel-skin-ie7 .jcarousel-direction-rtl .jcarousel-prev-horizontal {
+    left: auto;
+    right: 5px;
+    background-image: url(../images/next-horizontal.png);
+}

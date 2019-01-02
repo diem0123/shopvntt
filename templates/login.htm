@@ -1,0 +1,42 @@
+<div class="login-clean">
+	<form name="frmLogin" method="post" action="dangnhap.html" onsubmit="return logincheck();">
+		<h2 class="sr-only">Login Form</h2>
+		<a href="#" id="errorLogin" class="forgot"><?=$msg?></a>
+		<div class="login-text">Đăng Nhập</div>
+		<div class="form-groupp"><input class="form-control" type="email" name="username" id="username" placeholder="Email"></div>
+		<div class="form-groupp"><input class="form-control" type="password" name="password" id="password" placeholder="Password"></div>
+		<div class="form-groupp"><button class="btn btn-primary btn-block" name="Login" type="submit">Log In</button></div>
+		<a href="quen-mat-khau.html" class="forgot">Forgot your email or password?</a>
+	
+		<input type="hidden" name="M000" id="M000" value="<?=$M000?>" />
+		<input type="hidden" name="M002" id="M002" value="<?=$M002?>" />
+		<input type="hidden" name="M003" id="M003" value="<?=$M003?>" />
+	</form>
+</div>
+<script type="text/javascript">
+function logincheck()
+{	
+	email = $('#username').val();
+	if (email =="" && $('#password').val() == "")
+	{
+		$('#errorLogin').html("<?=$lang['tl_mmailnhap']?>");
+		$('#errorpass').html("<?=$lang['tl_mnhappass']?>");
+		return false;
+	}
+	else
+	if (email == "")
+	{
+		$('#errorLogin').html("<?=$lang['tl_mmailnhap']?>");
+		$('#errorpass').html("");
+		return false;
+	}	
+	else
+	if ($('#password').val() == "")
+	{
+		$('#errorLogin').html("");
+		$('#errorpass').html("<?=$lang['tl_mnhappass']?>");
+		return false;
+	}
+	return true;
+}
+</script>

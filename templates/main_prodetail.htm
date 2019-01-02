@@ -1,0 +1,57 @@
+<section class="box-all mgt10">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 content-left">
+				<ul class="breadcrumbs">
+					<?=$title_cat?>
+				</ul>
+				<?=$main_contents?>
+			</div>
+			<div class="col-md-4 content-right">
+				<div class="slideads fadeInUp wow">
+					<?=$list_qc_top_right1?>
+				</div>
+				<script>
+					$('#slideadsleft').owlCarousel({
+						loop:true, margin:10, autoplay:true, responsiveClass:true, responsive:{
+							0:{
+								items:1, nav:true
+							},
+							400:{
+								items:1, nav:true
+							},
+							600:{
+								items:1, nav:true
+							},
+							1000:{
+								items:1, nav:true, loop:true
+							}
+						}
+					});
+				</script>
+				<div class="slideads fadeInUp wow">
+					<?=$list_qc_top_right2?>
+				</div>
+				<script>
+					$('#slideadsleft2').owlCarousel({
+						loop:true, margin:10, autoplay:true, responsiveClass:true, responsive:{
+							0:{
+								items:1, nav:true
+							},
+							400:{
+								items:1, nav:true
+							},
+							600:{
+								items:1, nav:true
+							},
+							1000:{
+								items:1, nav:true, loop:true
+							}
+						}
+					});
+				</script>
+				<?=$list_sp_new_right?><!-- sản phẩm mới nhất -->
+			</div>			
+		</div>
+	</div>
+</section>

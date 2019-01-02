@@ -1,0 +1,93 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title><?=$title?></title>
+<link rel="stylesheet" type="text/css" href="css/wstyle.css" />
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/webtoolkit.base64.js"></script>
+<script type="text/javascript" src="wysiwyg/wysiwyg.js"></script>
+</head>
+<div align="left">
+<form action="index.php?act=adm_update_hotnews" method="post"  enctype="multipart/form-data" name="f1" onsubmit="return checkform();"> 
+<input type="hidden" name="ac" value="<?=$ac?>">
+<input type="hidden" name="idhot" value="<?=$idhot?>">
+<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+ <tr bgcolor="#FFF5EA">
+    <td width="17" height="40" class='menu'>&nbsp;</td>
+    <td width="271" class='menu'><?=$title_action?></td>
+    <td width="797" class='menu'>&nbsp;</td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="271" class='menu'>Tiêu đề tin
+    <font size="1" color="#D7261C">*</font></td>
+    <td width="797" class='menu'>
+	<input type="text" name="titlename" style="width:376px " size="1" value="<?=$titlename?>"></td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="271" class='menu'>&nbsp;</td>
+    <td width="797" class='menu'>&nbsp;    </td>
+  </tr>
+  <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="271" class='menu'>Id của tin <font size="1" color="#D7261C">*</font></td>
+    <td width="797" class='menu'>
+    <input type="text" name="idn" style="width:376px " size="1" value="<?=$idn?>"></td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="271" class='menu'>&nbsp;</td>
+    <td width="797" class='menu'>&nbsp;    </td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="271" class='menu'>Thứ tự</td>
+    <td width="797" class='menu'>
+    <input type="text" name="iorder" style="width:376px " size="1" value="<?=$iorder?>"></td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="271" class='menu'>&nbsp;</td>
+    <td width="797" class='menu'>&nbsp;</td>
+  </tr>
+ <tr>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>Trạng thái </td>
+   <td class='menu'><SELECT  class=textbox style="WIDTH: 205px;" size=1 name=status>
+      <option value="">Vui lòng chọn trạng thái...</option>
+		<option value="Active" <?=$sl1?> >Active</option>
+		<option value="Inactive" <?=$sl2?> >Inactive</option>
+		<option value="Deleted" <?=$sl3?> >Deleted</option>
+    </SELECT></td>
+ </tr>
+ <tr>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>&nbsp;</td>
+ </tr>
+    <tr>
+    <td colspan="3" align="center" height="41" class='menu'>
+    <input type="submit" name="submit" value="<?=$button_action?>" class="button" style="width:80px; height:22px ">
+    <input type="button" name="cancel" value="Đóng" onClick="javascript:window.close();" class="button" style="width:60px;height:22px ">    </td>
+  </tr>
+  </table>
+  </form>
+</div>
+<script language="javascript1.2">
+               function checkform(){
+                    
+                    if (document.f1.titlename.value==""){
+                                        alert("Vui lòng nhập tiêu đề tin!");
+                                        document.f1.titlename.focus();
+                                        return false;
+                                }
+                     if (document.f1.idn.value==""){
+                                        alert("Vui lòng nhập Id của tin!");
+                                        document.f1.idn.focus();
+                                        return false;
+                                }
+                      
+                     return true;
+               }
+            
+</script>

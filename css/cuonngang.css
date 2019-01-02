@@ -1,0 +1,21 @@
+/* list-partner */
+
+.doitac-bottom-jcarousellite {
+	height: 80px; 
+	text-align: center;
+	position:relative;
+	top:10px;
+	margin-left:5px;
+	border: 0px solid #ff0000;
+}
+
+.doitac-bottom-jcarousellite ul li{ 
+	float:left;
+	display:block;
+	margin:0px 8px 0 0;
+	background-color: #ffffff;
+}
+
+
+
+

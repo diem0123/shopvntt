@@ -1,0 +1,118 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="js/webtoolkit.base64.js"></script>
+<table width="100%" border="0" cellspacing="3" cellpadding="3"  >
+  <tr>
+    <td align="left" height="40"></td>
+    <td align="left" height="40" class="title_xam" ><?=$lang['tl_nnguoinhan']?> </td>
+    <td align="left" height="40" ><input id="thesame" name="thesame" type="checkbox" onclick="getcopy();" /> 
+      <?=$lang['tl_ngiongmua']?> </td>
+  </tr>
+  <tr>
+    <td align="left"></td>
+    <td align="left"></td>
+    <td align="left"><span id="mess_er1" class="do"></span></td>
+  </tr>
+  <tr>
+    <td width="2%" align="left">&nbsp;</td>
+    <td width="29%" align="left" ><?=$lang['tl_ntennhan']?><font size="1" color="#D7261C">*</font></td>
+    <td width="69%" align="left"><input type="text" class="textbox" id="cus_name_get" name="fullname_get" style="width:376px;height:25px; " size="1" value="<?=$fullname_get?>"></td>
+  </tr>
+  <tr>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"><span id="mess_er4" class="do"></span></td>
+  </tr>
+  <tr>
+    <td align="left">&nbsp;</td>
+    <td align="left" ><?=$lang['tl_ntelnhan']?> <font size="1" color="#D7261C">*</font></td>
+    <td align="left">
+	<input type="text" class="textbox" id="cus_tel_get" name="tel_get" style="width:376px;height:25px; " size="1" value="<?=$tel_get?>">	</td>
+  </tr>
+  <tr>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"><span id="mess_er2" class="do"></span></td>
+  </tr>
+  <tr>
+    <td align="left">&nbsp;</td>
+    <td align="left" ><?=$lang['tl_nmailnhan']?> <font size="1" color="#D7261C">*</font></td>
+    <td align="left"><input type="text" class="textbox" id="cus_email_get" name="email_get" style="width:376px;height:25px; " size="1" value="<?=$email_get?>"></td>
+  </tr> 
+  <tr>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"><span id="mess_er6" class="do"></span></td>
+  </tr>
+  <tr>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"><?=$lang['tl_btinhthanh']?> <font size="1" color="#D7261C">*</font></td>
+    <td align="left" height="10"><SELECT  class="textbox" style="WIDTH: 205px;height:25px;" size=1 name="province_get" id="cus_province_get" onchange="changedist();">
+      <option value=""><?=$lang['tl_bvuilongchontinh']?>...</option>      
+   		<?=$list_provinces?>
+	</SELECT></td>
+  </tr>
+  <tr>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"><span id="mess_er7" class="do"></span></td>
+  </tr>
+  <tr>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"><?=$lang['tl_bquanhuyen']?> <font size="1" color="#D7261C">*</font></td>
+    <td align="left" height="10" id="same_dist">
+	<select  class="textbox" style="WIDTH: 205px;height:25px;" size="1" name="dist" id="dist">
+      <option value=""><?=$lang['tl_bvuilongquanhuyen']?>...</option>
+      <?=$list_dist?>
+    </select></td>
+  </tr>
+  <tr>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"><span id="mess_er5" class="do"></span></td>
+  </tr>
+  <tr>
+    <td align="left">&nbsp;</td>
+    <td align="left" ><?=$lang['tl_ndiachinhan']?> <font size="1" color="#D7261C">*</font></td>
+    <td align="left"><input type="text" class="textbox" id="cus_address_get" name="address_get" style="width:376px;height:25px; " size="1" value="<?=$address_get?>"></td>
+  </tr>
+  <tr>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"><span id="mess_er3" class="do"></span></td>
+  </tr>
+  <tr>
+    <td align="left" height="10"></td>
+    <td align="left" height="10" >&nbsp;</td>
+    <td align="left" height="10">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left" height="40"></td>
+    <td align="left" height="40" class="title_xam"><?=$lang['tl_nptvanchuyen']?> </td>
+    <td align="left" height="40">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left" height="10"></td>
+    <td height="25" colspan="2" align="left">
+	</td>
+  </tr>    
+</table>	
+<!-- container -->
+	<div class="padding15">
+	  <div id="controllaccordion">
+	  <h3> 		
+		<input class="inc1" id="transfer_get1" name="transfer_get" value="1" <?=$cked1?> type="radio">
+		 <span><?=$lang['tl_nphatbuudien']?></span>
+	 </h3>		
+	<div class="accordion">
+			<p><?=$buudien?></p>
+	</div>
+	<h3>
+		<input class="inc1" id="transfer_get2" name="transfer_get" value="2" <?=$cked2?>  type="radio">
+			   <span><?=$lang['tl_nphatnhanh']?></span>
+	</h3>
+	<div class="accordion">
+		<p><?=$phatnhanh?></p>
+	</div>
+</div>
+</div>
+<!-- //container -->	

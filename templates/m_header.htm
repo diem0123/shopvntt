@@ -1,0 +1,31 @@
+<div class="header-top">
+                <a href="/">
+                    <img alt="Home" src="mobi/imgs/home.png" />
+                </a>                
+                <p>
+                    <?=$info_login?>					                   
+                </p>                
+            </div>
+<div class="header group">
+            <div class="show-menu">
+            </div>
+            <a href="/" class="logo">
+                <img alt="therapyshower" src="mobi/imgs/logo.png" />
+            </a>
+
+            <div class="cart">
+                <a href="thong-tin-gio-hang.html" >
+				<span class="iconcart">
+                    Giỏ hàng: <em id="inviewcart" >0</em>
+                </span>
+				</a>
+
+            </div>
+
+        </div>
+		<div class="search">
+		<form action="tim-kiem-san-pham.html" method="get"  enctype="multipart/form-data" name="fsearch">
+            <input type="text" id="keyword"  name="keyword" value="<?=$lang['tl_keyword']?>" onFocus="if(this.value=='<?=$lang['tl_keyword']?>'){this.value='';}" onblur="if(this.value==''){this.value='<?=$lang['tl_keyword']?>';}" />
+            <input type="submit" value="" />
+        </form>
+		</div>

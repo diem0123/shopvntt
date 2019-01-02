@@ -1,0 +1,160 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div class="popup_lbr" >
+<table border="0" width="1000" cellspacing="0" cellpadding="0">
+	<tr>
+		<td height="10" bgcolor="#FFF5EA"></td>
+	</tr>
+</table>
+<form name="f1" method="post" >
+<input type="hidden" id="vlid" name="vlid" value="">
+<input type="hidden" id="idtype1" name="idtype1" value="<?=$idtype?>">
+		
+<table border="0" width="1000">
+	<tr>
+		<td>
+		<table border="0" width="100%" bgcolor="#FFF5EA">
+			<tr>
+			  <td height="14" class="menu" ><button class="admbutton" type="button" name="ct1" value="" onClick="delselect(<?=$pagejs?>,'Vui l&ograve;ng ch&#7885;n &iacute;t nh&#7845;t 1 h&igrave;nh &#7843;nh!','B&#7841;n ch&#7855;c ch&#7855;n mu&#7889;n x&oacute;a?', document.forms.f1.ck, document.forms.f1.vlid,'<?=$thumuc?>');" >Xoá file chọn </button> <button class="admbutton" type="button" name="ct1" value="" onClick="getlibrary(0);" >Quản lý ảnh </button> <button class="admbutton" type="button" name="ct1" value="" onClick="getfilelibrary(0);" >Quản lý file </button></td>
+			</tr>
+		</table>
+		<table border="0" width="100%" cellpadding="0" cellspacing="0" >
+			<tr>
+			  <td height="10" align="left" ></td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<table border="0" cellpadding="0" cellspacing="0" width="994" style="background-color: #F7F7F7; border: 2px solid #FFFFFF; padding: 5px;">	
+			<tr>
+			  <td colspan="15" align="left" height="10"><input name="allbox" type="checkbox" onclick="checkall(this.form);" title="Check All"> 
+				Ch&#7885;n t&#7845;t c&#7843;  / H&#7911;y ch&#7885;n t&#7845;t c&#7843;    </td>
+			</tr>
+			<tr>
+				<td colspan="15" align="left" height="5"><span class="dotline_auto"></span></td>
+			</tr>
+			<?=$list_images?>
+					
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td height="5"></td>
+	</tr>	
+</table>
+<div class="box-phantrang">
+            		<ul>                    	
+						<?=$paging?>						                       
+                    </ul>
+            	</div>
+</form>
+</div>
+<script type="text/javascript">
+function getfilelibrary(page) {	
+	//alert($("#base_url").val());
+	document.getElementById("selectfile").value = "F";
+	$.ajax({
+		url: $("#base_url").val()+'index.php',
+		type: 'POST',
+		data: 'act=getimagelibrary&page='+page+'&f=1',
+		success: function(data) {
+		//alert('111');
+		$('#showlibrary').html(data);
+		}
+	});
+}
+
+function delfile(page,imgname, thumuc) {
+	//alert(imgname);
+	$.ajax({
+		url: $("#base_url").val()+'index.php',
+		type: 'POST',
+		data: 'act=delimage&page='+page+'&imgname='+imgname+'&thumuc='+thumuc,
+		success: function(data) {
+		//alert(data);
+		var getData = $.parseJSON(data);
+		//$('#showlibrary').html(data);
+		//document.getElementById("showlistimg").style.display = "block";
+		if(getData.mess1 == "success") getfilelibrary(page);
+		else alert(getData.mess2);
+		
+		}
+	});
+}
+
+function deletelistfile(page, mess1, mess2, cklist, vlidlist, thumuc) {
+	getValueListCheckBoxspec(cklist,vlidlist);
+	var vlidtemp = $("#vlid").val();
+	//alert(vlidtemp);
+	if (vlidlist.value=='') alert(mess1);
+	else if(confirm(mess2)){		
+		$.ajax({
+			url: $("#base_url").val()+'index.php',
+			type: 'POST',
+			data: 'act=delimage&page='+page+'&ac=d&vlid='+vlidtemp+'&thumuc='+thumuc,		
+			success: function(data) {
+			//alert(data);
+			var getData = $.parseJSON(data);
+			//$('#showlibrary').html(data);
+			//document.getElementById("showlistimg").style.display = "block";
+			if(getData.mess1 == "success") getfilelibrary(page);//window.location.reload();
+			else alert(getData.mess2);
+			
+			}
+		});
+	}
+}
+
+function delimage(page,imgname,thumuc) {
+	//alert(imgname);
+	$.ajax({
+		url: $("#base_url").val()+'index.php',
+		type: 'POST',
+		data: 'act=delimage&page='+page+'&imgname='+imgname+'&thumuc='+thumuc,
+		success: function(data) {
+		//alert(data);
+		var getData = $.parseJSON(data);
+		//$('#showlibrary').html(data);
+		//document.getElementById("showlistimg").style.display = "block";
+		if(getData.mess1 == "success") getlibrary(page);
+		else alert(getData.mess2);
+		
+		}
+	});
+}
+
+function deletelistimg(page, mess1, mess2, cklist, vlidlist, thumuc) {
+	getValueListCheckBoxspec(cklist,vlidlist);
+	var vlidtemp = $("#vlid").val();
+	//alert(vlidtemp);
+	if (vlidlist.value=='') alert(mess1);
+	else if(confirm(mess2)){		
+		$.ajax({
+			url: $("#base_url").val()+'index.php',
+			type: 'POST',
+			data: 'act=delimage&page='+page+'&ac=d&vlid='+vlidtemp+'&thumuc='+thumuc,		
+			success: function(data) {
+			//alert(data);
+			var getData = $.parseJSON(data);
+			//$('#showlibrary').html(data);
+			//document.getElementById("showlistimg").style.display = "block";
+			if(getData.mess1 == "success") getlibrary(page);//window.location.reload();
+			else alert(getData.mess2);
+			
+			}
+		});
+	}
+}	
+
+function geturlimage(urlimage) {
+	document.getElementById("imageurl").value = urlimage;
+	document.getElementById("fileurl").value = $("#base_nohttp").val()+urlimage;
+}
+
+function delselect(page, mess1, mess2, cklist, vlidlist, thumuc) {
+	if($("#selectfile").val() == "I") deletelistimg(page, mess1, mess2, cklist, vlidlist, thumuc);
+	else deletelistfile(page, mess1, mess2, cklist, vlidlist, thumuc);
+}	
+
+</script>

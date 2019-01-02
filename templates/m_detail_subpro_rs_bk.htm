@@ -1,0 +1,42 @@
+<div class="detail-right">
+                            <h1><?=$product_name?></h1>
+                            <p class="star">
+                                <i class="fa fa-star vote"></i>
+                                <i class="fa fa-star vote"></i>
+                                <i class="fa fa-star vote"></i>
+                                <i class="fa fa-star vote"></i>
+                                <i class="fa fa-star "></i>
+                            </p>
+                            <?=nl2br($content_short)?>
+							<?php if($PRICE_SALE ==""){ ?>
+										<h5 class="price"><?=$lang['tl_gia']?>: <strong><?=$price?></strong></h5>							
+							<?php } elseif($PRICE_SALE !=""){ ?>							
+										<h5 class="price"><?=$lang['tl_gia']?>: <strong><?=$PRICE_SALE?></strong></h5>	
+										<span class="price-old">
+                                            <?=$price?>
+                                        </span>																						
+							<?php } ?>
+							                            
+                            <div class="control-detail">                                
+                                <a href="#" onClick="savecart(<?=$idp?>,0);" ><?=$lang['tl_addcart']?></a>
+                                <a href="#" class="buy" onClick="savecart(<?=$idp?>,1);" ><?=$lang['tl_order']?></a>
+                            </div>
+                            <div class="social"><table border="0" width="100%">
+					<tr>
+						<td width="6" height="30"></td>
+						<td width="153" ><div class="fb-like" data-href="http://dnfc.vn/<?=$url_like?>" data-send="true" data-layout="button_count" data-width="450" data-show-faces="true"></div></td>
+						<td width="13" > </td>
+					    <td width="76" >
+					  <g:plusone size="medium" href="http://halamfashion.vn/<?=$url_like?>"></g:plusone>						</td>
+					    <td width="10" >&nbsp;</td>
+					    <td width="469" >
+						 <p><a href="https://twitter.com/intent/tweet?original_referer" class="twitter-share-button" data-url="halamfashion.vn/<?=$url_like?>">Tweet</a>
+                              <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script> 
+			          </p>						</td>
+					    <td width="12" >&nbsp;</td>
+					    <td width="186" >				      </td>
+					    <td width="337" align="right"></td>
+					</tr>					 
+				</table>
+                            </div>
+                        </div>

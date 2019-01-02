@@ -1,0 +1,15 @@
+<li>
+<a href="sanpham-<?=$ID_CATEGORY?>-<?=$name_link?>.html?idt=<?=$ID_TYPE?>" data-toggle="dropdown" class="dropdown-toggle"><?=$name?></a>
+<?php if($list_procat_menu !=''){?>
+<ul class="dropdown-menu">
+	<div class="col-md-6">
+		<?=$list_procat_menu?>
+	</div>
+	<?php if($PICTURE !=''){?>
+		<div class="col-md-6 pdr0 txtCentermb txtRight">
+			<a href="#" class="pd0"><img src="images/bin/imagenews/<?=$PICTURE?>"/></a>
+		</div>
+	<?php }?>
+</ul> 
+<?php }?> 
+</li> 

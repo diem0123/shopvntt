@@ -1,0 +1,10 @@
+<li>
+	<a href="spchitiet-<?=$ID?>-<?=$name_link?>.html"><img src="images/bin/<?=$ID_CATEGORY?>/<?=$IMAGE_LARGE?>"/></a>
+	<a href="spchitiet-<?=$ID?>-<?=$name_link?>.html" class="name-pro"><?=$name?></a><br>
+	<?php if($SALE !=''){ ?>
+		<span class="price-sp"><?=$PRICE?></span><br>
+		<span class="price-sp-old"><?=$PRICE_SALE?></span>
+	<?php }else{?>
+		<span class="price-sp"><?=$PRICE?></span><br>
+	<?php }?>
+</li>

@@ -1,0 +1,33 @@
+<tr>
+  <td valign="top" align="left" class="title_xam" height="35" >T&ecirc;n s&#7843;n ph&#7849;m: <a href="spchitiet-<?=$ID_PRODUCT?>-<?=$name_link?>.html?idc=1" class="style1" target="_blank"><?=$productname?></a></td>
+</tr>
+<tr>
+	<td valign="top" align="left" class="title_xam" height="35" >M&#7913;c &#273;&aacute;nh gi&aacute;: 
+    <?php if($COUNT_STAR == 5){ ?> <img border="0" src="images/star_full.gif" width="13" height="12"><img border="0" src="images/star_full.gif" width="13" height="12"><img border="0" src="images/star_full.gif" width="13" height="12"><img border="0" src="images/star_full.gif" width="13" height="12"><img border="0" src="images/star_full.gif" width="13" height="12"> <?php } elseif($COUNT_STAR == 4){ ?><img border="0" src="images/star_full.gif" width="13" height="12"><img border="0" src="images/star_full.gif" width="13" height="12"><img border="0" src="images/star_full.gif" width="13" height="12"><img border="0" src="images/star_full.gif" width="13" height="12"><img border="0" src="images/star_empty.gif" width="13" height="12"><?php } elseif($COUNT_STAR == 3) { ?><img border="0" src="images/star_full.gif" width="13" height="12" /><img border="0" src="images/star_full.gif" width="13" height="12" /><img border="0" src="images/star_full.gif" width="13" height="12" /><img border="0" src="images/star_empty.gif" width="13" height="12" /><img border="0" src="images/star_empty.gif" width="13" height="12" /><?php } elseif($COUNT_STAR == 2) { ?><img border="0" src="images/star_full.gif" width="13" height="12" /><img border="0" src="images/star_full.gif" width="13" height="12" /><img border="0" src="images/star_empty.gif" width="13" height="12" /><img border="0" src="images/star_empty.gif" width="13" height="12" /><img border="0" src="images/star_empty.gif" width="13" height="12" /><?php } elseif($COUNT_STAR == 1) { ?><img border="0" src="images/star_full.gif" width="13" height="12" /><img border="0" src="images/star_empty.gif" width="13" height="12" /><img border="0" src="images/star_empty.gif" width="13" height="12" /><img border="0" src="images/star_empty.gif" width="13" height="12" /><img border="0" src="images/star_empty.gif" width="13" height="12" /><?php } elseif($COUNT_STAR == 0){ ?><img border="0" src="images/star_empty.gif" width="13" height="12" /><img border="0" src="images/star_empty.gif" width="13" height="12" /><img border="0" src="images/star_empty.gif" width="13" height="12" /><img border="0" src="images/star_empty.gif" width="13" height="12" /><img border="0" src="images/star_empty.gif" width="13" height="12" /><?php } ?></td>
+</tr>
+<tr>
+	<td valign="top" align="left" ><?=nl2br(base64_decode($SCONTENTS))?></td>
+</tr>
+<tr>
+	<td align="left" class="content" height="35"><i><?=$name_user?></i></td>
+</tr>
+<tr>
+	<td align="left" class="content" height="25">Ng&agrave;y nh&#7853;n x&eacute;t: <?=$DATE_POST?></td>
+</tr>
+<tr>
+	<td align="left" class="content" height="25">Tr&#7841;ng th&aacute;i hi&#7875;n th&#7883;: <span id="approve_status"><?php if($STATUS == 'Active'){ ?>&#272;&atilde; duy&#7879;t cho hi&#7875;n th&#7883;<?php } else { ?> Ch&#432;a duy&#7879;t<?php } ?></span></td>
+</tr>
+<tr>
+  <td align="left" class="content" height="35"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td width="2%">&nbsp;</td>
+      <td width="10%"><input type="button" name="approve" value="Duy&#7879;t" style="width:80px; height:25px " onclick="approve(<?=$ID_COMMENT?>,1);" ></td>
+      <td width="10%"><input type="button" name="remove" value="Lo&#7841;i b&#7887;" style="width:80px; height:25px " onclick="approve(<?=$ID_COMMENT?>,2);"></td>
+      <td width="78%"><span id="err_approve" class="do"></span></td>
+    </tr>
+  </table></td>
+</tr>
+<tr>
+	<td height="1" class="style50">
+	<span class="dotline"></span>	</td>
+</tr>

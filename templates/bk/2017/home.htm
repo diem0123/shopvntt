@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en" class="wf-fontawesome-n4-active wf-active">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+	<link rel="stylesheet" media="all" href="css/animate.css">
+	<link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css"/>
+	<link rel="stylesheet" type="text/css" href="css/jquery.fancybox.css?v=2.1.2" media="screen" />
+	<link rel="stylesheet" type="text/css" href="css/owl.carousel.css" />
+	<link type="text/css" rel="stylesheet" href="font-awesome/4.5.0/css/font-awesome.css" />
+	<link rel="stylesheet" media="all" href="css/styles.css">
+	<link rel="stylesheet" media="all" href="css/styles_reponsive.css">
+	<script type="text/javascript" src="js/jquery-2.2.4.min.js"></script>
+	<script src="js/jquery-migrate.min.js" type="text/javascript"></script>
+	<script type="text/javascript" src="js/jquery.fancybox.js"></script>
+	<script type="text/javascript" src="js/jquery.bxslider.js"></script>
+	<script type="text/javascript" src="js/wow.min.js"></script>
+	<script type="text/javascript" src="js/owl.carousel.js"></script>
+	<script src="js/jquery.nicescroll.min.js"></script>
+	<title><?php if($_SESSION['tab'] == 1 && $_SESSION['get_title']==""){ ?>GCfood<?php } elseif($_SESSION['tab'] == 1 && $_SESSION['get_title'] !=""){ ?><?=$_SESSION['get_title']?><?php } elseif($_SESSION['tab'] == 2){ ?><?=$_SESSION['get_title']?><?php } elseif($_SESSION['tab'] == 3){ ?><?=$_SESSION['get_title']?><?php } elseif($_SESSION['tab'] == 4){ ?><?=$_SESSION['get_title']?><?php } elseif($_SESSION['tab'] == 5 || $_SESSION['tab'] == 6){ ?><?=$_SESSION['get_title']?><?php } elseif($_SESSION['tab'] > 6){ ?>GCfood<?php } ?></title>
+	<meta name="keywords" content="cung cấp nha đam, hạt điều, cà phê,.." />
+<meta name="description" content="<?php if(isset($_SESSION['descript']) && $_SESSION['descript'] != ""){ echo $_SESSION['descript']; } elseif($_SESSION['get_title'] != "") { echo $_SESSION['get_title']; } else { echo 'cung cấp nha đam, hạt điều, cà phê,..'; } ?>" />
+<meta http-equiv="Content-Language" content="vi" />
+<meta name="language" content="Vietnamese" />
+<meta name="robots" content="index,follow" />
+<link rel="canonical" href="http://gcfood.com.vn/" />
+<!-- M1 -->
+<meta name="geo.country" content="VN" />
+<meta name="geo.region" content="VN" />
+<meta name="geo.placename" content="Lô V-2E, KCN Hố Nai, Đường số 11, Xã Hố Nai 3, Huyện Trảng Bom, Tỉnh Đồng Nai" />
+<meta name="geo.position" content="10.823866;106.5643" />
+<meta name="ICBM" content="10.823866, 106.5643" />
+<!-- M2 -->
+<meta itemprop="name" content="nha đam, hạt điều, cà phê"> 
+<meta itemprop="description" content="cung cấp nha đam, hạt điều, cà phê,.."> 
+<meta itemprop="image" content="http://gcfood.com.vn/images/1377790302_nmto4.jpg">
+<!-- M3 -->
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+<meta name="DC.Title" content="nha đam, hạt điều, cà phê">
+<meta name="DC.Creator" content="http://gcfood.com.vn">
+<meta name="DC.Subject" content="nha đam, hạt điều, cà phê">
+<meta name="DC.Description" content="cung cấp nha đam, hạt điều, cà phê,..">
+<meta name="DC.Publisher" content="cung cấp nha đam, hạt điều, cà phê,..">
+<link rel="DC.Identifier" href="http://gcfood.com.vn">
+<meta name="DC.Language" content="vi">
+<!-- M4 -->
+<meta property="og:image" content="http://gcfood.com.vn/images/1377790302_nmto4.jpg" />
+<meta property="og:title" content="cung cấp nha đam, hạt điều, cà phê" />
+<meta property="og:url" content="http://gcfood.com.vn" />
+<meta property="og:site_name" content="cung cấp nha đam, hạt điều, cà phê" />
+<meta property="og:type" content="article" />
+<meta property="og:description" content="cung cấp nha đam, hạt điều, cà phê" />
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+	<LINK HREF="http://gcfood.com.vn/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+	<link rel="stylesheet" type="text/css" href="css/lightbox.css" media="screen" />
+	<script type="text/javascript" src="js/lightbox.js"></script>
+	<script>
+	$(document).ready(function(){	
+		$(".lightbox").lightbox();		
+	});
+	</script>
+
+	<script>
+		function generateHeader(height)
+		{
+			if (height > 30)
+			{
+				$('.header-fix').addClass('white-bg');
+			}
+			else
+			{
+				$('.header-fix').removeClass('white-bg');
+			}
+		}
+		function generateMenuLeft(height)
+	{
+		if (height > 60)
+		{
+			$('.menu-fix').addClass('fix-top');
+		}
+		else
+		{
+			$('.menu-fix').removeClass('fix-top');
+		}
+	}
+		$(window).scroll(function(){
+			var top = $(document).scrollTop();
+			generateHeader(top);
+		});
+		$(document).on('click', function(event){
+		var container = $("#menu_main_ul");
+		var container2 = $("#menu_mobile");
+		if ($(window).width() < 1000)
+		{
+			if (!container.is(event.target) && container.has(event.target).length === 0 && !container2.is(event.target) && container2.has(event.target).length === 0)
+			{
+				 $("#menu_main_ul").slideUp();
+				 $('#menu_mobile').animate({right:'15px'},500);
+			}
+		}		
+	});
+	$(document).ready(function(){
+		$('#menu_mobile').click(function () {
+			if ($('#menu_main_ul').css('display') == "block")
+			{
+				$('#menu_main_ul').slideUp();
+				$('#menu_mobile').animate({right:'15px'},500);
+				$('#menu_mobile').css('left','auto');
+			}
+			else{
+				$('#menu_main_ul').slideDown();
+				$('#menu_mobile').animate({right:'0px'},500);
+			}
+		});
+	});
+	</script>
+	
+<style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+   
+      .controls {
+        margin-top: 10px;
+        border: 1px solid transparent;
+        border-radius: 2px 0 0 2px;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        height: 32px;
+        outline: none;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      }
+
+      #pac-input {
+        background-color: #fff;
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+        margin-left: 12px;
+        padding: 0 11px 0 13px;
+        text-overflow: ellipsis;
+        width: 300px;
+      }
+
+      #pac-input:focus {
+        border-color: #4d90fe;
+      }
+
+      .pac-container {
+        font-family: Roboto;
+      }
+
+      #type-selector {
+        color: #fff;
+        background-color: #4d90fe;
+        padding: 5px 11px 0px 11px;
+      }
+
+      #type-selector label {
+        font-family: Roboto;
+        font-size: 13px;
+        font-weight: 300;
+      }
+      #target {
+        width: 345px;
+      }
+    </style>
+	
+</head>
+<body>
+	<?=$header?>
+	<?=$main?>
+	<?=$footer?>
+	<script type="text/javascript" src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript">
+		getcount();
+		getcart();			
+	</script>
+	
+	<script>	
+		$('#slider1').bxSlider({
+			mode: 'fade',
+			auto: true,
+			speed: 1500,
+			autoControls: true,
+			pager:true,
+			controls: false,
+			pause: 4000
+		});
+		$(document).ready(function(){
+			$('.fancybox').fancybox();	
+			$("html").niceScroll({
+				cursorwidth: '12px', 
+				autohidemode: false, 
+				zindex: 999, 
+				horizrailenabled: false,
+				cursorborder: 0,
+				cursorcolor: '#ccc', 
+				scrollspeed: 80, 
+				mousescrollstep: 40 
+			});
+			$('.arrow-down').click(function(e){
+				e.preventDefault();
+				if ($('.drop-lang').css('display') == "none")
+				{
+					$('.drop-lang').slideDown();
+				}
+				else
+				{
+					$('.drop-lang').slideUp();
+				}
+			});
+			$(document).click(function(event) { 
+				if(!$(event.target).closest('.arrow-down').length && !$(event.target).is('.arrow-down'))
+				{
+					$('.drop-lang').slideUp();
+				}        
+			});
+			var wow = new WOW({
+					boxClass: 'wow',
+					animateClass: 'animated',
+					offset: 0,
+					mobile: true,
+					live: false,
+					callback: function (box) {
+					}
+				}
+				);
+			wow.init();
+		});
+	</script>
+		<script>
+		$('#slideproduct1').owlCarousel({
+			loop:true, margin:10, responsiveClass:true, responsive:{
+				0:{
+					items:1, nav:true
+				},
+				400:{
+					items:1, nav:true
+				},
+				600:{
+					items:2, nav:true
+				},
+				1000:{
+					items:3, nav:true, loop:true
+				}
+			}
+		});
+
+		$('#slideproduct4').owlCarousel({
+			loop:true, margin:0, responsiveClass:true, responsive:{
+				0:{
+					items:1, nav:true
+				},
+				400:{
+					items:1, nav:true
+				},
+				600:{
+					items:1, nav:true
+				},
+				1000:{
+					items:1, nav:true, loop:true
+				}
+			}
+		});
+		$('#slideproduct2').owlCarousel({
+			loop:true, margin:10, responsiveClass:true, responsive:{
+				0:{
+					items:1, nav:true
+				},
+				400:{
+					items:1, nav:true
+				},
+				600:{
+					items:1, nav:true
+				},
+				1000:{
+					items:1, nav:true, loop:true
+				}
+			}
+		});
+		$('#slideproduct3').owlCarousel({
+			loop:true, margin:10, responsiveClass:true, autoplay:true, autoplayTimeout:4000, responsive:{
+				0:{
+					items:1, nav:true
+				},
+				400:{
+					items:1, nav:true
+				},
+				600:{
+					items:1, nav:true
+				},
+				1000:{
+					items:1, nav:true, loop:true
+				}
+			}
+		});
+	</script>
+	<script>
+		$(document).ready(function() {
+			$('#table_cart').DataTable();
+		} );
+	</script>
+	<script>
+		window.fbAsyncInit = function() {
+			FB.init({
+				appId      : '110279855830217',
+				xfbml      : true,
+				version    : 'v2.8'
+			});
+		};
+
+		(function(d, s, id){
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) {return;}
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/en_US/sdk.js";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	</script>
+
+<!-- 	<script src="js/jquery.nicescroll.min.js">
+		$(document).on('click', function(event){
+			var container = $(".menu_main");
+			var container2 = $("#menu_mobile");
+			if ($(window).width() < 1000)
+			{
+				if (!container.is(event.target) && container.has(event.target).length === 0 && !container2.is(event.target) && container2.has(event.target).length === 0)
+				{
+					$(".menu_main").slideUp();
+					$('#menu_mobile').animate({left:'10px'},500);
+					$('#menu_mobile').css('right','auto');
+				}
+			}		
+		});
+	</script> -->
+<!--<script type="text/javascript" src="js/ticker.js"></script>
+	c<script type="text/javascript">
+		$(function() {
+			$('#list-kien-thuc').vTicker();
+			$('#list-lam-dep').vTicker();
+		});
+	</script>-->
+	<!-- Load google maps script -->
+	<script>
+	function initAutocomplete() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 10.826546 , lng: 106.625876},
+          zoom: 13,
+          mapTypeId: 'roadmap'
+        });
+
+        // Create the search box and link it to the UI element.
+        var input = document.getElementById('pac-input');
+        var searchBox = new google.maps.places.SearchBox(input);
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+        // Bias the SearchBox results towards current map's viewport.
+        map.addListener('bounds_changed', function() {
+          searchBox.setBounds(map.getBounds());
+        });
+
+        var markers = [];
+        // Listen for the event fired when the user selects a prediction and retrieve
+        // more details for that place.
+        searchBox.addListener('places_changed', function() {
+          var places = searchBox.getPlaces();
+
+          if (places.length == 0) {
+            return;
+          }
+
+          // Clear out the old markers.
+          markers.forEach(function(marker) {
+            marker.setMap(null);
+          });
+          markers = [];
+
+          // For each place, get the icon, name and location.
+          var bounds = new google.maps.LatLngBounds();
+          places.forEach(function(place) {
+            if (!place.geometry) {
+              console.log("Returned place contains no geometry");
+              return;
+            }
+            var icon = {
+              url: place.icon,
+              size: new google.maps.Size(71, 71),
+              origin: new google.maps.Point(0, 0),
+              anchor: new google.maps.Point(17, 34),
+              scaledSize: new google.maps.Size(25, 25)
+            };
+
+            // Create a marker for each place.
+            markers.push(new google.maps.Marker({
+              map: map,
+              icon: icon,
+              title: place.name,
+              position: place.geometry.location
+            }));
+
+            if (place.geometry.viewport) {
+              // Only geocodes have viewport.
+              bounds.union(place.geometry.viewport);
+            } else {
+              bounds.extend(place.geometry.location);
+            }
+          });
+          map.fitBounds(bounds);
+        });
+      }
+
+    </script>
+	<script type="text/javascript">
+ <!-- {literal} -->
+  window.___gcfg = {lang: 'vi'};
+ <!--{/literal}-->
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+	
+</body>
+<div class="support">
+	<a href="#"><img src="images/fbsupport.png"/></a><br>
+	<a href="#"><img src="images/youtubea.png"/></a><br>
+	<a href="tel:+84898920468"><img src="images/phonesupport.png"/></a>
+</div>
+</html>

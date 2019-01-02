@@ -1,0 +1,30 @@
+<table width="100%" border="0" cellspacing="3" cellpadding="3" class="ptext">  
+  <tr >
+    <td align="left" height="20"></td>
+    <td align="left" height="20" ></td>
+  </tr>
+  <tr background="images/bg_viewcart2.gif">
+    <td align="left" height="30"></td>
+    <td align="left" height="30" class="title_xam" ><input type="checkbox" name="ck" value="<?=$ID_PAYMENT?>"> <?=$lang['tl_stt']?>: <?=$stt?> - <?=$lang['tl_cdonhang']?>: <a href="index.php?act=account_view_order&idpayment=<?=$ID_PAYMENT?>"  title="<?=$lang['tl_xemchitietdonhang']?>" ><?=$paymentname?></a></td>
+  </tr>
+  <tr >
+    <td align="left" height="20" ></td>
+    <td align="left" height="20" ><?=$lang['tl_mngaydathang']?>: <?=$CREATED_DATE?></td>
+  </tr>
+  <tr >
+    <td align="left" height="20" ></td>
+    <td align="left" height="20"><?php if($APPROVE == 0){ ?><img src="images/duyetdoi.png" width="16" height="16" alt="No process" title="<?=$lang['tl_choxuly']?>"> <?=$lang['tl_choxuly']?> <?php } elseif($APPROVE == 1){ ?><img src="images/duyet.png" width="16" height="16" alt="Approve" title="<?=$lang['tl_dathanhtoan']?>"> <?=$lang['tl_dathanhtoan']?><?php } elseif($APPROVE == 2){ ?><img src="images/duyetno.png" width="16" height="16" alt="Reject" title="<?=$lang['tl_khle']?>"> <?=$lang['tl_khle']?><?php } ?></td>
+  </tr>
+  <tr >
+    <td align="left" height="20" >&nbsp;</td>
+    <td align="left" height="20"><?=$lang['tl_atienthanhtoan']?>: <?=$TOTAL_PAY_FINAL?></td>
+  </tr>
+  <tr >
+    <td align="left" height="20"></td>
+    <td align="left" height="30" ><?=$lang['tl_ahanhdong']?>: <a href="index.php?act=account_view_order&idpayment=<?=$ID_PAYMENT?>"  title="<?=$lang['tl_xemchitietdonhang']?>" ><img src="images/magnifier.png" width="16" alt="View"></a> &nbsp;&nbsp;<a href="#"  title="<?=$lang['tl_hxoa']?>" onclick="if(confirm('<?=$lang['tl_axacnhanxoa']?>')) window.location.href='index.php?act=delete_order&idpayment=<?=$ID_PAYMENT?>&ac=d<?=$page?>';" ><img src="images/icon_delete.png" width="16" alt="Delete"></a></td>
+  </tr>
+  <tr >
+    <td align="left" height="10"></td>
+    <td align="left" height="10"></td>
+  </tr>    
+</table>

@@ -1,0 +1,162 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="js/webtoolkit.base64.js"></script>
+<table width="100%" border="0" cellspacing="3" cellpadding="3" >  
+  <tr id="r1">
+    <td align="left" height="20" ></td>
+    <td align="left" height="30"></td>
+    <td align="left" height="20" > <?=$lang['tl_bbandacotaikhoan']?> <br /> <span class="style_do" id="errorLogin"><?=$lang['tl_bvuilongnhap']?></span></td>
+  </tr>
+  <tr id="r2">
+    <td align="left" height="20"></td>
+    <td align="left" height="20" ></td>
+    <td align="left" height="20"><input placeholder="<?=$lang['tl_bmailnhap']?>" type="text" class="textinput" name="username" id="username" value="<?=$username?>" ></td>
+  </tr>
+  <tr id="r3">
+    <td align="left" height="5"></td>
+    <td align="left" height="5"></td>
+    <td align="left" height="5" class="style_do" id="errorpass"></td>
+  </tr>
+  <tr id="r4">
+    <td align="left" height="20"></td>
+    <td align="left" height="20"> </td>
+    <td align="left" height="20"><input placeholder="<?=$lang['tl_bpass']?>" type="password" class="textinput" name="password" id="password" autocomplete="off" value="" ></td>
+  </tr>
+  <tr id="r5">
+    <td align="left" height="50"></td>
+    <td align="left" height="50">&nbsp;</td>
+    <td align="left" height="50"><input type="button" name="Login" value="<?=$lang['tl_bdangnhap']?>" accesskey="true" onclick="loginuser();" style="width:100px; height:28px;" >&nbsp;&nbsp;&nbsp; <a href="quen-mat-khau.html" class="style15"><span class="style15"><?=$lang['tl_bquenpass']?></span></a></td>
+  </tr>
+  <tr id="r7">
+    <td align="left" height="20"></td>
+    <td height="20" colspan="2" align="left" class="style38"><span class="dotline"></span></td>
+  </tr>
+  <tr id="r8">
+    <td align="left" height="20"></td>
+    <td align="left" height="20">  </td>
+    <td align="left" height="20"><?=$lang['tl_bchuacotaikhoan']?> <br /><span id="mess_er1" class="style_do"><?=$lang['tl_bvuilongnhaptin']?> </span></td>
+  </tr>
+  <tr>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"></td>
+    <td align="left" height="10"></td>
+  </tr>  
+  <tr>
+    <td width="2%" align="left" height="20"></td>
+    <td width="2%" align="left">  <font  color="#D7261C">*</font></td>
+    <td width="96%" align="left"><input placeholder="<?=$lang['tl_bhoten']?>" type="text" class="textinput" id="cus_name" name="fullname"  value="<?=$fullname?>"></td>
+  </tr>
+  <tr>
+    <td align="left" height="20"></td>
+    <td align="left" height="20"></td>
+    <td align="left" height="20"><span id="mess_er4" class="do"></span></td>
+  </tr>
+  <tr>
+    <td align="left" height="20"></td>
+    <td align="left"> <font  color="#D7261C">*</font></td>
+    <td align="left">
+	<input placeholder="<?=$lang['tl_dthoai']?>" type="text" class="textinput" id="cus_tel" name="tel"  value="<?=$tel?>">	</td>
+  </tr>
+  <tr>
+    <td align="left" height="20"></td>
+    <td align="left" height="20"></td>
+    <td align="left" height="20"><span id="mess_er2" class="do"></span></td>
+  </tr>
+  <tr>
+    <td align="left" height="20"></td>
+    <td align="left"> <font  color="#D7261C">*</font></td>
+    <td align="left"><input placeholder="<?=$lang['tl_bemail']?>" type="text" class="textinput" id="cus_email" name="email"  value="<?=$email?>">
+					<input type="hidden" id="ckedmail" name="ckedmail" value="" />	</td>
+  </tr>
+  <tr>
+    <td align="left" height="20"></td>
+    <td align="left" height="20"></td>
+    <td align="left" height="20"><span id="mess_er6" class="do"></span></td>
+  </tr>
+  <tr>
+    <td align="left" height="20"></td>
+    <td align="left"><font  color="#D7261C">*</font></td>
+    <td align="left"><SELECT  class="textinput" size=1 name="province" id="cus_province" onchange="changedist();">
+      <option value=""><?=$lang['tl_bvuilongchontinh']?>...</option>      
+   		<?=$list_provinces?>
+	</SELECT></td>
+  </tr>
+  <tr>
+    <td align="left" height="20"></td>
+    <td align="left"></td>
+    <td align="left"><span id="mess_er7" class="do"></span></td>
+  </tr>
+  <tr>
+    <td align="left" height="20"></td>
+    <td align="left"> <font  color="#D7261C">*</font></td>
+    <td align="left" id="same_dist"><select  class="textinput"  name="dist" id="dist">
+      <option value=""><?=$lang['tl_bvuilongquanhuyen']?>...</option>
+      <?=$list_dist?>
+    </select>
+	<input type="hidden" id="cus_dist" name="cus_dist" value="" />
+	<input type="hidden" id="loggedin" name="loggedin" value="<?=$loggedin?>" />	</td>
+  </tr>
+  <tr>
+    <td align="left" height="20"></td>
+    <td align="left"></td>
+    <td align="left"><span id="mess_er5" class="do"></span></td>
+  </tr>
+  <tr>
+    <td align="left" height="20"></td>
+    <td align="left"> <font  color="#D7261C">*</font></td>
+    <td align="left"><input placeholder="<?=$lang['tl_bdiachidu']?>" type="text" class="textinput"  id="cus_address" name="address"  value="<?=$address?>"></td>
+  </tr>
+  <tr>
+    <td align="left" height="20"></td>
+    <td align="left" height="20"></td>
+    <td align="left" height="20">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left" height="20"></td>
+    <td align="left" height="20"></td>
+    <td align="left" height="20"><?=$lang['tl_bghichu']?></td>
+  </tr>
+  <tr>
+    <td align="left" height="20"></td>
+    <td align="left" height="20"></td>
+    <td align="left" height="20"><span id="mess_er3" class="do"></span></td>
+  </tr>
+  <tr>
+    <td align="left" height="20"></td>
+    <td align="left" valign="top"></td>
+    <td align="left" valign="top"><textarea class="textarea" id="cus_content" name="content"  onKeyUp="getLengthtextarear(this,3000);"></textarea>
+	<input type="hidden" id="cus_contentencode" name="cus_contentencode" value="<?=$content?>">	</td>
+  </tr>
+  <?php if($loggedin==0){ ?>
+   <tr id="dr5">
+    <td align="left" height="20"></td>
+    <td align="left" height="20"></td>
+    <td align="left" height="20"></td>
+  </tr>
+  <tr id="dr6">
+    <td align="left" height="30"></td>
+    <td align="left" height="30"> </td>
+    <td align="left" height="30" ><input name="addreg" id="addreg" type="checkbox" value="1" onclick="getpw();" <?=$cked?> > 
+    (<?=$lang['tl_bchecktutaotkhoan']?>) </td>
+  </tr>
+  <tr id="dr1" <?=$dl1?> >
+    <td align="left" height="20"></td>
+    <td align="left" height="20"></td>
+    <td align="left" height="20"><span id="mess_reg1" class="style_do"><?=$mess_existemail?></span></td>
+  </tr>
+  <tr id="dr2" <?=$dl2?> >
+    <td align="left" height="20"></td>
+    <td align="left" height="20"> <font  color="#D7261C">*</font></td>
+    <td align="left" height="20"><input placeholder="<?=$lang['tl_bmatkhau']?>" type="password" class="textinput" name="passwordreg" id="passwordreg" value="" autocomplete="off"  /></td>
+  </tr>
+  <tr id="dr3" <?=$dl3?> >
+    <td align="left" height="20"></td>
+    <td align="left" height="20"></td>
+    <td align="left" height="20"><span id="mess_reg2" class="style_do"></span></td>
+  </tr>
+  <tr id="dr4" <?=$dl4?> >
+    <td align="left" height="20"></td>
+    <td align="left" height="20"> <font  color="#D7261C">*</font></td>
+    <td align="left" height="20"><input placeholder="<?=$lang['tl_bxacnhanmatkhau']?>" type="password" class="textinput" name="passwordreg2" id="passwordreg2"  autocomplete="off" /></td>
+  </tr>
+  <?php } ?>
+</table>		

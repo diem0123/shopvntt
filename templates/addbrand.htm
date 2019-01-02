@@ -1,0 +1,139 @@
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title><?=$title?></title>
+	<link rel="stylesheet" type="text/css" href="css/wstyle.css" />
+	<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="js/webtoolkit.base64.js"></script>
+	<script src="ckeditor/ckeditor.js"></script>
+</head>
+<form action="index.php?act=updatebrand" method="post"  enctype="multipart/form-data" name="f1" onsubmit="return checkform();"> 
+  <input type="hidden" name="ac" value="<?=$ac?>">
+  <input type="hidden" name="idcat" value="<?=$idcat?>">
+  <table width="100%"  border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF">
+   <tr bgcolor="#FFF5EA">
+    <td width="17" height="40" class='menu'>&nbsp;</td>
+    <td width="271" class='menu'><?=$lang['adm_addbrand']?></td>
+    <td width="797" class='menu'>&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="271" class='menu'><?=$lang['adm_name_brand']?>
+      <font size="1" color="#D7261C">*</font></td>
+      <td width="797" class='menu'>
+       <input type="text" name="catname" style="width:376px " size="1" value="<?=$catname?>"></td>
+     </tr>
+     <tr>
+      <td width="17" class='menu'>&nbsp;</td>
+      <td width="271" class='menu'>&nbsp;</td>
+      <td width="797" class='menu'>&nbsp;    </td>
+    </tr>
+    <tr>
+      <td width="17" class='menu'>&nbsp;</td>
+      <td width="271" class='menu'><?=$lang['adm_thutu']?>
+        <font size="1" color="#D7261C">*</font></td>
+        <td width="797" class='menu'>
+          <input type="text" name="iorder" style="width:376px " size="1" value="<?=$iorder?>"></td>
+        </tr>
+        <tr>
+          <td width="17" class='menu'>&nbsp;</td>
+          <td width="271" class='menu'>&nbsp;</td>
+          <td width="797" class='menu'>&nbsp;    </td>
+        </tr>
+        <tr>
+         <td class='menu'>&nbsp;</td>
+         <td class='menu'><?=$lang['adm_trangthai']?> </td>
+         <td class='menu'><SELECT  class=textbox style="WIDTH: 205px;" size=1 name=status>
+          <option value=""><?=$lang['adm_vuilongchontrangthai']?>...</option>
+          <option value="Active" <?=$sl1?>>Active</option>
+          <option value="Inactive" <?=$sl2?>>Inactive</option>
+          <option value="Deleted" <?=$sl3?>>Deleted</option>
+        </SELECT></td>
+      </tr>
+      <tr>
+       <td class='menu'>&nbsp;</td>
+       <td class='menu'>&nbsp;</td>
+       <td class='menu'>&nbsp;</td>
+     </tr>
+	 <tr >
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="203" class='menu'>&nbsp;</td>
+    <td width="864" class='menu'>&nbsp;</td>
+  </tr>
+<tr >
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="203" class='menu'>Thương hiệu tiêu biểu </td>
+    <td width="864" class='menu'><input type="checkbox" name="TIEUBIEU" value="1" <?=$tbchecked?> >	</td>
+  </tr>
+    <tr >
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="203" class='menu'>&nbsp;</td>
+    <td width="864" class='menu'>&nbsp;</td>
+  </tr>
+ <tr>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'><?=$lang['adm_noidungbaiviet']?> </td>
+   <td class='menu'><textarea id="contentout" name="content"><?=$content?></textarea>
+   <input type="hidden" id="contentencode" name="contentencode" value="">
+        <script>CKEDITOR.replace('content', {     
+      filebrowserBrowseUrl: 'thu-vien.html'
+      
+    });</script></td>
+ </tr>
+ <tr>
+       <td class='menu'>&nbsp;</td>
+       <td class='menu'>&nbsp;</td>
+       <td class='menu'>&nbsp;</td>
+     </tr>
+ <tr>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>Ý kiến khách hàng </td>
+   <td class='menu'><textarea id="contentout_ykien" name="content_ykien"><?=$content_ykien?></textarea>
+   <input type="hidden" id="contentencode_ykien" name="contentencode_ykien" value="">
+        <script>CKEDITOR.replace('content_ykien', {     
+      filebrowserBrowseUrl: 'thu-vien.html'
+      
+    });</script></td>
+ </tr>
+  <tr>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>&nbsp;</td>
+ </tr>
+ <tr>
+  <td colspan="3" align="center" height="41" class='menu'>
+    <input type="submit" name="submit" value="<?=$lang['them']?>" class="button" style="width:80px; height:22px ">
+    <input type="button" name="cancel" value="<?=$lang['dong']?>" onClick="javascript:window.close();" class="button" style="width:60px;height:22px ">    </td>
+  </tr>
+</table>
+</form>
+<script language="javascript1.2">
+ function checkform(){
+
+  if (document.f1.catname.value==""){
+    alert("Please enter Brand name!");
+    document.f1.catname.focus();
+    return false;
+  }
+  if (document.f1.iorder.value==""){
+    alert("Please enter order!");
+    document.f1.iorder.focus();
+    return false;
+  }
+  getcontens();
+  return true;
+}
+
+
+    function CKupdate() {
+      for (instance in CKEDITOR.instances)
+      CKEDITOR.instances[instance].updateElement();
+    }
+      
+    function getcontens(){
+        //updateTextArea('contentout');
+      CKupdate();
+      document.getElementById("contentencode").value = Base64.encode($("#contentout").val());
+      document.getElementById("contentencode_ykien").value = Base64.encode($("#contentout_ykien").val());
+    }
+</script>
+

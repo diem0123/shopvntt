@@ -1,0 +1,56 @@
+<div class="captions group">
+             <ul>                                                                       
+                 <li class="icon icon11"><a href="#"><span></span> <?=$lang['tl_cdonhang']?>  </a></li>
+                 <li class="icon icon2"><a href="#"><span></span> <?=$lang['tl_cnguoimua']?>  </a></li>
+                 <li class="icon icon3"><a href="#"><span></span><?=$lang['tl_cvanchuyen']?></a></li>
+                 <li class="icon icon4"><a href="#"><span></span><?=$lang['tl_cptthanhtoan']?></a></li>
+                 <li class="icon icon5"><a href="#"> <span></span><?=$lang['tl_cguidonhang']?> </a></li>
+                 <li class="icon icon6"><a href="#"> <span></span><?=$lang['tl_choantat']?></a></li>
+             </ul>
+         </div>
+
+<div class="cart-page">
+            <table>
+                    <thead>
+                        <tr>
+                            <td>
+                                <span>
+                                    <?=$lang['tl_stt']?>
+                                </span>
+                            </td>
+                            <td class="col-product">
+                                <span>  <?=$lang['tl_csanpham']?>   </span>
+                            </td>
+                            <td>
+                                <span>  <?=$lang['tl_cdongia']?>   </span>
+                            </td>
+                            <td>
+                                <span>  <?=$lang['tl_cgiamgia']?>    </span>
+                            </td>
+                            <td>
+                                <span>   <?=$lang['tl_csoluong']?>   </span>
+                            </td>
+                            <td>
+                                <span>  <?=$lang['tl_cthanhtien']?>   </span>
+                            </td>
+                            <td>
+                                <span>  <?=$lang['tl_cthanhtien']?><br /> <em>(<?=$lang['tl_csaugiam']?>)  </em> </span>
+                            </td>
+                            <td>
+                                <span><?=$lang['tl_cloaibo']?></span>
+</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?=$list_pro_com?>
+                    </tbody>
+                </table>
+				<div class="total group">
+                  <p><?=$lang['tl_ctongtien']?></p>
+                    <div class="total-right">
+                        <span><?=$totalpay?></span>
+                        <strong><?=$totalpay_disc?></strong>
+                    </div>
+                </div>    
+				
+            </div>		 

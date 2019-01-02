@@ -1,0 +1,14 @@
+<tbody>
+<tr>
+	<td width="20" height="25"><input type="checkbox" name="ck" value="<?=$idcommon?>"></td>
+	<td width="342" height="25"><a href="#" class="menu" title="<?=$commonname?>" onclick="window.open('?act=adm_viewcommon&idcommon=<?=$idcommon?>&ac=v','Viewcommonpopup','scrollbars=yes,status=yes,toolbar=no,location=0,directories=0,status=yes,menubar=0,resizable=0,width=\'100%\',height=\'100%\'');"><?=$commonname?></a></td>
+	<td width="141" height="25"><?=$DATE_POST?></td>
+	<td width="142" height="25"><?=$DATE_UPDATED?></td>
+	<td width="97" height="25" class="menu"><?=$STATUS?></td>
+	<td width="117" class="menu"><?=$FULL_NAME?></td>
+	<td width="23"><a href="#"  title="View" onclick="window.open('?act=adm_viewcommon&idcommon=<?=$idcommon?>&ac=v','Viewcommonpopup','scrollbars=yes,status=yes,toolbar=no,location=0,directories=0,status=yes,menubar=0,resizable=0,width=\'100%\',height=\'100%\'');"  ><img src="images/magnifier.png" width="16" alt="View"></a></td>
+	<td width="23"><a href="#"  title="Edit" onclick="window.open('?act=adm_editcommon&idcommon=<?=$idcommon?>&ac=e','Editcommonpopup','scrollbars=yes,status=yes,toolbar=no,location=0,directories=0,status=yes,menubar=0,resizable=0,width=\'100%\',height=\'100%\'');"  ><img src="images/icon_edit.png" width="16" alt="Edit"></a></td>
+	<td width="27"><a href="#"  title="Delete" onclick="delit(<?=$idcommon?>,'','');" ><img src="images/icon_delete.png" width="16" alt="Delete"></a></td>
+	<td width="42"></td>
+</tr>
+</tbody>

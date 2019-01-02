@@ -1,0 +1,136 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title><?=$title?></title>
+<link rel="stylesheet" type="text/css" href="css/wstyle.css" />
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/webtoolkit.base64.js"></script>
+<input type="hidden" name="base_url" id="base_url" value="<?=$base_url?>">
+<script type="text/javascript" src="wysiwyg/wysiwyg.js"></script>
+</head>
+<div align="left">
+<form action="?act=adm_saverole" method="post"  enctype="multipart/form-data" name="f1" onsubmit="return checkform();"> 
+<input type="hidden" name="ac" value="<?=$ac?>">
+<input type="hidden" name="idr" value="<?=$idr?>">
+<table width="100%"  border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF">
+ <tr bgcolor="#FFF5EA">
+    <td width="17" height="40" class='menu'>&nbsp;</td>
+    <td width="216" class='menu'><?=$title_action?></td>
+    <td width="800" class='menu'>&nbsp;</td>
+  </tr>
+   <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="216" class='menu'>&nbsp;</td>
+    <td width="800" class='menu'>&nbsp;    </td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="216" class='menu'>Tên vai trò
+    <font size="1" color="#D7261C">*</font></td>
+    <td width="800" class='menu'>
+	<input type="text" name="rolename" style="width:376px " size="1" value="<?=$rolename?>"></td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="216" class='menu'>&nbsp;</td>
+    <td width="800" class='menu'>&nbsp;    </td>
+  </tr>
+  <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="216" class='menu'>Phân cấp
+    <font size="1" color="#D7261C">*</font></td>
+    <td width="800" class='menu'>
+    <SELECT  class=textbox style="WIDTH: 205px;" size=1 name="roletype">
+   		<option value="" selected>Chọn phân cấp...</option>
+   		<option value="Consultant" <?=$sl1?>>Nhân viên</option>
+   		<option value="Operation" <?=$sl2?>>Quản lý</option>
+	</SELECT></td>
+  </tr>
+ <tr style="display:none;">
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="216" class='menu'>&nbsp;</td>
+    <td width="800" class='menu'>&nbsp;    </td>
+  </tr>
+ <tr style="display:none;" >
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="216" class='menu'>LEVEL
+    <font size="1" color="#D7261C">*</font></td>
+    <td width="800" class='menu'>
+    <SELECT  class=textbox style="WIDTH: 205px;" size=1 name="level">
+    	<option value="" >Please select level...</option>
+   		<option value="1" <?=$s1?>>Diamon</option>
+		<option value="2" <?=$s2?>>Gold</option>
+		<option value="3" <?=$s3?>>Silver</option>
+		<option value="4" <?=$s4?>>Cu</option>
+		<option value="5" <?=$s5?>>Trial</option>
+    </SELECT></td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="216" class='menu'>&nbsp;</td>
+    <td width="800" class='menu'>&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="216" class='menu'>Phân quyền    </td>
+    <td width="800" class='menu'>&nbsp;	</td>
+  </tr>
+  <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="216" class='menu'>&nbsp;</td>
+    <td width="800" class='menu'>&nbsp;	</td>
+  </tr>
+  <tr>
+    <td  class='menu' valign="top" width="17">&nbsp;</td>
+    <td  class='menu' valign="top" colspan="2">
+    <table width="100%" cellspacing="0">
+         <?=$list_permission?>
+    </table>    </td>
+  </tr>
+  <tr>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="216" class='menu'>&nbsp;</td>
+    <td width="800" class='menu'><input type="submit" name="submit" value="<?=$button_action?>" class="button" style="width:80px; height:22px ">
+    <input type="button" name="cancel" value="Huỷ" onClick="javascript:window.close();" class="button" style="width:60px;height:22px ">	</td>
+  </tr>
+  <tr>
+    <td colspan="3" align="center" height="41" class='menu'>    </td>
+  </tr>
+</table>
+</form>
+</div>
+<script language="javascript1.2">
+               function checkform(){
+                    
+                    if (document.f1.rolename.value==""){
+                                        alert("Please enter Role name!");
+                                        document.f1.rolename.focus();
+                                        return false;
+                                }
+                     
+                    if (document.f1.roletype.selectedIndex==""){
+                         alert("Please select role type!");
+						 document.f1.roletype.focus();
+                         return false;
+                    }
+                    
+                    if (document.f1.level.selectedIndex==""){
+                         alert("Please select level!");
+						 document.f1.level.focus();
+                         return false;
+                    }
+
+                      
+                     return true;
+               }
+           
+</script>

@@ -1,0 +1,355 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title><?=$title?></title>
+<link rel="stylesheet" type="text/css" href="css/wstyle.css" />
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/webtoolkit.base64.js"></script>
+<input type="hidden" name="base_url" id="base_url" value="<?=$base_url?>">
+<script type="text/javascript" src="wysiwyg/wysiwyg.js"></script>
+</head>
+<div align="left">
+<form action="?act=adm_addaccount" method="post"  enctype="multipart/form-data" name="f1" onsubmit="return checkform();"> 
+<input type="hidden" name="ac" value="a">
+<table width="100%"  border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF">
+ <tr bgcolor="#FFF5EA">
+   <td height="20" class='menu'>&nbsp;</td>
+   <td colspan="2" class='menu'>&nbsp;</td>
+ </tr>
+ <tr bgcolor="#FFF5EA">
+    <td width="17" height="40" class='menu'>&nbsp;</td>
+    <td colspan="2" class='menu'>TẠO TÀI KHOẢN MỚI </td>
+    </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="280" class='menu'>&nbsp;</td>
+    <td width="787" class='do'><?=$mess1?></td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="280" class='menu'>Email &#273;&#259;ng nh&#7853;p <font size="1" color="#D7261C">*</font></td>
+    <td width="787" class='menu'>
+	<input type="text" name="email" style="width:376px " size="1" value="<?=$email?>"></td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="280" class='menu'>&nbsp;</td>
+    <td width="787" class='menu'>&nbsp;    </td>
+  </tr>
+ <tr>
+    <td width="17" class='menu' height="20">&nbsp;</td>
+    <td width="280" class='menu' height="20">M&#7853;t kh&#7849;u <font size="1" color="#D7261C">*</font></td>
+    <td width="787" class='menu' height="20"><input name="password" type="password" autocomplete="off" style="width:376px"/></td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="280" class='menu'>&nbsp;</td>
+    <td width="787" class='menu'>&nbsp;    </td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="280" class='menu'>X&aacute;c nh&#7853;n l&#7841;i m&#7853;t kh&#7849;u <font size="1" color="#D7261C">*</font></td>
+    <td width="787" class='menu'>
+    <input name="password2" type="password" style="width:376px"/></td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="280" class='menu'>&nbsp;</td>
+    <td width="787" class='menu'>&nbsp;    </td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="280" class='menu'>Vai tr&ograve; <font size="1" color="#D7261C">*</font></td>
+    <td width="787" class='menu'>
+    <SELECT  class=textbox style="WIDTH: 205px;" size=1 name="role">
+      <option value="">Chọn vai trò...</option>
+      
+   		<?=$role_list?>
+	</SELECT></td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="280" class='menu'>&nbsp;</td>
+    <td width="787" class='menu'>&nbsp;    </td>
+  </tr>
+ <tr bgcolor="#FFF5EA">
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="280" class='menu'>Th&ocirc;ng tin c&aacute; nh&acirc;n</td>
+    <td width="787" class='menu'>&nbsp;    </td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="280" class='menu'>&nbsp;</td>
+    <td width="787" class='menu'>&nbsp;    </td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="280" class='menu'>Giới tính <font size="1" color="#D7261C">*</font></td>
+    <td width="787" class='menu'>
+    <SELECT  style="WIDTH: 205px;" size=1 name="gender" id="gender" >
+      <option value="" selected="selected">Vui lòng chọn giới tính...</option>
+	       <?=$list_gender?>  		
+	</SELECT></td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="280" class='menu'>&nbsp;</td>
+    <td width="787" class='menu'>&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="280" class='menu'>T&ecirc;n &#273;&#7847;y &#273;&#7911; <font size="1" color="#D7261C">*</font></td>
+    <td width="787" class='menu'>
+	<input type="text" name="consultantname" style="width:376px " size="1" value="<?=$consultantname?>"></td>
+  </tr>
+  <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="280" class='menu'>&nbsp;</td>
+    <td width="787" class='menu'>&nbsp;	</td>
+  </tr>
+  
+<tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="280" class='menu'>&#272;i&#7879;n tho&#7841;i <font size="1" color="#D7261C">*</font></td>
+    <td width="787" class='menu'>
+	<input type="text" name="tel" style="width:376px " size="1" value="<?=$tel?>"></td>
+  </tr>
+  <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="280" class='menu'>&nbsp;</td>
+    <td width="787" class='menu'>&nbsp;</td>
+  </tr>
+<tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="280" class='menu'>Website</td>
+    <td width="787" class='menu'>
+	<input type="text" name="website" style="width:376px " size="1" value="<?=$website?>"></td>
+  </tr>
+  <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="280" class='menu'>&nbsp;</td>
+    <td width="787" class='menu'>&nbsp;</td>
+  </tr>
+<tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="280" class='menu'>&#272;&#7883;a ch&#7881; <font size="1" color="#D7261C">*</font></td>
+    <td width="787" class='menu'>
+	<input type="text" name="address" style="width:376px " size="1" value="<?=$address?>"></td>
+  </tr>
+  <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="280" class='menu'>&nbsp;</td>
+    <td width="787" class='do'><?=$mess2?></td>
+  </tr>
+<tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="280" class='menu'>&#7842;nh th&#7867;</td>
+    <td width="787" class='menu'>
+	<input name="file_ul" type="file" size="25"></td>
+  </tr>
+  <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="280" class='menu' height="30">&nbsp;</td>
+    <td width="787" class='content'>(File: .png, jpg, gif)</td>
+  </tr>
+
+  <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="280" class='menu'>&nbsp;</td>
+    <td width="787" class='menu'>&nbsp;										</td>
+  </tr>
+  
+  
+  
+  <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="280" class='menu'>&#272;i&#7879;n tho&#7841;i di &#273;&#7897;ng</td>
+    <td width="787" class='menu'>
+	<input type="text" name="mobi" style="width:376px " size="1" value="<?=$mobi?>"></td>
+  </tr>
+  
+  
+  
+  <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="280" class='menu'>&nbsp;</td>
+    <td width="787" class='menu'>&nbsp;										</td>
+  </tr>
+  
+  
+  
+  <tr style="display:none">
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="280" class='menu'>Chat yahoo</td>
+    <td width="787" class='menu'>
+	<input type="text" name="chatyahoo" style="width:376px " size="1" value="<?=$chatyahoo?>"></td>
+  </tr>
+  
+  
+  
+  <tr style="display:none">
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="280" class='menu'>&nbsp;</td>
+    <td width="787" class='menu'>&nbsp;										</td>
+  </tr>
+  
+  
+  
+  <tr style="display:none">
+    <td  class='menu' valign="top" width="17">&nbsp;</td>
+    <td  class='menu' valign="top" width="280">Chat skype</td>
+    <td class='menu' ><input type="text" name="chatskype" style="width:376px " size="1" value="<?=$chatskype?>">   	</td>
+  </tr>
+  <tr style="display:none">
+    <td  class='menu' valign="top" width="17">&nbsp;</td>
+    <td  class='menu' valign="top" width="280">&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="280" class='menu'>Tr&#7841;ng th&aacute;i  <font size="1" color="#D7261C">*</font></td>
+    <td width="787" class='menu'>
+    <SELECT  class=textbox style="WIDTH: 205px;" size=1 name=status>
+      <option value="">Chọn trạng thái...</option>
+		<option value="Active" <?=$sl1?>>Active</option>
+		<option value="Inactive" <?=$sl2?>>Inactive</option>
+		<option value="Deleted" <?=$sl3?>>Deleted</option>
+    </SELECT></td>
+  </tr>
+  <tr <?=$dis?>>
+    <td  class='menu' valign="top">&nbsp;</td>
+    <td  class='menu' valign="top">&nbsp;</td>
+    <td class='menu' colspan="3">&nbsp;</td>
+  </tr>
+  
+  <tr>
+    <td colspan="3" align="center" height="41" class='menu'>
+    <input type="submit" name="submit" value="Khởi tạo" class="button" style="width:80px; height:22px ">
+    <input type="button" name="cancel" value="Hủy bỏ" onClick="javascript:window.close();" class="button" style="width:60px;height:22px ">    </td>
+  </tr>
+  </table>
+  </form>
+</div>
+<script language="javascript1.2">
+               function checkform(){
+                    
+                     if (document.f1.email.value==""){
+                                        alert("Vui lòng nhập địa chỉ email!");
+                                        document.f1.email.focus();
+                                        return false;
+                     }else{
+								var at="@";
+								var dot=".";
+								var obj=document.f1.email.value;
+								var lat=obj.indexOf(at);
+								var lstr=obj.length;
+								var ldot=obj.indexOf(dot);
+								if (obj.indexOf(at)==-1){
+									alert('Email không đúng định dạng!')
+									document.f1.email.focus();
+									document.f1.email.value="";
+									return false
+								}
+							   if (obj.indexOf(at)==-1 || obj.indexOf(at)==0 || obj.indexOf(at)==lstr){
+									alert('Email không đúng định dạng!');
+									document.f1.email.focus();
+									document.f1.email.value="";
+									return false;
+								}
+							  if (obj.indexOf(dot)==-1 || obj.indexOf(dot)==0 || obj.indexOf(dot)==lstr){
+									alert('Email không đúng định dạng!');
+									document.f1.email.focus();
+									document.f1.email.value="";
+									return false;
+								}
+							 if (obj.indexOf(at,(lat+1))!=-1){
+									alert('Email không đúng định dạng!');
+									document.f1.email.focus();
+									document.f1.email.value="";
+									return false;
+								}
+							 if (obj.substring(lat-1,lat)==dot || obj.substring(lat+1,lat+2)==dot){
+									alert('Email không đúng định dạng!');
+									document.f1.email.focus();
+									document.f1.email.value="";
+									return false;
+								}
+							 if (obj.indexOf(dot,(lat+2))==-1){
+									alert('Email không đúng định dạng!');
+									document.f1.email.focus();
+									document.f1.email.value="";
+									return false;
+								}
+							 if (obj.indexOf(' ')!=-1){
+									alert('Email không đúng định dạng!');
+									document.f1.email.focus();
+									document.f1.email.value="";
+									return false;
+								}
+										 
+							}
+                    
+                    if (document.f1.password.value==""){
+                                        alert("Vui lòng nhập mật khẩu!");
+                                        document.f1.password.focus();
+                                        return false;
+                                }
+                     if (document.f1.password.value.length < 6){
+	                    alert("Mật khẩu phải ít nhất 6 ký tự!");
+	                    document.f1.password.focus();
+	                    return false;
+                	}
+           
+                     if (document.f1.password2.value==""){
+                                        alert("Vui lòng xác nhận lại mật khẩu!");
+                                        document.f1.password2.focus();
+                                        return false;
+                     }
+                     
+                     if (document.f1.password.value != document.f1.password2.value){
+									alert ("Mật khẩu không khớp nhau!");
+									document.f1.password2.focus();
+									return false;
+					}
+					
+					if (document.f1.role.selectedIndex==""){
+                         alert("Vui lòng chọn vai trò người sử dụng!");
+						 document.f1.role.focus();
+                         return false;
+                    }
+                    
+                    if (document.f1.pre.selectedIndex==""){
+                         alert("Vui lòng chọn xưng hô theo giới tính!");
+						 document.f1.pre.focus();
+                         return false;
+                    }
+                    
+                    if (document.f1.consultantname.value==""){
+                                        alert("Vui lòng điền tên đầy đủ!");
+                                        document.f1.consultantname.focus();
+                                        return false;
+                     }
+    
+                                
+					if (document.f1.tel.value==""){
+	                    alert("Vui lòng nhập số điện thoại!");
+	                    document.f1.tel.focus();
+	                    return false;
+					}
+					if (document.f1.address.value==""){
+                            alert("Vui lòng nhập địa chỉ!");
+                            document.f1.address.focus();
+                            return false;
+                    }
+           
+                     if (document.f1.status.selectedIndex==""){
+                         alert("Vui lòng chọn trạng thái!");
+						 document.f1.status.focus();
+                         return false;
+                    }
+
+
+                      
+                     return true;
+               }
+               
+</script>

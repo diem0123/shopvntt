@@ -1,0 +1,122 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title><?=$title?></title>
+<link rel="stylesheet" type="text/css" href="css/wstyle.css" />
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/webtoolkit.base64.js"></script>
+<script type="text/javascript" src="wysiwyg/wysiwyg.js"></script>
+</head>
+<div align="left">
+<form action="index.php?act=adm_update_nick" method="post"  enctype="multipart/form-data" name="f1" onsubmit="return checkform();"> 
+<input type="hidden" name="ac" value="<?=$ac?>">
+<input type="hidden" name="idnick" value="<?=$idnick?>">
+<table width="100%"  border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF">
+ <tr >
+    <td width="17" height="40" class='menu'>&nbsp;</td>
+    <td width="271" class='menu'><?=$title_action?></td>
+    <td width="797" class='menu'>&nbsp;</td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="271" class='menu'>Chọn tài khoản
+    <font size="1" color="#D7261C">*</font></td>
+    <td width="797" class='menu'>
+	<SELECT  class=textbox style="WIDTH: 205px;" size=1 name="idc" id="idc" >
+      <option value="">Vui lòng chọn tài khoản...</option>      
+		<?=$list_consultant?>
+    </SELECT></td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="271" class='menu'>&nbsp;</td>
+    <td width="797" class='menu'>&nbsp;    </td>
+  </tr>
+  <tr>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>Tên đặc tả <font size="1" color="#D7261C">*</font></td>
+    <td class='contents'><input type="text" name="namedes" style="width:376px " size="1" value="<?=$namedes?>"> 
+    (vd: Kinh doanh 1) </td>
+  </tr>
+  <tr>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+    <td class='menu'>&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="271" class='menu'>Tên nick
+    <font size="1" color="#D7261C">*</font></td>
+    <td width="797" class='contents'>
+    <input type="text" name="nickname" style="width:376px " size="1" value="<?=$nickname?>">     
+    (vd: sales123) </td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="271" class='menu'>&nbsp;</td>
+    <td width="797" class='menu'>&nbsp;    </td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="271" class='menu'>Chọn kiểu chat <font size="1" color="#D7261C">*</font></td>
+    <td width="797" class='menu'>
+    <SELECT  class=textbox style="WIDTH: 205px;" size=1 name="typechat" id="typechat" >
+      <option value="">Vui lòng chọn kiểu chat...</option>      
+	  <option value="YAHOO" <?=$s1?> >Chat YAHOO</option>
+	  <option value="SKYPE" <?=$s2?> >Chat SKYPE</option>
+    </SELECT></td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="271" class='menu'>&nbsp;</td>
+    <td width="797" class='menu'>&nbsp;</td>
+  </tr>
+ <tr>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>Trạng thái </td>
+   <td class='menu'><SELECT  class=textbox style="WIDTH: 205px;" size=1 name="status">
+      <option value="">Vui lòng chọn trạng thái...</option>
+		<option value="Active" <?=$sl1?> >Online</option>
+		<option value="Inactive" <?=$sl2?> >Offline</option>		
+    </SELECT></td>
+ </tr>
+ <tr>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>&nbsp;</td>
+ </tr>
+ <tr>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>Thứ tự </td>
+   <td class='menu'><input type="text" name="iorder" style="width:376px " size="1" value="<?=$iorder?>"></td>
+ </tr>
+ <tr>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>&nbsp;</td>
+ </tr>
+    <tr>
+    <td colspan="3" align="center" height="41" class='menu'>
+    <input type="submit" name="submit" value="<?=$button_action?>" class="button" style="width:80px; height:22px ">
+    <input type="button" name="cancel" value="Đóng" onClick="javascript:window.close();" class="button" style="width:60px;height:22px ">    </td>
+  </tr>
+  </table>
+  </form>
+</div>
+<script language="javascript1.2">
+               function checkform(){
+                    
+                    if (document.f1.catname.value==""){
+                                        alert("Please enter Category name!");
+                                        document.f1.catname.focus();
+                                        return false;
+                                }
+                     if (document.f1.iorder.value==""){
+                                        alert("Please enter order!");
+                                        document.f1.iorder.focus();
+                                        return false;
+                                }
+                      
+                     return true;
+               }
+            
+</script>

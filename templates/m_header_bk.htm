@@ -1,0 +1,45 @@
+<div class="header-top">
+             <div class="language">
+                <a href="index.php?act=home&lang=2"> <img alt="en" src="mobi/imgs/en.png" /> </a>
+                <a href="index.php?act=home&lang=1"> <img alt="vn" src="mobi/imgs/vn.png" /> </a>
+            </div>
+			<div class="clearfix"></div>
+			<div class="hotline">
+                <span><em></em> <?=$hotline?></span>
+            </div>           
+            <div class="clearfix"></div>
+
+        </div>
+		<div class="header">
+            <a href="http://redribbon.vn/" class="logo">
+                <img alt="RED RIBBON JSC" src="mobi/imgs/logo.png" />
+            </a>
+
+            <div class="search">
+                <form action="tim-kiem-san-pham.html" method="get"  enctype="multipart/form-data" name="fsearch">
+                        <input type="text" id="keyword"  name="keyword" value="<?=$lang['tl_keyword']?>" onFocus="if(this.value=='<?=$lang['tl_keyword']?>'){this.value='';}" onblur="if(this.value==''){this.value='<?=$lang['tl_keyword']?>';}" />
+                        <input type="submit" value="" />
+                    </form>
+            </div>
+            <div class="menu">
+                <div class="show-menu">
+                    <span></span> <?=$lang['tl_dmuc']?>
+                </div>
+                <ul class="nav">
+                    <li class="active">
+                        <a href="http://redribbon.vn/"><?=$lang['tl_home1']?> </a>
+                    </li>
+                    <li><a href="info-1-Gioi-thieu.html?idcat=1"><?=$lang['tl_aboutus']?></a></li>
+                    <li>
+                        <a href="sanpham.html" ><?=$lang['tl_prod']?> </a>                       
+                    </li>
+                    <li>
+                        <a href="info-2-dich-vu.html"> <?=$lang['tl_service']?></a>                        
+                    </li>
+                    <li><a href="info-6-golf-corner.html"><?=$lang['tl_golfcorner']?></a></li>
+                    <li><a href="info-3-tin-tuc.html"><?=$lang['tl_news']?> </a></li>
+                    <li><a href="lienhe.html"><?=$lang['tl_contact']?></a></li>
+                </ul>
+            </div>   <!--end menu-->
+
+        </div>

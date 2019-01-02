@@ -1,0 +1,13 @@
+<tr>
+	<td width="20" height="25"><input type="checkbox" name="ck" value="<?=$idnick?>"></td>
+	<td width="211" height="25" class="menu"><?=$NAME?></td>
+	<td width="187"><?=$NICK_NAME?></td>
+	<td width="119" height="25"><?=$TYPECHAT?></td>
+	<td width="120" height="25"><img src="images/<?=$iconchat?>" width="27" height="27" border="0"></td>
+	<td width="85" height="25" class="menu"><?php if($MESSENGER_ON=='Active') {?>Online<?php } else { ?>Offline<?php } ?></td>
+	<td width="99" class="menu"><?=$IORDER?></td>
+	<td width="34"><a href="#"  title="Set Online/Offline" onclick="setonoff(<?=$idnick?>);"  ><img src="images/onoff.png" width="16" alt="On-Off"></a></td>
+	<td width="30"><a href="#"  title="Edit" onclick="window.open('?act=adm_update_nick&idnick=<?=$idnick?>&ac=e','Editnickpopup','scrollbars=yes,status=yes,toolbar=no,location=0,directories=0,status=yes,menubar=0,resizable=0,width=800,height=380');"  ><img src="images/icon_edit.png" width="16" alt="Edit"></a></td>
+	<td width="28"><a href="#"  title="Delete" onclick="delit(<?=$idnick?>,'','');" ><img src="images/icon_delete.png" width="16" alt="Delete"></a></td>
+	<td width="39"></td>
+</tr>

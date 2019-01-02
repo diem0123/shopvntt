@@ -1,0 +1,58 @@
+/*tab1*/
+.shadetabs1{
+padding: 1px 0;
+margin-left: 3px;
+margin-top: 1px;
+margin-bottom: 2px;
+font: bold 12px Arial;
+list-style-type: none;
+text-align: left; /*set to left, center, or right to align the menu as desired*/
+}
+
+.shadetabs1 li{
+display: inline;
+margin: 0;
+}
+
+.shadetabs1 li a{
+text-decoration: none;
+padding: 3px 3px;
+margin-right: 1px;
+border: 1px solid #DDDDDD;
+color: #000000;
+border-bottom-color: #FFFFFF;
+background: white url(../images/shade1.gif) top left repeat-x;
+}
+
+.shadetabs1 li a:visited{
+color: #AD2D2D;
+}
+
+.shadetabs1 li a:hover{
+text-decoration: none;
+color: #AD2D2D;
+}
+
+.shadetabs1 li.selected{
+position: relative;
+top: 1px;
+}
+
+.shadetabs1 li.selected a{ /*selected main tab style */
+background-image: url(../images/shadeactive1.gif);
+border-bottom-color: #FFFFFF;
+}
+
+.shadetabs1 li.selected a:hover{ /*selected main tab style */
+text-decoration: none;
+}
+
+.content-style1{
+font: 13px Arial;
+color:#000000;
+border: 1px solid #DDDDDD;
+width: auto;
+margin-bottom: 1px;
+padding: 10px;
+}
+/**/

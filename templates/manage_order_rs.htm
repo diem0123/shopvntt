@@ -1,0 +1,12 @@
+<tr>
+	<td width="20" height="25"><input type="checkbox" name="ck" value="<?=$ID_PAYMENT?>"></td>
+	<td width="34" height="25"><?=$stt?></td>
+	<td width="153" height="25"><a href="index.php?act=account_view_order&idpayment=<?=$ID_PAYMENT?>"  title="<?=$lang['tl_xemchitietdonhang']?>" ><?=$paymentname?></a></td>
+	<td width="224" height="25"><?=$CREATED_DATE?></td>
+	<td width="244" height="25" class="content"><?php if($APPROVE == 0){ ?><img src="images/duyetdoi.png" width="16" height="16" alt="No process" title="<?=$lang['tl_choxuly']?>"> <?=$lang['tl_choxuly']?> <?php } elseif($APPROVE == 1){ ?><img src="images/duyet.png" width="16" height="16" alt="Approve" title="<?=$lang['tl_dathanhtoan']?>"> <?=$lang['tl_dathanhtoan']?><?php } elseif($APPROVE == 2){ ?><img src="images/duyetno.png" width="16" height="16" alt="Reject" title="<?=$lang['tl_khle']?>"> <?=$lang['tl_khle']?><?php } ?></td>
+	<td width="184" ><?=$TOTAL_PAY_FINAL?></td>
+	<td width="23"><a href="index.php?act=account_view_order&idpayment=<?=$ID_PAYMENT?>"  title="<?=$lang['tl_xemchitietdonhang']?>" ><img src="images/magnifier.png" width="16" alt="View"></a></td>
+	<td width="23"><a href="#"  title="<?=$lang['tl_hxoa']?>" onclick="if(confirm('<?=$lang['tl_axacnhanxoa']?>')) window.location.href='index.php?act=delete_order&idpayment=<?=$ID_PAYMENT?>&ac=d<?=$page?>';" ><img src="images/icon_delete.png" width="16" alt="Delete"></a></td>
+	<td width="27"></td>
+	<td width="42"></td>
+</tr>

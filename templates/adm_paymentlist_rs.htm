@@ -1,0 +1,15 @@
+<tr>
+	<td width="25" height="25"><input type="checkbox" name="ck" value="<?=$ID_PAYMENT?>"></td>
+	<td width="102" height="25"><a href="#" class="menu" title="<?=$paymentname?>" onclick="window.open('?act=adm_account_view_order&idpayment=<?=$ID_PAYMENT?>','Viewcommonpopup','scrollbars=yes,status=yes,toolbar=no,location=0,directories=0,status=yes,menubar=0,resizable=0,width=776,height=600');"><?=$paymentname?></a></td>
+	<td width="127" height="25" class="content"><?=$CREATED_DATE?></td>
+	<td width="65" height="25" class="content" align="center"><?php if($APPROVE == 0){ ?><img src="images/duyetdoi.png" width="16" height="16" alt="No process" title="Đơn hàng chờ xử lý"> <?php } elseif($APPROVE == 1){ ?><img src="images/duyet.png" width="16" height="16" alt="Approve" title="Đơn hàng đã thanh toán"><?php } elseif($APPROVE == 2){ ?><img src="images/duyetno.png" width="16" height="16" alt="Reject" title="Đơn hàng không hợp lệ"><?php } ?></td>
+	<td width="108" class="content" align="right"><?=number_format($TOTAL_PAY,0,"",".")?></td>
+	<td width="113" class="content" align="right"><?=number_format($TOTAL_PAY_DISC,0,"",".")?></td>
+	<td width="98" height="25" class="content" align="right"><?=number_format($TOTAL_PAY_FINAL,0,"",".")?></td>
+	<td width="216" class="content" align="center"><?=$EMAIL?></td>
+	<td width="120">
+		<a href="#" class="menu" title="Xem đơn hàng" onclick="window.open('?act=adm_account_view_order&idpayment=<?=$ID_PAYMENT?>','Viewcommonpopup','scrollbars=yes,status=yes,toolbar=no,location=0,directories=0,status=yes,menubar=0,resizable=0,width=776,height=600');"><img src="images/magnifier.png" width="16" alt="View"></a>
+		<a href="#"  title="Xoá đơn hàng" onclick="delit(<?=$ID_PAYMENT?>,'', '');" ><img src="images/icon_delete.png" width="16" alt="Delete"></a>
+		<a href="#"  title="Xác nhận đã thanh toán" onclick="processpay(<?=$ID_PAYMENT?>,1);" ><img src="images/duyet.png" width="16" alt="Approve"></a> <a href="#"  title="Đơn hàng không hợp lệ" onclick="processpay(<?=$ID_PAYMENT?>,2);" ><img src="images/duyetno.png" width="16" alt="Not Approve"></a> <a href="#"  title="Đơn hàng chờ xử lý" onclick="processpay(<?=$ID_PAYMENT?>,0);" ><img src="images/duyetdoi.png" width="16" alt="No Process"></a>
+	</td>
+</tr>

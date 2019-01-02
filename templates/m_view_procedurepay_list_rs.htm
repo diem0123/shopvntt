@@ -1,0 +1,76 @@
+<table width="100%" border="0" cellspacing="3" cellpadding="3" class="ptext" >
+  <tr>
+    <td height="40" colspan="2" align="left"><table width="100%" border="0" cellpadding="3" cellspacing="0"  background="images/bg_viewcart2.gif">
+  <tr >
+    <td width="2%" height="10" align="left">&nbsp;</td>
+    <td width="98%" height="32" colspan="2" align="left" class="title_xam" ><?=$lang['tl_tpthanhtoan']?> </td>
+  </tr>
+</table></td>
+  </tr>
+  <tr>
+    <td width="2%" height="25" align="left"></td>
+    <td rowspan="3" align="left" valign="top">
+	<?php if($cked == 1){ ?>		
+		<table width="100%" border="0" cellpadding="3" cellspacing="3" >
+		  <tr>
+			<td height="40" colspan="2" align="left" > <?=$lang['tl_ttructiep']?></td>
+		  </tr>
+		</table>		
+			<?=$content_pay1?>
+	<?php } elseif($cked == 2){ ?>	
+		<table width="100%" border="0" cellpadding="3" cellspacing="3" >
+		  <tr>
+			<td align="left" height="40" > <?=$lang['tl_ttheatm']?></td>
+			<td align="left">&nbsp;</td>
+		  </tr>
+		</table>	
+		<?=$content_pay2?>
+	<?php } elseif($cked ==3) { ?>
+		<table width="100%" border="0" cellpadding="3" cellspacing="3" >
+		  <tr>
+			<td align="left" height="40" > <?=$lang['tl_ttienmat']?></td>
+			<td align="left">&nbsp;</td>
+		  </tr>
+		</table>	
+		<?=$content_pay3?>
+	<?php } elseif($cked == 4){ ?>
+		<table width="100%" border="0" cellpadding="3" cellspacing="3" >
+		  <tr>
+			<td align="left" height="40" ><?=$lang['tl_tnganluong']?></td>
+			<td align="left">&nbsp;</td>
+		  </tr>
+		</table>		
+		<?=$content_pay4?>
+	<?php } elseif($cked == 5){ ?>
+		<table width="100%" border="0" cellpadding="3" cellspacing="3" >
+		  <tr>
+			<td align="left" height="40" ><?=$lang['tl_tbaokim']?></td>
+			<td align="left">&nbsp;</td>
+		  </tr>
+		</table>		
+		<?=$content_pay5?>
+	<?php } elseif($cked == 6) { ?>
+		<table width="100%" border="0" cellpadding="3" cellspacing="3" >
+		  <tr>
+			<td align="left" height="40" ><?=$lang['tl_tvanphong']?></td>
+			<td align="left">&nbsp;</td>
+		  </tr>
+		</table>	
+		<?=$content_pay6?>
+		<?php } elseif($cked == 7) { ?>
+		<table width="100%" border="0" cellpadding="3" cellspacing="3" >
+		  <tr>
+			<td align="left" height="40" > Thanh toán qua 123Pay: <?php if(@$_SESSION['pay123'] == "123PCC"){ ?>Thanh toán bằng thẻ Visa/Master/jCB<?php } else { ?>Thanh toán bằng thẻ ATM nội địa <?php } ?>  </td>
+			<td align="left">&nbsp;</td>
+		  </tr>
+		</table>	
+		<?=$content_pay7?>
+	<?php } ?>	</td>
+  </tr>
+  <tr>
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left" height="10"></td>
+  </tr>    
+</table>	

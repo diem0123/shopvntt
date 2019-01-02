@@ -1,0 +1,46 @@
+<div class="intro">
+        <div class="wrap">
+            <div class="bar group">
+                <div class="menu-cate menu-cate-hide">
+                    <p>
+                        <?=$lang['tl_chuyenmucsp']?><i class="fa fa-angle-down"></i>
+                    </p>
+                    <?=$list_menur_pro?>
+                </div>
+                <div class="search">
+                   <form action="tim-kiem-san-pham.html" method="get"  enctype="multipart/form-data" name="fsearch">
+				    <div class="search-option">
+                        <span> <em><?=$lang['tl_tk']?>  </em></span>                        
+                    </div>
+                    <input type="text" id="keyword"  name="keyword" value="<?=$lang['tl_keyword']?>" onFocus="if(this.value=='<?=$lang['tl_keyword']?>'){this.value='';}" onblur="if(this.value==''){this.value='<?=$lang['tl_keyword']?>';}" />
+                    <input type="submit" value="" class="btn-search" />
+					</form>
+
+                </div>
+                <a href="thong-tin-gio-hang.html" class="cart"> <img alt="gio hang" src="images/icon_cart.png" /> 
+				(<span class="number" id="inviewcart">
+					0<?=$countcart?>
+				</span>)</a>
+            </div>
+        </div>
+    </div>
+	
+	<div class="middle">
+        <div class="wrap">
+          
+            <div class="cols group">
+                <div class="colleft">
+					<?=$title_cat?>					 
+                    <?=$main_contents?>	
+					<?=$pro_relevant?>				
+                </div>
+                <!--end colleft-->
+                <div class="colright">
+                    <?=$support_online?> 
+                    <?=$hotnews_right?> 
+					<?=$nhanong?>                    
+                </div>
+                <!--end colright-->
+            </div>
+        </div>
+    </div>

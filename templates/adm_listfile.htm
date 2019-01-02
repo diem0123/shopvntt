@@ -1,0 +1,48 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Thư viện hình ảnh - files</title>
+<link rel="stylesheet" type="text/css" href="css/vntt.css" />
+<link rel="stylesheet" type="text/css" href="css/addmore.css" />
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/common_old.js"></script>
+</head>
+<input type="hidden" name="base_url" id="base_url" value="<?=$base_url?>">
+<input type="hidden" name="base_nohttp" id="base_nohttp" value="<?=$base_nohttp?>">
+<input type="hidden" id="selectfile" name="selectfile" value="I">
+<?=$list_files?>
+
+<script type="text/javascript">
+function getlibrary(page) {	
+	//alert($("#base_url").val());
+	document.getElementById("selectfile").value = "I";
+	$.ajax({
+		url: $("#base_url").val()+'index.php',
+		type: 'POST',
+		data: 'act=getthuvien&page='+page+'&f=0',
+		success: function(data) {
+		//alert('111');
+		$('#showfile').html(data);
+		}
+	});
+}
+
+function getfilelibrary(page) {	
+	//alert($("#base_url").val());
+	document.getElementById("selectfile").value = "F";
+	$.ajax({
+		url: $("#base_url").val()+'index.php',
+		type: 'POST',
+		data: 'act=getthuvien&page='+page+'&f=1',
+		success: function(data) {
+		//alert('111');
+		$('#showfile').html(data);
+		}
+	});
+}
+<?php if($slfile == 1){ ?>
+getfilelibrary(0);	
+<?php } else { ?>
+getlibrary(0);
+<?php } ?>
+
+</script>

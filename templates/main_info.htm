@@ -1,0 +1,31 @@
+<section class="box-all mgt10">
+	<div class="box-all mgt10 pdb20">
+		<div class="container">
+			<div class="box-all">
+				<h2 class="title-orange fadeInUp wow"><?=$title_cat?></h2>
+				<div class="desc fadeInUp wow">Thông tin hỗ trợ kiến thức giúp bạn nhanh chóng biết cách kinh doanh online hiệu quả
+				</div>
+			</div>
+			<div class="row">
+				<div class="box-all listNews mgt20">
+					<div class="col-md-5 fadeInUp wow col-sm-6">
+						<?=$tinmoinhat?><!-- Tin mới nhất  -->
+						<?=$tinmoi?><!-- Tin mới giới hạn 2 tin  -->
+					</div>
+					<?=$old_news?><!-- Tin tức cũ hơn giới hạn 4 tin -->
+					<?=$gocchuyengia?>
+				</div>
+			</div>
+			<div class="box-all">
+				<h2 class="title-orange fadeInUp wow">Tin tức khác</h2>
+				<div class="desc fadeInUp wow">Các thông tin nổi bật từ các thương hiệu hàng đầu</div>
+			</div>
+			<div class="box-all mgt20 fadeInUp wow">
+				<?=$list_news_other?><!-- List video giới thiệu sản phẩm -->
+				<script>
+					$('#slidevideo').owlCarousel({ nestedItemSelector: 'slide' });
+				</script>
+			</div>
+		</div>
+	</div>
+</section>

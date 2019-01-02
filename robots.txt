@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /includes/
+Disallow: /cgi-bin/
+Disallow: /sources/
+Disallow: /demo/
+Disallow: /demo1/

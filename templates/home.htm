@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/owl.carousel.js"></script>
+<script type="text/javascript" src="js/wow.min.js"></script>
+<script src="js/validator.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/animate.css" />
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+<link type="text/css" rel="stylesheet" href="css/jquery.bxslider.css"/>
+<link rel="stylesheet" type="text/css" href="css/owl.carousel.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link rel="stylesheet" href="css/Login-Form-Clean.css">
+<link rel="stylesheet" type="text/css" href="css/wstyle.css" />
+<link rel="stylesheet" href="css/Login-Form-Dark.css">
+ <link rel="stylesheet" href="css/Newsletter-Subscription-Form.css">
+ <link rel="stylesheet" href="css/baguetteBox.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,600,700" rel="stylesheet">
+<LINK HREF="images/favicon-1.ico" rel="shortcut icon" type="image/x-icon" />
+<title><?php if(isset($_SESSION['get_title']) && $_SESSION['get_title'] !=""){ ?><?=$_SESSION['get_title']?><?php } else { ?>onlinemall<?php } ?></title>
+<meta name="keywords" content="Cung cấp các sản phẩm nhập khẩu chất lượng cao" />
+
+
+<meta http-equiv="Content-Language" content="vi" />
+<meta name="language" content="Vietnamese" />
+<meta name="robots" content="index,follow" />
+<link rel="canonical" href="http://onlinemall.vn" />
+<!-- M1 -->
+<meta name="geo.country" content="VN" />
+<meta name="geo.region" content="VN" />
+<meta name="geo.placename" content="Địa chỉ trang web shopvntt.vn" />
+<meta name="geo.position" content="10.823866;106.5643" />
+<meta name="ICBM" content="10.823866, 106.5643" />
+
+<!-- M3 -->
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+<meta name="DC.Title" content="<?=$_SESSION['get_title']?>">
+<meta name="DC.Creator" content="http://onlinemall.vn">
+<meta name="DC.Subject" content="Cung cấp các sản phẩm nhập khẩu chất lượng cao">
+<meta name="DC.Description" content="$_SESSION['descript']">
+<meta name="DC.Publisher" content="Cung cấp các sản phẩm nhập khẩu chất lượng cao">
+<link rel="DC.Identifier" href="http://onlinemall.vn">
+<meta name="DC.Language" content="vi">
+<!-- M4 -->
+
+<meta property="og:site_name" content="shopvntt"  />
+<meta property="og:url"  itemprop="url" content="<?=$nameurl?>" />
+<meta property="og:type"          content="article" />
+<meta property="og:title" itemprop="headline" content="<?php if(isset($_SESSION['get_title']) && $_SESSION['get_title'] !=""){ ?><?=$_SESSION['get_title']?><?php } else { ?>Chongdinh<?php } ?>" />
+<meta property="og:image"  itemprop="thumbnailUrl" content="<?=$nameimg?>" />
+<meta property="og:description" content="<?php if(isset($_SESSION['descript']) && $_SESSION['descript'] != ""){ echo $_SESSION['descript']; } elseif($_SESSION['get_title'] != "") { echo $_SESSION['get_title']; } else { echo 'Cung cấp các sản phẩm nhập khẩu chất lượng cao'; } ?>" />
+	
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+
+	
+</head>
+<body>
+<?=$header?>
+<?=$main?>
+<?=$footer?>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript">
+	getcount();
+	getcart();			
+</script>
+
+<script type="text/javascript">
+ 	$(document).ready(function(){
+		var wow = new WOW({
+					boxClass: 'wow',      // animated element css class (default is wow)
+					animateClass: 'animated', // animation css class (default is animated)
+					offset: 0,          // distance to the element when triggering the animation (default is 0)
+					mobile: true,       // trigger animations on mobile devices (default is true)
+					live: false,       // act on asynchronously loaded content (default is true)
+					callback: function (box) {
+						// the callback is fired every time an animation is started
+						// the argument that is passed in is the DOM node being animated
+					}
+				}
+			);
+			wow.init();
+		$(document).on('click', function(event){
+			var container2 = $(".dropdown-cat");
+			var container1 = $("#category-drop");
+			if (!container2.is(event.target) && container2.has(event.target).length === 0 && !container1.is(event.target) && container1.has(event.target).length === 0)
+			{
+				$('.dropdown-cat').slideUp();
+			}
+			var containerc = $(".location");
+			var containerct = $(".select_country");
+			
+			if (!containerc.is(event.target) && containerc.has(event.target).length === 0 && !containerct.is(event.target) && containerct.has(event.target).length === 0)
+			{
+				$('.select_country').slideUp();
+			}	
+			if ($(window).width() < 1090)
+			{
+				var container = $("#menu_mobile");
+				var container3 = $(".menu-main");
+				
+				if (!container.is(event.target) && container.has(event.target).length === 0 && !container3.is(event.target) && container3.has(event.target).length === 0)
+				{
+					$('.menu-main').slideUp();
+				}	
+			}
+		});
+		$('#category-drop').click(function(){
+			if ($('.dropdown-cat').css('display') == "none")
+			{
+				$('.dropdown-cat').slideDown();
+			}
+			else
+			{
+				$('.dropdown-cat').slideUp();
+			}
+		});
+		$('#category-drop').mouseover(function(){
+			if ($(window).width() > 1090)
+			{
+				$('.dropdown-cat').slideDown();
+			}
+		});
+		
+		$('#menu_mobile').click(function(){
+			if ($('.menu-main').css('display') == "none")
+			{
+				$('.menu-main').slideDown();
+			}
+			else
+			{
+				$('.menu-main').slideUp();
+			}
+		});
+		$('.location').click(function(){
+			if ($('.select_country').css('display') == "none")
+			{
+				$('.select_country').slideDown();
+			}
+			else
+			{
+				$('.select_country').slideUp();
+			}
+		});
+		$('.phone').click(function(){
+			if ($(window).width() < 1000)
+			{
+				if ($('.support').css('right') == "0px")
+				{
+					$('.support').animate({right:'-100px'},500);
+				}
+				else
+				{
+					$('.support').animate({right:'0px'},500);
+				}
+			}
+		});
+	});
+    	
+		$('.has-sub').click(function(){
+			if ($(this).next().css('display') == "none")
+			{
+				$(this).addClass('has-minus');
+				$(this).next().slideDown();
+			}
+			else
+			{
+				$(this).removeClass('has-minus');
+				$(this).next().slideUp();
+			}
+		});
+    </script>
+	<script src="js/baguetteBox.js" async></script>
+	<script src="js/highlight.min.js" async></script>
+	<script>
+	window.onload = function() {
+		 baguetteBox.run('.lightbox', {
+			animation: 'fadeIn',
+			noScrollbars: true
+		});
+		if (typeof oldIE === 'undefined' && Object.keys) {
+			hljs.initHighlighting();
+		}
+	};	
+	</script>	
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v3.1&appId=110279855830217";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+</script>
+<script type="text/javascript">
+ <!-- {literal} -->
+  window.___gcfg = {lang: 'vi'};
+ <!--{/literal}-->
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+
+</body>
+</html>

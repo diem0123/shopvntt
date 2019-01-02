@@ -1,0 +1,51 @@
+<div class="table-info-sp">
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+	<tr>
+		<td height="1" bgcolor="#FFF5EA"></td>
+	</tr>
+</table>
+<?=$submenu2?>
+<table border="0" width="100%">
+	<tr>
+		<td>
+		<table border="0" width="100%" >
+			<tr>
+				<td height="14" class="menu" ><button class="admbutton" type="button" name="bk1" value="" onclick="window.history.go(-1);" >&lt;&lt; Back</button>
+				&nbsp;&nbsp;<button class="admbutton" type="button" name="ct1" value="" onclick="window.open('index.php?act=updatemt&cat=<?=$idcat?>&ac=a','Addsubcatpopup','scrollbars=yes,status=yes,toolbar=no,location=0,directories=0,status=yes,menubar=0,resizable=0,width=\'100%\',height=\'100%\'');" >Th&ecirc;m m&#7909;c c&#7845;p 2</button>
+				&nbsp;&nbsp; Cấp 1: <?=$NAMECAT?></td>
+			</tr>
+		</table>
+		<table border="0" width="100%" cellpadding="0" cellspacing="0" >
+			<tr>
+			  <td height="10" align="left" ></td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<table border="0" width="100%" cellspacing="0">
+			<tr bgcolor="#EEEEEE">
+				<td width="319" class="do" height="25">T&ecirc;n chuy&ecirc;n m&#7909;c c&#7845;p 2 </td>
+				<td width="258" class="do" height="25">Chuy&ecirc;n m&#7909;c c&#7845;p 1 </td>
+				<td width="162" class="do" height="25">Li&ecirc;n k&#7871;t </td>
+				<td width="84" class="do">Status</td>
+				<td width="75" class="do" height="25">Th&#7913; t&#7921; </td>
+				<td colspan="3" class="do">H&agrave;nh &#273;&#7897;ng </td>
+			</tr>			
+			<?=$subcategorylist_rs?>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td height="5"></td>
+	</tr>
+	<tr>
+		<td height="25" align="center"><div class="box-phantrang">
+            		<ul>                    	
+						<?=$paging?>						                       
+                    </ul>
+            	</div></td>
+	</tr>
+</table>
+</div>

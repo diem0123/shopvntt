@@ -1,0 +1,217 @@
+<script type="text/javascript" src="js/webtoolkit.base64.js"></script>
+<form name="f1" action="phuong-thuc-thanh-toan.html"  method="post"  enctype="multipart/form-data"  onsubmit="return check_complete();">
+<input type="hidden" id="cus_name" name="fullname" value="<?=$fullname?>" />
+<input type="hidden" id="cus_tel" name="tel" value="<?=$tel?>" />
+<input type="hidden" id="cus_email" name="email" value="<?=$email?>" />
+<input type="hidden" id="cus_address" name="address" value="<?=$address?>" />
+<input type="hidden" id="cus_province" name="province" value="<?=$province?>" />
+<input type="hidden" id="cus_dist" name="cus_dist" value="<?=$cus_dist?>" />
+<div class="bar-icon group">
+                <a href="mua-hang.html">                                                                                      
+                    <img alt="" src="images/i1.png" />
+                    <span><?=$lang['tl_cdonhang']?></span>
+                </a>
+                <a href="thong-tin-nguoi-mua.html">
+                    <img alt="" src="images/i2.png" />
+                    <span>  <?=$lang['tl_cnguoimua']?></span>
+                </a>
+                <a href="#">
+                    <img alt="" src="images/i31.png" />
+                    <span><?=$lang['tl_cvanchuyen']?></span>
+                </a>
+                <a href="#">
+                    <img alt="" src="images/i4.png" />
+                    <span><?=$lang['tl_cptthanhtoan']?></span>
+                </a>
+                <a href="#">
+                    <img alt="" src="images/i5.png" />
+                    <span><?=$lang['tl_cguidonhang']?> </span>
+                </a>
+                <a href="#">
+                    <img alt="" src="images/i6.png" />
+                    <span><?=$lang['tl_choantat']?></span>
+                </a>
+            </div>
+		 <?=$transferpay_list?>
+		 <div class="cart-control group">
+                <a href="thong-tin-nguoi-mua.html" class="btn-lui"><span> <?=$lang['tl_cquaylai']?></span> </a> <input class="btsubmit" type="submit" name="submit" value="<?=$lang['tl_ctieptuc']?>"  />              
+            </div>		 
+
+</form>
+<script type="text/javascript">
+/*
+get_decode_special();
+function get_encode_special(){	 
+	 	var b64_content = Base64.encode($("#cus_content_get").val());
+		document.getElementById("cus_contentencode_get").value = encodeURIComponent(b64_content);			
+	}
+function get_decode_special(){		
+		if($("#cus_contentencode_get").val() != ""){	 
+	 	//var b64_content_decode = Base64.encode($("#cus_content").val());
+		// decode uri
+		var uri_content_decode = decodeURIComponent($("#cus_contentencode_get").val());		 
+		//decode base64
+		document.getElementById("cus_content_get").value = Base64.decode(uri_content_decode);
+		}				
+	}
+function getLengthtextarear(item1,num)
+			{
+				var str=item1.value;
+				if (item1.value.length>eval(num))
+					{
+						alert("Ð? dài t?i da là "+num);
+						item1.value=str.substring(0,eval(num));
+					}
+			}
+*/
+			
+function check_complete(){
+			
+		 if ($("#cus_name_get").val()==""){
+			$('#mess_er1').html("<?=$lang['tl_ntennhan']?>");
+			return false;
+		 }
+		 
+		 if ($("#cus_tel_get").val()==""){
+		 	$('#mess_er1').html("");
+			$('#mess_er4').html("<?=$lang['tl_ntelnhan']?>");
+			return false;
+		 }
+		 
+		 else if($("#cus_email_get").val()==""){
+		 $('#mess_er1').html("");
+		 $('#mess_er4').html("");
+		 $('#mess_er2').html("<?=$lang['tl_nmailnhan']?>");
+		 return false;
+		 }
+		 else{
+		 $('#mess_er1').html("");
+					var at="@";
+					var dot=".";
+					var obj=$("#cus_email_get").val();
+					var lat=obj.indexOf(at);
+					var lstr=obj.length;
+					var ldot=obj.indexOf(dot);
+					if (obj.indexOf(at)==-1){
+						$('#mess_er2').html("<?=$lang['tl_ckhonghop']?>");
+						return false
+					}
+				   else if (obj.indexOf(at)==-1 || obj.indexOf(at)==0 || obj.indexOf(at)==lstr){
+						$('#mess_er2').html("<?=$lang['tl_ckhonghop']?>");
+						return false;
+					}
+				  else if (obj.indexOf(dot)==-1 || obj.indexOf(dot)==0 || obj.indexOf(dot)==lstr){
+						$('#mess_er2').html("<?=$lang['tl_ckhonghop']?>");
+						return false;
+					}
+				 else if (obj.indexOf(at,(lat+1))!=-1){
+						$('#mess_er2').html("<?=$lang['tl_ckhonghop']?>");
+						return false;
+					}
+				 else if (obj.substring(lat-1,lat)==dot || obj.substring(lat+1,lat+2)==dot){
+						$('#mess_er2').html("<?=$lang['tl_ckhonghop']?>");
+						return false;
+					}
+				 else if (obj.indexOf(dot,(lat+2))==-1){
+						$('#mess_er2').html("<?=$lang['tl_ckhonghop']?>");
+						return false;
+					}
+				 else if (obj.indexOf(' ')!=-1){
+						$('#mess_er2').html("<?=$lang['tl_ckhonghop']?>");
+						return false;
+					}
+							 
+				}
+				
+			if (document.f1.province_get.selectedIndex==""){
+			$('#mess_er1').html("");
+			$('#mess_er4').html("");
+			$('#mess_er2').html("");
+			$('#mess_er6').html("<?=$lang['tl_mtinhthanh']?>");
+			document.f1.province_get.focus();
+			return false;                        
+         }
+		 
+		 if (document.f1.dist.selectedIndex==""){
+			$('#mess_er1').html("");
+			$('#mess_er4').html("");
+			$('#mess_er2').html("");
+			$('#mess_er6').html("");
+			$('#mess_er7').html("<?=$lang['tl_mqhuyen']?>");
+			document.f1.dist.focus();
+			return false;                        
+         }
+			
+			if ($("#cus_address_get").val()==""){
+			$('#mess_er1').html("");
+			$('#mess_er4').html("");
+			$('#mess_er2').html("");
+			$('#mess_er6').html("");
+			$('#mess_er7').html("");
+			$('#mess_er5').html("<?=$lang['tl_mdchi']?>");
+			return false;
+		 }
+	/*	
+		if ($("#cus_content_get").val()==""){
+			$('#mess_er1').html("");
+			$('#mess_er2').html("");
+			$('#mess_er3').html("Vui l&ograve;ng nh&#7853;p th&ocirc;ng tin li&ecirc;n h&#7879;!");
+			return false;
+		 }
+	*/	 
+	//get_encode_special();								
+	return true;
+   }
+   
+   $(function() {	
+	$("#controllaccordion .accordion:not(:first)").hide();	
+	$("#controllaccordion h3").click(function(){
+		$accordion = $(this).next();
+		if ($accordion.is(':hidden') === true) {
+			$("#controllaccordion .accordion").slideUp();
+			$accordion.slideDown();
+		} else {
+			$accordion.slideUp();
+		}
+	});
+});
+
+var checkflag = "false";
+function getcopy() {
+	if (checkflag == "false") {
+		document.getElementById("cus_name_get").value = $("#cus_name").val();
+		document.getElementById("cus_tel_get").value = $("#cus_tel").val();
+		document.getElementById("cus_email_get").value = $("#cus_email").val();
+		document.getElementById("cus_address_get").value = $("#cus_address").val();
+		document.getElementById("cus_province_get").value = $("#cus_province").val();		
+		changedist();
+		//document.getElementById("dist").value = $("#cus_dist").val();
+		checkflag = "true";
+		return "Uncheck"; 
+	}
+	else {
+		document.getElementById("cus_name_get").value = "";
+		document.getElementById("cus_tel_get").value = "";
+		document.getElementById("cus_email_get").value = "";
+		document.getElementById("cus_address_get").value = "";
+		document.getElementById("cus_province_get").value = "";
+		changedist();
+		//document.getElementById("dist").value = "";
+		checkflag = "false";
+		return "Check"; 
+		}
+}
+
+	function changedist() {
+	$.ajax({
+		url: 'index.php?act=changedist',
+		type: 'POST',
+		data: 'province='+ $('#cus_province_get').val()+'&dist='+ $('#cus_dist').val(),
+		success: function(data) {
+		//document.getElementById("sametype").style.display = "block";
+		$('#same_dist').html(data);
+		}
+	});
+}
+			
+</script>

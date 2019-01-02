@@ -1,0 +1,72 @@
+
+#Options –Indexes
+RewriteEngine On
+#Options +FollowSymLinks
+#RewriteBase /
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteCond %{HTTP_HOST} ^www.onlinemall.vn
+RewriteRule ^.*$ http://www.onlinemall.vn%{REQUEST_URI} [R=301,L]
+
+RewriteRule ^home-([0-9]+)-([a-zA-Z0-9_-]+).html$ index.php?act=home&lang=$1&%{QUERY_STRING}
+RewriteRule ^trangchu-([0-9]+)-([a-zA-Z0-9_-]+).html$ index.php?act=home&idc=$1&%{QUERY_STRING}
+RewriteRule ^sanpham.html$ index.php?act=products&idc=0
+RewriteRule ^loc-san-pham-theo-mau.html$ index.php?act=products&idc=0&%{QUERY_STRING}
+RewriteRule ^sanphammoi.html$ index.php?act=products&idc=100
+RewriteRule ^thuonghieu.html$ index.php?act=products&id_brand=$1&%{QUERY_STRING}
+RewriteRule ^tenthuonghieu.html$ index.php?act=products&name_brand=$1&%{QUERY_STRING}
+RewriteRule ^sanphamgiamgia.html$ index.php?act=products&idc=101
+RewriteRule ^tim-kiem-thong-tin.html$ index.php?act=info&idc=0&%{QUERY_STRING}
+RewriteRule ^sanpham-([0-9]+)-([a-zA-Z0-9_-]+).html$ index.php?act=products&idc=$1&%{QUERY_STRING}
+RewriteRule ^spchitiet-([0-9]+)-([a-zA-Z0-9_-]+).html$ index.php?act=prodetail&idp=$1&%{QUERY_STRING}
+RewriteRule ^muc-([0-9]+)-([a-zA-Z0-9_-]+).html$ index.php?act=info&idtype=$1&%{QUERY_STRING}
+RewriteRule ^info-([0-9]+)-([a-zA-Z0-9_-]+).html$ index.php?act=info&idtype=$1&%{QUERY_STRING}
+RewriteRule ^info-danh-sach.html$ index.php?act=info&%{QUERY_STRING}
+RewriteRule ^info-danh-sach-([0-9]+)-([a-zA-Z0-9_-]+).html$ index.php?act=list_info&idc=$1&%{QUERY_STRING}
+RewriteRule ^thongso-([0-9]+)-([a-zA-Z0-9_-]+).html$ index.php?act=prodetail_tab&idn=$1&%{QUERY_STRING}
+RewriteRule ^lienhe.html$ index.php?act=contact
+RewriteRule ^thong-bao.html$ index.php?act=mess
+RewriteRule ^chitiet-([0-9]+)-([a-zA-Z0-9_-]+).html$ index.php?act=detail&idn=$1&%{QUERY_STRING}
+RewriteRule ^thu-vien-anh.html$ index.php?act=adm_library&%{QUERY_STRING}
+RewriteRule ^baogia.html$ index.php?act=show_excel&idc=0
+RewriteRule ^bao-gia-([0-9]+)-([a-zA-Z0-9_-]+).html$ index.php?act=show_excel&idc=$1&%{QUERY_STRING}
+RewriteRule ^tim-kiem-san-pham.html$ index.php?act=products&idc=0&%{QUERY_STRING}
+RewriteRule ^comments.html$ index.php?act=prodetail&idcomment=$0&%{QUERY_STRING}
+
+RewriteRule ^taikhoan-([0-9]+)-([a-zA-Z0-9_-]+).html$ index.php?act=view_account&idtype=$1&%{QUERY_STRING}
+RewriteRule ^dangky.html$ index.php?act=register
+RewriteRule ^dang-ky-thanh-cong.html$ index.php?act=register_success
+RewriteRule ^dangnhap.html$ index.php?act=login
+RewriteRule ^quen-mat-khau.html$ index.php?act=forgot
+RewriteRule ^nhan-lai-mat-khau.html$ index.php?act=forgot_success
+RewriteRule ^thoat.html$ index.php?act=logout
+RewriteRule ^doi-mat-khau.html$ index.php?act=changepass
+RewriteRule ^thong-bao.html$ index.php?act=mess
+RewriteRule ^hieu-chinh-tai-khoan.html$ index.php?act=edit_account
+RewriteRule ^thong-tin-tai-khoan.html$ index.php?act=view_account&%{QUERY_STRING}
+RewriteRule ^chi-tiet-don-hang.html$ index.php?act=account_view_order&%{QUERY_STRING}
+
+RewriteRule ^san-pham-da-luu.html$ index.php?act=mypro&%{QUERY_STRING}
+RewriteRule ^thu-vien.html$ index.php?act=adm_listfile&%{QUERY_STRING}
+RewriteRule ^thu-vien-anh.html$ index.php?act=adm_library&%{QUERY_STRING}
+RewriteRule ^admin index.php?act=adm_login
+RewriteRule ^upload.html$ index.php?act=upload&%{QUERY_STRING}
+RewriteRule ^apply-([0-9]+)-([a-zA-Z0-9_-]+).html$ index.php?act=apply&jobid=$1&%{QUERY_STRING}
+
+RewriteRule ^dr-([0-9]+)-([a-zA-Z0-9_-]+).html$ index.php?act=dr&kq=$1&%{QUERY_STRING}
+RewriteRule ^123pay-([0-9]+)-([a-zA-Z0-9_-]+).html$ index.php?act=checkoutResult&kq=$1&%{QUERY_STRING}
+RewriteRule ^123notify.html$ index.php?act=notify&%{QUERY_STRING}
+RewriteRule ^123truyvan.html$ index.php?act=queryOrder&%{QUERY_STRING}
+
+RewriteRule ^thong-bao-het-hang.html$ index.php?act=pro_expire
+RewriteRule ^donhang-([0-9]+)-([a-zA-Z0-9_-]+).html$ index.php?act=manage_order&idtype=$1&%{QUERY_STRING}
+RewriteRule ^thong-tin-gio-hang.html$ index.php?act=viewcart
+RewriteRule ^mua-hang.html$ index.php?act=vieworderpro
+RewriteRule ^thong-tin-nguoi-mua.html$ index.php?act=paysendcontact
+RewriteRule ^thong-tin-van-chuyen.html$ index.php?act=paytransfer
+RewriteRule ^phuong-thuc-thanh-toan.html$ index.php?act=procedurepay
+RewriteRule ^gui-don-hang.html$ index.php?act=sendorder
+RewriteRule ^hoan-tat-dat-hang.html$ index.php?act=completeorder
+RewriteRule ^muc-san-pham-ua-thich.html$ index.php?act=mypro&%{QUERY_STRING}
+RewriteRule ^dia-chi-nguoi-mua.html$ index.php?act=paysendaddress

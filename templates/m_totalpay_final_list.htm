@@ -1,0 +1,165 @@
+<?php if($fee_transfer == 100000001) {?>
+<div id="getTransfer_fee">
+<table width="100%" border="0" cellspacing="3" cellpadding="3" >  
+  <tr >
+    <td align="left" height="20"></td>
+    <td align="left" height="20" ></td>
+  </tr>
+  <tr background="images/bg_viewcart2.gif">
+    <td align="left" height="30"></td>
+    <td align="left" height="30" class="title_xam" > <?=$lang['tl_sphivanchuyen']?></td>
+  </tr>
+  <tr >
+    <td align="left" height="20" ></td>
+    <td align="left" height="20" class="ptext"><?=$lang['tl_sgoilayphi']?> <br />
+      <span id="mess_1" class="do"></span> </td>
+  </tr>
+  <tr >
+    <td align="left" height="10" ></td>
+    <td align="left" height="10"></td>
+  </tr>
+  <tr >
+    <td align="left" height="20" ><font size="1" color="#D7261C">*</font></td>
+    <td align="left" height="20"><input class="textlogin" name="fee_trans" type="text" id="fee_trans" value=""  onkeyup="checknum('fee_trans');" /></td>
+  </tr>
+  <tr >
+    <td align="left" height="20"></td>
+    <td align="left" height="30" class="ptext" ><?=$lang['tl_sgiamcuoc']?> (%)</td>
+  </tr>
+  <tr >
+    <td align="left" height="10"></td>
+    <td align="left" height="10"></td>
+  </tr>
+  <tr >
+    <td align="left" height="20"> </td>
+    <td align="left" height="20"><input class="textlogin" name="sale_trans" type="text" id="sale_trans" value="0" onkeyup="checknum('sale_trans');" /></td>
+  </tr>
+  <tr >
+    <td align="left" height="50">&nbsp;</td>
+    <td align="left" height="50"><input style="width:150px; height:30px;" type="button" name="capnhat" value="<?=$lang['tl_scapnhatthanhtoan']?>" onclick="update_transfer_fee();" /><input name="fee_transfer" type="hidden" id="fee_transfer" value="<?=$fee_transfer?>"  /></td>
+  </tr>
+  <tr >
+    <td height="20" colspan="2" align="left" class="style38"><span class="dotline"></span></td>
+  </tr>
+  <tr >
+    <td align="left" height="20">  </td>
+    <td align="left" height="20" class="ptext" ><?=$lang['tl_sphivanchuyen']?>: <strong><?=$lang['tl_schuaxacdinh']?></strong> </td>
+  </tr>  
+  <tr>
+    <td width="2%" height="20" align="left"></td>
+    <td width="96%" align="left"></td>
+  </tr>
+  <tr>
+    <td align="left" height="20"></td>
+    <td align="left" height="20" class="ptext" ><?=$lang['tl_stongthanhtoan']?>: <strong><?=$lang['tl_schuaxacdinh']?></strong></td>
+  </tr>
+  <tr>
+    <td height="20" align="left"></td>
+    <td align="left"></td>
+  </tr>
+  
+</table>
+</div>
+<?php } else{ ?>
+<table width="100%" border="0" cellspacing="3" cellpadding="3" >  
+  <tr background="images/bg_viewcart2.gif">
+    <td align="left" height="30"></td>
+    <td align="left" height="30" class="title_xam" > <?=$lang['tl_sphivanchuyen']?></td>
+  </tr>  
+  <tr >
+    <td align="left" height="20" ></td>
+    <td align="left" height="20" class="ptext"><?=$lang['tl_sphivanchuyen']?>: <strong><?=$fee?></strong> (VNĐ)</td>
+  </tr>
+  <tr >
+    <td align="left" height="20"></td>
+    <td align="left" height="20" ></td>
+  </tr>
+  <tr >
+    <td align="left" height="20"> </td>
+    <td align="left" height="20" class="ptext"><?=$lang['tl_sgiamcuoc']?>: <strong><?=$sale?></strong> (%)</td>
+  </tr>
+  <tr >
+    <td height="20" colspan="2" align="left" class="style38"><span class="dotline"></span></td>
+  </tr>
+  <tr >
+    <td align="left" height="20">  </td>
+    <td align="left" height="20" class="ptext"><?=$lang['tl_sphivanchuyen']?> (<?=$lang['tl_csaugiam']?>): <strong><?=$fee_transfer?></strong> (VNĐ)</td>
+  </tr>  
+  <tr>
+    <td width="2%" height="20" align="left">&nbsp;</td>
+    <td width="96%" align="left"></td>
+  </tr>
+  <tr>
+    <td align="left" height="20"></td>
+    <td align="left" height="20" class="ptext"><?=$lang['tl_stongthanhtoan']?>: <strong><?=$totalpay_final?></strong> (VNĐ)</td>
+  </tr>
+  <tr>
+    <td align="left" height="20"></td>
+    <td align="left"></td>
+  </tr>
+</table>
+<?php } ?>
+
+<script type="text/javascript">
+	function checknum(id)
+     {
+     
+         var check = true;
+         var value = $('#'+id).val(); //get characters
+          //check that all characters are digits, ., -, or ""
+          for(var i=0;i < value.length; ++i)
+          {
+               var new_key = value.charAt(i); //cycle through characters
+              
+               if(((new_key < "0") || (new_key > "9")) && 
+                    !(new_key == ""))
+               {
+                    check = false;
+					document.getElementById(id).value = "";
+					$('#mess_1').html("Vui l&ograve;ng nh&#7853;p s&#7889;!");
+                    //alert('Vui long nhap so!');
+                    break;
+               }
+          }
+
+     }
+	
+	function check_trans(){	
+		if ($('#fee_trans').val()==""){			
+			$('#mess_1').html("Nh&#7853;p c&#432;&#7899;c v&#7853;n chuy&#7875;n!");
+			document.f1.fee_trans.focus();
+			return false;                        
+		 }	
+														
+		return true;
+   }
+	
+	function update_transfer_fee() {
+		if(check_trans()){
+		$.ajax({
+			url: 'index.php?act=update_total_fee',
+			type: 'POST',
+			data: 'fee_trans='+ $('#fee_trans').val()+'&sale_trans='+ $('#sale_trans').val(),
+			success: function(data) {
+			//document.getElementById("sametype").style.display = "block";
+			$('#getTransfer_fee').html(data);
+			}
+			});
+		}	
+	}
+	
+	function check_submit_trans(){	
+	if ($('#fee_trans').val()==""){			
+		$('#mess_1').html("Nh&#7853;p c&#432;&#7899;c v&#7853;n chuy&#7875;n!");
+		document.f1.fee_trans.focus();
+		return false;                        
+	 }
+	 else if ($('#fee_transfer').val()==100000001){			
+		$('#mess_1').html("Vui l&ograve;ng nh&#7845;n n&uacute;t C&#7853;p nh&#7853;t thanh to&aacute;n!");
+		document.f1.fee_trans.focus();
+		return false;                        
+	 }
+													
+	return true;
+   }
+</script>

@@ -1,0 +1,42 @@
+<table border="0" width="1000" cellspacing="0" cellpadding="0">
+	<tr>
+		<td height="1" bgcolor="#FFF5EA"></td>
+	</tr>
+</table>
+<?=$submenu2?>
+<form name="f1" method="post" action="admin/accountlist" >
+<input type="hidden" name="vlid" value="">
+<table border="0" width="1000">
+	<tr>
+		<td>
+		<table border="0" width="100%" bgcolor="#FFF5EA">
+			<tr>
+			  <td height="14" class="title" ></td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<table border="0" width="994" cellspacing="0">
+			<tr bgcolor="#EEEEEE">
+				<td width="20" class="do" height="30"><input name="allbox" type="checkbox" onclick="checkall(this.form);" title="Check All"></td>
+				<td width="267" class="do" height="30">T&ecirc;n t&agrave;i kho&#7843;n </td>
+				<td width="174" class="do" height="30">Ng&agrave;y t&#7841;o </td>
+				<td width="150" class="do" height="30">Ng&agrave;y c&#7853;p nh&#7853;t </td>
+				<td width="70" class="do" height="30">Tr&#7841;ng th&aacute;i </td>
+				<td width="147" class="do">Vai tr&ograve; </td>
+				<td colspan="4" class="do">H&agrave;nh &#273;&#7897;ng </td>
+			</tr>			
+			<?=$customerlist_rs?>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td height="5"></td>
+	</tr>
+	<tr>
+		<td height="25" align="center"><div id="divPaging"><?=$paging?></div></td>
+	</tr>
+</table>
+</form>

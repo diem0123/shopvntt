@@ -1,0 +1,289 @@
+<div class="breadcrumbs ace-save-state" id="breadcrumbs">
+	<ul class="breadcrumb">
+		<li>
+			<a href="index.php?act=adm_common"><?=$lang['adm_caidat']?></a>
+		</li>				
+		<li>
+			<a href="index.php?act=adm_commontype">Mail Outgoing Server</a>
+		</li>		
+		
+	</ul><!-- /.breadcrumb -->
+	<div class="nav-search" id="nav-search">
+		<!--
+		<form class="form-search">
+			<span class="input-icon">
+				<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+				<i class="ace-icon fa fa-search nav-search-icon"></i>
+			</span>
+		</form>-->
+	</div><!-- /.nav-search -->
+</div>
+<div class="adm_out" >
+<div class="adm_common">
+<form action="index.php?act=update_mailsmtp" method="post"  enctype="multipart/form-data" name="f1" onsubmit="return checkform();"> 
+<input type="hidden" name="ac" value="<?=$ac?>">
+<input type="hidden" name="ids" value="<?=$ids?>">
+<table width="100%"  border="0" cellspacing="0" cellpadding="0" >
+ <tr >
+    <td width="17" height="40" class='menu'>&nbsp;</td>
+    <td colspan="2" class='menu'></td>
+    </tr>
+ <tr>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>FROM NAME <font size="1" color="#D7261C">*</font></td>
+   <td class='menu'><input type="text" name="fromname" style="width:376px " size="1" value="<?=$fromname?>"></td>
+ </tr>
+ <tr>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>&nbsp;</td>
+ </tr>
+ 
+  <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="353" class='menu'>FROM EMAIL <font size="1" color="#D7261C">*</font></td>
+    <td width="715" class='menu'>
+    <input type="text" name="emailfrom" style="width:376px " size="1" value="<?=$emailfrom?>"> 
+    ( Email dùng để nhận) </td>
+  </tr>
+ <tr>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>&nbsp;</td>
+ </tr>
+  <tr>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>SMTP SERVER<font size="1" color="#D7261C"> *</font></td>
+   <td class='menu'><input type="text" name="hostname" style="width:376px " size="1" value="<?=$hostname?>"></td>
+ </tr>
+ <tr>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>&nbsp;</td>
+ </tr>
+  <tr>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>SMTP PORT <font size="1" color="#D7261C">*</font></td>
+   <td class='menu'><input type="text" name="port" style="width:376px " size="1" value="<?=$port?>"></td>
+ </tr>
+ <tr>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>&nbsp;</td>
+ </tr>
+  <tr>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>SMTP SECURE <font size="1" color="#D7261C">*</font></td>
+   <td class='menu'>
+   <select name="smtptype" id="smtptype" >
+		<option value="" >SMTP Secure...</option>
+		<option value="ssl" <?=$s1?> >SSL</option>
+		<option value="tls" <?=$s2?> >TLS</option>
+	</select>
+   </td>
+ </tr>
+ <tr>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>&nbsp;</td>
+ </tr>
+ 
+  <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="353" class='menu'>SMTP USER <font size="1" color="#D7261C">*</font></td>
+    <td width="715" class='menu'>
+    <input type="text" name="emailsmtp" style="width:376px " size="1" value="<?=$emailsmtp?>"> 
+    ( Email đệm dùng để gửi) </td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="353" class='menu'>&nbsp;</td>
+    <td width="715" class='menu'>&nbsp;    </td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="353" class='menu'>PASSWORD <font size="1" color="#D7261C">*</font></td>
+    <td width="715" class='menu'>
+    <input type="password" name="pass" style="width:376px " size="1" value="<?=$pass?>"> (ít nhất 6 ký tự)</td>
+  </tr>
+ <tr>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>&nbsp;</td>
+ </tr>
+ <tr>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>RETYPE PASSWORD <font size="1" color="#D7261C">*</font></td>
+   <td class='menu'><input type="password" name="pass1" style="width:376px " size="1" value="<?=$pass1?>"></td>
+ </tr>
+ <tr>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>&nbsp;</td>
+ </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="353" class='menu'>&nbsp;</td>
+    <td width="715" class='menu'><input type="submit" name="submit" value="<?=$button_action?>" class="admbtn" >
+    <input type="button" name="cancel" value="Huỷ" onClick="window.location.href='index.php?act=update_mailsmtp&ac=v&ids=1';" class="admbtn" ></td>
+  </tr>
+ 
+    <tr>
+    <td colspan="3" align="center" height="41" class='menu'>
+        </td>
+  </tr>
+  </table>
+  </form>
+</div>
+</div>
+<script language="javascript1.2">
+               function checkform(){
+                    
+                    if (document.f1.fromname.value==""){
+                                        alert("Vui lòng nhập frome name!");
+                                        document.f1.fromname.focus();
+                                        return false;
+                                }
+					
+					if (document.f1.emailfrom.value==""){
+                                        alert("Vui lòng nhập địa chỉ email nhận!");
+                                        document.f1.emailfrom.focus();
+                                        return false;
+                     }else{
+								var at="@";
+								var dot=".";
+								var obj=document.f1.emailfrom.value;
+								var lat=obj.indexOf(at);
+								var lstr=obj.length;
+								var ldot=obj.indexOf(dot);
+								if (obj.indexOf(at)==-1){
+									alert('Email không đúng định dạng!')
+									document.f1.emailfrom.focus();
+									return false
+								}
+							   if (obj.indexOf(at)==-1 || obj.indexOf(at)==0 || obj.indexOf(at)==lstr){
+									alert('Email không đúng định dạng!');
+									document.f1.emailfrom.focus();
+									return false;
+								}
+							  if (obj.indexOf(dot)==-1 || obj.indexOf(dot)==0 || obj.indexOf(dot)==lstr){
+									alert('Email không đúng định dạng!');
+									document.f1.emailfrom.focus();
+									return false;
+								}
+							 if (obj.indexOf(at,(lat+1))!=-1){
+									alert('Email không đúng định dạng!');
+									document.f1.emailfrom.focus();
+									return false;
+								}
+							 if (obj.substring(lat-1,lat)==dot || obj.substring(lat+1,lat+2)==dot){
+									alert('Email không đúng định dạng!');
+									document.f1.emailfrom.focus();
+									return false;
+								}
+							 if (obj.indexOf(dot,(lat+2))==-1){
+									alert('Email không đúng định dạng!');
+									document.f1.emailfrom.focus();
+									return false;
+								}
+							 if (obj.indexOf(' ')!=-1){
+									alert('Email không đúng định dạng!');
+									document.f1.emailfrom.focus();
+									return false;
+								}
+										 
+							}
+							
+					if (document.f1.hostname.value==""){
+                                        alert("Vui lòng nhập SMTP Server!");
+                                        document.f1.hostname.focus();
+                                        return false;
+                                }
+					if (document.f1.port.value==""){
+                                        alert("Vui lòng nhập port!");
+                                        document.f1.port.focus();
+                                        return false;
+                                }
+								
+					if (document.f1.smtptype.value==""){
+                                        alert("Vui lòng nhập SMTP Secure!");
+                                        document.f1.smtptype.focus();
+                                        return false;
+                                }
+																	
+					if (document.f1.emailsmtp.value==""){
+                                        alert("Vui lòng nhập địa chỉ email gửi!");
+                                        document.f1.emailsmtp.focus();
+                                        return false;
+                     }else{
+								var at="@";
+								var dot=".";
+								var obj=document.f1.emailsmtp.value;
+								var lat=obj.indexOf(at);
+								var lstr=obj.length;
+								var ldot=obj.indexOf(dot);
+								if (obj.indexOf(at)==-1){
+									alert('Email không đúng định dạng!')
+									document.f1.emailsmtp.focus();
+									return false
+								}
+							   if (obj.indexOf(at)==-1 || obj.indexOf(at)==0 || obj.indexOf(at)==lstr){
+									alert('Email không đúng định dạng!');
+									document.f1.emailsmtp.focus();
+									return false;
+								}
+							  if (obj.indexOf(dot)==-1 || obj.indexOf(dot)==0 || obj.indexOf(dot)==lstr){
+									alert('Email không đúng định dạng!');
+									document.f1.emailsmtp.focus();
+									return false;
+								}
+							 if (obj.indexOf(at,(lat+1))!=-1){
+									alert('Email không đúng định dạng!');
+									document.f1.emailsmtp.focus();
+									return false;
+								}
+							 if (obj.substring(lat-1,lat)==dot || obj.substring(lat+1,lat+2)==dot){
+									alert('Email không đúng định dạng!');
+									document.f1.emailsmtp.focus();
+									return false;
+								}
+							 if (obj.indexOf(dot,(lat+2))==-1){
+									alert('Email không đúng định dạng!');
+									document.f1.emailsmtp.focus();
+									return false;
+								}
+							 if (obj.indexOf(' ')!=-1){
+									alert('Email không đúng định dạng!');
+									document.f1.emailsmtp.focus();
+									return false;
+								}
+										 
+							}
+                    
+                    if (document.f1.pass.value==""){
+                                        alert("Vui lòng nhập mật khẩu!");
+                                        document.f1.pass.focus();
+                                        return false;
+                                }
+                     if (document.f1.pass.value.length < 6){
+	                    alert("Mật khẩu phải ít nhất 6 ký tự!");
+	                    document.f1.pass.focus();
+	                    return false;
+                	}
+           
+                     if (document.f1.pass1.value==""){
+                                        alert("Vui lòng xác nhận lại mật khẩu!");
+                                        document.f1.pass1.focus();
+                                        return false;
+                     }
+                     
+                     if (document.f1.pass.value != document.f1.pass1.value){
+									alert ("Mật khẩu không khớp nhau!");
+									document.f1.pass1.focus();
+									return false;
+					}
+					
+                     return true;
+               }
+            
+</script>

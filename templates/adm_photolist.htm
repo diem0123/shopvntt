@@ -1,0 +1,82 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<table border="0" width="1000" cellspacing="0" cellpadding="0">
+	<tr>
+		<td height="1" bgcolor="#FFF5EA"></td>
+	</tr>
+</table>
+<?=$submenu2?>
+<form name="f1" method="post" >
+<input type="hidden" id="vlid" name="vlid" value="">
+<table border="0" width="1000">
+	<tr>
+		<td>
+		<table border="0" width="100%" bgcolor="#FFF5EA">
+			<tr>
+			  <td height="14" class="content" ><img src="images/bg-title.gif"  height="14"><input name="addcommon" type="button" id="addphoto" onclick="window.open('?act=adm_addphoto&ac=a','Addphotopopup','scrollbars=yes,status=yes,toolbar=no,location=0,directories=0,status=yes,menubar=0,resizable=0,width=\'100%\',height=\'100%\'');" value="Thêm photo" >
+				&nbsp;&nbsp;&nbsp; <a href="#" onclick="delit('',document.forms.f1.ck, document.forms.f1.vlid);" class="menu">X&oacute;a photo </a> </td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<table border="0" width="994" cellspacing="0">
+			<tr bgcolor="#EEEEEE">
+				<td width="20" class="do" height="25"><input name="allbox" type="checkbox" onclick="checkall(this.form);" title="Check All"></td>
+				<td width="342" class="do" height="25">T&ecirc;n Photo </td>
+				<td width="141" class="do" height="25">Ng&agrave;y t&#7841;o </td>
+				<td width="142" class="do" height="25">Ng&agrave;y c&#7853;p nh&#7853;t </td>
+				<td width="97" class="do" height="25">Tr&#7841;ng th&aacute;i </td>
+				<td width="117" class="do">&#272;&#259;ng b&#7903;i </td>
+				<td width="130" colspan="4" class="do">H&agrave;nh &#273;&#7897;ng </td>
+			</tr>
+			<?=$photolist_rs?>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td height="5"></td>
+	</tr>
+	<tr>
+		<td height="25" align="center"><div id="divPaging"><?=$paging?></div></td>
+	</tr>
+</table>
+</form>
+<script type="text/javascript">
+function delaction(idp,vlid) {
+		$.ajax({
+			url: 'index.php',
+			type: 'POST',
+			data: 'act=adm_deletephoto&ac=d&idp='+idp+'&vlid='+vlid,
+			success: function(data) {
+				var getdata = $.parseJSON(data);
+				if(getdata.mess1 == "success"){
+					//alert(getdata.mess2);
+					window.location.reload();
+				}
+				else $('#err').html(getdata.mess2);//alert(getdata.mess2);		
+			}
+		});	
+	}
+	
+	function delit(idp,listck,listid) {		
+	var str1 = "Vui lòng chọn ít nhất 1 photo!";
+	var str2 = "Bạn chắc chắn muốn xóa?";
+	if(idp ==""){
+		getValueListCheckBox(listck,listid);
+		if (listid.value=='') alert(str1);
+		else if(confirm(str2)){
+			//alert($('#vlid').val());
+			var id_list = $('#vlid').val();
+			delaction(idp,id_list);
+			
+		}
+	}
+	else {
+		if(confirm(str2)){
+		delaction(idp,'');
+		}
+	}
+	
+}
+</script>

@@ -1,0 +1,52 @@
+ <!DOCTYPE>
+<html lang="html">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Import File Excel For Database</title>
+
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+
+	<!-- Styles -->
+	<link href="css/jquery.filer.css" rel="stylesheet">
+	
+	<!-- Jvascript -->
+	<script src="http://code.jquery.com/jquery-3.1.0.min.js" crossorigin="anonymous"></script>
+	<script src="js/jquery.filer.min.js" type="text/javascript"></script>
+	<script src="js/custom.js" type="text/javascript"></script>
+
+   <style>
+        body {
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #47525d;
+            background-color: #fff;
+
+            margin: 0;
+            padding: 20px;
+        }
+
+        hr {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border: 0;
+            border-top: 1px solid #eee;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="content">
+		<h2>Chọn file excel </h2>
+		<!-- Example 1 -->
+		<form action="index.php?act=adm_import_excel_cap" method="post" enctype="multipart/form-data">
+			<input type="hidden" name="ac" value="a">
+		    <input type="file" name="files[]" id="filer_input" multiple="multiple">
+		    <input type="submit" name="submit" class="" style="margin-left:343px" value="Submit">
+		</form>
+		<!-- end of Example 1 -->
+    </div>
+    </body>
+</html>

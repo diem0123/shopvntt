@@ -1,0 +1,9 @@
+<?php if($idtype == 9 || $idtype == 11 ) { ?>
+<a href="info-<?=$idtype?>-<?=$linktype?>.html" <?=$st_select?> > <?=$nametype?></a>
+<?php } else { ?>
+<a href="#" <?=$st_select?> > <?=$nametype?></a>
+<?php } if($list_menusp_rs != "") { ?>
+<ul class="sub" >                       
+	<?=$list_menusp_rs?>
+</ul>		
+<?php } ?>		

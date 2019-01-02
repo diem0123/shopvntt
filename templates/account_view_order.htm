@@ -1,0 +1,37 @@
+ <div class="sitemap group">
+		<a href="thong-tin-tai-khoan.html"><?=$lang['tl_qltkhoan']?></a><span>></span><a href="donhang-6-quan-ly-don-hang.html"><?=$lang['tl_aqldhang']?></a>
+</div>
+
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+	<tr>
+		<td height="32" background="images/bg_viewcart2.gif"  >&nbsp;&nbsp;&nbsp;<?=$lang['tl_ttxldhang']?> </td>
+	</tr>
+	<tr>
+	  <td ><table width="100%" border="0" cellspacing="0" cellpadding="0" >
+        <tr>
+          <td width="2%">&nbsp;</td>
+          <td width="46%" height="30"><?=$lang['tl_sodonhang']?></td>
+          <td width="52%">: <?=$paymentname?></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td height="30"><?=$lang['tl_ngaydhang']?></td>
+          <td>: <?=$CREATED_DATE?></td>
+        </tr> 
+        <tr>
+          <td>&nbsp;</td>
+          <td height="30"><?=$lang['tl_ttdhang']?></td>
+          <td>: <?php if($APPROVE == 0){ ?><img src="images/duyetdoi.png" width="16" height="16" alt="No process" title="<?=$lang['tl_choxuly']?>"> <?=$lang['tl_choxuly']?> <?php } elseif($APPROVE == 1){ ?><img src="images/duyet.png" width="16" height="16" alt="Approve" title="<?=$lang['tl_dathanhtoan']?>"> <?=$lang['tl_dathanhtoan']?><?php } elseif($APPROVE == 2){ ?><img src="images/duyetno.png" width="16" height="16" alt="Reject" title="<?=$lang['tl_khle']?>"> <?=$lang['tl_khle']?><?php } ?></td>
+        </tr>
+      </table></td>
+  </tr>
+	 <tr>
+		<td height="10"></td>
+	</tr>
+	<tr>
+		<td height="32" background="images/bg_viewcart2.gif"  >&nbsp;&nbsp;&nbsp;<?=$lang['tl_ngtbandau']?>  </td>
+	</tr>
+</table>
+
+<?=$content_email?>
+<div style="padding:10px 0;">

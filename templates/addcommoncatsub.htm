@@ -1,0 +1,203 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title><?=$title?></title>
+<link rel="stylesheet" type="text/css" href="css/wstyle.css" />
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/webtoolkit.base64.js"></script>
+<script src="ckeditor/ckeditor.js"></script>
+</head>
+<div align="left">
+<form action="index.php?act=updatecommoncatsub" method="post"  enctype="multipart/form-data" name="f1" onsubmit="return checkform();"> 
+<input type="hidden" name="ac" value="<?=$ac?>">
+<input type="hidden" name="idcatsub" value="<?=$idcatsub?>">
+<table width="100%"  border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF">
+ <tr bgcolor="#FFF5EA">
+    <td width="17" height="40" class='menu'>&nbsp;</td>
+    <td width="271" class='menu'><?=$title_action?></td>
+    <td width="797" class='menu'>&nbsp;</td>
+  </tr>
+ <tr>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'><?=$lang['adm_chonchuyenmuc']?> 1 <font size="1" color="#D7261C">*</font></td>
+   <td class='menu'><SELECT  class="textbox" style="WIDTH: 376px;" size="1" name="idtype" id="idtype" >
+   		<option value=""><?=$lang['adm_vuilongchonchuyenmuc']?> 1...</option>
+   		<?=$list_commontype?>	
+    </SELECT></td>
+ </tr>
+ <tr>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>&nbsp;</td>
+ </tr>
+  <tr>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'><?=$lang['adm_chonchuyenmuc']?> 2 <font size="1" color="#D7261C">*</font></td>
+   <td class='menu'><SELECT  class="textbox" style="WIDTH: 376px;" size="1" name="idcat" id="idcat" >
+   		<option value=""><?=$lang['adm_vuilongchonchuyenmuc']?> 2...</option>
+   		<?=$list_commoncat?>	
+    </SELECT></td>
+ </tr>
+ <tr>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>&nbsp;</td>
+ </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="271" class='menu'><?=$lang['adm_tenchuyenmuc']?> 3
+    <font size="1" color="#D7261C">*</font></td>
+    <td width="797" class='menu'>
+	<input type="text" name="catname" style="width:376px " size="1" value="<?=$catname?>"></td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="271" class='menu'>&nbsp;</td>
+    <td width="797" class='menu'>&nbsp;    </td>
+  </tr>
+  <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="271" class='menu'><?=$lang['adm_thutu']?>
+    <font size="1" color="#D7261C">*</font></td>
+    <td width="797" class='menu'>
+    <input type="text" name="iorder" style="width:376px " size="1" value="<?=$iorder?>"></td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="271" class='menu'>&nbsp;</td>
+    <td width="797" class='menu'>&nbsp;    </td>
+  </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="271" class='menu'><?=$lang['adm_trangthai']?> </td>
+    <td width="797" class='menu'>
+    <SELECT  class=textbox style="WIDTH: 205px;" size=1 name=status>
+      <option value=""><?=$lang['adm_vuilongchontrangthai']?>...</option>
+		<option value="Active" <?=$sl1?>><?=$lang['adm_active']?></option>
+		<option value="Inactive" <?=$sl2?>><?=$lang['adm_inactive']?></option>
+		<option value="Deleted" <?=$sl3?>><?=$lang['adm_deleted']?></option>
+    </SELECT></td>
+  </tr>
+  <tr>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>&nbsp;</td>
+   <td class='do'><?=$mess?></td>
+ </tr>
+ <tr>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'><?=$lang['adm_anhnhodaidien']?></td>
+   <td class='menu'><input name="file_ul" type="file" size="25"></td>
+ </tr>
+ <tr>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'><span class="content">(<?=$lang['adm_anhdang']?>: .png, jpg, gif. </span>)</td>
+ </tr>
+ <tr>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'><?php if($thumbnail != "") { ?><img src="images/bin/imagenews/<?=$thumbnail?>" width="180" height="180" alt="<?=$thumbnail?>" /><?php } ?></td>
+ </tr>
+ <tr>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>&nbsp;</td>
+ </tr>
+ <tr>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'><?=$lang['adm_noidungsoluoc']?></td>
+   <td class='menu'><textarea name="short_content" rows="4" cols="52" onKeyUp="getLengthtextarear(this,500);"><?=$short_content?></textarea></td>
+ </tr>
+ <tr>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>&nbsp;</td>
+ </tr>
+ <tr>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'><?=$lang['adm_noidungbaiviet']?> </td>
+   <td class='menu'><textarea id="contentout" name="content"><?=$content?></textarea>
+   <input type="hidden" id="contentencode" name="contentencode" value="">
+        <script>CKEDITOR.replace('content', {			
+			filebrowserBrowseUrl: 'thu-vien.html'
+			
+		});</script></td>
+ </tr>
+ <!--
+ <tr>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>&nbsp;</td>
+ </tr>
+ <tr>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'><?=$lang['adm_hienthitrenmenu']?> </td>
+   <td class='menu'><input type="checkbox" name="mn" value="1" <?=$tbchecked?> ></td>
+ </tr>
+ -->
+ <tr>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'>&nbsp;</td>
+ </tr>
+ <tr>
+   <td class='menu'>&nbsp;</td>
+   <td class='menu'><?=$lang['adm_cachhienthithongtin']?> </td>
+   <td class='menu'><SELECT  class="textbox" style="WIDTH: 285px;" size="1" name="ht">
+      <option value=""><?=$lang['adm_choncachhienthi']?>...</option>
+		<option value="1" <?=$ht1?>><?=$lang['adm_tatcamuccon']?></option>
+		<option value="2" <?=$ht2?>><?=$lang['adm_hienthimotachomucnay']?></option>		
+    </SELECT></td>
+ </tr>
+ <tr>
+    <td width="17" class='menu'>&nbsp;</td>
+    <td width="271" class='menu'>&nbsp;</td>
+    <td width="797" class='menu'>&nbsp;</td>
+  </tr>
+    <tr>
+    <td colspan="3" align="center" height="41" class='menu'>
+    <input type="submit" name="submit" value="<?=$button_action?>" class="button" style="width:80px; height:22px ">
+    <input type="button" name="cancel" value="Đóng" onClick="javascript:window.close();" class="button" style="width:60px;height:22px ">    </td>
+  </tr>
+  </table>
+  </form>
+</div>
+<script language="javascript1.2">
+               function checkform(){
+                    
+                    if (document.f1.catname.value==""){
+                                        alert("Please enter Category name!");
+                                        document.f1.catname.focus();
+                                        return false;
+                                }
+                     if (document.f1.iorder.value==""){
+                                        alert("Please enter order!");
+                                        document.f1.iorder.focus();
+                                        return false;
+                                }
+                      
+                     getcontens();
+					 return true;
+               }
+			   
+			   function getLengthtextarear(item1,num)
+			{
+				var str=item1.value;
+				if (item1.value.length>eval(num))
+					{
+						alert("Độ dài tối đa là "+num);
+						item1.value=str.substring(0,eval(num));
+					}
+			}
+	  
+	  function CKupdate() {
+		  for (instance in CKEDITOR.instances)
+			CKEDITOR.instances[instance].updateElement();
+		}
+	  
+	  	function getcontens(){
+	  		//updateTextArea('contentout');
+			CKupdate();
+			document.getElementById("contentencode").value = Base64.encode($("#contentout").val());
+		}
+            
+</script>

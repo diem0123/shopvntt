@@ -1,0 +1,22 @@
+<li>
+	<div class="box-product">
+		<a href="spchitiet-<?=$ID?>-<?=$name_link?>.html" class="img-box"><img src="images/bin/<?=$ID_CATEGORY?>/<?=$IMAGE_LARGE?>"/></a>
+		<?php if($SALE > 0){?>
+					<span class="onsale">Sale - <?=$SALE?>%</span>
+				<?php }?>
+		<div class="info-product">
+			<div class="price txtLeft"><span class="txtOrange f18 upper">
+				<?php if($PRICE_SALE != 0)
+						echo $PRICE_SALE;
+					  else
+						echo $PRICE;
+				?>
+			</span></div>
+			<a href="spchitiet-<?=$ID?>-<?=$name_link?>.html" class="name-product txtLeft f12"><?=$name?></a>
+			<div class="box-extra">
+				<a href="#" onclick="savecart(<?=$ID?>,0);" class="buy-now-icon">Mua ngay</a>
+				<span class="view-icon"><?=$COUNTVIEW?></span>
+			</div>
+		</div>
+	</div>
+</li>

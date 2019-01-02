@@ -1,0 +1,12 @@
+<tr>
+	<td width="20" height="25"><input type="checkbox" name="ck" value="<?=$idc?>"></td>
+	<td width="267" height="25"><a href="index.php?act=adm_cus_payment&idc=<?=$idc?>" class="menu" title="Xem &#273;&#417;n h&agrave;ng c&#7911;a kh&aacute;ch h&agrave;ng n&agrave;y" ><?=$USER_NAME?></a></td>
+	<td width="174" height="25"><?=$CREATED_DATE?></td>
+	<td width="150" height="25"><?=$UPDATED_DATE?></td>
+	<td width="70" height="25" class="content"><?=$STATUS?></td>
+	<td width="147" class="content"><?=$ROLE_NAME?></td>
+	<td width="26"><a href="index.php?act=adm_cus_payment&idc=<?=$idc?>" class="menu" title="Xem &#273;&#417;n h&agrave;ng c&#7911;a kh&aacute;ch h&agrave;ng n&agrave;y" ><img src="images/magnifier.png" width="16" alt="View"></a></td>
+	<td width="29"><a href="#"  title="Edit" onclick="window.open('?act=adm_editaccount&idc=<?=$idc?>&ac=e','Editaccountpopup','scrollbars=yes,status=yes,toolbar=no,location=0,directories=0,status=yes,menubar=0,resizable=0,width=800,height=580');"  ><img src="images/icon_edit.png" width="16" alt="Edit"></a></td>
+	<td width="29"><a href="#"  title="Delete" onclick="if(confirm('Are you sure you want to delete this account?')) window.open('?act=adm_deleteaccount&idc=<?=$idc?>&ac=d','Deleteaccountpopup','scrollbars=yes,status=yes,toolbar=no,location=0,directories=0,status=yes,menubar=0,resizable=0,width=600,height=250');" ><img src="images/icon_delete.png" width="16" alt="Delete"></a></td>
+	<td width="62"></td>
+</tr>

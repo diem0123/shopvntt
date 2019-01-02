@@ -1,0 +1,58 @@
+<?php if($idtype == 1000 && $idtype == 1100){?>
+<?=$intro?>
+<div class="col-md-12" style="height:20px"></div>
+<?php }else{?>
+<div class="col-md-12" style="height:100px"></div>
+<?php }?>
+<section class="bg-white">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 txtLeft fadeInUp wow">
+				<div class="box-all">
+				<h2 class="title-green fadeInLeft wow animated"><?=$title_cat?></h2>
+				<div class="name-gioithieu"><?=$lang['nongsan']?></div>	
+				</div>
+			</div>
+			<section class="about-us">
+				<div class="container">
+					<div class="row">
+					
+						<?=$menu_about?>
+						<?php if($idtype == 4 || $idtype == 9 ){?>
+						<div class="col-md-12" >
+						<div class="common-news"><?=$main_contents?>
+						<div class="box-social-common" >
+						<span class="fbk" ><div class="fb-like" data-href="http://gcfood.com.vn/<?=$url_like?>" data-send="true" data-layout="button_count" data-width="450" data-show-faces="true"></div></span> <span class="ggg"  ><g:plusone size="medium" href="http://gcfood.com.vn/<?=$url_like?>"></g:plusone></span>
+						</div>
+						</div>						
+						</div>	
+						<?php } else { ?>						
+						<div class="common-news"><?=$main_contents?>						
+						 <?php if($idtype != 100) {?>
+						<div class="box-social-common" >
+						<span class="fbk" ><div class="fb-like" data-href="http://gcfood.com.vn/<?=$url_like?>" data-send="true" data-layout="button_count" data-width="450" data-show-faces="true"></div></span> <span class="ggg"  ><g:plusone size="medium" href="http://gcfood.com.vn/<?=$url_like?>"></g:plusone></span>
+						</div>
+						<?php } ?>						
+						</div>						
+						<?php } ?>	
+		
+					</div>
+					
+				</div>
+				
+			</section>
+			
+	
+		</div>
+	</div>
+</section>
+<!--
+<section class="thanhvien">
+	<div class="container">
+		<div class="row">
+			<?=$bannerqc?>
+		</div>
+	</div>
+</section>
+-->
+<div class="line-partner fadeInRight wow"></div>
